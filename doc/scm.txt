@@ -1,0 +1,52 @@
+/////////////////////////////////////////////////////////////////
+//  NG BOOTSTRAP STRATEGY
+/////////////////////////////////////////////////////////////////
+
+-- [_] Crear aplicativo de ceros
+ 
+       -- [xx] npm cache clean --force
+
+       -- [xx] ng new PWA_DEMO_ENV_LANDING --no-standalone
+
+       -- [Xx] open folder / cd PWA_DEMO_ENV_LANDING
+
+       -- [xx] abrir / compilar / ejecyutar proyecto en visual studio code.
+
+              -- [xx] npm install --force
+
+              -- [xx] npm run build.
+
+              -- [xx] npm run start.
+
+-- [x] SOURCE CONTROL  
+
+      -- [X] crar repositorio github.
+
+              -- [Xx] https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING.git
+
+       -- [x] agregar a github.
+
+              -- [X] git init
+              -- [X] git branch -M main
+              -- [x] git remote add origin https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING.git 
+              -- [x] git remote -v
+              -- [x] git add *
+              -- [x] git commit -m "FIRST COMMIT"
+              -- [x] git push --set-upstream origin main
+              -- [x] git pull
+
+-- [x] DEPLOY AND PUBLISH 
+
+       -- [x]  packages.json
+
+               -- [x]  "deploy": "ng build --c=production --base-href=\"https://aperezNWO.github.io/PWA_DEMO_ENV_LANDING/\"
+
+               -- [x]  "publish": "npx ngh --dir=dist\pwa-demo-env-landing
+
+               -- [_]  npm run deploy
+              
+               -- [_]  npm run publish
+
+-- [_]  (publicar en raiz de github pages!!!!)
+
+/////////////////////////////////////////////////////////////////
