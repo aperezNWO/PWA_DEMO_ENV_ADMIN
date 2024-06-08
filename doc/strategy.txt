@@ -1,0 +1,9 @@
+/***********************************************/
+-- STRATEGY DEV
+/***********************************************/
+--[_] LISTADO DE URLS
+
+--[_] REGISTRO CON DESCRIPCION.
+
+--[_] ITERAR CON NGFOR.
+
