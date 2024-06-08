@@ -47,6 +47,13 @@
               
                -- [_]  npm run publish
 
+-- [_] ng-bootstrap install
+
+       -- [_] ng add @ng-bootstrap/ng-bootstrap
+
+       -- [_] ng add @bootstrap/bootstrap       
+
+
 -- [_]  (publicar en raiz de github pages!!!!)
 
 /////////////////////////////////////////////////////////////////

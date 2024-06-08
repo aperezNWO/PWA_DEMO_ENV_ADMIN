@@ -1,9 +1,30 @@
 /***********************************************/
 -- STRATEGY DEV
 /***********************************************/
---[_] LISTADO DE URLS
+--[_] paypal button.
 
---[_] REGISTRO CON DESCRIPCION.
+--[_] LEER ARCHIVO CONFIG / VERSION.
 
---[_] ITERAR CON NGFOR.
+--[_] MENU PRINIPAL
 
+        --[_] NAVEGACION.
+
+                --[_] TEMARIO.
+
+                --[_] PAGINAS.
+
+--[>] LISTADO DE URLS
+
+        --[>] NG BOOTRSRAP TABLE
+
+               --[>] _sevices, _modules,_models.
+
+               --[_] Tipo de registro "Enlace / Link".
+
+                      --[_] descripcion.
+
+                      --[_] url.
+
+                      --[_] nivel de encabezado.
+
+/***********************************************/
