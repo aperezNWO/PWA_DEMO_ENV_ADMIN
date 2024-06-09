@@ -41,17 +41,17 @@ function matches(country: Country, term: string, pipe: PipeTransform) {
 		pipe.transform(country.population).includes(term)
 	);
 }
-//
+//  
 @Injectable({
   providedIn: 'root'
 })
-export class DemoService {
-
+export class DevPageService {
+  //
 	private _loading$   = new BehaviorSubject<boolean>(true);
 	private _search$    = new Subject<void>();
 	private _countries$ = new BehaviorSubject<Country[]>([]);
 	private _total$     = new BehaviorSubject<number>(0);
-
+  //
 	private _state: State = {
 		page: 1,
 		pageSize: 4,
@@ -59,7 +59,7 @@ export class DemoService {
 		sortColumn: '',
 		sortDirection: '',
 	};
-
+  //
 	constructor(private pipe: DecimalPipe) {
 		this._search$
 			.pipe(
@@ -132,3 +132,4 @@ export class DemoService {
 		return of({ countries, total });
 	}
 }
+

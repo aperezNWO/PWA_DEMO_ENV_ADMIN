@@ -1,4 +1,4 @@
-export interface Page {
+export interface Dev_Page {
 	id               : number;
 	name             : string;
     framework        : string;

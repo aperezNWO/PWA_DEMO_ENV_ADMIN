@@ -1,6 +1,6 @@
-import { Page } from './page';
+import { Dev_Page } from './devpage';
 
-export const PAGES: Page[] = [
+export const DEV_PAGES: Dev_Page[] = [
 	{
                 id               : 1,
                 name             : '[PWA_DEMO - ENV_LANDING]',
