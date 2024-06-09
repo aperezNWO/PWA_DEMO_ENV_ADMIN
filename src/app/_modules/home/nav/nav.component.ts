@@ -40,6 +40,10 @@ export class NavComponent {
     {
       'url': '/Curriculum',
       'text': '[CURRICULUM]',
+    },
+    {
+      'url': '/NgbTableSample',
+      'text': '[NG TABLE SAMPLE]',
     }
   ]
   //-----------------------------------------------------------------------------------------------------

@@ -3,7 +3,7 @@
 	<hr>
 	<form>
 		<div class="mb-3 row">
-			<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Full text search:</label>
+			<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">[Búsqueda]:</label>
 			<div class="col-xs-3 col-sm-auto">
 				<input
 					id="table-complete-search"
@@ -14,7 +14,7 @@
 				/>
 			</div>
 			@if (service.loading | async) {
-				<span class="col col-form-label">Loading...</span>
+				<span class="col col-form-label">Cargando...</span>
 			}
 		</div>
 
@@ -22,9 +22,9 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col" sortable="name" (sort)="onSort($event)">Country</th>
-					<th scope="col" sortable="area" (sort)="onSort($event)">Area</th>
-					<th scope="col" sortable="population" (sort)="onSort($event)">Population</th>
+					<th scope="col" sortable="name" (sort)="onSort($event)">[Nombre]</th>
+					<th scope="col" sortable="area" (sort)="onSort($event)">[URL]</th>
+					<th scope="col" sortable="population" (sort)="onSort($event)">[Descripcion]</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -45,7 +45,7 @@
 					</tr>
 				} @empty {
 					<tr>
-						<td colspan="4" style="text-align: center">No countries found</td>
+						<td colspan="4" style="text-align: center">[NO SE ENCONTRARON DATOS]</td>
 					</tr>
 				}
 			</tbody>
@@ -56,9 +56,9 @@
 			</ngb-pagination>
 
 			<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
-				<option [ngValue]="2">2 items per page</option>
-				<option [ngValue]="4">4 items per page</option>
-				<option [ngValue]="6">6 items per page</option>
+				<option [ngValue]="2">2 items por página</option>
+				<option [ngValue]="4">4 items por página</option>
+				<option [ngValue]="6">6 items por página</option>
 			</select>
 		</div>
 	</form>

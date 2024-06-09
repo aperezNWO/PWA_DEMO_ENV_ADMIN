@@ -22,11 +22,17 @@
 
         --[>] RESTRINGIR ACCESO A REGISTROS VIA ROLES / OAUTH. 
 
-        --[>] NG BOOTRSRAP ** SAMPLE ** .
+        --[x] NG BOOTRSRAP ** SAMPLE ** .
      
         --[>] NG BOOTRSRAP TABLE
 
                --[>] _sevices, _modules,_models.
+
+               --[>] Estrategia de Duplicacion.
+
+                     --[>] Duplicar objetos .ts.
+                
+                     --[>] Cambiar referencia a objetos .ts.
 
                --[_] Tipo de registro "Enlace / Link".
 
