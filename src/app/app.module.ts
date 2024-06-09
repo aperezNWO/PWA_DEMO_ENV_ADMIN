@@ -16,6 +16,7 @@ import { CurriculumComponent                    } from './_modules/curriculum/cu
 import { PagesComponent                         } from './_modules/pages/pages.component';
 import { ConfigService                          } from './_services/config.service';
 import { NgbdSortableHeader                     } from './_services/sortable.directe';
+import { NgtablesampleComponent } from './_modules/samples/ngtablesample/ngtablesample.component';
 //
 export function initialize(_configService: ConfigService) {
   // 
@@ -29,7 +30,8 @@ export function initialize(_configService: ConfigService) {
     PageNotFoundComponent,
     HomeComponent,
     CurriculumComponent,
-    PagesComponent
+    PagesComponent,
+    NgtablesampleComponent
   ],
   imports: [
     BrowserModule,

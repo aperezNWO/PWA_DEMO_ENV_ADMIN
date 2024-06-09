@@ -1,6 +1,6 @@
 {
     "appBrand"           : "[PWA DEMO]",
     "appEnv"             : "[ENV_LANDING]",
-    "appVersion"         : "1.0.0.1"
+    "appVersion"         : "v[1.0.0.1]"
 }
   

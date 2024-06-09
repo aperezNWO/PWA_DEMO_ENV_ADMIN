@@ -1,11 +1,13 @@
 /***********************************************/
 -- STRATEGY DEV
 /***********************************************/
---[_] paypal button.
+-- [_] paypal button.
 
---[_] LEER ARCHIVO CONFIG / VERSION.
+-- [_] tailwind dark mode.
 
---[_] MENU PRINIPAL
+-- [_] LEER ARCHIVO CONFIG / VERSION.
+
+-- [_] MENU PRINIPAL
 
         --[_] NAVEGACION.
 
@@ -15,6 +17,9 @@
 
 --[>] LISTADO DE URLS
 
+        --[>] NG BOOTRSRAP ** SAMPLE ** .
+
+     
         --[>] NG BOOTRSRAP TABLE
 
                --[>] _sevices, _modules,_models.
