@@ -35,16 +35,12 @@ export class NavComponent {
     },
     {
       'url': '/Pages',
-      'text': '[PAGES]',
+      'text': '[PAGINAS]',
     },
     {
       'url': '/Curriculum',
       'text': '[CURRICULUM]',
-    },
-    {
-      'url': '/NgSampleTable',
-      'text': '[NG TABLE SAMPLE]',
-    },
+    }
   ]
   //-----------------------------------------------------------------------------------------------------
   constructor(

@@ -4,6 +4,7 @@ import { PageNotFoundComponent   } from './_modules/home/page-not-found/page-not
 import { PagesComponent          } from './_modules/pages/pages.component';
 import { CurriculumComponent     } from './_modules/curriculum/curriculum.component';
 import { HomeComponent           } from './_modules/home/home/home.component';
+import { NgtablesampleComponent  } from './_modules/samples/ngtablesample/ngtablesample.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {  path: ''                         , component: HomeComponent                      },
   {  path: 'Pages'                    , component: PagesComponent                     },
   {  path: 'Curriculum'               , component: CurriculumComponent                },
+  {  path: 'NgbTableSample'           , component: NgtablesampleComponent             },
   {  path: '**'                       , component: PageNotFoundComponent              },
 ];
 

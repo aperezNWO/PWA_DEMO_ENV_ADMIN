@@ -11,14 +11,18 @@
 
         --[_] NAVEGACION.
 
+                --[_] LOGIN / OAUTH.
+
                 --[_] TEMARIO.
 
                 --[_] PAGINAS.
 
+
 --[>] LISTADO DE URLS
 
-        --[>] NG BOOTRSRAP ** SAMPLE ** .
+        --[>] RESTRINGIR ACCESO A REGISTROS VIA ROLES / OAUTH. 
 
+        --[>] NG BOOTRSRAP ** SAMPLE ** .
      
         --[>] NG BOOTRSRAP TABLE
 
