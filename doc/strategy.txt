@@ -28,14 +28,6 @@
 
                --[x] _sevices, _modules,_models.
 
-               --[>] leer archivo externo de paginas .json (HOW TO PUBLISH A SINGLE ELEMNT VIA NPX NGH).
-
-               --[>] Estrategia de Duplicacion.
-
-                     --[>] Duplicar objetos .ts.
-                
-                     --[>] Cambiar referencia a objetos .ts.
-
                --[_] Tipo de registro "Enlace / Link".
 
                       --[_] descripcion.
@@ -43,5 +35,14 @@
                       --[_] url.
 
                       --[_] nivel de encabezado.
+
+
+               --[>>] leer archivo externo de paginas .json (HOW TO PUBLISH A SINGLE ELEMNT VIA NPX NGH).
+
+               --[>>] Estrategia de Duplicacion.
+
+                     --[>] Duplicar objetos .ts.
+                
+                     --[>] Cambiar referencia a objetos .ts.
 
 /***********************************************/
