@@ -22,13 +22,10 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-			    <!--<th scope="col" sortable="name"        (sort)="onSort($event)">[Nombre]</th>
-					<th scope="col" sortable="description" (sort)="onSort($event)">[URL]</th>
-					<th scope="col" sortable="descripcion" (sort)="onSort($event)">[Descripcion]</th>-->
-					<th scope="col">name</th>
-					<th scope="col">framework</th>					
-					<th scope="col">frameworkVersion</th>
-					<th scope="col">description</th>				
+					<th scope="col" sortableDevPage="name"              (_sort)="onSort($event)">[Nombre]</th>
+					<th scope="col" sortableDevPage="framework"         (_sort)="onSort($event)">[Framework]</th>					
+					<th scope="col" sortableDevPage="frameworkVersion"  (_sort)="onSort($event)">[FrameworkVersion]</th>
+					<th scope="col" sortableDevPage="description"       (_sort)="onSort($event)">[Description]</th>				
 				</tr>
 			</thead>
 			<tbody>

@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap      } from 'rxjs/operators';
 import { Dev_Page                                 } from '../_models/devpage';
 import { DEV_PAGES                                } from '../_models/devpages';
-import { SortColumn, SortDirection                } from './DevPageSortable.directive';
+import { SortColumnDevPage, SortDirectionDevPage  } from './DevPageSortable.directive';
 
 interface SearchResult {
 	countries: Dev_Page[];
@@ -16,13 +16,13 @@ interface State {
 	page         : number;
 	pageSize     : number;
 	searchTerm   : string;
-	sortColumn   : SortColumn;
-	sortDirection: SortDirection;
+	sortColumn   : SortColumnDevPage;
+	sortDirection: SortDirectionDevPage;
 }
 
 const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 
-function sort(countries: Dev_Page[], column: SortColumn, direction: string): Dev_Page[] {
+function sort(countries: Dev_Page[], column: SortColumnDevPage, direction: string): Dev_Page[] {
 	if (direction === '' || column === '') {
 		return countries;
 	} else {
@@ -33,12 +33,15 @@ function sort(countries: Dev_Page[], column: SortColumn, direction: string): Dev
 	}
 }
 
-function matches(country: Dev_Page, term: string, pipe: PipeTransform) {
+function matches(country: Dev_Page, term: string/*, pipe: PipeTransform*/) {
 	return (
-		country.name.toLowerCase().includes(term.toLowerCase()) ||
-		pipe.transform(country.framework).includes(term)        ||
-		pipe.transform(country.frameworkVersion).includes(term) ||
-		pipe.transform(country.description).includes(term)      
+		country.name.toLowerCase().includes(term.toLowerCase())               ||
+		country.framework.toLowerCase().includes(term.toLowerCase())          ||
+		country.frameworkVersion.toLowerCase().includes(term.toLowerCase())   ||
+		country.description.toLowerCase().includes(term.toLowerCase())        
+		//pipe.transform(country.framework).includes(term)        ||
+		//pipe.transform(country.frameworkVersion).includes(term) ||
+		//pipe.transform(country.description).includes(term)      
 	);
 }
 //  
@@ -60,7 +63,7 @@ export class DevPageService {
 		sortDirection : '',
 	};
   //
-	constructor(private pipe: DecimalPipe) {
+	constructor(/*private pipe: DecimalPipe*/) {
 		this._search$
 			.pipe(
 				tap(() => this._loading$.next(true)),
@@ -105,10 +108,10 @@ export class DevPageService {
 	set searchTerm(searchTerm: string) {
 		this._set({ searchTerm });
 	}
-	set sortColumn(sortColumn: SortColumn) {
+	set sortColumn(sortColumn: SortColumnDevPage) {
 		this._set({ sortColumn });
 	}
-	set sortDirection(sortDirection: SortDirection) {
+	set sortDirection(sortDirection: SortDirectionDevPage) {
 		this._set({ sortDirection });
 	}
 
@@ -124,7 +127,7 @@ export class DevPageService {
 		let countries = sort(DEV_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
-		countries = countries.filter((country) => matches(country, searchTerm, this.pipe));
+		countries = countries.filter((country) => matches(country, searchTerm/*, this.pipe)*/));
 		const total = countries.length;
 
 		// 3. paginate

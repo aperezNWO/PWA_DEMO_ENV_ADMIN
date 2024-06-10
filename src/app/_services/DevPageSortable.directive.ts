@@ -1,14 +1,14 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { Dev_Page                               } from '../_models/devpage';
 
-export type SortColumn    = keyof Dev_Page | '';
-export type SortDirection = 'asc' | 'desc' | '';
+export type SortColumnDevPage                         = keyof Dev_Page | '';
+export type SortDirectionDevPage                      = 'asc' | 'desc' | '';
 
-const rotate: { [key: string]: SortDirection } = { asc: 'desc', desc: '', '': 'asc' };
+const rotate: { [key: string]: SortDirectionDevPage } = { asc: 'desc', desc: '', '': 'asc' };
 
-export interface SortEvent {
-	column   :  SortColumn;
-	direction: SortDirection;
+export interface SortEventDevPage {
+	_column    :  SortColumnDevPage;
+	_direction :  SortDirectionDevPage;
 }
 
 @Directive({
@@ -20,13 +20,13 @@ export interface SortEvent {
 		'(click)'     : 'rotate()',
 	},
 })
-export class NgbdSortableHeader {
-	@Input()  sortable  : SortColumn    = '';
-	@Input()  direction : SortDirection = '';
-	@Output() sort                     = new EventEmitter<SortEvent>();
+export class NgbdSortableHeaderDevPage {
+	@Input()  sortableDevPage  : SortColumnDevPage    = '';
+	@Input()  directionDevPage : SortDirectionDevPage = '';
+	@Output() _sort                                   = new EventEmitter<SortEventDevPage>();
 
 	rotate() {
-		this.direction = rotate[this.direction];
-		this.sort.emit({ column: this.sortable, direction: this.direction });
+		this.directionDevPage = rotate[this.directionDevPage];
+		this._sort.emit({ _column: this.sortableDevPage, _direction: this.directionDevPage });
 	}
 }
