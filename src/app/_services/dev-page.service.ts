@@ -1,29 +1,28 @@
 /* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { Injectable, PipeTransform                } from '@angular/core';
 import { DecimalPipe                              } from '@angular/common';
-import { Country                                  } from '../_models/country';
-import { COUNTRIES                                } from '../_models/countries';
-import { SortColumn, SortDirection                } from './sortable.directive';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap      } from 'rxjs/operators';
-
+import { Dev_Page                                 } from '../_models/devpage';
+import { DEV_PAGES                                } from '../_models/devpages';
+import { SortColumn, SortDirection                } from './DevPageSortable.directive';
 
 interface SearchResult {
-	countries: Country[];
+	countries: Dev_Page[];
 	total    : number;
 }
 
 interface State {
-	page: number;
-	pageSize: number;
-	searchTerm: string;
-	sortColumn: SortColumn;
+	page         : number;
+	pageSize     : number;
+	searchTerm   : string;
+	sortColumn   : SortColumn;
 	sortDirection: SortDirection;
 }
 
 const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 
-function sort(countries: Country[], column: SortColumn, direction: string): Country[] {
+function sort(countries: Dev_Page[], column: SortColumn, direction: string): Dev_Page[] {
 	if (direction === '' || column === '') {
 		return countries;
 	} else {
@@ -34,11 +33,12 @@ function sort(countries: Country[], column: SortColumn, direction: string): Coun
 	}
 }
 
-function matches(country: Country, term: string, pipe: PipeTransform) {
+function matches(country: Dev_Page, term: string, pipe: PipeTransform) {
 	return (
 		country.name.toLowerCase().includes(term.toLowerCase()) ||
-		pipe.transform(country.area).includes(term) ||
-		pipe.transform(country.population).includes(term)
+		pipe.transform(country.framework).includes(term)        ||
+		pipe.transform(country.frameworkVersion).includes(term) ||
+		pipe.transform(country.description).includes(term)      
 	);
 }
 //  
@@ -49,15 +49,15 @@ export class DevPageService {
   //
 	private _loading$   = new BehaviorSubject<boolean>(true);
 	private _search$    = new Subject<void>();
-	private _countries$ = new BehaviorSubject<Country[]>([]);
+	private _countries$ = new BehaviorSubject<Dev_Page[]>([]);
 	private _total$     = new BehaviorSubject<number>(0);
   //
 	private _state: State = {
-		page: 1,
-		pageSize: 4,
-		searchTerm: '',
-		sortColumn: '',
-		sortDirection: '',
+		page          : 1,
+		pageSize      : 4,
+		searchTerm    : '',
+		sortColumn    : '',
+		sortDirection : '',
 	};
   //
 	constructor(private pipe: DecimalPipe) {
@@ -121,7 +121,7 @@ export class DevPageService {
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
 		// 1. sort
-		let countries = sort(COUNTRIES, sortColumn, sortDirection);
+		let countries = sort(DEV_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
 		countries = countries.filter((country) => matches(country, searchTerm, this.pipe));

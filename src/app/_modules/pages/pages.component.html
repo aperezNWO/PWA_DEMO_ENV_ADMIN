@@ -22,26 +22,23 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col" sortable="name" (sort)="onSort($event)">[Nombre]</th>
-					<th scope="col" sortable="area" (sort)="onSort($event)">[URL]</th>
-					<th scope="col" sortable="population" (sort)="onSort($event)">[Descripcion]</th>
+			    <!--<th scope="col" sortable="name"        (sort)="onSort($event)">[Nombre]</th>
+					<th scope="col" sortable="description" (sort)="onSort($event)">[URL]</th>
+					<th scope="col" sortable="descripcion" (sort)="onSort($event)">[Descripcion]</th>-->
+					<th scope="col">name</th>
+					<th scope="col">framework</th>					
+					<th scope="col">frameworkVersion</th>
+					<th scope="col">description</th>				
 				</tr>
 			</thead>
 			<tbody>
 				@for (country of countries | async; track country.id) {
 					<tr>
 						<th scope="row">{{ country.id }}</th>
-						<td>
-							<img
-								[src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
-								[alt]="'The flag of ' + country.name"
-								class="me-2"
-								style="width: 20px"
-							/>
-							<ngb-highlight [result]="country.name" [term]="service.searchTerm" />
-						</td>
-						<td><ngb-highlight [result]="country.area | number" [term]="service.searchTerm" /></td>
-						<td><ngb-highlight [result]="country.population | number" [term]="service.searchTerm" /></td>
+						<td><ngb-highlight [result]="country.name"              [term]="service.searchTerm" /></td>
+						<td><ngb-highlight [result]="country.framework"         [term]="service.searchTerm" /></td>
+						<td><ngb-highlight [result]="country.frameworkVersion"  [term]="service.searchTerm" /></td>
+						<td><ngb-highlight [result]="country.description"       [term]="service.searchTerm" /></td>
 					</tr>
 				} @empty {
 					<tr>

@@ -1,10 +1,10 @@
 export interface Dev_Page {
 	id               : number;
 	name             : string;
+    description      : string;
     framework        : string;
 	frameworkVersion : string;
     uixFramework     : string;    
-    description      : string;
     urlPage          : string;
 	urlRepo          : string;
 }

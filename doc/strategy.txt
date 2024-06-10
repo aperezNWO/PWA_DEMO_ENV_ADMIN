@@ -41,6 +41,8 @@
 
                --[>>] Estrategia de Duplicacion.
 
+                     --[>] utilzar herencia.
+
                      --[>] Duplicar objetos .ts.
                 
                      --[>] Cambiar referencia a objetos .ts.
