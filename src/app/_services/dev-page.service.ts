@@ -7,12 +7,12 @@ import { Dev_Page                                 } from '../_models/devpage';
 import { DEV_PAGES                                } from '../_models/devpages';
 import { SortColumnDevPage, SortDirectionDevPage  } from './DevPageSortable.directive';
 
-interface SearchResult {
+interface _SearchResult {
 	countries: Dev_Page[];
 	total    : number;
 }
 
-interface State {
+interface _State {
 	page         : number;
 	pageSize     : number;
 	searchTerm   : string;
@@ -20,20 +20,20 @@ interface State {
 	sortDirection: SortDirectionDevPage;
 }
 
-const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
+const _compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 
-function sort(countries: Dev_Page[], column: SortColumnDevPage, direction: string): Dev_Page[] {
+function _sort(countries: Dev_Page[], column: SortColumnDevPage, direction: string): Dev_Page[] {
 	if (direction === '' || column === '') {
 		return countries;
 	} else {
 		return [...countries].sort((a, b) => {
-			const res = compare(a[column], b[column]);
+			const res = _compare(a[column], b[column]);
 			return direction === 'asc' ? res : -res;
 		});
 	}
 }
 
-function matches(country: Dev_Page, term: string/*, pipe: PipeTransform*/) {
+function _matches(country: Dev_Page, term: string/*, pipe: PipeTransform*/) {
 	return (
 		country.name.toLowerCase().includes(term.toLowerCase())               ||
 		country.framework.toLowerCase().includes(term.toLowerCase())          ||
@@ -48,14 +48,14 @@ function matches(country: Dev_Page, term: string/*, pipe: PipeTransform*/) {
 @Injectable({
   providedIn: 'root'
 })
-export class DevPageService {
+export class _DevPageService {
   //
 	private _loading$   = new BehaviorSubject<boolean>(true);
 	private _search$    = new Subject<void>();
 	private _countries$ = new BehaviorSubject<Dev_Page[]>([]);
 	private _total$     = new BehaviorSubject<number>(0);
   //
-	private _state: State = {
+	private _state: _State = {
 		page          : 1,
 		pageSize      : 4,
 		searchTerm    : '',
@@ -115,19 +115,19 @@ export class DevPageService {
 		this._set({ sortDirection });
 	}
 
-	private _set(patch: Partial<State>) {
+	private _set(patch: Partial<_State>) {
 		Object.assign(this._state, patch);
 		this._search$.next();
 	}
 
-	private _search(): Observable<SearchResult> {
+	private _search(): Observable<_SearchResult> {
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
 		// 1. sort
-		let countries = sort(DEV_PAGES, sortColumn, sortDirection);
+		let countries = _sort(DEV_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
-		countries = countries.filter((country) => matches(country, searchTerm/*, this.pipe)*/));
+		countries = countries.filter((country) => _matches(country, searchTerm/*, this.pipe)*/));
 		const total = countries.length;
 
 		// 3. paginate

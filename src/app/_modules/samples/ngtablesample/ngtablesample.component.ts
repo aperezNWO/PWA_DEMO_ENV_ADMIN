@@ -25,6 +25,11 @@ export class NgtablesampleComponent {
 	}
 
 	onSort({ column, direction }: SortEvent) {
+		//
+		console.log ("onSort.column   :" + column);
+		//
+		console.log ("onSort.direction:" + column);
+
 		// resetting other headers
 		this.headers?.forEach((header) => {
 			if (header.sortable !== column) {

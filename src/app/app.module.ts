@@ -17,6 +17,8 @@ import { PagesComponent                         } from './_modules/pages/pages.c
 import { ConfigService                          } from './_services/config.service';
 import { NgbdSortableHeader                     } from './_services/sortable.directive';
 import { NgtablesampleComponent                 } from './_modules/samples/ngtablesample/ngtablesample.component';
+import { DemoService                            } from './_services/demo.service';
+import { _DevPageService                        } from './_services/dev-page.service';
 //
 export function initialize(_configService: ConfigService) {
   // 
@@ -58,7 +60,7 @@ export function initialize(_configService: ConfigService) {
         multi     : true
       },
     ],
-    [DatePipe,DecimalPipe],
+    [DemoService,_DevPageService,DatePipe,DecimalPipe,HttpClient],
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

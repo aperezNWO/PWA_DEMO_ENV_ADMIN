@@ -29,7 +29,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				@for (country of countries | async; track country.id) {
+				@for (country of _countries | async; track country.id) {
 					<tr>
 						<th scope="row">{{ country.id }}</th>
 						<td><ngb-highlight [result]="country.name"              [term]="service.searchTerm" /></td>
@@ -46,7 +46,7 @@
 		</table>
 
 		<div class="d-flex justify-content-between p-2">
-			<ngb-pagination [collectionSize]="(total | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+			<ngb-pagination [collectionSize]="(_total | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
 			</ngb-pagination>
 
 			<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
