@@ -13,12 +13,10 @@ import { NavComponent                           } from './_modules/home/nav/nav.
 import { PageNotFoundComponent                  } from './_modules/home/page-not-found/page-not-found.component';
 import { HomeComponent                          } from './_modules/home/home/home.component';
 import { CurriculumComponent                    } from './_modules/curriculum/curriculum.component';
-import { PagesComponent                         } from './_modules/pages/pages.component';
 import { ConfigService                          } from './_services/config.service';
 import { NgbdSortableHeader                     } from './_services/sortable.directive';
-import { NgtablesampleComponent                 } from './_modules/samples/ngtablesample/ngtablesample.component';
+import { NgtablesampleComponent                 } from './_modules/pages/ngtablesample/ngtablesample.component';
 import { DemoService                            } from './_services/demo.service';
-import { _DevPageService                        } from './_services/dev-page.service';
 //
 export function initialize(_configService: ConfigService) {
   // 
@@ -32,7 +30,6 @@ export function initialize(_configService: ConfigService) {
     PageNotFoundComponent,
     HomeComponent,
     CurriculumComponent,
-    PagesComponent,
     NgtablesampleComponent
   ],
   imports: [
@@ -60,7 +57,7 @@ export function initialize(_configService: ConfigService) {
         multi     : true
       },
     ],
-    [DemoService,_DevPageService,DatePipe,DecimalPipe,HttpClient],
+    [DemoService,DatePipe,DecimalPipe,HttpClient],
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

@@ -37,8 +37,8 @@ function sort(countries: Country[], column: SortColumn, direction: string): Coun
 function matches(country: Country, term: string, pipe: PipeTransform) {
 	return (
 		country.name.toLowerCase().includes(term.toLowerCase()) ||
-		pipe.transform(country.area).includes(term) ||
-		pipe.transform(country.population).includes(term)
+		country.framework.toLowerCase().includes(term.toLowerCase()) ||
+		country.description.toLowerCase().includes(term.toLowerCase())  
 	);
 }
 //

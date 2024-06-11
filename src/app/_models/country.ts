@@ -1,7 +1,10 @@
 export interface Country {
-	id: number;
-	name: string;
-	flag: string;
-	area: number;
-	population: number;
+	id               : number;
+	name             : string;
+    description      : string;
+    framework        : string;
+	frameworkVersion : string;
+    uixFramework     : string;    
+    urlPage          : string;
+	urlRepo          : string;
 }
