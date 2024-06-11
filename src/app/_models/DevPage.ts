@@ -1,4 +1,4 @@
-export interface Country {
+export interface DevPage {
 	id               : number;
 	name             : string;
     description      : string;

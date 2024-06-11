@@ -1,29 +1,29 @@
 /* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { Injectable, PipeTransform                } from '@angular/core';
 import { DecimalPipe                              } from '@angular/common';
-import { Country                                  } from '../_models/country';
-import { COUNTRIES                                } from '../_models/countries';
-import { SortColumn, SortDirection                } from './sortable.directive';
+import { DevPage                                  } from '../_models/DevPage';
+import { DEV_PAGES                                } from '../_models/DevPages';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap      } from 'rxjs/operators';
+import { _SortColumn, _SortDirection              } from '../_directives/devpagesortable.directive';
 
 
-interface SearchResult {
-	countries: Country[];
+interface _SearchResult {
+	countries: DevPage[];
 	total    : number;
 }
 
-interface State {
-	page: number;
-	pageSize: number;
-	searchTerm: string;
-	sortColumn: SortColumn;
-	sortDirection: SortDirection;
+interface _State {
+	page           : number;
+	pageSize       : number;
+	searchTerm     : string;
+	sortColumn     :  _SortColumn;
+	sortDirection  :  _SortDirection;
 }
 
 const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 
-function sort(countries: Country[], column: SortColumn, direction: string): Country[] {
+function sort(countries: DevPage[], column: _SortColumn, direction: string): DevPage[] {
 	if (direction === '' || column === '') {
 		return countries;
 	} else {
@@ -34,7 +34,7 @@ function sort(countries: Country[], column: SortColumn, direction: string): Coun
 	}
 }
 
-function matches(country: Country, term: string, pipe: PipeTransform) {
+function matches(country: DevPage, term: string, pipe: PipeTransform) {
 	return (
 		country.name.toLowerCase().includes(term.toLowerCase()) ||
 		country.framework.toLowerCase().includes(term.toLowerCase()) ||
@@ -49,15 +49,15 @@ export class DemoService {
 
 	private _loading$   = new BehaviorSubject<boolean>(true);
 	private _search$    = new Subject<void>();
-	private _countries$ = new BehaviorSubject<Country[]>([]);
+	private _countries$ = new BehaviorSubject<DevPage[]>([]);
 	private _total$     = new BehaviorSubject<number>(0);
 
-	private _state: State = {
-		page: 1,
-		pageSize: 4,
-		searchTerm: '',
-		sortColumn: '',
-		sortDirection: '',
+	private _state: _State = {
+		page          : 1,
+		pageSize      : 4,
+		searchTerm    : '',
+		sortColumn    : '',
+		sortDirection : '',
 	};
 
 	constructor(private pipe: DecimalPipe) {
@@ -105,23 +105,23 @@ export class DemoService {
 	set searchTerm(searchTerm: string) {
 		this._set({ searchTerm });
 	}
-	set sortColumn(sortColumn: SortColumn) {
+	set sortColumn(sortColumn: _SortColumn) {
 		this._set({ sortColumn });
 	}
-	set sortDirection(sortDirection: SortDirection) {
+	set sortDirection(sortDirection: _SortDirection) {
 		this._set({ sortDirection });
 	}
 
-	private _set(patch: Partial<State>) {
+	private _set(patch: Partial<_State>) {
 		Object.assign(this._state, patch);
 		this._search$.next();
 	}
 
-	private _search(): Observable<SearchResult> {
+	private _search(): Observable<_SearchResult> {
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
 		// 1. sort
-		let countries = sort(COUNTRIES, sortColumn, sortDirection);
+		let countries = sort(DEV_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
 		countries = countries.filter((country) => matches(country, searchTerm, this.pipe));

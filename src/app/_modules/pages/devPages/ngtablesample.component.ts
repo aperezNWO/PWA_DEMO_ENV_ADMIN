@@ -1,9 +1,9 @@
 import { Component                         } from '@angular/core';
 import { QueryList, ViewChildren           } from '@angular/core';
 import { Observable                        } from 'rxjs';
-import { Country                           } from '../../../_models/country';
+import { DevPage                           } from '../../../_models/DevPage';
 import { DemoService                       } from '../../../_services/demo.service';
-import { NgbdSortableHeader, SortEvent     } from '../../../_services/sortable.directive';
+import { DevPageSortableHeader, SortEvent             } from '../../../_directives/devpagesortable.directive';
 //
 @Component({
   selector: 'app-ngtablesample',
@@ -14,10 +14,10 @@ import { NgbdSortableHeader, SortEvent     } from '../../../_services/sortable.d
 export class NgtablesampleComponent {
 
 
-	public countries!: Observable<Country[]>;
+	public countries!: Observable<DevPage[]>;
 	public total!:     Observable<number>;
 
-	@ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader> | undefined;
+	@ViewChildren(DevPageSortableHeader) headers: QueryList<DevPageSortableHeader> | undefined;
 
 	constructor(public service: DemoService) {
 		this.countries = service.countries;
@@ -32,7 +32,7 @@ export class NgtablesampleComponent {
 
 		// resetting other headers
 		this.headers?.forEach((header) => {
-			if (header.sortable !== column) {
+			if (header.devpagesortable !== column) {
 				header.direction = '';
 			}
 		});

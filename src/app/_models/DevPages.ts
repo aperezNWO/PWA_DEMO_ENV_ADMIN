@@ -1,6 +1,6 @@
-import { Country } from './country';
+import { DevPage } from './DevPage';
 
-export const COUNTRIES: Country[] = [
+export const DEV_PAGES: DevPage[] = [
 	{
 		id               : 1,
 		name             : '[PWA_DEMO - ENV_LANDING]',

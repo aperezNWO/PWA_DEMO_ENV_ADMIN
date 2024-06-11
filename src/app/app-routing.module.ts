@@ -3,7 +3,7 @@ import { RouterModule, Routes    } from '@angular/router';
 import { PageNotFoundComponent   } from './_modules/home/page-not-found/page-not-found.component';
 import { CurriculumComponent     } from './_modules/curriculum/curriculum.component';
 import { HomeComponent           } from './_modules/home/home/home.component';
-import { NgtablesampleComponent  } from './_modules/pages/ngtablesample/ngtablesample.component';
+import { NgtablesampleComponent  } from './_modules/pages/devPages/ngtablesample.component';
 
 
 const routes: Routes = [

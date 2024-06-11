@@ -14,8 +14,8 @@ import { PageNotFoundComponent                  } from './_modules/home/page-not
 import { HomeComponent                          } from './_modules/home/home/home.component';
 import { CurriculumComponent                    } from './_modules/curriculum/curriculum.component';
 import { ConfigService                          } from './_services/config.service';
-import { NgbdSortableHeader                     } from './_services/sortable.directive';
-import { NgtablesampleComponent                 } from './_modules/pages/ngtablesample/ngtablesample.component';
+import { DevPageSortableHeader                  } from './_directives/devpagesortable.directive';
+import { NgtablesampleComponent                 } from './_modules/pages/devPages/ngtablesample.component';
 import { DemoService                            } from './_services/demo.service';
 //
 export function initialize(_configService: ConfigService) {
@@ -40,7 +40,7 @@ export function initialize(_configService: ConfigService) {
     NgbPaginationModule, 
     NgbAlertModule,
     NgbHighlight, 
-    NgbdSortableHeader, 
+    DevPageSortableHeader, 
     NgbPaginationModule,
     DecimalPipe, 
     FormsModule, 
