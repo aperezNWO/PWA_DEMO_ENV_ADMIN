@@ -22,9 +22,12 @@
 		<thead>
 			<tr>
 				<th scope="col">#</th>
-				<th scope="col" devpagesortable="name"        (sort)="onSort($event)">Name</th>
-				<th scope="col" devpagesortable="framework"   (sort)="onSort($event)">framework</th>
-				<th scope="col" devpagesortable="description" (sort)="onSort($event)">description</th>
+				<th scope="col" devpagesortable="name"                  (sort)="onSort($event)">Name</th>
+				<th scope="col" devpagesortable="urlRepo"               (sort)="onSort($event)">Repo</th>
+				<th scope="col" devpagesortable="framework"             (sort)="onSort($event)">framework</th>
+				<th scope="col" devpagesortable="frameworkVersion"      (sort)="onSort($event)">frameworkVersion</th>
+				<th scope="col" devpagesortable="uixFramework"          (sort)="onSort($event)">uixFramework</th>
+				<th scope="col" devpagesortable="description"           (sort)="onSort($event)">description</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -36,8 +39,15 @@
 							<ngb-highlight [result]="country.name" [term]="service.searchTerm" />
 						</a>
 					</td>
-					<td><ngb-highlight [result]="country.framework" [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="country.description" [term]="service.searchTerm" /></td>
+					<td>
+						<a [href]="country.urlRepo" target="_blank">
+							[Repo]
+						</a>
+					</td>
+					<td><ngb-highlight [result]="country.framework"             [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="country.frameworkVersion"      [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="country.uixFramework"          [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="country.description"           [term]="service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>

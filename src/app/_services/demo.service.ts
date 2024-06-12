@@ -38,6 +38,7 @@ function matches(country: DevPage, term: string, pipe: PipeTransform) {
 	return (
 		country.name.toLowerCase().includes(term.toLowerCase()) ||
 		country.framework.toLowerCase().includes(term.toLowerCase()) ||
+		country.uixFramework.toLowerCase().includes(term.toLowerCase()) ||
 		country.description.toLowerCase().includes(term.toLowerCase())  
 	);
 }
@@ -54,7 +55,7 @@ export class DemoService {
 
 	private _state: _State = {
 		page          : 1,
-		pageSize      : 4,
+		pageSize      : 6,
 		searchTerm    : '',
 		sortColumn    : '',
 		sortDirection : '',
