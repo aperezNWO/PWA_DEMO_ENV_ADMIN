@@ -1,17 +1,13 @@
 /* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { Injectable, PipeTransform                } from '@angular/core';
 import { DecimalPipe                              } from '@angular/common';
-import { DevPage                                  } from '../_models/DevPage';
-import { DEV_PAGES                                } from '../_models/DevPages';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
+import { DevPage, _SearchResult                   } from '../_models/DevPage';
+import { BehaviorSubject, Observable, Observer, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap      } from 'rxjs/operators';
 import { _SortColumn, _SortDirection              } from '../_directives/devpagesortable.directive';
+import { HttpClient } from '@angular/common/http';
+import { DEV_PAGES } from '../_models/DevPages';
 
-
-interface _SearchResult {
-	countries: DevPage[];
-	total    : number;
-}
 
 interface _State {
 	page           : number;
@@ -36,10 +32,10 @@ function sort(countries: DevPage[], column: _SortColumn, direction: string): Dev
 
 function matches(country: DevPage, term: string, pipe: PipeTransform) {
 	return (
-		country.name.toLowerCase().includes(term.toLowerCase()) ||
-		country.framework.toLowerCase().includes(term.toLowerCase()) ||
-		country.uixFramework.toLowerCase().includes(term.toLowerCase()) ||
-		country.description.toLowerCase().includes(term.toLowerCase())  
+		country.name.toLowerCase().includes(term?.toLowerCase())         ||
+		country.framework.toLowerCase().includes(term?.toLowerCase())    ||
+		country.uixFramework.toLowerCase().includes(term?.toLowerCase()) ||
+		country.description.toLowerCase().includes(term?.toLowerCase())  
 	);
 }
 //
@@ -61,7 +57,7 @@ export class DemoService {
 		sortDirection : '',
 	};
 
-	constructor(private pipe: DecimalPipe) {
+	constructor(private pipe: DecimalPipe,private http: HttpClient) {
 		this._search$
 			.pipe(
 				tap(() => this._loading$.next(true)),
@@ -119,17 +115,49 @@ export class DemoService {
 	}
 
 	private _search(): Observable<_SearchResult> {
+		//////////////////////////////////////////////////////
+		let countries                             : any;
+		let total                                 : any;
+		let _searchResult                         : _SearchResult  = {countries,total};
+		let csv_informeLogRemoto!                 :  Observable<DevPage[]>;
+		csv_informeLogRemoto                      =  this.http.get<DevPage[]>('assets/pages.json');
+		let _DEV_PAGES: DevPage[] = [];
+		//
+		const csv_observer = {
+		next: (csv_data: any)     => { 
+				//
+				console.log("getting data : " + csv_data);
+				//
+				_DEV_PAGES = csv_data;
+			},
+			error           : (err: Error)      => {
+				//
+			},
+			complete        : ()                => {
+
+			},
+		}
+		//
+		csv_informeLogRemoto.subscribe(csv_observer);
+		
+		//////////////////////////////////////////////////////
+        // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
 		// 1. sort
-		let countries = sort(DEV_PAGES, sortColumn, sortDirection);
+		countries = sort(DEV_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
-		countries = countries.filter((country) => matches(country, searchTerm, this.pipe));
-		const total = countries.length;
+		countries   = countries.filter((country: DevPage) => matches(country, searchTerm, this.pipe));
+		total       = countries.length;
 
 		// 3. paginate
 		countries = countries.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
-		return of({ countries, total });
+		
+		// 4. return 
+		_searchResult = { countries,total };
+
+		// 5. return
+		return  of (_searchResult);
 	}
 }

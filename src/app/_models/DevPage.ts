@@ -8,3 +8,8 @@ export interface DevPage {
     urlPage          : string;
 	urlRepo          : string;
 }
+
+export interface _SearchResult {
+	countries: DevPage[];
+	total    : number;
+}
