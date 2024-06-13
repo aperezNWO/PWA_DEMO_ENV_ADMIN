@@ -11,7 +11,7 @@
 	},
 	{
 		"id"               :  2,
-		"name "            : "[PWA_DEMO - ENV_TEST]",
+		"name"             : "[PWA_DEMO - ENV_TEST]",
 		"description"      : "Angular Learning - Testing Page",
 		"framework"        : "Angular",
 		"frameworkVersion" : "17.0.8",
@@ -21,7 +21,7 @@
 	},
 	{ 
 		"id"               :  3,
-		"name "            : "[PWA_DEMO - ENV_DEV]",
+		"name"             : "[PWA_DEMO - ENV_DEV]",
 		"description"      : "Angular Learning - DEV Page",
 		"framework"        : "Angular",
 		"frameworkVersion" : "17.0.8",
@@ -31,7 +31,7 @@
 	},
 	{
 		"id"               :  4,
-		"name "            : "[PWA_DEMO - ENV_PROD]",
+		"name"             : "[PWA_DEMO - ENV_PROD]",
 		"description"      : "Angular Learning - PROD",
 		"framework"        : "Angular",
 		"frameworkVersion" : "17.0.8",
@@ -40,8 +40,8 @@
 		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PROD.git"
 	},
 	{
-		"id"            :  5,
-		"name "            : "[PWA_DEMO - ENV_PUBLIC]",
+		"id"               :  5,
+		"name"             : "[PWA_DEMO - ENV_PUBLIC]",
 		"description"      : "Angular Learning - PUBLIC",
 		"framework"        : "Angular",
 		"frameworkVersion" : "17.0.8",
@@ -50,8 +50,8 @@
 		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC.git"
 	},
 	{
-		"id"            :  6,
-		"name "            : "[IONIC DEMO - ENV TEST]",
+		"id"               :  6,
+		"name"             : "[IONIC DEMO - ENV TEST]",
 		"description"      : "IONIC Learning - ENV TEST",
 		"framework"        : "Angular",
 		"frameworkVersion" : "17.3.0",
@@ -60,8 +60,8 @@
 		"urlRepo"          : "https://github.com/aperezNWO/IONIC_DEMO_ENV_TEST.git"
 	},
 	{
-		"id"            :  7,
-		"name "            : "[PRIMENG DEMO - QUICKSTART]",
+		"id"               :  7,
+		"name"             : "[PRIMENG DEMO - QUICKSTART]",
 		"description"      : "PRIMGENG DEMO - QUICKSTART",
 		"framework"        : "Angular",
 		"frameworkVersion" : "0.0.0",
@@ -70,8 +70,8 @@
 		"urlRepo"          : "https://github.com/aperezNWO/primeng-quickstart-cli.git"
 	},
 	{
-		"id"            :  8,
-		"name "            : "[PRIGENG DEMO - ENV PROD]",
+		"id"               :  8,
+		"name"             : "[PRIGENG DEMO - ENV PROD]",
 		"description"      : "PRIMGNG DEMO - ENV PROD",
 		"framework"        : "Angular",
 		"frameworkVersion" : "0.0.0",
@@ -80,8 +80,8 @@
 		"urlRepo"          : "https://github.com/aperezNWO/PRIMENG_DEMO_ENV_PROD.git"
 	},
 	{
-		"id"            :  9,
-		"name "            : "[NGBOOTRSAP DEMO - ENV TEST]",
+		"id"               :  9,
+		"name"             : "[NGBOOTRSAP DEMO - ENV TEST]",
 		"description"      : "NGBOOTSRAP DEMO - ENV TEST",
 		"framework"        : "Angular",
 		"frameworkVersion" : "0.0.0",
@@ -90,8 +90,8 @@
 		"urlRepo"          : "https://github.com/aperezNWO/NG_BOOTSTRAP_DEMO_ENV_TEST.git"
 	},
 	{
-		"id"            :  10,
-		"name "            : "[NGBOOTSRAP DEMO - ENV DEV]",
+		"id"               :  10,
+		"name"             : "[NGBOOTSRAP DEMO - ENV DEV]",
 		"description"      : "NGBOOTSRAP DEMO - ENV DEV",
 		"framework"        : "Angular",
 		"frameworkVersion" : "0.0.0",
@@ -100,8 +100,8 @@
 		"urlRepo"          : "https://github.com/aperezNWO/NG_BOOTSTRAP_DEMO_ENV_DEV.git"
 	},
 	{
-		"id"            :  11,
-		"name "            : "[TAILDWIND DEMO - ENV DEV]",
+		"id"               : 11,
+		"name"             : "[TAILDWIND DEMO - ENV DEV]",
 		"description"      : "[TAILDWIND DEMO - ENV DEV]",
 		"framework"        : "Angular",
 		"frameworkVersion" : "0.0.0",
@@ -111,7 +111,7 @@
 	},
 	{
 		"id"               : 12,
-		"name "            : "[TAILDWIND DEMO - ENV TEST]",
+		"name"             : "[TAILDWIND DEMO - ENV TEST]",
 		"description"      : "[NGBOOTSRAP DEMO - ENV TEST]",
 		"framework"        : "Angular",
 		"frameworkVersion" : "0.0.0",

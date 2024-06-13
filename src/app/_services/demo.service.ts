@@ -5,8 +5,8 @@ import { DevPage, _SearchResult                   } from '../_models/DevPage';
 import { BehaviorSubject, Observable, Observer, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap      } from 'rxjs/operators';
 import { _SortColumn, _SortDirection              } from '../_directives/devpagesortable.directive';
-import { HttpClient } from '@angular/common/http';
-import { DEV_PAGES } from '../_models/DevPages';
+import { _environment                             } from '../../environments/environment';
+import { DEV_PAGES                                } from '../_models/DevPages';
 
 
 interface _State {
@@ -57,7 +57,7 @@ export class DemoService {
 		sortDirection : '',
 	};
 
-	constructor(private pipe: DecimalPipe,private http: HttpClient) {
+	constructor(private pipe: DecimalPipe) {
 		this._search$
 			.pipe(
 				tap(() => this._loading$.next(true)),
@@ -115,37 +115,26 @@ export class DemoService {
 	}
 
 	private _search(): Observable<_SearchResult> {
-		//////////////////////////////////////////////////////
+		
 		let countries                             : any;
 		let total                                 : any;
 		let _searchResult                         : _SearchResult  = {countries,total};
-		let csv_informeLogRemoto!                 :  Observable<DevPage[]>;
-		csv_informeLogRemoto                      =  this.http.get<DevPage[]>('assets/pages.json');
-		let _DEV_PAGES: DevPage[] = [];
-		//
-		const csv_observer = {
-		next: (csv_data: any)     => { 
-				//
-				console.log("getting data : " + csv_data);
-				//
-				_DEV_PAGES = csv_data;
-			},
-			error           : (err: Error)      => {
-				//
-			},
-			complete        : ()                => {
-
-			},
-		}
-		//
-		csv_informeLogRemoto.subscribe(csv_observer);
 		
-		//////////////////////////////////////////////////////
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
+		console.log("external json data : " +  _environment.jsonData); 
+
 		// 1. sort
-		countries = sort(DEV_PAGES, sortColumn, sortDirection);
+		//countries = sort(DEV_PAGES, sortColumn, sortDirection);
+		let _DEV_PAGES  : DevPage[] = [];
+		
+		_environment.jsonData.forEach((element: any) => {
+			_DEV_PAGES.push(element);
+			console.log(element)
+		});
+
+		countries = sort(_DEV_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
 		countries   = countries.filter((country: DevPage) => matches(country, searchTerm, this.pipe));
