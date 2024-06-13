@@ -6,7 +6,6 @@ import { BehaviorSubject, Observable, Observer, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap      } from 'rxjs/operators';
 import { _SortColumn, _SortDirection              } from '../_directives/devpagesortable.directive';
 import { _environment                             } from '../../environments/environment';
-import { DEV_PAGES                                } from '../_models/DevPages';
 
 
 interface _State {
