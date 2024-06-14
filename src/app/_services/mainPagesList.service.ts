@@ -1,40 +1,39 @@
 /* eslint-disable @typescript-eslint/adjacent-overload-signatures */
-import { Injectable, PipeTransform                } from '@angular/core';
-import { DecimalPipe                              } from '@angular/common';
-import { DevPage, _DevPagesSearchResult                   } from '../_models/DevPage';
-import { BehaviorSubject, Observable, Observer, of, Subject } from 'rxjs';
-import { debounceTime, delay, switchMap, tap      } from 'rxjs/operators';
+import { Injectable, PipeTransform                              } from '@angular/core';
+import { DecimalPipe                                            } from '@angular/common';
+import { DevPage, _DevPagesSearchResult                         } from '../_models/DevPage';
+import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
+import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
 import { _DevPageSortColumn, _DevPageSortDirection              } from '../_directives/devPagesListSortable.directive';
-import { _environment                             } from '../../environments/environment';
-
-
-interface _State {
+import { _environment                                           } from '../../environments/environment';
+//
+interface _DevPageSearchState {
 	page           : number;
 	pageSize       : number;
 	searchTerm     : string;
 	sortColumn     :  _DevPageSortColumn;
 	sortDirection  :  _DevPageSortDirection;
 }
-
+//
 const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
-
-function sort(countries: DevPage[], column: _DevPageSortColumn, direction: string): DevPage[] {
+//
+function sort(devpageslist: DevPage[], column: _DevPageSortColumn, direction: string): DevPage[] {
 	if (direction === '' || column === '') {
-		return countries;
+		return devpageslist;
 	} else {
-		return [...countries].sort((a, b) => {
+		return [...devpageslist].sort((a, b) => {
 			const res = compare(a[column], b[column]);
 			return direction === 'asc' ? res : -res;
 		});
 	}
 }
-
-function matches(country: DevPage, term: string, pipe: PipeTransform) {
+//
+function matches(devPage: DevPage, term: string, pipe: PipeTransform) {
 	return (
-		country.name.toLowerCase().includes(term?.toLowerCase())         ||
-		country.framework.toLowerCase().includes(term?.toLowerCase())    ||
-		country.uixFramework.toLowerCase().includes(term?.toLowerCase()) ||
-		country.description.toLowerCase().includes(term?.toLowerCase())  
+		devPage.name.toLowerCase().includes(term?.toLowerCase())         ||
+		devPage.framework.toLowerCase().includes(term?.toLowerCase())    ||
+		devPage.uixFramework.toLowerCase().includes(term?.toLowerCase()) ||
+		devPage.description.toLowerCase().includes(term?.toLowerCase())  
 	);
 }
 //
@@ -42,20 +41,20 @@ function matches(country: DevPage, term: string, pipe: PipeTransform) {
   providedIn: 'root'
 })
 export class mainPagesListService {
-
-	private _loading$   = new BehaviorSubject<boolean>(true);
-	private _search$    = new Subject<void>();
-	private _countries$ = new BehaviorSubject<DevPage[]>([]);
-	private _total$     = new BehaviorSubject<number>(0);
-
-	private _state: _State = {
+    // 
+	private _loading$     = new BehaviorSubject<boolean>(true);
+	private _search$      = new Subject<void>();
+	private _devpageList$ = new BehaviorSubject<DevPage[]>([]);
+	private _total$       = new BehaviorSubject<number>(0);
+    //
+	private _state: _DevPageSearchState = {
 		page          : 1,
-		pageSize      : 6,
+		pageSize      : 6, 
 		searchTerm    : '',
 		sortColumn    : '',
 		sortDirection : '',
 	};
-
+    //
 	constructor(private pipe: DecimalPipe) {
 		this._search$
 			.pipe(
@@ -66,58 +65,67 @@ export class mainPagesListService {
 				tap(() => this._loading$.next(false)),
 			)
 			.subscribe((result) => {
-				this._countries$.next(result.countries);
+				this._devpageList$.next(result.countries);
 				this._total$.next(result.total);
 			});
-
+        //
 		this._search$.next();
 	}
-
-	public get countries() {
-		return this._countries$.asObservable();
+    //
+	public get devpageLists () {
+		return this._devpageList$.asObservable();
 	}
+	//
 	get total() {
 		return this._total$.asObservable();
 	}
+	//
 	get loading() {
 		return this._loading$.asObservable();
 	}
+	//
 	get page() {
 		return this._state.page;
 	}
+	//
 	public get pageSize() {
 		return this._state.pageSize;
 	}
+	//
 	get searchTerm() {
 		return this._state.searchTerm;
 	}
-
+    //
 	set page(page: number) {
 		this._set({ page });
 	}
+	//
 	set pageSize(pageSize: number) {
 		this._set({ pageSize });
 	}
+	//
 	set searchTerm(searchTerm: string) {
 		this._set({ searchTerm });
 	}
+	//
 	set sortColumn(sortColumn: _DevPageSortColumn) {
 		this._set({ sortColumn });
 	}
+	//
 	set sortDirection(sortDirection: _DevPageSortDirection) {
 		this._set({ sortDirection });
 	}
-
-	private _set(patch: Partial<_State>) {
+    //
+	private _set(patch: Partial<_DevPageSearchState>) {
 		Object.assign(this._state, patch);
 		this._search$.next();
 	}
-
+    //
 	private _search(): Observable<_DevPagesSearchResult> {
-		
-		let countries                             : any;
+		//
+		let _devpageList                          : any;
 		let total                                 : any;
-		let _searchResult                         : _DevPagesSearchResult  = {countries,total};
+		let _searchResult                         : _DevPagesSearchResult  = {countries: _devpageList,total};
 		
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
@@ -125,7 +133,6 @@ export class mainPagesListService {
 		console.log("external json data : " +  _environment.mainPagesList); 
 
 		// 1. sort
-		//countries = sort(DEV_PAGES, sortColumn, sortDirection);
 		let _DEV_PAGES  : DevPage[] = [];
 		
 		_environment.mainPagesList.forEach((element: any) => {
@@ -133,17 +140,17 @@ export class mainPagesListService {
 			console.log(element)
 		});
 
-		countries = sort(_DEV_PAGES, sortColumn, sortDirection);
+		_devpageList   = sort(_DEV_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
-		countries   = countries.filter((country: DevPage) => matches(country, searchTerm, this.pipe));
-		total       = countries.length;
+		_devpageList   = _devpageList.filter((country: DevPage) => matches(country, searchTerm, this.pipe));
+		total          = _devpageList.length;
 
 		// 3. paginate
-		countries = countries.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
+		_devpageList   = _devpageList.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
 		
-		// 4. return 
-		_searchResult = { countries,total };
+		// 4. return
+		_searchResult  = { countries: _devpageList,total };
 
 		// 5. return
 		return  of (_searchResult);

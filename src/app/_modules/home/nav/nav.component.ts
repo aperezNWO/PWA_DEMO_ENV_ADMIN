@@ -1,6 +1,6 @@
 import { Component, OnInit, VERSION } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { ConfigService } from '../../../_services/config.service';
+import { Title                      } from '@angular/platform-browser';
+import { ConfigService              } from '../../../_services/config.service';
 //
 @Component({
   selector: 'app-nav',
@@ -34,7 +34,7 @@ export class NavComponent {
       'text': '[HOME]',
     },
     {
-      'url': '/Pages',
+      'url': '/DevPages',
       'text': '[PAGINAS]',
     },
     {

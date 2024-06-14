@@ -15,8 +15,8 @@ import { HomeComponent                          } from './_modules/home/home/hom
 import { CurriculumComponent                    } from './_modules/curriculum/curriculum.component';
 import { ConfigService                          } from './_services/config.service';
 import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
-import { NgtablesampleComponent                 } from './_modules/pages/devPages/ngtablesample.component';
 import { mainPagesListService                   } from './_services/mainPagesList.service';
+import { DevPagesListsComponent                 } from './_modules/devPages/devPagesList.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -34,7 +34,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     PageNotFoundComponent,
     HomeComponent,
     CurriculumComponent,
-    NgtablesampleComponent
+    DevPagesListsComponent
   ],
   imports: [
     BrowserModule,

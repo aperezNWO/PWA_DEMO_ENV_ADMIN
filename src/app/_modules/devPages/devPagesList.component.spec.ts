@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DevPagesListsComponent    } from './devPagesList.component';
 
-import { NgtablesampleComponent } from './ngtablesample.component';
-
-describe('NgtablesampleComponent', () => {
-  let component: NgtablesampleComponent;
-  let fixture: ComponentFixture<NgtablesampleComponent>;
+describe('DevPagesListsComponent', () => {
+  let component: DevPagesListsComponent;
+  let fixture: ComponentFixture<DevPagesListsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NgtablesampleComponent]
+      declarations: [DevPagesListsComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NgtablesampleComponent);
+    fixture = TestBed.createComponent(DevPagesListsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
