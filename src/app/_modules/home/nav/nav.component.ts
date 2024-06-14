@@ -11,9 +11,9 @@ import { ConfigService              } from '../../../_services/config.service';
 export class NavComponent {
 
   // propiedades publicas
-  public readonly _appBrand: string | undefined = "";
-  public readonly _title: string | undefined = "";
-  public readonly _appEnv: string | undefined = "";
+  public readonly _appBrand  : string | undefined = "";
+  public readonly _title     : string | undefined = "";
+  public readonly _appEnv    : string | undefined = "";
   public readonly _appVersion: string | undefined = "";
   //
   public _navbarCollapsed: boolean = true;
@@ -31,11 +31,15 @@ export class NavComponent {
   pages = [
     {
       'url': '/Home',
-      'text': '[HOME]',
+      'text': '[INICIO]',
+    },
+    {
+      'url': '/FeaturePages',
+      'text': '[PAGINAS - CARACTERISTICAS]',
     },
     {
       'url': '/DevPages',
-      'text': '[PAGINAS]',
+      'text': '[PAGINAS - DESARROLLO]',
     },
     {
       'url': '/Curriculum',

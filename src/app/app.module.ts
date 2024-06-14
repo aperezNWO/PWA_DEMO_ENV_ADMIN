@@ -17,6 +17,7 @@ import { ConfigService                          } from './_services/config.servi
 import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
 import { mainPagesListService                   } from './_services/mainPagesList.service';
 import { DevPagesListsComponent                 } from './_modules/devPages/devPagesList.component';
+import { FeaturePagesComponent } from './_modules/feature-pages/feature-pages.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -34,7 +35,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     PageNotFoundComponent,
     HomeComponent,
     CurriculumComponent,
-    DevPagesListsComponent
+    DevPagesListsComponent,
+    FeaturePagesComponent
   ],
   imports: [
     BrowserModule,
