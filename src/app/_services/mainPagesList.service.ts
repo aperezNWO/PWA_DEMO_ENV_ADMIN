@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { Injectable, PipeTransform                } from '@angular/core';
 import { DecimalPipe                              } from '@angular/common';
-import { DevPage, _SearchResult                   } from '../_models/DevPage';
+import { DevPage, _DevPagesSearchResult                   } from '../_models/DevPage';
 import { BehaviorSubject, Observable, Observer, of, Subject } from 'rxjs';
 import { debounceTime, delay, switchMap, tap      } from 'rxjs/operators';
-import { _SortColumn, _SortDirection              } from '../_directives/devpagesortable.directive';
+import { _DevPageSortColumn, _DevPageSortDirection              } from '../_directives/devPagesListSortable.directive';
 import { _environment                             } from '../../environments/environment';
 
 
@@ -12,13 +12,13 @@ interface _State {
 	page           : number;
 	pageSize       : number;
 	searchTerm     : string;
-	sortColumn     :  _SortColumn;
-	sortDirection  :  _SortDirection;
+	sortColumn     :  _DevPageSortColumn;
+	sortDirection  :  _DevPageSortDirection;
 }
 
 const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 
-function sort(countries: DevPage[], column: _SortColumn, direction: string): DevPage[] {
+function sort(countries: DevPage[], column: _DevPageSortColumn, direction: string): DevPage[] {
 	if (direction === '' || column === '') {
 		return countries;
 	} else {
@@ -41,7 +41,7 @@ function matches(country: DevPage, term: string, pipe: PipeTransform) {
 @Injectable({
   providedIn: 'root'
 })
-export class DemoService {
+export class mainPagesListService {
 
 	private _loading$   = new BehaviorSubject<boolean>(true);
 	private _search$    = new Subject<void>();
@@ -101,10 +101,10 @@ export class DemoService {
 	set searchTerm(searchTerm: string) {
 		this._set({ searchTerm });
 	}
-	set sortColumn(sortColumn: _SortColumn) {
+	set sortColumn(sortColumn: _DevPageSortColumn) {
 		this._set({ sortColumn });
 	}
-	set sortDirection(sortDirection: _SortDirection) {
+	set sortDirection(sortDirection: _DevPageSortDirection) {
 		this._set({ sortDirection });
 	}
 
@@ -113,22 +113,22 @@ export class DemoService {
 		this._search$.next();
 	}
 
-	private _search(): Observable<_SearchResult> {
+	private _search(): Observable<_DevPagesSearchResult> {
 		
 		let countries                             : any;
 		let total                                 : any;
-		let _searchResult                         : _SearchResult  = {countries,total};
+		let _searchResult                         : _DevPagesSearchResult  = {countries,total};
 		
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
-		console.log("external json data : " +  _environment.jsonData); 
+		console.log("external json data : " +  _environment.mainPagesList); 
 
 		// 1. sort
 		//countries = sort(DEV_PAGES, sortColumn, sortDirection);
 		let _DEV_PAGES  : DevPage[] = [];
 		
-		_environment.jsonData.forEach((element: any) => {
+		_environment.mainPagesList.forEach((element: any) => {
 			_DEV_PAGES.push(element);
 			console.log(element)
 		});

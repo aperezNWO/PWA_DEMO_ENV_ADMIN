@@ -25,13 +25,26 @@ export class ConfigService {
       });
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadJsonData() {
-    return this.http.get('./assets/pages.json').toPromise()
+  loadFeaturesData() {
+    return this.http.get('./assets/featuresPagesLists.json').toPromise()
       .then((data: any) => {
           //
-          console.log("loading json data ..." + data);
+          console.log("loading features data ..." + data);
           //
-          _environment.jsonData = data; // Assign loaded data to environment variable
+          _environment.featuresPagesList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading configuration:', error);
+      });
+  }
+   // ONLY HAPPENS ONCE ON APPMODULE LOADING
+   loadJsonData() {
+    return this.http.get('./assets/mainPagesList.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading mainPagesList data ..." + data);
+          //
+          _environment.mainPagesList = data; // Assign loaded data to environment variable
       })
       .catch(error => {
         console.error('Error loading configuration:', error);

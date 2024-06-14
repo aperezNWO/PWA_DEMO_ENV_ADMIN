@@ -188,6 +188,12 @@
                 
                      --[>] Cambiar referencia a objetos .ts.
 
--- [_] read pages from json file.
+-- [x] read pages from json file.
+
+-- [>] datagrid theming.
+
+-- [>] Pasar contenido por tema a pagina principal.
+
+       -- [>] Angular End Points / Param Url.
 
 /***********************************************/

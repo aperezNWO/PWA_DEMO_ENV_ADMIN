@@ -14,39 +14,15 @@ import { PageNotFoundComponent                  } from './_modules/home/page-not
 import { HomeComponent                          } from './_modules/home/home/home.component';
 import { CurriculumComponent                    } from './_modules/curriculum/curriculum.component';
 import { ConfigService                          } from './_services/config.service';
-import { DevPageSortableHeader                  } from './_directives/devpagesortable.directive';
+import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
 import { NgtablesampleComponent                 } from './_modules/pages/devPages/ngtablesample.component';
-import { DemoService                            } from './_services/demo.service';
-import { Observable } from 'rxjs';
-import { DevPage } from './_models/DevPage';
+import { mainPagesListService                   } from './_services/mainPagesList.service';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
-		
-  //////////////////////////////////////////////////////
-   /*
-		let csv_informeLogRemoto!                 :  Observable<DevPage[]>;
-		csv_informeLogRemoto                      =  http.get<DevPage[]>('assets/pages.json');
-		let _DEV_PAGES: DevPage[] = [];
-		//
-		const csv_observer = {
-		next: (csv_data: any)     => { 
-				//
-				console.log("getting data : " + csv_data);
-				//
-				_DEV_PAGES = csv_data;
-			},
-			error           : (err: Error)      => {
-				//
-			},
-			complete        : ()                => {
-
-			},
-		}
-		//
-		csv_informeLogRemoto.subscribe(csv_observer);*/
-		
-		//////////////////////////////////////////////////////
-    _configService.loadJsonData();
+  //
+  _configService.loadFeaturesData();
+  //
+  _configService.loadJsonData();
   // 
   return () =>  _configService.loadConfig();
 }
@@ -85,7 +61,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
         multi     : true
       },
     ],
-    [DemoService,DatePipe,DecimalPipe,HttpClient],
+    [mainPagesListService,DatePipe,DecimalPipe,HttpClient],
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

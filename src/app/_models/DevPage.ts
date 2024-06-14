@@ -9,7 +9,7 @@ export interface DevPage {
 	urlRepo          : string;
 }
 
-export interface _SearchResult {
+export interface _DevPagesSearchResult {
 	countries: DevPage[];
 	total    : number;
 }

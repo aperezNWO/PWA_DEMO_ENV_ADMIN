@@ -22,32 +22,32 @@
 		<thead>
 			<tr>
 				<th scope="col">#</th>
-				<th scope="col" devpagesortable="name"                  (sort)="onSort($event)">Name</th>
-				<th scope="col" devpagesortable="urlRepo"               (sort)="onSort($event)">Repo</th>
-				<th scope="col" devpagesortable="framework"             (sort)="onSort($event)">framework</th>
-				<th scope="col" devpagesortable="frameworkVersion"      (sort)="onSort($event)">Version</th>
-				<th scope="col" devpagesortable="uixFramework"          (sort)="onSort($event)">uixFramework</th>
-				<th scope="col" devpagesortable="description"           (sort)="onSort($event)">description</th>
+				<th scope="col" devpagesortable="name"                  (devpagesort)="onSort($event)">Name</th>
+				<th scope="col" devpagesortable="urlRepo"               (devpagesort)="onSort($event)">Repo</th>
+				<th scope="col" devpagesortable="framework"             (devpagesort)="onSort($event)">framework</th>
+				<th scope="col" devpagesortable="frameworkVersion"      (devpagesort)="onSort($event)">Version</th>
+				<th scope="col" devpagesortable="uixFramework"          (devpagesort)="onSort($event)">uixFramework</th>
+				<th scope="col" devpagesortable="description"           (devpagesort)="onSort($event)">description</th>
 			</tr>
 		</thead>
 		<tbody>
-			@for (country of countries | async; track country.id) {
+			@for (mainPage of mainPagesList | async; track mainPage.id) {
 				<tr>
-					<th scope="row">{{ country.id }}</th>
+					<th scope="row">{{ mainPage.id }}</th>
 					<td>
-						<a [href]="country.urlPage" target="_blank">
-							<ngb-highlight [result]="country.name" [term]="service.searchTerm" />
+						<a [href]="mainPage.urlPage" target="_blank">
+							<ngb-highlight [result]="mainPage.name" [term]="service.searchTerm" />
 						</a>
 					</td>
 					<td>
-						<a [href]="country.urlRepo" target="_blank">
+						<a [href]="mainPage.urlRepo" target="_blank">
 							[Repo]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="country.framework"             [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="country.frameworkVersion"      [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="country.uixFramework"          [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="country.description"           [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="mainPage.framework"             [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="mainPage.frameworkVersion"      [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="mainPage.uixFramework"          [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="mainPage.description"           [term]="service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>
