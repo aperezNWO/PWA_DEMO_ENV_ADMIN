@@ -1,10 +1,9 @@
 import { Injectable, PipeTransform                              } from '@angular/core';
 import { DecimalPipe                                            } from '@angular/common';
-import { DevPage, _DevPagesSearchResult                         } from '../_models/DevPage';
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
 import { _FeaturePageSortColumn, _FeaturePageSortDirection      } from '../_directives/featurePageListSortable.directive';
-import { FeaturePage } from '../_models/FeaturePage';
+import { FeaturePage, _FeaturePagesSearchResult } from '../_models/FeaturePage';
 import { _environment } from '../../environments/environment';
 //
 interface _FeaturePageSearchState {
@@ -29,12 +28,11 @@ function sort(featurePagelist: FeaturePage[], column: _FeaturePageSortColumn, di
 	}
 }
 //
-function matches(featurePage: DevPage, term: string, pipe: PipeTransform) {
+function matches(featurePage: FeaturePage, term: string, pipe: PipeTransform) {
 	return (
-		featurePage.name.toLowerCase().includes(term?.toLowerCase())         ||
-		featurePage.framework.toLowerCase().includes(term?.toLowerCase())    ||
-		featurePage.uixFramework.toLowerCase().includes(term?.toLowerCase()) ||
-		featurePage.description.toLowerCase().includes(term?.toLowerCase())  
+		featurePage.descripcion.toLowerCase().includes(term?.toLowerCase())   ||
+		featurePage.framework.toLowerCase().includes(term?.toLowerCase())     ||
+		featurePage.keywords.toLowerCase().includes(term?.toLowerCase())      
 	);
 }
 //
@@ -46,7 +44,7 @@ export class FeaturesPagesListService {
   //
 	private _loading$          = new BehaviorSubject<boolean>(true);
 	private _search$           = new Subject<void>();
-	private _featurepageList$  = new BehaviorSubject<DevPage[]>([]);
+	private _featurepageList$  = new BehaviorSubject<FeaturePage[]>([]);
 	private _total$            = new BehaviorSubject<number>(0);
   //
 	private _state: _FeaturePageSearchState = {
@@ -67,7 +65,7 @@ export class FeaturesPagesListService {
         tap(() => this._loading$.next(false)),
       )
       .subscribe((result) => {
-        this._featurepageList$.next(result.countries);
+        this._featurepageList$.next(result.featurePages);
         this._total$.next(result.total);
       });
     //
@@ -124,11 +122,11 @@ export class FeaturesPagesListService {
 		this._search$.next();
 	}
     //
-	private _search(): Observable<_DevPagesSearchResult> {
+	private _search(): Observable<_FeaturePagesSearchResult> {
 		//
 		let _devpageList                          : any;
 		let total                                 : any;
-		let _searchResult                         : _DevPagesSearchResult  = {countries: _devpageList,total};
+		let _searchResult                         : _FeaturePagesSearchResult  = {featurePages: _devpageList,total};
 
     // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
@@ -146,14 +144,14 @@ export class FeaturesPagesListService {
 		_devpageList   = sort(_FEATURE_PAGES, sortColumn, sortDirection);
 
     // 2. filter
-		_devpageList   = _devpageList.filter((country: DevPage) => matches(country, searchTerm, this.pipe));
+		_devpageList   = _devpageList.filter((featurePage: FeaturePage) => matches(featurePage, searchTerm, this.pipe));
 		total          = _devpageList.length;
 
 		// 3. paginate
 		_devpageList   = _devpageList.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
 		
 		// 4. return
-		_searchResult  = { countries: _devpageList,total };
+		_searchResult  = { featurePages: _devpageList,total };
 
 		// 5. return
 		return  of (_searchResult);

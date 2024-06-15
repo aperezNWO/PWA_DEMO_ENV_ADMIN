@@ -1,6 +1,7 @@
 export interface FeaturePage
 {
     id               : number;
+    name             : string;
     descripcion      : string;
     framework        : string;
     keywords         : string;

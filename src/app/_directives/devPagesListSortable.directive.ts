@@ -13,7 +13,7 @@ export interface _DevPageSortEvent {
 }
 //
 @Directive({
-	selector    : 'th[devpagesortable]',
+	selector    : 'th[devpagesort]',
 	standalone  : true,
 	host        : {
 		'[class.asc]'  : 'direction === "asc"',

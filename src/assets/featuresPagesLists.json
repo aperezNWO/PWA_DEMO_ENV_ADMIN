@@ -1,6 +1,7 @@
 [
 	{
 		"id"               : 1,
+        "name"             : "Lectura de archivos de configuración",
         "descripcion"      : "Lectura de archivos de configuración",
         "framework"        : "",
         "keywords"         : "",
@@ -9,6 +10,7 @@
     },
     {
 		"id"               : 2,
+        "name"             : "Interceptores (registro de llamadas http)",
         "descripcion"      : "Interceptores (registro de llamadas http)",
         "framework"        : "",
         "keywords"         : "",
@@ -17,6 +19,7 @@
     },
     {
 		"id"               : 3,
+        "name"             : "Manejo de errores",
         "descripcion"      : "Manejo de errores",
         "framework"        : "",
         "keywords"         : "",
@@ -25,6 +28,7 @@
     },
     {
 		"id"               : 4,
+        "name"             : "Manejo de Graficos (canvas)",
         "descripcion"      : "Manejo de Graficos (canvas)",
         "framework"        : "",
         "keywords"         : "",
@@ -34,6 +38,7 @@
     {
 		"id"               : 5,
         "descripcion"      : "Graficos estadisticos tipo Pastel y barras",
+        "name"             : "Graficos estadisticos tipo Pastel y barras",
         "framework"        : "",
         "keywords"         : "",
         "urlDemo"          : "",
@@ -41,6 +46,7 @@
     },
     {
 		"id"               : 6,
+        "name"             : "Exportaciones pdf, xls, csv, pdf",
         "descripcion"      : "Exportaciones pdf, xls, csv, pdf",
         "framework"        : "",
         "keywords"         : "",
@@ -49,6 +55,7 @@
     },
     {
 		"id"               : 7,
+        "name"             : "Algoritmos (minmax, camino más corto)",
         "descripcion"      : "Algoritmos (minmax, camino más corto)",
         "framework"        : "",
         "keywords"         : "",
@@ -57,6 +64,7 @@
     },
     {
 		"id"               : 8,
+        "name"             : "OCR (Reconocimientos de Caracteres)",
         "descripcion"      : "OCR (Reconocimientos de Caracteres)",
         "framework"        : "",
         "keywords"         : "",
@@ -65,6 +73,7 @@
     },
     {
 		"id"               : 9,
+        "name"             : "LLamado a Sockets via Node.js (Chat)",
         "descripcion"      : "LLamado a Sockets via Node.js (Chat)",
         "framework"        : "",
         "keywords"         : "",
@@ -73,6 +82,7 @@
     },
     {
 		"id"               : 10,
+        "name"             : "Manipulación de bases de datos MS SQL Server desde .net Core (backend)",
         "descripcion"      : "Manipulación de bases de datos MS SQL Server desde .net Core (backend)",
         "framework"        : "",
         "keywords"         : "",
