@@ -28,12 +28,12 @@
     },
     {
 		"id"               : 4,
-        "name"             : "Manejo de Graficos (canvas)",
-        "descripcion"      : "Manejo de Graficos (canvas)",
+        "name"             : "Manejo de Graficos",
+        "descripcion"      : "Manejo de Graficos",
         "framework"        : "Angular",
-        "keywords"         : "",
-        "urlDemo"          : "",
-        "urlRepo"          : ""
+        "keywords"         : "canvas",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/?redirectPage=AlgorithmDijkstra",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_engines/draw.engine.ts"
     },
     {
 		"id"               : 5,
