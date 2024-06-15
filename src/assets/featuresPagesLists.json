@@ -32,7 +32,7 @@
         "descripcion"      : "Manejo de Graficos",
         "framework"        : "Angular",
         "keywords"         : "canvas",
-        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/?redirectPage=AlgorithmDijkstra",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/?redirectPage=AlgorithmDijkstra",
         "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_engines/draw.engine.ts"
     },
     {
