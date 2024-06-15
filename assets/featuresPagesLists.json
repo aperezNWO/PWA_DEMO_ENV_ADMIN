@@ -1,0 +1,92 @@
+[
+	{
+		"id"               : 1,
+        "name"             : "Lectura de archivos de configuración",
+        "descripcion"      : "Lectura de archivos de configuración",
+        "framework"        : "Angular",
+        "keywords"         : "json, config, HttpClient, Environment",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_services/-config.service.ts"
+    },
+    {
+		"id"               : 2,
+        "name"             : "Interceptores (registro de llamadas http)",
+        "descripcion"      : "Interceptores (registro de llamadas http)",
+        "framework"        : "Angular",
+        "keywords"         : "HttpInterceptor, HttpRequest, HttpHandler",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/app.module.ts"
+    },
+    {
+		"id"               : 3,
+        "name"             : "Manejo de excepciones",
+        "descripcion"      : "Manejo de excepciones",
+        "framework"        : "Angular",
+        "keywords"         : "ErrorHandler",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/app.module.ts"
+    },
+    {
+		"id"               : 4,
+        "name"             : "Manejo de Graficos (canvas)",
+        "descripcion"      : "Manejo de Graficos (canvas)",
+        "framework"        : "Angular",
+        "keywords"         : "",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },
+    {
+		"id"               : 5,
+        "descripcion"      : "Graficos estadisticos tipo Pastel y barras",
+        "name"             : "Graficos estadisticos tipo Pastel y barras",
+        "framework"        : "Angular",
+        "keywords"         : "",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },
+    {
+		"id"               : 6,
+        "name"             : "Exportaciones pdf, xls, csv, pdf",
+        "descripcion"      : "Exportaciones pdf, xls, csv, pdf",
+        "framework"        : "Angular",
+        "keywords"         : "",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },
+    {
+		"id"               : 7,
+        "name"             : "Algoritmos (minmax, camino más corto)",
+        "descripcion"      : "Algoritmos (minmax, camino más corto)",
+        "framework"        : "Angular",
+        "keywords"         : "",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },
+    {
+		"id"               : 8,
+        "name"             : "OCR (Reconocimientos de Caracteres)",
+        "descripcion"      : "OCR (Reconocimientos de Caracteres)",
+        "framework"        : "Angular",
+        "keywords"         : "",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },
+    {
+		"id"               : 9,
+        "name"             : "LLamado a Sockets via Node.js (Chat)",
+        "descripcion"      : "LLamado a Sockets via Node.js (Chat)",
+        "framework"        : "Angular",
+        "keywords"         : "",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },
+    {
+		"id"               : 10,
+        "name"             : "Manipulación de bases de datos MS SQL Server desde .net Core (backend)",
+        "descripcion"      : "Manipulación de bases de datos MS SQL Server desde .net Core (backend)",
+        "framework"        : "Angular",
+        "keywords"         : "",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    }
+]       
