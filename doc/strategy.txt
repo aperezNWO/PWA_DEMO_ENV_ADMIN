@@ -194,6 +194,8 @@
 
 -- [>] Pasar contenido por tema a pagina principal.
 
-       -- [>] Angular End Points / Param Url.
+-- [>] Angular End Points / Param Url.
+
+-- [>] Read json pages from somee.com.
 
 /***********************************************/
