@@ -6,8 +6,8 @@ import { mainPagesListService                      } from '../../_services/mainP
 //
 @Component({
   selector: 'app-devpageslist',
-  templateUrl: './devpageslist.component.html',
-  styleUrl: './devpageslist.component.css'
+  templateUrl: './devPagesList.component.html',
+  styleUrl: './devPagesList.component.css'
 })
 //
 export class DevPagesListsComponent {
