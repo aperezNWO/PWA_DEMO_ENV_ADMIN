@@ -1,5 +1,5 @@
 import { Component     } from '@angular/core';
-import { Router        } from '@angular/router';
+import { ActivatedRoute, Router        } from '@angular/router';
 import { Title         } from '@angular/platform-browser';
 import { ConfigService } from './_services/config.service';
 
@@ -17,6 +17,7 @@ export class AppComponent {
   public readonly _title: string | undefined = "";
   public readonly _appBrand: string | undefined = "";
   public readonly _appVersion: string | undefined = "";
+  redirectPage               : string | null | undefined; 
   //
   private navbarCollapsed: boolean = true;
   //
@@ -31,9 +32,10 @@ export class AppComponent {
   }
 
   constructor(
-    private router: Router,
-    private _configService: ConfigService,
-    private titleService: Title
+    private router         : Router,
+    private route          : ActivatedRoute,
+    private _configService : ConfigService,
+    private titleService   : Title
   ) 
   {
     //
@@ -47,7 +49,30 @@ export class AppComponent {
     //
     this.titleService.setTitle(title);
     //
-    router.navigateByUrl("/Home");
+    this.route.queryParams.subscribe(params => {
+      //
+      this.redirectPage = params['redirectPage'] ? params['redirectPage'] : "" ;
+      //
+      if (this.redirectPage !== undefined)
+      {
+        //
+        console.log("Redirecting To Page : "  +  this.redirectPage );
+        //
+        switch (this.redirectPage)
+        {
+          case "FeaturePages":
+              // 
+              this.router.navigateByUrl('/FeaturePages');
+          break;
+          //default : 
+              //
+          //    this.router.navigateByUrl("/Home");
+          //break;
+        };
+      } else {
+        //
+        router.navigateByUrl("/Home");
+      }
+   });
   }
 }
-

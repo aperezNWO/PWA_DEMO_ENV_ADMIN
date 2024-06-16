@@ -88,5 +88,15 @@
         "keywords"         : "",
         "urlDemo"          : "",
         "urlRepo"          : ""
+    },
+    {
+		"id"               : 11,
+        "name"             : "Extraer Parametros de una URL",
+        "descripcion"      : "Extraer Parametros de una URL",
+        "framework"        : "Angular",
+        "keywords"         : "ActivatedRoute, queryPparams",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_LANDING/#/?redirectPage=FeaturePages",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING/blob/main/src/app/app.component.ts"
     }
+    
 ]       
