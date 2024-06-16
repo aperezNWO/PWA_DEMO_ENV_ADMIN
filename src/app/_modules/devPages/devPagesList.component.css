@@ -1,15 +1,28 @@
-/* Unvisited link */
+  .dark-table  {
+    background-color: #212529 !important;
+    color: #fff               !important;
+  }
+  
+  .dark-table tr:nth-child(odd) {
+    background-color: #2c3034 !important;
+  }
+  
+  .dark-table td, .dark-table th {
+    border-color: #dee2e6 !important;
+  }
+
+  /* Unvisited link */
 a:link {
-    color: rgb(0, 255, 64);
-  }
-  
-  /* Visited link */
-  a:visited {
-    color: green;
-  }
-  
-  /* Link on hover */
-  a:hover {
-    text-decoration: underline;
-    background-color: lightblue;
-  }
+  color: rgb(0, 255, 64);
+}
+
+/* Visited link */
+a:visited {
+  color: green;
+}
+
+/* Link on hover */
+a:hover {
+  text-decoration: underline;
+  background-color: lightblue;
+}

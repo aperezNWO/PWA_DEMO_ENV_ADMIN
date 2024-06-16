@@ -190,12 +190,12 @@
 
 -- [x] read pages from json file.
 
--- [>] datagrid theming.
+-- [x] Pasar contenido por tema a pagina principal.
 
--- [>] Pasar contenido por tema a pagina principal.
+-- [x] Angular End Points / Param Url.
 
--- [>] Angular End Points / Param Url.
+-- [_] datagrid theming.
 
--- [>] Read json pages from somee.com.
+-- [_] Read json pages from somee.com.
 
 /***********************************************/
