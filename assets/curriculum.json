@@ -1,0 +1,92 @@
+[
+	{
+		"id"               : 1,
+        "done"             : true,
+        "name"             : "Formularios basados en plantillas.",
+        "descripcion"      : "Formularios basados en plantillas.",
+        "framework"        : "Angular",
+        "keywords"         : "template forms",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },
+    {
+		"id"               : 2,
+        "done"             : true,
+        "name"             : "Fomulaios reactivos.",
+        "descripcion"      : "Fomulaios reactivos.",
+        "framework"        : "Angular",
+        "keywords"         : "reactive forms",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },
+    {
+		"id"               : 3,
+        "done"             : true,
+        "name"             : "Servicios.",
+        "descripcion"      : "(llamadas API Rest a backends .net o node.js).",
+        "framework"        : "Angular",
+        "keywords"         : "services, http",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },
+    {
+		"id"               : 4,
+        "done"             : true,
+        "name"             : "Pipes.",
+        "descripcion"      : "(formato de fecha).",
+        "framework"        : "Angular",
+        "keywords"         : "Pipes",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },  
+    {
+		"id"               : 5,
+        "done"             : true,
+        "name"             : "Injección de Dependencia.",
+        "descripcion"      : "Injección de Dependencia.",
+        "framework"        : "Angular",
+        "keywords"         : "constructor",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },  
+    {
+		"id"               : 6,
+        "done"             : true,
+        "name"             : "Ionic.",
+        "descripcion"      : "Ionic.",
+        "framework"        : "Angular",
+        "keywords"         : "Ionic",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    }, 
+    {
+		"id"               : 7,
+        "done"             : true,
+        "name"             : "PrimeNg.",
+        "descripcion"      : "PrimeNg.",
+        "framework"        : "Angular",
+        "keywords"         : "PrimeNg",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    }, 
+    {
+		"id"               : 8,
+        "done"             : true,
+        "name"             : "NgBootstrap.",
+        "descripcion"      : "NgBootstrap.",
+        "framework"        : "Angular",
+        "keywords"         : "NgBootstrap",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    },    
+    {
+		"id"               : 9,
+        "done"             : true,
+        "name"             : "Material.",
+        "descripcion"      : "Material.",
+        "framework"        : "Angular",
+        "keywords"         : "Material.",
+        "urlDemo"          : "",
+        "urlRepo"          : ""
+    }        
+]    
