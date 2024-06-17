@@ -57,7 +57,7 @@ export class ConfigService {
         //
         console.log("loading curriculum data ..." + data);
         //
-        _environment.mainPagesList = data; // Assign loaded data to environment variable
+        _environment.curriculumList = data; // Assign loaded data to environment variable
     })
     .catch(error => {
       console.error('Error loading curriculum:', error);
