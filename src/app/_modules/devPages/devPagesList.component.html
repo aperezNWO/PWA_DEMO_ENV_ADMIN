@@ -3,7 +3,7 @@
 <hr>
 <form>
 	<div class="mb-3 row">
-		<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Full text search:</label>
+		<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Búsqueda de Texto Completo:</label>
 		<div class="col-xs-3 col-sm-auto">
 			<input
 				id="table-complete-search"
@@ -14,7 +14,7 @@
 			/>
 		</div>
 		@if (service.loading | async) {
-			<span class="col col-form-label">Loading...</span>
+			<span class="col col-form-label">[Cargando...]</span>
 		}
 	</div>
 
@@ -62,9 +62,9 @@
 		</ngb-pagination>
 
 		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
-			<option [ngValue]="2">2 items per page</option>
-			<option [ngValue]="4">4 items per page</option>
-			<option [ngValue]="6">6 items per page</option>
+			<option [ngValue]="2">2 items por Pagina</option>
+			<option [ngValue]="4">4 items por Pagina</option>
+			<option [ngValue]="6">6 items por Pagina</option>
 		</select>
 	</div>
 </form>
