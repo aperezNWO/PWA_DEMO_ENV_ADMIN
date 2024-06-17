@@ -3,8 +3,8 @@ import { DecimalPipe                                            } from '@angular
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
 import { _FeaturePageSortColumn, _FeaturePageSortDirection      } from '../_directives/featurePageListSortable.directive';
-import { FeaturePage, _FeaturePagesSearchResult } from '../_models/FeaturePage';
-import { _environment } from '../../environments/environment';
+import { FeaturePage, _FeaturePagesSearchResult                 } from '../_models/FeaturePage';
+import { _environment                                           } from '../../environments/environment';
 //
 interface _FeaturePageSearchState {
 	page           : number;
@@ -15,7 +15,6 @@ interface _FeaturePageSearchState {
 }
 //
 const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
-//
 //
 function sort(featurePagelist: FeaturePage[], column: _FeaturePageSortColumn, direction: string): FeaturePage[] {
 	if (direction === '' || column === '') {
@@ -41,12 +40,12 @@ function matches(featurePage: FeaturePage, term: string, pipe: PipeTransform) {
 })
 // 
 export class FeaturesPagesListService {
-  //
+    //
 	private _loading$          = new BehaviorSubject<boolean>(true);
 	private _search$           = new Subject<void>();
 	private _featurepageList$  = new BehaviorSubject<FeaturePage[]>([]);
 	private _total$            = new BehaviorSubject<number>(0);
-  //
+    //
 	private _state: _FeaturePageSearchState = {
 		page          : 1,
 		pageSize      : 6, 
@@ -54,24 +53,23 @@ export class FeaturesPagesListService {
 		sortColumn    : '',
 		sortDirection : '',
 	};
-  //
-  constructor(private pipe: DecimalPipe) {
-    this._search$
-      .pipe(
-        tap(() => this._loading$.next(true)),
-        debounceTime(200),
-        switchMap(() => this._search()),
-        delay(200),
-        tap(() => this._loading$.next(false)),
-      )
-      .subscribe((result) => {
-        this._featurepageList$.next(result.featurePages);
-        this._total$.next(result.total);
-      });
-    //
-    this._search$.next();
-  }
-  //
+	//
+	constructor(private pipe: DecimalPipe) {
+		this._search$
+		.pipe(
+			tap(() => this._loading$.next(true)),
+			debounceTime(200),
+			switchMap(() => this._search()),
+			delay(200),
+			tap(() => this._loading$.next(false)),
+		)
+		.subscribe((result) => {
+			this._featurepageList$.next(result.featurePages);
+			this._total$.next(result.total);
+		});
+		//
+		this._search$.next();
+	}
     //
 	public get featurepageLists () {
 		return this._featurepageList$.asObservable();
@@ -128,22 +126,22 @@ export class FeaturesPagesListService {
 		let total                                 : any;
 		let _searchResult                         : _FeaturePagesSearchResult  = {featurePages: _devpageList,total};
 
-    // 0. get state
+        // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
-    //
+        //
 		console.log("external json data : " +  _environment.mainPagesList); 
 
-    // 1. sort
+        // 1. sort
 		let _FEATURE_PAGES  : FeaturePage[] = [];
 		//
 		_environment.featuresPagesList.forEach((element: any) => {
 			_FEATURE_PAGES.push(element);
 			console.log(element)
 		});
-    //
+        //
 		_devpageList   = sort(_FEATURE_PAGES, sortColumn, sortDirection);
 
-    // 2. filter
+        // 2. filter
 		_devpageList   = _devpageList.filter((featurePage: FeaturePage) => matches(featurePage, searchTerm, this.pipe));
 		total          = _devpageList.length;
 

@@ -3,4 +3,5 @@ export const _environment = {
     externalConfig         : {},     // Placeholder for external configuration
     mainPagesList          : [{}],   // Json pages
     featuresPagesList      : [{}],   // Json pages
+    curriculumList         : [{}],   // Json pages
 };

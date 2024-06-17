@@ -16,6 +16,78 @@
     </ul>
  </div>
 <hr>
+<form>
+	<div class="mb-3 row">
+		<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Full text search:</label>
+		<div class="col-xs-3 col-sm-auto">
+			<input
+				id="table-complete-search"
+				type="text"
+				class="form-control"
+				name="searchTerm"
+				[(ngModel)]="service.searchTerm"
+			/>
+		</div>
+		@if (service.loading | async) {
+			<span class="col col-form-label">Loading...</span>
+		}
+	</div>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col" curriculumsortable="name"                  >Name</th>
+				<th scope="col" curriculumsortable="urlDemo"               >Demo</th>
+				<th scope="col" curriculumsortable="urlRepo"               >Repo</th>
+				<th scope="col" curriculumsortable="framework"             >framework</th>
+				<th scope="col" curriculumsortable="keywords"              >keywords</th>
+				<th scope="col" curriculumsortable="description"           >description</th>
+			</tr>
+		</thead>
+		<tbody>
+			@for (curriculumPage of curriculumList | async; track curriculumPage.id) {
+				<tr>
+					<th scope="row">{{ curriculumPage.id }}</th>
+					<td>
+						<a [href]="curriculumPage.urlDemo" target="_blank">
+							<ngb-highlight [result]="curriculumPage.name" [term]="service.searchTerm" />
+						</a>
+					</td>
+					<td>
+						<a [href]="curriculumPage.urlDemo" target="_blank">
+							[Demo]
+						</a>
+					</td>
+					<td>
+						<a [href]="curriculumPage.urlRepo" target="_blank">
+							[Repo]
+						</a>
+					</td>
+					<td><ngb-highlight [result]="curriculumPage.framework"             [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="curriculumPage.keywords"              [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="curriculumPage.descripcion"           [term]="service.searchTerm" /></td>
+				</tr>
+			} @empty {
+				<tr>
+					<td colspan="4" style="text-align: center">[NO SE ENCONTRARON DATOS]</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+
+	<div class="d-flex justify-content-between p-2">
+		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+		</ngb-pagination>
+
+		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+			<option [ngValue]="2">2 items per page</option>
+			<option [ngValue]="4">4 items per page</option>
+			<option [ngValue]="6">6 items per page</option>
+		</select>
+	</div>
+</form>
+<hr>
 <div align="right">
 	<a routerLink="/">[Inicio]</a>
 </div>

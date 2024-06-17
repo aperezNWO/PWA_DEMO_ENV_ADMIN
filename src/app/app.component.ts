@@ -14,8 +14,8 @@ export class AppComponent {
   //
   title = 'NG_BOOTSTRAP_DEMO_ENV_LANDING';
   // propiedades publicas
-  public readonly _title: string | undefined = "";
-  public readonly _appBrand: string | undefined = "";
+  public readonly _title     : string | undefined = "";
+  public readonly _appBrand  : string | undefined = "";
   public readonly _appVersion: string | undefined = "";
   redirectPage               : string | null | undefined; 
   //

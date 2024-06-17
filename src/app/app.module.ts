@@ -17,13 +17,15 @@ import { ConfigService                          } from './_services/config.servi
 import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
 import { mainPagesListService                   } from './_services/mainPagesList.service';
 import { DevPagesListsComponent                 } from './_modules/devPages/devPagesList.component';
-import { FeaturePagesComponent } from './_modules/feature-pages/feature-pages.component';
+import { FeaturePagesComponent                  } from './_modules/feature-pages/feature-pages.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
   _configService.loadFeaturesData();
   //
   _configService.loadJsonData();
+  //
+  _configService.loadCurriculumData();
   // 
   return () =>  _configService.loadConfig();
 }

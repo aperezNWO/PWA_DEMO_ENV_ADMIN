@@ -36,7 +36,7 @@ export class ConfigService {
       .catch(error => {
         console.error('Error loading configuration:', error);
       });
-  }
+   }
    // ONLY HAPPENS ONCE ON APPMODULE LOADING
    loadJsonData() {
     return this.http.get('./assets/mainPagesList.json').toPromise()
@@ -49,6 +49,19 @@ export class ConfigService {
       .catch(error => {
         console.error('Error loading configuration:', error);
       });
+  }
+  // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadCurriculumData() {
+  return this.http.get('./assets/curriculum.json').toPromise()
+    .then((data: any) => {
+        //
+        console.log("loading curriculum data ..." + data);
+        //
+        _environment.mainPagesList = data; // Assign loaded data to environment variable
+    })
+    .catch(error => {
+      console.error('Error loading curriculum:', error);
+    });
   }
   //
   getConfigValue(key: string) {
