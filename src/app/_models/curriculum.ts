@@ -8,6 +8,7 @@ export interface curriculum
     keywords         : string;
     urlDemo          : string;
     urlRepo          : string;
+    urlCurriculum    : string;
 }
 //
 export interface _CurriculumSearchResult {

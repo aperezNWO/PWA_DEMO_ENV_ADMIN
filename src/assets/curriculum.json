@@ -6,87 +6,96 @@
         "descripcion"      : "Formularios basados en plantillas.",
         "framework"        : "Angular",
         "keywords"         : "template forms",
-        "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_modules/files-generation/files-generation-csv/files-generation-csv.component.html",
+        "urlCurriculum"    : "https://angular.dev/guide/forms/template-driven-forms"
     },
     {
 		"id"               : 2,
-        "done"             : true,
+        "done"             : false,
         "name"             : "Fomulaios reactivos.",
         "descripcion"      : "Fomulaios reactivos.",
         "framework"        : "Angular",
         "keywords"         : "reactive forms",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""       
     },
     {
 		"id"               : 3,
-        "done"             : true,
+        "done"             : false,
         "name"             : "Servicios.",
         "descripcion"      : "(llamadas API Rest a backends .net o node.js).",
         "framework"        : "Angular",
         "keywords"         : "services, http",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""   
     },
     {
 		"id"               : 4,
-        "done"             : true,
+        "done"             : false,
         "name"             : "Pipes.",
-        "descripcion"      : "(formato de fecha).",
+        "descripcion"      : "(formato de fechas, numero y moneda).",
         "framework"        : "Angular",
         "keywords"         : "Pipes",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""   
     },  
     {
 		"id"               : 5,
-        "done"             : true,
+        "done"             : false,
         "name"             : "Injección de Dependencia.",
         "descripcion"      : "Injección de Dependencia.",
         "framework"        : "Angular",
         "keywords"         : "constructor",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""   
     },  
     {
 		"id"               : 6,
-        "done"             : true,
+        "done"             : false,
         "name"             : "Ionic.",
         "descripcion"      : "Ionic.",
         "framework"        : "Angular",
         "keywords"         : "Ionic",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""   
     }, 
     {
 		"id"               : 7,
-        "done"             : true,
+        "done"             : false,
         "name"             : "PrimeNg.",
         "descripcion"      : "PrimeNg.",
         "framework"        : "Angular",
         "keywords"         : "PrimeNg",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""   
     }, 
     {
 		"id"               : 8,
-        "done"             : true,
+        "done"             : false,
         "name"             : "NgBootstrap.",
         "descripcion"      : "NgBootstrap.",
         "framework"        : "Angular",
         "keywords"         : "NgBootstrap",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""   
     },    
     {
 		"id"               : 9,
-        "done"             : true,
+        "done"             : false,
         "name"             : "Material.",
         "descripcion"      : "Material.",
         "framework"        : "Angular",
         "keywords"         : "Material.",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""   
     }        
 ]    

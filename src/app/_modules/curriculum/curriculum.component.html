@@ -1,7 +1,5 @@
 <div align="left">
     <h1>[CURRICULUM]</h1>
-    <hr>
-    <h4>[Angular - Listado por Tema]</h4>
 <hr>
 <form>
 	<div class="mb-3 row">
@@ -24,6 +22,7 @@
 		<thead>
 			<tr>
 				<th scope="col">#</th>
+				<th scope="col" curriculumsortable="done"                  >done</th>
 				<th scope="col" curriculumsortable="name"                  >Name</th>
 				<th scope="col" curriculumsortable="urlDemo"               >Demo</th>
 				<th scope="col" curriculumsortable="urlRepo"               >Repo</th>
@@ -36,6 +35,9 @@
 			@for (curriculumPage of curriculumList | async; track curriculumPage.id) {
 				<tr>
 					<th scope="row">{{ curriculumPage.id }}</th>
+					<td>
+						<input type="checkbox" name="done" id="done" value="done" [checked]="curriculumPage.done" disabled readonly>
+					</td>
 					<td>
 						<a [href]="curriculumPage.urlDemo" target="_blank">
 							<ngb-highlight [result]="curriculumPage.name" [term]="service.searchTerm" />
