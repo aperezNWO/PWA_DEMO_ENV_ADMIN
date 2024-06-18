@@ -26,6 +26,7 @@
 				<th scope="col" curriculumsortable="name"                  >Name</th>
 				<th scope="col" curriculumsortable="urlDemo"               >Demo</th>
 				<th scope="col" curriculumsortable="urlRepo"               >Repo</th>
+				<th scope="col" curriculumsortable="urlCurriculum"         >Curriculum</th>
 				<th scope="col" curriculumsortable="framework"             >framework</th>
 				<th scope="col" curriculumsortable="keywords"              >keywords</th>
 				<th scope="col" curriculumsortable="description"           >description</th>
@@ -51,6 +52,11 @@
 					<td>
 						<a [href]="curriculumPage.urlRepo" target="_blank">
 							[Repo]
+						</a>
+					</td>
+					<td>
+						<a [href]="curriculumPage.urlCurriculum" target="_blank">
+							[Curriculum]
 						</a>
 					</td>
 					<td><ngb-highlight [result]="curriculumPage.framework"             [term]="service.searchTerm" /></td>
