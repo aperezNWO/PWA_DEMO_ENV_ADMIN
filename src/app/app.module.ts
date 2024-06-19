@@ -23,7 +23,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   //
   _configService.loadFeaturesData();
   //
-  _configService.loadJsonData();
+  _configService.loadDevPages();
   //
   _configService.loadCurriculumData();
   // 

@@ -38,8 +38,8 @@ export class ConfigService {
       });
    }
    // ONLY HAPPENS ONCE ON APPMODULE LOADING
-   loadJsonData() {
-    return this.http.get('./assets/mainPagesList.json').toPromise()
+   loadDevPages() {
+    return this.http.get('./assets/devPagesList.json').toPromise()
       .then((data: any) => {
           //
           console.log("loading mainPagesList data ..." + data);

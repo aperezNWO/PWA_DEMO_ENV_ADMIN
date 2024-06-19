@@ -4,10 +4,13 @@ export interface DevPage {
 	name             : string;
     description      : string;
     framework        : string;
+	FrameworkUrl     : string;
 	frameworkVersion : string;
-    uixFramework     : string;    
+    uixFramework     : string; 
+	uixFrameworkUrl  : string;     
     urlPage          : string;
 	urlRepo          : string;
+
 }
 
 export interface _DevPagesSearchResult {

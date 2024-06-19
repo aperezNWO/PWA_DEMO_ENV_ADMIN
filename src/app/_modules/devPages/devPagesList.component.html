@@ -21,14 +21,14 @@
 	<table class="table dark-table table-striped">
 		<thead>
 			<tr>
-				<th scope="col">#</th>
-				<th scope="col" devpagesortable="done"                  >(Hecho)</th>
-				<th scope="col" devpagesortable="name"                  (devpagesort)="onSort($event)">Name</th>
+				<th scope="col" devpagesortable="id"                    (devpagesort)="onSort($event)">#</th>
+				<th scope="col" devpagesortable="done"                  (devpagesort)="onSort($event)">(Hecho)</th>
+				<th scope="col" devpagesortable="name"                  (devpagesort)="onSort($event)">Nombre</th>
 				<th scope="col" devpagesortable="urlRepo"               (devpagesort)="onSort($event)">Repo</th>
-				<th scope="col" devpagesortable="framework"             (devpagesort)="onSort($event)">framework</th>
-				<th scope="col" devpagesortable="frameworkVersion"      (devpagesort)="onSort($event)">Version</th>
-				<th scope="col" devpagesortable="uixFramework"          (devpagesort)="onSort($event)">uixFramework</th>
-				<th scope="col" devpagesortable="description"           (devpagesort)="onSort($event)">description</th>
+				<th scope="col" devpagesortable="framework"             (devpagesort)="onSort($event)">Framework</th>
+				<th scope="col" devpagesortable="frameworkVersion"      (devpagesort)="onSort($event)">Versión</th>
+				<th scope="col" devpagesortable="uixFramework"          (devpagesort)="onSort($event)">UixFramework</th>
+				<th scope="col" devpagesortable="description"           (devpagesort)="onSort($event)">Descripción</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -48,9 +48,19 @@
 							[Repo]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="mainPage.framework"             [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="mainPage.frameworkVersion"      [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="mainPage.uixFramework"          [term]="service.searchTerm" /></td>
+					<td>
+						<a ngb-highlight [href]="mainPage.FrameworkUrl"  target="_blank">
+							<ngb-highlight [result]="mainPage.framework" [term]="service.searchTerm" />
+						</a>
+					</td>
+					<td>
+						  <ngb-highlight [result]="mainPage.frameworkVersion" [term]="service.searchTerm" />
+					</td>
+					<td>
+						<a ngb-highlight [href]="mainPage.uixFrameworkUrl"      target="_blank">
+						   <ngb-highlight [result]="mainPage.uixFramework"          [term]="service.searchTerm" />
+					   </a>
+					</td>
 					<td><ngb-highlight [result]="mainPage.description"           [term]="service.searchTerm" /></td>
 				</tr>
 			} @empty {
