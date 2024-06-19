@@ -5,10 +5,13 @@
 		"name"             : "[PWA_DEMO - ENV_LANDING]",
 		"description"      : "Angular Learning - Landing Page",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "17.3.8",
-		"uixFramework"     : "NGBOOTSTRAP",    
+		"uixFramework"     : "NGBOOTSTRAP", 
+		"uixFrameworkUrl"  : "",      
 		"urlPage"          : "https://apereznwo.github.io/PWA_DEMO_ENV_LANDING/",
-		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING.git"
+		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING.git",
+		"urlCurriculum"    : ""
 	},
 	{
 		"id"               :  2,
@@ -16,10 +19,13 @@
 		"name"             : "[PWA_DEMO - ENV_TEST]",
 		"description"      : "Angular Learning - Testing Page",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "17.0.8",
-		"uixFramework"     : "Material",   
+		"uixFramework"     : "Material",  
+		"uixFrameworkUrl"  : "",  
 		"urlPage"          : "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/",
-		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_TEST.git"
+		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_TEST.git",
+		"urlCurriculum"    : ""
 	},
 	{ 
 		"id"               :  3,
@@ -27,10 +33,13 @@
 		"name"             : "[PWA_DEMO - ENV_DEV]",
 		"description"      : "Angular Learning - DEV Page",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "17.0.8",
-		"uixFramework"     : "Material",   
+		"uixFramework"     : "Material", 
+		"uixFrameworkUrl"  : "",   
 		"urlPage"          : "https://apereznwo.github.io/PWA_DEMO_ENV_DEV/",
-		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_DEV.git"
+		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_DEV.git",
+		"urlCurriculum"    : ""
 	},
 	{
 		"id"               :  4,
@@ -38,10 +47,13 @@
 		"name"             : "[PWA_DEMO - ENV_PROD]",
 		"description"      : "Angular Learning - PROD",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "17.0.8",
 		"uixFramework"     : "Material",   
+		"uixFrameworkUrl"  : "", 
 		"urlPage"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PROD/",
-		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PROD.git"
+		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PROD.git",
+		"urlCurriculum"    : ""
 	},
 	{
 		"id"               :  5,
@@ -49,10 +61,13 @@
 		"name"             : "[PWA_DEMO - ENV_PUBLIC]",
 		"description"      : "Angular Learning - PUBLIC",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
+		"uixFrameworkUrl"  : "", 
 		"frameworkVersion" : "17.0.8",
 		"uixFramework"     : "Material",   
 		"urlPage"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
-		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC.git"
+		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC.git",
+		"urlCurriculum"    : ""
 	},
 	{
 		"id"               :  6,
@@ -60,10 +75,13 @@
 		"name"             : "[IONIC DEMO - ENV TEST]",
 		"description"      : "IONIC Learning - ENV TEST",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "17.3.0",
-		"uixFramework"     : "IONIC",    
+		"uixFramework"     : "", 
+		"uixFrameworkUrl"  : "",    
 		"urlPage"          : "https://apereznwo.github.io/IONIC_DEMO_ENV_TEST/",
-		"urlRepo"          : "https://github.com/aperezNWO/IONIC_DEMO_ENV_TEST.git"
+		"urlRepo"          : "https://github.com/aperezNWO/IONIC_DEMO_ENV_TEST.git",
+		"urlCurriculum"    : ""
 	},
 	{
 		"id"               :  7,
@@ -71,10 +89,13 @@
 		"name"             : "[PRIMENG DEMO - QUICKSTART]",
 		"description"      : "PRIMGENG DEMO - QUICKSTART",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "0.0.0",
-		"uixFramework"     : "PRIMENG",    
+		"uixFramework"     : "PRIMENG",
+		"uixFrameworkUrl"  : "",     
 		"urlPage"          : "https://apereznwo.github.io/primeng-quickstart-cli/",
-		"urlRepo"          : "https://github.com/aperezNWO/primeng-quickstart-cli.git"
+		"urlRepo"          : "https://github.com/aperezNWO/primeng-quickstart-cli.git",
+		"urlCurriculum"    : ""
 	},
 	{
 		"id"               :  8,
@@ -82,10 +103,13 @@
 		"name"             : "[PRIGENG DEMO - ENV PROD]",
 		"description"      : "PRIMGNG DEMO - ENV PROD",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "0.0.0",
-		"uixFramework"     : "PRIMENG",    
+		"uixFramework"     : "PRIMENG",  
+		"uixFrameworkUrl"  : "",   
 		"urlPage"          : "2https://apereznwo.github.io/PRIMENG_DEMO_ENV_PROD/",
-		"urlRepo"          : "https://github.com/aperezNWO/PRIMENG_DEMO_ENV_PROD.git"
+		"urlRepo"          : "https://github.com/aperezNWO/PRIMENG_DEMO_ENV_PROD.git",
+		"urlCurriculum"    : ""		
 	},
 	{
 		"id"               :  9,
@@ -93,10 +117,13 @@
 		"name"             : "[NGBOOTRSAP DEMO - ENV TEST]",
 		"description"      : "NGBOOTSRAP DEMO - ENV TEST",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "0.0.0",
-		"uixFramework"     : "NGBOOTSRAP",    
+		"uixFramework"     : "NGBOOTSRAP",  
+		"uixFrameworkUrl"  : "",   
 		"urlPage"          : "https://apereznwo.github.io/NG_BOOTSTRAP_DEMO_ENV_TEST/",
-		"urlRepo"          : "https://github.com/aperezNWO/NG_BOOTSTRAP_DEMO_ENV_TEST.git"
+		"urlRepo"          : "https://github.com/aperezNWO/NG_BOOTSTRAP_DEMO_ENV_TEST.git",
+		"urlCurriculum"    : ""		
 	},
 	{
 		"id"               :  10,
@@ -104,10 +131,13 @@
 		"name"             : "[NGBOOTSRAP DEMO - ENV DEV]",
 		"description"      : "NGBOOTSRAP DEMO - ENV DEV",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "0.0.0",
 		"uixFramework"     : "NGBOOTSRAP",    
+		"uixFrameworkUrl"  : "", 
 		"urlPage"          : "https://apereznwo.github.io/NG_BOOTSTRAP_DEMO_ENV_DEV/",
-		"urlRepo"          : "https://github.com/aperezNWO/NG_BOOTSTRAP_DEMO_ENV_DEV.git"
+		"urlRepo"          : "https://github.com/aperezNWO/NG_BOOTSTRAP_DEMO_ENV_DEV.git",
+		"urlCurriculum"    : ""		
 	},
 	{
 		"id"               : 11,
@@ -115,10 +145,13 @@
 		"name"             : "[TAILDWIND DEMO - ENV DEV]",
 		"description"      : "[TAILDWIND DEMO - ENV DEV]",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "0.0.0",
-		"uixFramework"     : "Tailwind",    
+		"uixFramework"     : "Tailwind",  
+		"uixFrameworkUrl"  : "",   
 		"urlPage"          : "",
-		"urlRepo"          : ""
+		"urlRepo"          : "",
+		"urlCurriculum"    : ""		
 	},
 	{
 		"id"               : 12,
@@ -126,10 +159,13 @@
 		"name"             : "[TAILDWIND DEMO - ENV TEST]",
 		"description"      : "[NGBOOTSRAP DEMO - ENV TEST]",
 		"framework"        : "Angular",
+		"frameworkUrl"     : "",
 		"frameworkVersion" : "0.0.0",
-		"uixFramework"     : "Tailwind",    
+		"uixFramework"     : "Tailwind",   
+		"uixFrameworkUrl"  : "",  
 		"urlPage"          : "",
-		"urlRepo"          : ""
+		"urlRepo"          : "",
+		"urlCurriculum"    : ""		
 	}
 ]
 
