@@ -14,7 +14,7 @@ interface _FeaturePageSearchState {
 	sortDirection  :  _FeaturePageSortDirection;
 }
 //
-const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
+const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
 function sort(featurePagelist: FeaturePage[], column: _FeaturePageSortColumn, direction: string): FeaturePage[] {
 	if (direction === '' || column === '') {
@@ -29,6 +29,7 @@ function sort(featurePagelist: FeaturePage[], column: _FeaturePageSortColumn, di
 //
 function matches(featurePage: FeaturePage, term: string, pipe: PipeTransform) {
 	return (
+		featurePage.urlCurriculum.toLowerCase().includes(term?.toLowerCase()) ||
 		featurePage.descripcion.toLowerCase().includes(term?.toLowerCase())   ||
 		featurePage.framework.toLowerCase().includes(term?.toLowerCase())     ||
 		featurePage.keywords.toLowerCase().includes(term?.toLowerCase())      

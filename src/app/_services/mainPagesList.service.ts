@@ -15,7 +15,7 @@ interface _DevPageSearchState {
 	sortDirection  :  _DevPageSortDirection;
 }
 //
-const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
+const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
 function sort(devpageslist: DevPage[], column: _DevPageSortColumn, direction: string): DevPage[] {
 	if (direction === '' || column === '') {
@@ -65,7 +65,7 @@ export class mainPagesListService {
 				tap(() => this._loading$.next(false)),
 			)
 			.subscribe((result) => {
-				this._devpageList$.next(result.countries);
+				this._devpageList$.next(result.devPages);
 				this._total$.next(result.total);
 			});
         //
@@ -125,7 +125,7 @@ export class mainPagesListService {
 		//
 		let _devpageList                          : any;
 		let total                                 : any;
-		let _searchResult                         : _DevPagesSearchResult  = {countries: _devpageList,total};
+		let _searchResult                         : _DevPagesSearchResult  = {devPages: _devpageList,total};
 		
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
@@ -150,7 +150,7 @@ export class mainPagesListService {
 		_devpageList   = _devpageList.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
 		
 		// 4. return
-		_searchResult  = { countries: _devpageList,total };
+		_searchResult  = { devPages: _devpageList,total };
 
 		// 5. return
 		return  of (_searchResult);

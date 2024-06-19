@@ -1,5 +1,6 @@
 export interface DevPage {
 	id               : number;
+	done             : boolean;
 	name             : string;
     description      : string;
     framework        : string;
@@ -10,6 +11,6 @@ export interface DevPage {
 }
 
 export interface _DevPagesSearchResult {
-	countries: DevPage[];
+	devPages : DevPage[];
 	total    : number;
 }

@@ -1,5 +1,5 @@
 <div align="left">
-<h1>[PAGINAS DE DESARROLLO]</h1>
+<h1>[ANGULAR - ENTORNOS]</h1>
 <hr>
 <form>
 	<div class="mb-3 row">
@@ -22,6 +22,7 @@
 		<thead>
 			<tr>
 				<th scope="col">#</th>
+				<th scope="col" devpagesortable="done"                  >(Hecho)</th>
 				<th scope="col" devpagesortable="name"                  (devpagesort)="onSort($event)">Name</th>
 				<th scope="col" devpagesortable="urlRepo"               (devpagesort)="onSort($event)">Repo</th>
 				<th scope="col" devpagesortable="framework"             (devpagesort)="onSort($event)">framework</th>
@@ -35,12 +36,15 @@
 				<tr>
 					<th scope="row">{{ mainPage.id }}</th>
 					<td>
-						<a [href]="mainPage.urlPage" target="_blank">
+						<input ngb-highlight type="checkbox" name="done" id="done" value="done" [checked]="mainPage.done" disabled readonly>
+					</td>
+					<td>
+						<a ngb-highlight [href]="mainPage.urlPage" target="_blank">
 							<ngb-highlight [result]="mainPage.name" [term]="service.searchTerm" />
 						</a>
 					</td>
 					<td>
-						<a [href]="mainPage.urlRepo" target="_blank">
+						<a ngb-highlight [href]="mainPage.urlRepo" target="_blank">
 							[Repo]
 						</a>
 					</td>

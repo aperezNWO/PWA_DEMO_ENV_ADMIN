@@ -1,102 +1,124 @@
 [
 	{
 		"id"               : 1,
+        "done"             : false,
         "name"             : "Lectura de archivos de configuración",
         "descripcion"      : "Lectura de archivos de configuración",
         "framework"        : "Angular",
-        "keywords"         : "json, config, HttpClient, Environment",
+        "keywords"         : "Json, Config, HttpClient, Environment",
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
-        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_services/-config.service.ts"
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_services/-config.service.ts",
+        "urlCurriculum"    : "https://angular.dev/guide/http/setup"   
     },
     {
 		"id"               : 2,
+        "done"             : false,
         "name"             : "Interceptores (registro de llamadas http)",
         "descripcion"      : "Interceptores (registro de llamadas http)",
         "framework"        : "Angular",
         "keywords"         : "HttpInterceptor, HttpRequest, HttpHandler",
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
-        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/app.module.ts"
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/app.module.ts",
+        "urlCurriculum"    : "https://angular.dev/guide/http/interceptors"  
     },
     {
 		"id"               : 3,
+        "done"             : false,
         "name"             : "Manejo de excepciones",
         "descripcion"      : "Manejo de excepciones",
         "framework"        : "Angular",
         "keywords"         : "ErrorHandler",
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
-        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/app.module.ts"
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/app.module.ts",
+        "urlCurriculum"    : "https://angular.dev/api/core/ErrorHandler#"  
     },
     {
 		"id"               : 4,
+        "done"             : false,
         "name"             : "Manejo de Graficos",
         "descripcion"      : "Manejo de Graficos",
         "framework"        : "Angular",
-        "keywords"         : "canvas",
-        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/?redirectPage=AlgorithmDijkstra",
-        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_engines/draw.engine.ts"
+        "keywords"         : "Canvas",
+        "urlDemo"          : "",
+        "urlRepo"          : "",
+        "urlCurriculum"    : "https://developer.mozilla.org/es/docs/Web/API/Canvas_API"  
     },
     {
 		"id"               : 5,
+        "done"             : false,
         "descripcion"      : "Graficos estadisticos tipo Pastel y barras",
         "name"             : "Graficos estadisticos tipo Pastel y barras",
         "framework"        : "Angular",
-        "keywords"         : "",
-        "urlDemo"          : "",
-        "urlRepo"          : ""
+        "keywords"         : "Pie Chart, Bar Chart, Chart.js",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chart",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_modules/miscelaneous/chart/chart.component.ts",
+        "urlCurriculum"    : "https://www.chartjs.org/"  
     },
     {
 		"id"               : 6,
-        "name"             : "Exportaciones pdf, xls, csv, pdf",
-        "descripcion"      : "Exportaciones pdf, xls, csv, pdf",
+        "done"             : false,
+        "name"             : "Exportacion a xls y csv",
+        "descripcion"      : "Exportación a xls y csv",
         "framework"        : "Angular",
         "keywords"         : "",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""  
     },
     {
 		"id"               : 7,
+        "done"             : false,
         "name"             : "Algoritmos (minmax, camino más corto)",
         "descripcion"      : "Algoritmos (minmax, camino más corto)",
         "framework"        : "Angular",
         "keywords"         : "",
-        "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/?redirectPage=AlgorithmDijkstra",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_engines/draw.engine.ts",
+        "urlCurriculum"    : ""  
     },
     {
 		"id"               : 8,
+        "done"             : false,
         "name"             : "OCR (Reconocimientos de Caracteres)",
         "descripcion"      : "OCR (Reconocimientos de Caracteres)",
         "framework"        : "Angular",
         "keywords"         : "",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""  
     },
     {
 		"id"               : 9,
+        "done"             : false,
         "name"             : "LLamado a Sockets via Node.js (Chat)",
         "descripcion"      : "LLamado a Sockets via Node.js (Chat)",
         "framework"        : "Angular",
-        "keywords"         : "",
+        "keywords"         : "Sockets, Node.js, Chat",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""  
     },
     {
 		"id"               : 10,
-        "name"             : "Manipulación de bases de datos MS SQL Server desde .net Core (backend)",
-        "descripcion"      : "Manipulación de bases de datos MS SQL Server desde .net Core (backend)",
+        "done"             : false,
+        "name"             : "Exportación a pdf",
+        "descripcion"      : "Exportación a pdf",
         "framework"        : "Angular",
-        "keywords"         : "",
+        "keywords"         : "jsPDF",
         "urlDemo"          : "",
-        "urlRepo"          : ""
+        "urlRepo"          : "",
+        "urlCurriculum"    : ""  
     },
     {
 		"id"               : 11,
+        "done"             : false,
         "name"             : "Extraer Parametros de una URL",
         "descripcion"      : "Extraer Parametros de una URL",
         "framework"        : "Angular",
         "keywords"         : "ActivatedRoute, queryPparams",
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_LANDING/?redirectPage=FeaturePages",
-        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING/blob/main/src/app/app.component.ts"
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING/blob/main/src/app/app.component.ts",
+        "urlCurriculum"    : "https://angular.dev/api/router/ActivatedRoute?tab=description"  
     }
     
 ]       

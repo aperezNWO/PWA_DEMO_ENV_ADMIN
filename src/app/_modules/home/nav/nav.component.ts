@@ -35,15 +35,15 @@ export class NavComponent {
     },
     {
       'url': '/FeaturePages',
-      'text': '[PAGINAS - CARACTERISTICAS]',
-    },
-    {
-      'url': '/DevPages',
-      'text': '[PAGINAS - DESARROLLO]',
+      'text': '[ANGULAR - CARACTERISTICAS]',
     },
     {
       'url': '/Curriculum',
-      'text': '[CURRICULUM]',
+      'text': '[ANGULAR - CURRICULUM]',
+    },
+    {
+      'url': '/DevPages',
+      'text': '[ANGJLAR - ENTORNOS]',
     },
   ]
   //-----------------------------------------------------------------------------------------------------

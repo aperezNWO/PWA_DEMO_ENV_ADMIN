@@ -1,5 +1,5 @@
 <div align="left">
-    <h1>[CURRICULUM]</h1>
+    <h1>[ANGULAR - CURRICULUM]</h1>
 <hr>
 <form>
 	<div class="mb-3 row">
@@ -22,12 +22,11 @@
 		<thead>
 			<tr>
 				<th scope="col">#</th>
-				<th scope="col" curriculumsortable="done"                  >done</th>
+				<th scope="col" curriculumsortable="done"                  >(Hecho)</th>
 				<th scope="col" curriculumsortable="name"                  >Name</th>
 				<th scope="col" curriculumsortable="urlDemo"               >Demo</th>
 				<th scope="col" curriculumsortable="urlRepo"               >Repo</th>
-				<th scope="col" curriculumsortable="urlCurriculum"         >Curriculum</th>
-				<th scope="col" curriculumsortable="framework"             >framework</th>
+				<th scope="col" curriculumsortable="urlCurriculum"         >Tema</th>
 				<th scope="col" curriculumsortable="keywords"              >keywords</th>
 				<th scope="col" curriculumsortable="description"           >description</th>
 			</tr>
@@ -45,21 +44,20 @@
 						</a>
 					</td>
 					<td>
-						<a [href]="curriculumPage.urlDemo" target="_blank">
+						<a ngb-highlight [href]="curriculumPage.urlDemo" target="_blank">
 							[Demo]
 						</a>
 					</td>
 					<td>
-						<a [href]="curriculumPage.urlRepo" target="_blank">
+						<a ngb-highlight [href]="curriculumPage.urlRepo" target="_blank">
 							[Repo]
 						</a>
 					</td>
 					<td>
-						<a [href]="curriculumPage.urlCurriculum" target="_blank">
-							[Curriculum]
+						<a ngb-highlight [href]="curriculumPage.urlCurriculum" target="_blank">
+							[Tema]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="curriculumPage.framework"             [term]="service.searchTerm" /></td>
 					<td><ngb-highlight [result]="curriculumPage.keywords"              [term]="service.searchTerm" /></td>
 					<td><ngb-highlight [result]="curriculumPage.descripcion"           [term]="service.searchTerm" /></td>
 				</tr>
