@@ -1,6 +1,7 @@
 [
 	{
 		"id"               : 1,
+		"done"             : false,
 		"name"             : "[PWA_DEMO - ENV_LANDING]",
 		"description"      : "Angular Learning - Landing Page",
 		"framework"        : "Angular",
@@ -11,6 +12,7 @@
 	},
 	{
 		"id"               :  2,
+		"done"             : false,
 		"name"             : "[PWA_DEMO - ENV_TEST]",
 		"description"      : "Angular Learning - Testing Page",
 		"framework"        : "Angular",
@@ -21,6 +23,7 @@
 	},
 	{ 
 		"id"               :  3,
+		"done"             : false,
 		"name"             : "[PWA_DEMO - ENV_DEV]",
 		"description"      : "Angular Learning - DEV Page",
 		"framework"        : "Angular",
@@ -31,6 +34,7 @@
 	},
 	{
 		"id"               :  4,
+		"done"             : false,
 		"name"             : "[PWA_DEMO - ENV_PROD]",
 		"description"      : "Angular Learning - PROD",
 		"framework"        : "Angular",
@@ -41,6 +45,7 @@
 	},
 	{
 		"id"               :  5,
+		"done"             : false,
 		"name"             : "[PWA_DEMO - ENV_PUBLIC]",
 		"description"      : "Angular Learning - PUBLIC",
 		"framework"        : "Angular",
@@ -51,6 +56,7 @@
 	},
 	{
 		"id"               :  6,
+		"done"             : false,
 		"name"             : "[IONIC DEMO - ENV TEST]",
 		"description"      : "IONIC Learning - ENV TEST",
 		"framework"        : "Angular",
@@ -61,6 +67,7 @@
 	},
 	{
 		"id"               :  7,
+		"done"             : false,
 		"name"             : "[PRIMENG DEMO - QUICKSTART]",
 		"description"      : "PRIMGENG DEMO - QUICKSTART",
 		"framework"        : "Angular",
@@ -71,6 +78,7 @@
 	},
 	{
 		"id"               :  8,
+		"done"             : false,
 		"name"             : "[PRIGENG DEMO - ENV PROD]",
 		"description"      : "PRIMGNG DEMO - ENV PROD",
 		"framework"        : "Angular",
@@ -81,6 +89,7 @@
 	},
 	{
 		"id"               :  9,
+		"done"             : false,
 		"name"             : "[NGBOOTRSAP DEMO - ENV TEST]",
 		"description"      : "NGBOOTSRAP DEMO - ENV TEST",
 		"framework"        : "Angular",
@@ -91,6 +100,7 @@
 	},
 	{
 		"id"               :  10,
+		"done"             : false,
 		"name"             : "[NGBOOTSRAP DEMO - ENV DEV]",
 		"description"      : "NGBOOTSRAP DEMO - ENV DEV",
 		"framework"        : "Angular",
@@ -101,6 +111,7 @@
 	},
 	{
 		"id"               : 11,
+		"done"             : false,
 		"name"             : "[TAILDWIND DEMO - ENV DEV]",
 		"description"      : "[TAILDWIND DEMO - ENV DEV]",
 		"framework"        : "Angular",
@@ -111,6 +122,7 @@
 	},
 	{
 		"id"               : 12,
+		"done"             : false,
 		"name"             : "[TAILDWIND DEMO - ENV TEST]",
 		"description"      : "[NGBOOTSRAP DEMO - ENV TEST]",
 		"framework"        : "Angular",
