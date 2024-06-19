@@ -31,7 +31,7 @@ function sort(curriculumList: curriculum[], column: _CurriculumSortColumn, direc
 function matches(_curriculum: curriculum, term: string, pipe: PipeTransform) {
 	return (
 		_curriculum.name.toLowerCase().includes(term?.toLowerCase())   ||
-		_curriculum.descripcion.toLowerCase().includes(term?.toLowerCase())   ||
+		_curriculum.description.toLowerCase().includes(term?.toLowerCase())   ||
 		_curriculum.framework.toLowerCase().includes(term?.toLowerCase())     ||
 		_curriculum.keywords.toLowerCase().includes(term?.toLowerCase())      
 	);

@@ -21,14 +21,14 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th scope="col" curriculumsortable="id"                    >#</th>
-				<th scope="col" curriculumsortable="done"                  >(Hecho)</th>
-				<th scope="col" curriculumsortable="name"                  >Name</th>
-				<th scope="col" curriculumsortable="urlDemo"               >Demo</th>
-				<th scope="col" curriculumsortable="urlRepo"               >Repo</th>
-				<th scope="col" curriculumsortable="urlCurriculum"         >Tema</th>
-				<th scope="col" curriculumsortable="keywords"              >keywords</th>
-				<th scope="col" curriculumsortable="description"           >description</th>
+				<th scope="col" curriculumsortable="id"             (curriculumsort)="onSort($event)">#</th>
+				<th scope="col" curriculumsortable="done"           (curriculumsort)="onSort($event)">(Hecho)</th>
+				<th scope="col" curriculumsortable="name"           (curriculumsort)="onSort($event)">Nombre</th>
+				<th scope="col" curriculumsortable="urlDemo"        (curriculumsort)="onSort($event)">Demo</th>
+				<th scope="col" curriculumsortable="urlRepo"        (curriculumsort)="onSort($event)">Repo</th>
+				<th scope="col" curriculumsortable="urlCurriculum"  (curriculumsort)="onSort($event)">Tema</th>
+				<th scope="col" curriculumsortable="keywords"       (curriculumsort)="onSort($event)">P. Clave</th>
+				<th scope="col" curriculumsortable="description"    (curriculumsort)="onSort($event)">Descripción</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -59,7 +59,7 @@
 						</a>
 					</td>
 					<td><ngb-highlight [result]="curriculumPage.keywords"              [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="curriculumPage.descripcion"           [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="curriculumPage.description"           [term]="service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>

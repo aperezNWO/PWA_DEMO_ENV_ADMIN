@@ -40,7 +40,7 @@ function matches(devPage: DevPage, term: string, pipe: PipeTransform) {
 @Injectable({
   providedIn: 'root'
 })
-export class mainPagesListService {
+export class devPagesListService {
     // 
 	private _loading$     = new BehaviorSubject<boolean>(true);
 	private _search$      = new Subject<void>();

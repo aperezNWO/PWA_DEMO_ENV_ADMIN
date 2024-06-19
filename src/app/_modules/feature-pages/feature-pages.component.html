@@ -21,14 +21,14 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th scope="col">#</th>
-				<th scope="col" featurepagesortable="done"                  >(hecho)</th>
-				<th scope="col" featurepagesortable="name"                  >Nombre</th>
-				<th scope="col" featurepagesortable="urlDemo"               >Demo</th>
-				<th scope="col" featurepagesortable="urlRepo"               >Repo</th>
-				<th scope="col" featurepagesortable="urlCurriculum"         >Tema</th>
-				<th scope="col" featurepagesortable="keywords"              >P. Clave</th>
-				<th scope="col" featurepagesortable="description"           >Descripción</th>
+				<th scope="col" featurepagesortable="id"              (featurepagesort)="onSort($event)">#</th>
+				<th scope="col" featurepagesortable="done"            (featurepagesort)="onSort($event)">(hecho)</th>
+				<th scope="col" featurepagesortable="name"            (featurepagesort)="onSort($event)">Nombre</th>
+				<th scope="col" featurepagesortable="urlDemo"         (featurepagesort)="onSort($event)">Demo</th>
+				<th scope="col" featurepagesortable="urlRepo"         (featurepagesort)="onSort($event)">Repo</th>
+				<th scope="col" featurepagesortable="urlCurriculum"   (featurepagesort)="onSort($event)">Tema</th>
+				<th scope="col" featurepagesortable="keywords"        (featurepagesort)="onSort($event)">P. Clave</th>
+				<th scope="col" featurepagesortable="description"     (featurepagesort)="onSort($event)">Descripción</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -59,7 +59,7 @@
 						</a>
 					</td>
 					<td><ngb-highlight [result]="featurePage.keywords"              [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="featurePage.descripcion"           [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="featurePage.description"           [term]="service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>

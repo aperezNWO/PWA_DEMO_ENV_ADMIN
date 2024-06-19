@@ -2,7 +2,8 @@ import { Component, QueryList, ViewChildren        } from '@angular/core';
 import { Observable                                } from 'rxjs';
 import { DevPageSortableHeader, _DevPageSortEvent  } from '../../_directives/devPagesListSortable.directive';
 import { DevPage                                   } from '../../_models/DevPage';
-import { mainPagesListService                      } from '../../_services/mainPagesList.service';
+import { devPagesListService                       } from '../../_services/devPagesList.service';
+
 //
 @Component({
   selector: 'app-devpageslist',
@@ -17,7 +18,7 @@ export class DevPagesListsComponent {
     // 
 	@ViewChildren(DevPageSortableHeader) headers: QueryList<DevPageSortableHeader> | undefined;
     //
-	constructor(public service: mainPagesListService) {
+	constructor(public service: devPagesListService) {
 		this.mainPagesList = service.devpageLists;
 		this.total         = service.total;
 	}

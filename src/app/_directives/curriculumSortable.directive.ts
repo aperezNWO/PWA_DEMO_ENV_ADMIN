@@ -27,7 +27,7 @@ export class CurriculumSortableHeader {
 	@Input() curriculumdirection      :   _CurriculumSortDirection = '';
 	@Output() curriculumsort          = new EventEmitter<_CurriculumSortEvent>();
      //
-	_rotateCurriculum() {
+	__rotateCurriculum() {
 		this.curriculumdirection = curriculumrotate[this.curriculumdirection];
 		this.curriculumsort.emit({ 
 								_column   : this.curriculumsortable, 

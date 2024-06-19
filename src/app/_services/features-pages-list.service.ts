@@ -30,7 +30,7 @@ function sort(featurePagelist: FeaturePage[], column: _FeaturePageSortColumn, di
 function matches(featurePage: FeaturePage, term: string, pipe: PipeTransform) {
 	return (
 		featurePage.urlCurriculum.toLowerCase().includes(term?.toLowerCase()) ||
-		featurePage.descripcion.toLowerCase().includes(term?.toLowerCase())   ||
+		featurePage.description.toLowerCase().includes(term?.toLowerCase())   ||
 		featurePage.framework.toLowerCase().includes(term?.toLowerCase())     ||
 		featurePage.keywords.toLowerCase().includes(term?.toLowerCase())      
 	);

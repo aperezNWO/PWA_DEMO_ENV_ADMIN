@@ -3,7 +3,7 @@ export interface curriculum
     id               : number;
     done             : boolean;
     name             : string;
-    descripcion      : string;
+    description      : string;
     framework        : string;
     keywords         : string;
     urlDemo          : string;

@@ -13,11 +13,13 @@ import { NavComponent                           } from './_modules/home/nav/nav.
 import { PageNotFoundComponent                  } from './_modules/home/page-not-found/page-not-found.component';
 import { HomeComponent                          } from './_modules/home/home/home.component';
 import { CurriculumComponent                    } from './_modules/curriculum/curriculum.component';
-import { ConfigService                          } from './_services/config.service';
-import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
-import { mainPagesListService                   } from './_services/mainPagesList.service';
 import { DevPagesListsComponent                 } from './_modules/devPages/devPagesList.component';
 import { FeaturePagesComponent                  } from './_modules/feature-pages/feature-pages.component';
+import { devPagesListService                    } from './_services/devPagesList.service';
+import { ConfigService                          } from './_services/config.service';
+import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
+import { CurriculumSortableHeader               } from './_directives/curriculumSortable.directive';
+import { FeaturePageSortableHeader              } from './_directives/featurePageListSortable.directive';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -48,8 +50,10 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NgbPaginationModule, 
     NgbAlertModule,
     NgbHighlight, 
-    DevPageSortableHeader, 
     NgbPaginationModule,
+    DevPageSortableHeader,
+    CurriculumSortableHeader,
+    FeaturePageSortableHeader,
     DecimalPipe, 
     FormsModule, 
     AsyncPipe, 
@@ -65,7 +69,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
         multi     : true
       },
     ],
-    [mainPagesListService,DatePipe,DecimalPipe,HttpClient],
+    [devPagesListService,DatePipe,DecimalPipe,HttpClient],
     provideClientHydration()
   ],
   bootstrap: [AppComponent]
