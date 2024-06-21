@@ -60,13 +60,24 @@
         "name"             : "Extraer Parametros de una URL",
         "description"      : "Parametros URL via GET separados por &",
         "framework"        : "Angular",
-        "keywords"         : "ActivatedRoute, queryPparams",
+        "keywords"         : "ActivatedRoute, queryParams",
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_LANDING/?redirectPage=FeaturePages",
         "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING/blob/main/src/app/app.component.ts",
         "urlCurriculum"    : "https://angular.dev/api/router/ActivatedRoute?tab=description"  
     },
     {
 		"id"               : 7,
+        "done"             : true,
+        "name"             : "Juego Tic Tac Toe / Tres en Raya",
+        "description"      : "Algoritmos min max",
+        "framework"        : "Angular",
+        "keywords"         : "algorimto minmax, tic tac toe",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/GamesTicTacToe",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_engines/game.engine.ts",
+        "urlCurriculum"    : "https://en.m.wikipedia.org/wiki/Minimax"  
+    },
+    {
+		"id"               : 8,
         "done"             : true,
         "name"             : "Exportación a pdf desde Frontend",
         "description"      : "Exportación a pdf desde Frontend",
@@ -77,31 +88,31 @@
         "urlCurriculum"    : "https://www.npmjs.com/package/jspdf"  
     },
     {
-		"id"               : 8,
-        "done"             : false,
+		"id"               : 9,
+        "done"             : true,
         "name"             : "OCR desde Backend",
         "description"      : "Reconocimientos de Caracteres",
         "framework"        : "Node.js",
-        "keywords"         : "Node.js, OCR",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""  
-    },
-    {
-		"id"               : 9,
-        "done"             : false,
-        "name"             : "Chat Demo desde Backend",
-        "description"      : "LLamado a Sockets",
-        "framework"        : "Node.js",
-        "keywords"         : "Node.js, Sockets,  Chat",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""  
+        "keywords"         : "Node.js, OCR, tesseract, codesandbox",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Ocr",
+        "urlRepo"          : "https://github.com/aperezNWO/cs_nodejs_ocr_/blob/main/index.js",
+        "urlCurriculum"    : "https://github.com/tesseract-ocr/tesseract"  
     },
     {
 		"id"               : 10,
+        "done"             : true,
+        "name"             : "Chat Demo desde Backend",
+        "description"      : "LLamado a Sockets",
+        "framework"        : "Node.js",
+        "keywords"         : "Node.js, Sockets,  Chat, Codesandbox",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chat",
+        "urlRepo"          : "https://github.com/aperezNWO/cs_node_js_test_chat/blob/main/index.js",
+        "urlCurriculum"    : "https://socket.io/get-started/chat/"  
+    },
+    {
+		"id"               : 11,
         "done"             : false,
-        "name"             : "Exportacion a pdf desde backend",
+        "name"             : "Exportacion a pdf desde Backend",
         "description"      : "Exportación via servicio RESTFUL",
         "framework"        : ".NET Core",
         "keywords"         : ".NET Core, pdf, iTextSharp",
@@ -110,24 +121,13 @@
         "urlCurriculum"    : ""  
     },
     {
-		"id"               : 11,
+		"id"               : 12,
         "done"             : false,
-        "name"             : "Exportacion a xls y csv desde backend",
+        "name"             : "Exportacion a xls y csv desde Backend",
         "description"      : "Exportación via servicio RESTFUL",
         "framework"        : ".NET Core",
         "keywords"         : ".NET Core, xls, csv, EPPPlus",
         "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""  
-    },
-    {
-		"id"               : 12,
-        "done"             : false,
-        "name"             : "Algoritmos Camino mas Corto desde Backend",
-        "description"      : "Algoritmos basado en Grafos",
-        "framework"        : ".NET Core, C++",
-        "keywords"         : "Algoritmo, Dijkstra",
-        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/?redirectPage=AlgorithmDijkstra",
         "urlRepo"          : "",
         "urlCurriculum"    : ""  
     }
