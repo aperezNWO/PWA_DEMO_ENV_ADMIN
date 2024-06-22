@@ -43,7 +43,7 @@ export class NavComponent {
     },
     {
       'url': '/DevPages',
-      'text': '[ANGJLAR - ENTORNOS]',
+      'text': '[ANGULAR - ENTORNOS]',
     },
   ]
   //-----------------------------------------------------------------------------------------------------

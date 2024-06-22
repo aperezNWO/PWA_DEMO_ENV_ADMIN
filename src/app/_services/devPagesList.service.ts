@@ -49,7 +49,7 @@ export class devPagesListService {
     //
 	private _state: _DevPageSearchState = {
 		page          : 1,
-		pageSize      : 6, 
+		pageSize      : 4, 
 		searchTerm    : '',
 		sortColumn    : '',
 		sortDirection : '',
@@ -72,6 +72,44 @@ export class devPagesListService {
 		this._search$.next();
 	}
     //
+	private _search(): Observable<_DevPagesSearchResult> {
+		//
+		let _devpageList                          : any;
+		let _total                                : any;
+		let _searchResult                         : _DevPagesSearchResult  = {devPages: _devpageList, total : _total};
+		
+        // 0. get state
+		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
+
+		console.log("external json data : " +  _environment.mainPagesList); 
+
+		// 1. sort
+		let _DEV_PAGES  : DevPage[] = [];
+		
+		_environment.mainPagesList.forEach((element: any) => {
+			_DEV_PAGES.push(element);
+			console.log(element)
+		});
+
+		_devpageList   = sort(_DEV_PAGES, sortColumn, sortDirection);
+
+		// 2. filter
+		_devpageList   = _devpageList.filter((country: DevPage) => matches(country, searchTerm, this.pipe));
+		_total         = _devpageList.length;
+
+		// 3. paginate
+		_devpageList   = _devpageList.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
+		
+		// 4. return
+		_searchResult  = { devPages: _devpageList, total : _total };
+
+		// 5. return
+		return  of (_searchResult);
+	}
+	//////////////////////////////////////////////////////////////////////
+    // PROPERTIES
+    //////////////////////////////////////////////////////////////////////
+	//
 	public get devpageLists () {
 		return this._devpageList$.asObservable();
 	}
@@ -120,39 +158,4 @@ export class devPagesListService {
 		Object.assign(this._state, patch);
 		this._search$.next();
 	}
-    //
-	private _search(): Observable<_DevPagesSearchResult> {
-		//
-		let _devpageList                          : any;
-		let total                                 : any;
-		let _searchResult                         : _DevPagesSearchResult  = {devPages: _devpageList,total};
-		
-        // 0. get state
-		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
-
-		console.log("external json data : " +  _environment.mainPagesList); 
-
-		// 1. sort
-		let _DEV_PAGES  : DevPage[] = [];
-		
-		_environment.mainPagesList.forEach((element: any) => {
-			_DEV_PAGES.push(element);
-			console.log(element)
-		});
-
-		_devpageList   = sort(_DEV_PAGES, sortColumn, sortDirection);
-
-		// 2. filter
-		_devpageList   = _devpageList.filter((country: DevPage) => matches(country, searchTerm, this.pipe));
-		total          = _devpageList.length;
-
-		// 3. paginate
-		_devpageList   = _devpageList.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
-		
-		// 4. return
-		_searchResult  = { devPages: _devpageList,total };
-
-		// 5. return
-		return  of (_searchResult);
-	}
-}
+ }

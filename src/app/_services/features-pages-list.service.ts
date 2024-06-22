@@ -49,7 +49,7 @@ export class FeaturesPagesListService {
     //
 	private _state: _FeaturePageSearchState = {
 		page          : 1,
-		pageSize      : 6, 
+		pageSize      : 4, 
 		searchTerm    : '',
 		sortColumn    : '',
 		sortDirection : '',
@@ -71,6 +71,44 @@ export class FeaturesPagesListService {
 		//
 		this._search$.next();
 	}
+    //
+	private _search(): Observable<_FeaturePagesSearchResult> {
+		//
+		let _devpageList                          : any;
+		let _total                                : any;
+		let _searchResult                         : _FeaturePagesSearchResult  = {featurePages: _devpageList, total : _total};
+
+        // 0. get state
+		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
+        //
+		console.log("external json data : " +  _environment.mainPagesList); 
+
+        // 1. sort
+		let _FEATURE_PAGES  : FeaturePage[] = [];
+		//
+		_environment.featuresPagesList.forEach((element: any) => {
+			_FEATURE_PAGES.push(element);
+			console.log(element)
+		});
+        //
+		_devpageList   = sort(_FEATURE_PAGES, sortColumn, sortDirection);
+
+        // 2. filter
+		_devpageList   = _devpageList.filter((featurePage: FeaturePage) => matches(featurePage, searchTerm, this.pipe));
+		_total         = _devpageList.length;
+
+		// 3. paginate
+		_devpageList   = _devpageList.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
+		
+		// 4. return
+		_searchResult  = { featurePages: _devpageList, total : _total };
+
+		// 5. return
+		return  of (_searchResult);
+	}
+	//////////////////////////////////////////////////////////////////////
+    // PROPERTIES
+    //////////////////////////////////////////////////////////////////////
     //
 	public get featurepageLists () {
 		return this._featurepageList$.asObservable();
@@ -119,40 +157,5 @@ export class FeaturesPagesListService {
 	private _set(patch: Partial<_FeaturePageSearchState>) {
 		Object.assign(this._state, patch);
 		this._search$.next();
-	}
-    //
-	private _search(): Observable<_FeaturePagesSearchResult> {
-		//
-		let _devpageList                          : any;
-		let total                                 : any;
-		let _searchResult                         : _FeaturePagesSearchResult  = {featurePages: _devpageList,total};
-
-        // 0. get state
-		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
-        //
-		console.log("external json data : " +  _environment.mainPagesList); 
-
-        // 1. sort
-		let _FEATURE_PAGES  : FeaturePage[] = [];
-		//
-		_environment.featuresPagesList.forEach((element: any) => {
-			_FEATURE_PAGES.push(element);
-			console.log(element)
-		});
-        //
-		_devpageList   = sort(_FEATURE_PAGES, sortColumn, sortDirection);
-
-        // 2. filter
-		_devpageList   = _devpageList.filter((featurePage: FeaturePage) => matches(featurePage, searchTerm, this.pipe));
-		total          = _devpageList.length;
-
-		// 3. paginate
-		_devpageList   = _devpageList.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
-		
-		// 4. return
-		_searchResult  = { featurePages: _devpageList,total };
-
-		// 5. return
-		return  of (_searchResult);
 	}
 }

@@ -30,7 +30,7 @@ function sort(curriculumList: curriculum[], column: _CurriculumSortColumn, direc
 //
 function matches(_curriculum: curriculum, term: string, pipe: PipeTransform) {
 	return (
-		_curriculum.name.toLowerCase().includes(term?.toLowerCase())   ||
+		_curriculum.name.toLowerCase().includes(term?.toLowerCase())          ||
 		_curriculum.description.toLowerCase().includes(term?.toLowerCase())   ||
 		_curriculum.framework.toLowerCase().includes(term?.toLowerCase())     ||
 		_curriculum.keywords.toLowerCase().includes(term?.toLowerCase())      
@@ -48,7 +48,7 @@ export class CurriculumService {
   //
   private _state: _CurriculumSearchState = {
     page          : 1,
-    pageSize      : 6, 
+    pageSize      : 4, 
     searchTerm    : '',
     sortColumn    : '',
     sortDirection : '',
@@ -76,23 +76,23 @@ export class CurriculumService {
 		let _curriculumList                       : any;
 		let _total                                : any;
 		let _searchResult                         : _CurriculumSearchResult  = {_curriculum  : _curriculumList
-                                                                          , _total       : _total};
-    // 0. get state
+                                                                              , _total       : _total};
+        // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
-    //
+        //
 		console.log("external json data : " +  _environment.curriculumList); 
 
-    // 1. sort
+        // 1. sort
 		let _CURRICULUM_PAGES  :  curriculum[] = [];
 		//
 		_environment.curriculumList.forEach((element: any) => {
 			_CURRICULUM_PAGES.push(element);
 			console.log(element)
 		});
-    //
+        //
 		_curriculumList   = sort(_CURRICULUM_PAGES, sortColumn, sortDirection);
 
-    // 2. filter
+        // 2. filter
 		_curriculumList   = _curriculumList.filter((curriculumPage: curriculum) => matches(curriculumPage, searchTerm, this.pipe));
 		_total            = _curriculumList.length;
 
