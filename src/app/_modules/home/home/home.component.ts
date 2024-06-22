@@ -14,6 +14,22 @@ export class HomeComponent implements OnInit {
   static PageTitle            : string             = '[HOME]';
   @ViewChild('nav') nav!      : NavComponent;
   //
+  //
+  pages = [
+    {
+      'url': '/FeaturePages',
+      'text': '[ANGULAR - CARACTERISTICAS]',
+    },
+    {
+      'url': '/Curriculum',
+      'text': '[ANGULAR - CURRICULUM]',
+    },
+    {
+      'url': '/DevPages',
+      'text': '[ANGULAR - ENTORNOS]',
+    },
+  ]
+  //
   constructor(private _configService: ConfigService)
   {
       //

@@ -122,11 +122,11 @@
     },
     {
 		"id"               : 12,
-        "done"             : false,
-        "name"             : "Exportacion a xls desde Backend",
+        "done"             : true,
+        "name"             : "Exportación a xls desde Backend",
         "description"      : "Exportación via servicio RESTFUL",
         "framework"        : ".NET Core",
-        "keywords"         : ".NET Core, xls, EPPPlus",
+        "keywords"         : ".NET Core, xls, OfficeOpenXm,eppPlus",
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationXLS",
         "urlRepo"          : "https://github.com/aperezNWO/mcsdNetCoreBackup/blob/main/mcsd.Core.Library/Managers/XlsManager.cs",
         "urlCurriculum"    : "https://www.nuget.org/packages/EPPlus/"  

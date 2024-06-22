@@ -1,1 +1,6 @@
 <div align="center"><h4>Bienvenido a <b>{{this._appBrand}}!</b></h4></div>
+<ul class="navbar-nav" *ngFor="let page of pages">
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/{{page.url}}"><div align="left">{{page.text}}</div></a>
+    </li>
+</ul>
