@@ -102,7 +102,7 @@
 		"id"               : 10,
         "done"             : true,
         "name"             : "Chat Demo desde Backend",
-        "description"      : "LLamado a Sockets",
+        "description"      : "Llamado a Sockets",
         "framework"        : "Node.js",
         "keywords"         : "Node.js, Sockets,  Chat, Codesandbox",
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chat",
