@@ -2,32 +2,32 @@
 	{
 		"id"               : 1,
         "done"             : true,
-        "name"             : "Formularios basados en plantillas.",
-        "description"      : "Formularios basados en plantillas.",
+        "name"             : "Formularios basados en plantillas",
+        "description"      : "Formularios basados en plantillas",
         "framework"        : "Angular",
-        "keywords"         : "template forms",
+        "keywords"         : "Template Forms",
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
         "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_modules/files-generation/files-generation-csv/files-generation-csv.component.html",
-        "urlCurriculum"    : "https://angular.dev/guide/forms/template-driven-forms"
+        "urlCurriculum"    : "https://v17.angular.io/guide/forms"
     },
     {
 		"id"               : 2,
-        "done"             : false,
-        "name"             : "Fomulaios reactivos.",
-        "description"      : "Fomulaios reactivos.",
+        "done"             : true,
+        "name"             : "Fomularios Reactivos",
+        "description"      : "Fomularios Reactivos",
         "framework"        : "Angular",
-        "keywords"         : "reactive forms",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""       
+        "keywords"         : "Reactive Forms, Responsive",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PROD/blob/master/src/app/_modules/files-generation/files-generation-csv/files-generation-csv.component.html",
+        "urlCurriculum"    : "https://v17.angular.io/guide/reactive-forms"       
     },
     {
 		"id"               : 3,
         "done"             : false,
         "name"             : "Servicios.",
-        "description"      : "(llamadas API Rest a backends .net o node.js).",
+        "description"      : "(Llamadas API Rest a backends .net o node.js).",
         "framework"        : "Angular",
-        "keywords"         : "services, http",
+        "keywords"         : "Services, Http",
         "urlDemo"          : "",
         "urlRepo"          : "",
         "urlCurriculum"    : ""   
@@ -35,10 +35,10 @@
     {
 		"id"               : 4,
         "done"             : false,
-        "name"             : "Pipes.",
-        "description"      : "(formato de fechas, numero y moneda).",
+        "name"             : "Pipes",
+        "description"      : "Formato de fechas, numero y moneda",
         "framework"        : "Angular",
-        "keywords"         : "Pipes",
+        "keywords"         : "Pipes, Date, Currency, Formatting",
         "urlDemo"          : "",
         "urlRepo"          : "",
         "urlCurriculum"    : ""   
@@ -46,10 +46,10 @@
     {
 		"id"               : 5,
         "done"             : false,
-        "name"             : "Injección de Dependencia.",
-        "description"      : "Injección de Dependencia.",
+        "name"             : "Injección de Dependencia",
+        "description"      : "Injección de Dependencia",
         "framework"        : "Angular",
-        "keywords"         : "constructor",
+        "keywords"         : "Constructor, Injection Dependency",
         "urlDemo"          : "",
         "urlRepo"          : "",
         "urlCurriculum"    : ""   
@@ -57,8 +57,8 @@
     {
 		"id"               : 6,
         "done"             : false,
-        "name"             : "Ionic.",
-        "description"      : "Ionic.",
+        "name"             : "Ionic",
+        "description"      : "Ionic",
         "framework"        : "Angular",
         "keywords"         : "Ionic",
         "urlDemo"          : "",
@@ -68,8 +68,8 @@
     {
 		"id"               : 7,
         "done"             : false,
-        "name"             : "PrimeNg.",
-        "description"      : "PrimeNg.",
+        "name"             : "PrimeNg",
+        "description"      : "PrimeNg",
         "framework"        : "Angular",
         "keywords"         : "PrimeNg",
         "urlDemo"          : "",
@@ -90,10 +90,10 @@
     {
 		"id"               : 9,
         "done"             : false,
-        "name"             : "Material.",
-        "description"      : "Material.",
+        "name"             : "Material",
+        "description"      : "Material",
         "framework"        : "Angular",
-        "keywords"         : "Material.",
+        "keywords"         : "Material",
         "urlDemo"          : "",
         "urlRepo"          : "",
         "urlCurriculum"    : ""   
