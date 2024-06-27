@@ -23,79 +23,35 @@
     },
     {
 		"id"               : 3,
-        "done"             : false,
+        "done"             : true,
         "name"             : "Servicios.",
-        "description"      : "(Llamadas API Rest a backends .net o node.js).",
+        "description"      : "Llamadas a backends",
         "framework"        : "Angular",
-        "keywords"         : "Services, Http",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""   
+        "keywords"         : "Services, HttpClient, REST API, RESTful, Injection Dependency",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PROD/blob/master/src/app/_services/mcsd.service.ts",
+        "urlCurriculum"    : "https://v17.angular.io/guide/architecture-services"   
     },
     {
 		"id"               : 4,
-        "done"             : false,
-        "name"             : "Pipes",
-        "description"      : "Formato de fechas, numero y moneda",
-        "framework"        : "Angular",
-        "keywords"         : "Pipes, Date, Currency, Formatting",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""   
-    },  
-    {
-		"id"               : 5,
-        "done"             : false,
+        "done"             : true,
         "name"             : "Injección de Dependencia",
         "description"      : "Injección de Dependencia",
         "framework"        : "Angular",
         "keywords"         : "Constructor, Injection Dependency",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""   
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PROD/blob/master/src/app/_services/mcsd.service.ts",
+        "urlCurriculum"    : "https://v17.angular.io/guide/dependency-injection"   
     },  
     {
-		"id"               : 6,
-        "done"             : false,
-        "name"             : "Ionic",
-        "description"      : "Ionic",
+		"id"               : 5,
+        "done"             : true,
+        "name"             : "Pipes",
+        "description"      : "Formato de fechas, numero y moneda",
         "framework"        : "Angular",
-        "keywords"         : "Ionic",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""   
-    }, 
-    {
-		"id"               : 7,
-        "done"             : false,
-        "name"             : "PrimeNg",
-        "description"      : "PrimeNg",
-        "framework"        : "Angular",
-        "keywords"         : "PrimeNg",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""   
-    }, 
-    {
-		"id"               : 8,
-        "done"             : false,
-        "name"             : "NgBootstrap.",
-        "description"      : "NgBootstrap.",
-        "framework"        : "Angular",
-        "keywords"         : "NgBootstrap",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""   
-    },    
-    {
-		"id"               : 9,
-        "done"             : false,
-        "name"             : "Material",
-        "description"      : "Material",
-        "framework"        : "Angular",
-        "keywords"         : "Material",
-        "urlDemo"          : "",
-        "urlRepo"          : "",
-        "urlCurriculum"    : ""   
-    }        
+        "keywords"         : "Pipes, Date, Currency, Formatting",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chat",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PROD/blob/master/src/app/_modules/miscelaneous/chat/chat/chat.component.ts",
+        "urlCurriculum"    : "https://v17.angular.io/guide/pipes-overview"   
+    }  
 ]    
