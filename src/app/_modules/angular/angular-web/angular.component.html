@@ -1,0 +1,7 @@
+<div align="center"><h4><b>[Angular Demo]</b></h4></div>
+<hr>
+<ul class="navbar-nav" *ngFor="let page of pages">
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/{{page.url}}"><div align="left">{{page.text}}</div></a>
+    </li>
+</ul>

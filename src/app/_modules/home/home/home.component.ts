@@ -12,23 +12,6 @@ export class HomeComponent implements OnInit {
   public _appBrand            : string | undefined = '';
   pageTitle                   : string             = '[HOME]';
   static PageTitle            : string             = '[HOME]';
-  @ViewChild('nav') nav!      : NavComponent;
-  //
-  //
-  pages = [
-    {
-      'url': '/FeaturePages',
-      'text': '[ANGULAR - CARACTERISTICAS]',
-    },
-    {
-      'url': '/Curriculum',
-      'text': '[ANGULAR - CURRICULUM]',
-    },
-    {
-      'url': '/DevPages',
-      'text': '[ANGULAR - ENTORNOS]',
-    },
-  ]
   //
   constructor(private _configService: ConfigService)
   {
@@ -40,6 +23,5 @@ export class HomeComponent implements OnInit {
   //
   ngOnInit(): void {
     //
-    //this.nav._NavbarCollapsed = true;
   }
 }

@@ -34,16 +34,8 @@ export class NavComponent {
       'text': '[INICIO]',
     },
     {
-      'url': '/FeaturePages',
-      'text': '[ANGULAR - CARACTERISTICAS]',
-    },
-    {
-      'url': '/Curriculum',
-      'text': '[ANGULAR - CURRICULUM]',
-    },
-    {
-      'url': '/DevPages',
-      'text': '[ANGULAR - ENTORNOS]',
+      'url': '/AngularDemo',
+      'text': '[ANGULAR DEMO]',
     },
   ]
   //-----------------------------------------------------------------------------------------------------

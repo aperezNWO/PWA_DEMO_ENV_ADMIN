@@ -12,9 +12,10 @@ import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstr
 import { NavComponent                           } from './_modules/home/nav/nav.component';
 import { PageNotFoundComponent                  } from './_modules/home/page-not-found/page-not-found.component';
 import { HomeComponent                          } from './_modules/home/home/home.component';
-import { CurriculumComponent                    } from './_modules/curriculum/curriculum.component';
-import { DevPagesListsComponent                 } from './_modules/devPages/devPagesList.component';
-import { FeaturePagesComponent                  } from './_modules/feature-pages/feature-pages.component';
+import { CurriculumComponent                    } from './_modules/angular/curriculum/curriculum.component';
+import { DevPagesListsComponent                 } from './_modules/angular/devPages/devPagesList.component';
+import { FeaturePagesComponent                  } from './_modules/angular/feature-pages/feature-pages.component';
+import { AngularComponent                       } from './_modules/angular/angular-web/angular.component';
 import { devPagesListService                    } from './_services/devPagesList.service';
 import { ConfigService                          } from './_services/config.service';
 import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
@@ -40,7 +41,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     HomeComponent,
     CurriculumComponent,
     DevPagesListsComponent,
-    FeaturePagesComponent
+    FeaturePagesComponent,
+    AngularComponent
   ],
   imports: [
     BrowserModule,
