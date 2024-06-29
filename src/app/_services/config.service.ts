@@ -26,7 +26,7 @@ export class ConfigService {
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadFeaturesData() {
-    return this.http.get('./assets/featuresPagesLists.json').toPromise()
+    return this.http.get('./assets/angular_featuresPagesLists.json').toPromise()
       .then((data: any) => {
           //
           console.log("loading features data ..." + data);
@@ -39,7 +39,7 @@ export class ConfigService {
    }
    // ONLY HAPPENS ONCE ON APPMODULE LOADING
    loadDevPages() {
-    return this.http.get('./assets/devPagesList.json').toPromise()
+    return this.http.get('./assets/angular_devPagesList.json').toPromise()
       .then((data: any) => {
           //
           console.log("loading mainPagesList data ..." + data);
@@ -52,7 +52,7 @@ export class ConfigService {
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadCurriculumData() {
-  return this.http.get('./assets/curriculum.json').toPromise()
+  return this.http.get('./assets/angular_curriculum.json').toPromise()
     .then((data: any) => {
         //
         console.log("loading curriculum data ..." + data);
