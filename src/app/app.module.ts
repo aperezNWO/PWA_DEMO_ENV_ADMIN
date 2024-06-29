@@ -18,6 +18,9 @@ import { FeaturePagesComponent                  } from './_modules/angular/featu
 import { AngularComponent                       } from './_modules/angular/angular-web/angular.component';
 import { devPagesListService                    } from './_services/devPagesList.service';
 import { ConfigService                          } from './_services/config.service';
+import { PhpWebComponent                        } from './_modules/Php/php-web/php-web.component';
+import { NodeJsWebComponent                     } from './_modules/Nodejs/node-js-web/node-js-web.component';
+import { NetcoreWebComponent                    } from './_modules/NetCore/netcore-web/netcore-web.component';
 import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
 import { CurriculumSortableHeader               } from './_directives/curriculumSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/featurePageListSortable.directive';
@@ -42,7 +45,10 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     CurriculumComponent,
     DevPagesListsComponent,
     FeaturePagesComponent,
-    AngularComponent
+    AngularComponent,
+    NetcoreWebComponent,
+    PhpWebComponent,
+    NodeJsWebComponent,
   ],
   imports: [
     BrowserModule,

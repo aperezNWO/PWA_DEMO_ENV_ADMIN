@@ -34,8 +34,20 @@ export class NavComponent {
       'text': '[INICIO]',
     },
     {
-      'url': '/AngularDemo',
+      'url': '/AngularWeb',
       'text': '[ANGULAR DEMO]',
+    },
+    {
+      'url': '/NodeJsWeb',
+      'text': '[NODE.JS DEMO]',
+    },
+    {
+      'url': '/NetCoreWeb',
+      'text': '[.NET CORE DEMO]',
+    },
+    {
+      'url': '/PhpWeb',
+      'text': '[PHP DEMO]',
     },
   ]
   //-----------------------------------------------------------------------------------------------------
