@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:PWA_DEMO_ENV_LANDING": "node dist/pwa-demo-env-landing/server/server.mjs",
-    "deploy": "ng build --c=production --base-href=\"https://aperezNWO.github.io/PWA_DEMO_ENV_LANDING/\"",
+    "package": "ng build --c=production --base-href=\"https://aperezNWO.github.io/PWA_DEMO_ENV_LANDING/\"",
     "publish": "npx ngh --dir=dist\\pwa-demo-env-landing\\browser\\",
     "deploy-and-publish": "ng build --c=production --base-href=\"https://aperezNWO.github.io/PWA_DEMO_ENV_LANDING/\" && npx ngh --dir=dist\\pwa-demo-env-landing\\browser\\ "
   },
