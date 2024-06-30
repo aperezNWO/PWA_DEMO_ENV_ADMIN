@@ -81,7 +81,7 @@ export class FeaturesPagesListService {
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
         //
-		console.log("external json data : " +  _environment.mainPagesList); 
+		console.log("external json data : " +  _environment.devPagesList); 
 
         // 1. sort
 		let _FEATURE_PAGES  : FeaturePage[] = [];

@@ -81,12 +81,12 @@ export class devPagesListService {
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
-		console.log("external json data : " +  _environment.mainPagesList); 
+		console.log("external json data : " +  _environment.devPagesList); 
 
 		// 1. sort
 		let _DEV_PAGES  : DevPage[] = [];
 		
-		_environment.mainPagesList.forEach((element: any) => {
+		_environment.devPagesList.forEach((element: any) => {
 			_DEV_PAGES.push(element);
 			console.log(element)
 		});

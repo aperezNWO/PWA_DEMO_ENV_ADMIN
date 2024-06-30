@@ -80,7 +80,7 @@ export class MarketingService {
          // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
          //
-		console.log("external json data : " +  _environment.mainPagesList); 
+		console.log("external json data : " +  _environment.marketingList); 
         // 1. sort
 		let _MARKETING_PAGES  : marketing[] = [];
 		//

@@ -44,7 +44,7 @@ export class ConfigService {
           //
           console.log("loading mainPagesList data ..." + data);
           //
-          _environment.mainPagesList = data; // Assign loaded data to environment variable
+          _environment.devPagesList = data; // Assign loaded data to environment variable
       })
       .catch(error => {
         console.error('Error loading configuration:', error);
@@ -70,7 +70,7 @@ export class ConfigService {
           //
           console.log("loading marketing data ..." + data);
           //
-          _environment.mainPagesList = data; // Assign loaded data to environment variable
+          _environment.marketingList = data; // Assign loaded data to environment variable
       })
       .catch(error => {
         console.error('Error loading marketing data:', error);
