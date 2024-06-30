@@ -208,4 +208,6 @@
 
 -- [_] Angular Directives. 
 
+-- [_] Marketing strategy table. 
+
 /***********************************************/
