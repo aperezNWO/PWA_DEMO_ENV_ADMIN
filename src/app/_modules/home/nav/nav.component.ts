@@ -34,6 +34,10 @@ export class NavComponent {
       'text': '[INICIO]',
     },
     {
+      'url': '/Marketing',
+      'text': '[MARKETING]',
+    },
+    {
       'url': '/AngularWeb',
       'text': '[ANGULAR DEMO]',
     },
@@ -48,6 +52,10 @@ export class NavComponent {
     {
       'url': '/PhpWeb',
       'text': '[PHP DEMO]',
+    },
+    {
+      'url': '/CppWeb',
+      'text': '[CPP DEMO]',
     },
   ]
   //-----------------------------------------------------------------------------------------------------

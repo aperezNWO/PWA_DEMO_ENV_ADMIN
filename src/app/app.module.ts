@@ -21,10 +21,12 @@ import { ConfigService                          } from './_services/config.servi
 import { PhpWebComponent                        } from './_modules/Php/php-web/php-web.component';
 import { NodeJsWebComponent                     } from './_modules/Nodejs/node-js-web/node-js-web.component';
 import { NetcoreWebComponent                    } from './_modules/NetCore/netcore-web/netcore-web.component';
+import { MarketingComponent                     } from './_modules/home/marketing/marketing.component';
 import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
 import { CurriculumSortableHeader               } from './_directives/curriculumSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/featurePageListSortable.directive';
-import { NodeJsDirective } from './_directives/node-js.directive';
+import { NodeJsDirective                        } from './_directives/node-js.directive';
+import { MarketingSortableHeader                } from './_directives/marketing.directive';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -33,6 +35,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   _configService.loadDevPages();
   //
   _configService.loadCurriculumData();
+  //
+  _configService.loadMarketing();
   // 
   return () =>  _configService.loadConfig();
 }
@@ -51,6 +55,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     PhpWebComponent,
     NodeJsWebComponent,
     NodeJsDirective,
+    MarketingComponent,
+    MarketingSortableHeader,
   ],
   imports: [
     BrowserModule,

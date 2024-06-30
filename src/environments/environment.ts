@@ -4,4 +4,5 @@ export const _environment = {
     mainPagesList          : [{}],   // Json pages
     featuresPagesList      : [{}],   // Json pages
     curriculumList         : [{}],   // Json pages
+    marketingList          : [{}],   // Json pages
 };

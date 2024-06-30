@@ -63,6 +63,19 @@ export class ConfigService {
       console.error('Error loading curriculum:', error);
     });
   }
+  // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadMarketing() {
+    return this.http.get('./assets/marketing.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading marketing data ..." + data);
+          //
+          _environment.mainPagesList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading marketing data:', error);
+      });
+  }
   //
   getConfigValue(key: string) {
     //
