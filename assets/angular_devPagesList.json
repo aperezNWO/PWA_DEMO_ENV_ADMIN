@@ -126,21 +126,7 @@
 		"urlCurriculum"    : ""		
 	},
 	{
-		"id"               : 10,
-		"done"             : false,
-		"name"             : "[TAILDWIND DEMO - ENV DEV]",
-		"description"      : "[TAILDWIND DEMO - ENV DEV]",
-		"framework"        : "Angular",
-		"frameworkUrl"     : "https://v17.angular.io/docs",
-		"frameworkVersion" : "17.0.0",
-		"uixFramework"     : "Tailwind",  
-		"uixFrameworkUrl"  : "https://tailwindcss.com/",   
-		"urlPage"          : "",
-		"urlRepo"          : "",
-		"urlCurriculum"    : ""		
-	},
-	{
-		"id"               : 11,
+		"id"               : 9,
 		"done"             : false,
 		"name"             : "[TAILDWIND DEMO - ENV TEST]",
 		"description"      : "[TAILDWIND DEMO - ENV TEST]",
