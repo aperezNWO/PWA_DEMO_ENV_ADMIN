@@ -53,5 +53,16 @@
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chat",
         "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PROD/blob/master/src/app/_modules/miscelaneous/chat/chat/chat.component.ts",
         "urlCurriculum"    : "https://v17.angular.io/guide/pipes-overview"   
-    }  
+    },
+    {
+		"id"               : 6,
+        "done"             : true,
+        "name"             : "Directives",
+        "description"      : "Directives",
+        "framework"        : "Angular",
+        "keywords"         : "Directives",
+        "urlDemo"          : "https://apereznwo.github.io/NG_BOOTSTRAP_DEMO_ENV_TEST/TableSampleComponent",
+        "urlRepo"          : "https://github.com/aperezNWO/NG_BOOTSTRAP_DEMO_ENV_TEST/blob/main/src/app/_services/sortable.directive.ts",
+        "urlCurriculum"    : "https://v17.angular.io/guide/directive-composition-api"   
+    }    
 ]    

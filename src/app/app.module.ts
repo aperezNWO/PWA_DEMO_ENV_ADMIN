@@ -24,6 +24,7 @@ import { NetcoreWebComponent                    } from './_modules/NetCore/netco
 import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
 import { CurriculumSortableHeader               } from './_directives/curriculumSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/featurePageListSortable.directive';
+import { NodeJsDirective } from './_directives/node-js.directive';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -49,6 +50,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NetcoreWebComponent,
     PhpWebComponent,
     NodeJsWebComponent,
+    NodeJsDirective,
   ],
   imports: [
     BrowserModule,
