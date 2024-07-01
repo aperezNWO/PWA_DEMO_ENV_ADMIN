@@ -9,24 +9,26 @@ import { HttpClientModule                       } from '@angular/common/http';
 import { BrowserModule, provideClientHydration  } from '@angular/platform-browser';
 import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
-import { NavComponent                           } from './_modules/home/nav/nav.component';
-import { PageNotFoundComponent                  } from './_modules/home/page-not-found/page-not-found.component';
-import { HomeComponent                          } from './_modules/home/home/home.component';
-import { CurriculumComponent                    } from './_modules/angular/curriculum/curriculum.component';
-import { DevPagesListsComponent                 } from './_modules/angular/devPages/devPagesList.component';
-import { FeaturePagesComponent                  } from './_modules/angular/feature-pages/feature-pages.component';
-import { AngularComponent                       } from './_modules/angular/angular-web/angular.component';
-import { devPagesListService                    } from './_services/devPagesList.service';
-import { ConfigService                          } from './_services/config.service';
-import { PhpWebComponent                        } from './_modules/Php/php-web/php-web.component';
-import { NodeJsWebComponent                     } from './_modules/Nodejs/node-js-web/node-js-web.component';
-import { NetcoreWebComponent                    } from './_modules/NetCore/netcore-web/netcore-web.component';
-import { MarketingComponent                     } from './_modules/home/marketing/marketing.component';
+import { DemosComponent                         } from './_modules/_home/demos/demos.component';
+import { MarketingComponent                     } from './_modules/_home/marketing/marketing.component';
+import { HomeComponent                          } from './_modules/_home/home/home.component';
+import { NavComponent                           } from './_modules/_home/nav/nav.component';
+import { PageNotFoundComponent                  } from './_modules/_home/page-not-found/page-not-found.component';
 import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
 import { CurriculumSortableHeader               } from './_directives/curriculumSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/featurePageListSortable.directive';
 import { NodeJsDirective                        } from './_directives/node-js.directive';
 import { MarketingSortableHeader                } from './_directives/marketing.directive';
+import { devPagesListService                    } from './_services/devPagesList.service';
+import { ConfigService                          } from './_services/config.service';
+import { CppWebComponent                        } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
+import { NetcoreWebComponent                    } from './_modules/_demos/NetCore/netcore-web/netcore-web.component';
+import { NodeJsWebComponent                     } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
+import { PhpWebComponent                        } from './_modules/_demos/Php/php-web/php-web.component';
+import { AngularComponent                       } from './_modules/_demos/angular/angular-web/angular.component';
+import { CurriculumComponent                    } from './_modules/_demos/angular/curriculum/curriculum.component';
+import { DevPagesListsComponent                 } from './_modules/_demos/angular/devPages/devPagesList.component';
+import { FeaturePagesComponent                  } from './_modules/_demos/angular/feature-pages/feature-pages.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -57,6 +59,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NodeJsDirective,
     MarketingComponent,
     MarketingSortableHeader,
+    DemosComponent,
+    CppWebComponent,
   ],
   imports: [
     BrowserModule,
