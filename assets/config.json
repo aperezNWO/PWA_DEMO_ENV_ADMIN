@@ -1,6 +1,7 @@
 {
-    "appBrand"           : "[DEV_DEMO]",
+    "appBrand"           : "[SE_DEMO]",
+    "appBrand_Long"      : "[SOFTWARE ENGINEERING DEMO]",
     "appEnv"             : "[ENV_LANDING]",
-    "appVersion"         : "v[1.1.6]"
+    "appVersion"         : "v[1.2.0]"
 }
   
