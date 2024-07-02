@@ -227,6 +227,6 @@
 
 -- [_] Change DEV_DEMO por SE_DEMO.
 
--- [_] Database.
+-- [_] Enum Angular.
 
 /***********************************************/
