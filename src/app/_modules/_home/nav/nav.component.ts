@@ -34,13 +34,17 @@ export class NavComponent {
       'text': '[INICIO]',
     },
     {
-      'url': '/Marketing',
-      'text': '[MARKETING]',
-    },
-    {
       'url': '/DemosWeb',
       'text': '[DEMOS]',
-    } 
+    },
+    {
+      'url': '/EduWeb',
+      'text': '[REFERENCES]',
+    }, 
+    {
+      'url': '/Marketing',
+      'text': '[MARKETING]',
+    }
   ]
   //-----------------------------------------------------------------------------------------------------
   constructor(

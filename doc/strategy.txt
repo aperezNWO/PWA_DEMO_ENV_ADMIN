@@ -214,4 +214,19 @@
 
 -- [_] Small Icon on NAV MENU. 
 
+-- [_] Edu link group.
+
+      -- [_] Database.
+
+      -- [_] Programming References.
+
+      -- [_] Patterns.
+      
+      -- [_] SOLID.
+      
+
+-- [_] Change DEV_DEMO por SE_DEMO.
+
+-- [_] Database.
+
 /***********************************************/

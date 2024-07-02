@@ -1,8 +1,8 @@
 import { Component, QueryList, ViewChildren                       } from '@angular/core';
 import { Observable                                               } from 'rxjs';
-import { CurriculumSortableHeader, _CurriculumSortEvent           } from '../../../../_directives/curriculumSortable.directive';
-import { curriculum                                               } from '../../../../_models/curriculum';
-import { CurriculumService                                        } from '../../../../_services/curriculum.service';
+import { CurriculumSortableHeader, _CurriculumSortEvent           } from '../../../_directives/curriculumSortable.directive';
+import { curriculum                                               } from '../../../_models/curriculum';
+import { CurriculumService                                        } from '../../../_services/curriculum.service';
 //
 @Component({
   selector: 'app-curriculum',

@@ -10,6 +10,7 @@ import { ConfigService                           } from '../../../_services/conf
 export class HomeComponent implements OnInit {
   //
   public _appBrand            : string | undefined = '';
+  public _appBrand_Long       : string | undefined = '';
   pageTitle                   : string             = '[HOME]';
   static PageTitle            : string             = '[HOME]';
   //
@@ -18,7 +19,9 @@ export class HomeComponent implements OnInit {
       //
       console.log(this.pageTitle + " - [INGRESO]") ;
       //
-      this._appBrand  = this._configService.getConfigValue('appBrand');
+      this._appBrand       = this._configService.getConfigValue('appBrand');
+      //
+      this._appBrand_Long  = this._configService.getConfigValue('appBrand_Long');
   }
   //
   ngOnInit(): void {

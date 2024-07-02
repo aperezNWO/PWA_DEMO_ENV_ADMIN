@@ -13,10 +13,6 @@ export class AngularComponent {
       'text': '[ANGULAR - CARACTERISTICAS]',
     },
     {
-      'url': '/Curriculum',
-      'text': '[ANGULAR - CURRICULUM]',
-    },
-    {
       'url': '/DevPages',
       'text': '[ANGULAR - ENTORNOS]',
     },
