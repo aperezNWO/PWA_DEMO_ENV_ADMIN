@@ -1,8 +1,8 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
-import { FeaturePage                            } from '../_models/FeaturePage';
+import { AngularFeatures                        } from '../../../_models/AngularDemo/AngularFeatures';
 //
-export type _FeaturePageSortColumn    = keyof FeaturePage  | '';
-export type _FeaturePageSortDirection = 'asc' | 'desc'     | '';
+export type _FeaturePageSortColumn    = keyof AngularFeatures  | '';
+export type _FeaturePageSortDirection = 'asc' | 'desc'         | '';
 //
 const featurepagerotate: { [key: string]: _FeaturePageSortDirection } = { asc: 'desc', desc: '', '': 'asc' };
 //

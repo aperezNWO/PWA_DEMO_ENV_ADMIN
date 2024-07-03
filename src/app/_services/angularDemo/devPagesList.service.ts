@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { Injectable, PipeTransform                              } from '@angular/core';
 import { DecimalPipe                                            } from '@angular/common';
-import { DevPage, _DevPagesSearchResult                         } from '../_models/DevPage';
+import { AngularConfig, _AngularConfigSearchResult              } from '../../_models/AngularDemo/AngularConfig';
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
-import { _DevPageSortColumn, _DevPageSortDirection              } from '../_directives/devPagesListSortable.directive';
-import { _environment                                           } from '../../environments/environment';
+import { _environment                                           } from '../../../environments/environment';
+import { _DevPageSortColumn, _DevPageSortDirection              } from '../../_directives/Demos/angularDemo/devPagesListSortable.directive';
 //
 interface _DevPageSearchState {
 	page           : number;
@@ -17,7 +17,7 @@ interface _DevPageSearchState {
 //
 const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
-function sort(devpageslist: DevPage[], column: _DevPageSortColumn, direction: string): DevPage[] {
+function sort(devpageslist: AngularConfig[], column: _DevPageSortColumn, direction: string): AngularConfig[] {
 	if (direction === '' || column === '') {
 		return devpageslist;
 	} else {
@@ -28,7 +28,7 @@ function sort(devpageslist: DevPage[], column: _DevPageSortColumn, direction: st
 	}
 }
 //
-function matches(devPage: DevPage, term: string, pipe: PipeTransform) {
+function matches(devPage: AngularConfig, term: string, pipe: PipeTransform) {
 	return (
 		devPage.name.toLowerCase().includes(term?.toLowerCase())         ||
 		devPage.framework.toLowerCase().includes(term?.toLowerCase())    ||
@@ -44,7 +44,7 @@ export class devPagesListService {
     // 
 	private _loading$     = new BehaviorSubject<boolean>(true);
 	private _search$      = new Subject<void>();
-	private _devpageList$ = new BehaviorSubject<DevPage[]>([]);
+	private _devpageList$ = new BehaviorSubject<AngularConfig[]>([]);
 	private _total$       = new BehaviorSubject<number>(0);
     //
 	private _state: _DevPageSearchState = {
@@ -72,21 +72,21 @@ export class devPagesListService {
 		this._search$.next();
 	}
     //
-	private _search(): Observable<_DevPagesSearchResult> {
+	private _search(): Observable<_AngularConfigSearchResult> {
 		//
 		let _devpageList                          : any;
 		let _total                                : any;
-		let _searchResult                         : _DevPagesSearchResult  = {devPages: _devpageList, total : _total};
+		let _searchResult                         : _AngularConfigSearchResult  = {devPages: _devpageList, total : _total};
 		
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
-		console.log("external json data : " +  _environment.devPagesList); 
+		console.log("external json data : " +  _environment.AngularConfigList); 
 
 		// 1. sort
-		let _DEV_PAGES  : DevPage[] = [];
+		let _DEV_PAGES  : AngularConfig[] = [];
 		
-		_environment.devPagesList.forEach((element: any) => {
+		_environment.AngularConfigList.forEach((element: any) => {
 			_DEV_PAGES.push(element);
 			console.log(element)
 		});
@@ -94,7 +94,7 @@ export class devPagesListService {
 		_devpageList   = sort(_DEV_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
-		_devpageList   = _devpageList.filter((country: DevPage) => matches(country, searchTerm, this.pipe));
+		_devpageList   = _devpageList.filter((country: AngularConfig) => matches(country, searchTerm, this.pipe));
 		_total         = _devpageList.length;
 
 		// 3. paginate

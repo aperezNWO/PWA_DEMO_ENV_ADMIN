@@ -1,8 +1,8 @@
 import { Component, QueryList, ViewChildren                        } from '@angular/core';
 import { Observable                                                } from 'rxjs';
-import { MarketingSortableHeader, _MarketingSortEvent              } from '../../_directives/marketing.directive';
-import { marketing                                                 } from '../../_models/marketing';
-import { MarketingService                                          } from '../../_services/marketing.service';
+import { marketing                                                 } from '../../_models/Marketing/marketing';
+import { MarketingService                                          } from '../../_services/marketing/marketing.service';
+import { MarketingSortableHeader, _MarketingSortEvent              } from '../../_directives/marketing/marketing.directive';
 
 //
 @Component({

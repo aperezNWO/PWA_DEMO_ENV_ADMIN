@@ -1,8 +1,8 @@
 import { Component, QueryList, ViewChildren        } from '@angular/core';
 import { Observable                                } from 'rxjs';
-import { DevPageSortableHeader, _DevPageSortEvent  } from '../../../_directives/devPagesListSortable.directive';
-import { DevPage                                   } from '../../../_models/DevPage';
-import { devPagesListService                       } from '../../../_services/devPagesList.service';
+import { AngularConfig                             } from '../../../_models/AngularDemo/AngularConfig';
+import { devPagesListService                       } from '../../../_services/angularDemo/devPagesList.service';
+import { DevPageSortableHeader, _DevPageSortEvent  } from '../../../_directives/Demos/angularDemo/devPagesListSortable.directive';
 
 //
 @Component({
@@ -13,7 +13,7 @@ import { devPagesListService                       } from '../../../_services/de
 //
 export class DevPagesListsComponent {
     //
-	public mainPagesList!: Observable<DevPage[]>;
+	public mainPagesList!: Observable<AngularConfig[]>;
 	public total!        : Observable<number>;
     // 
 	@ViewChildren(DevPageSortableHeader) headers: QueryList<DevPageSortableHeader> | undefined;

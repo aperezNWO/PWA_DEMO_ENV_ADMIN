@@ -1,4 +1,4 @@
-export interface curriculum
+export interface AngularCurriculum
 {
     id               : number;
     done             : boolean;
@@ -11,7 +11,7 @@ export interface curriculum
     urlCurriculum    : string;
 }
 //
-export interface _CurriculumSearchResult {
-	_curriculum : curriculum[];
+export interface _AngularCurriculumSearchResult {
+	_curriculum : AngularCurriculum[];
 	_total      : number;
 }

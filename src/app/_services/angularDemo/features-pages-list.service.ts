@@ -2,9 +2,9 @@ import { Injectable, PipeTransform                              } from '@angular
 import { DecimalPipe                                            } from '@angular/common';
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
-import { _FeaturePageSortColumn, _FeaturePageSortDirection      } from '../_directives/featurePageListSortable.directive';
-import { FeaturePage, _FeaturePagesSearchResult                 } from '../_models/FeaturePage';
-import { _environment                                           } from '../../environments/environment';
+import { AngularFeatures, _AngularFeaturesSearchResult          } from '../../_models/AngularDemo/AngularFeatures';
+import { _environment                                           } from '../../../environments/environment';
+import { _FeaturePageSortColumn, _FeaturePageSortDirection      } from '../../_directives/Demos/angularDemo/featurePageListSortable.directive';
 //
 interface _FeaturePageSearchState {
 	page           : number;
@@ -16,7 +16,7 @@ interface _FeaturePageSearchState {
 //
 const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
-function sort(featurePagelist: FeaturePage[], column: _FeaturePageSortColumn, direction: string): FeaturePage[] {
+function sort(featurePagelist: AngularFeatures[], column: _FeaturePageSortColumn, direction: string): AngularFeatures[] {
 	if (direction === '' || column === '') {
 		return featurePagelist;
 	} else {
@@ -27,7 +27,7 @@ function sort(featurePagelist: FeaturePage[], column: _FeaturePageSortColumn, di
 	}
 }
 //
-function matches(featurePage: FeaturePage, term: string, pipe: PipeTransform) {
+function matches(featurePage: AngularFeatures, term: string, pipe: PipeTransform) {
 	return (
 		featurePage.urlCurriculum.toLowerCase().includes(term?.toLowerCase()) ||
 		featurePage.description.toLowerCase().includes(term?.toLowerCase())   ||
@@ -44,7 +44,7 @@ export class FeaturesPagesListService {
     //
 	private _loading$          = new BehaviorSubject<boolean>(true);
 	private _search$           = new Subject<void>();
-	private _featurepageList$  = new BehaviorSubject<FeaturePage[]>([]);
+	private _featurepageList$  = new BehaviorSubject<AngularFeatures[]>([]);
 	private _total$            = new BehaviorSubject<number>(0);
     //
 	private _state: _FeaturePageSearchState = {
@@ -72,21 +72,21 @@ export class FeaturesPagesListService {
 		this._search$.next();
 	}
     //
-	private _search(): Observable<_FeaturePagesSearchResult> {
+	private _search(): Observable<_AngularFeaturesSearchResult> {
 		//
 		let _devpageList                          : any;
 		let _total                                : any;
-		let _searchResult                         : _FeaturePagesSearchResult  = {featurePages: _devpageList, total : _total};
+		let _searchResult                         : _AngularFeaturesSearchResult  = {featurePages: _devpageList, total : _total};
 
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
         //
-		console.log("external json data : " +  _environment.devPagesList); 
+		console.log("external json data : " +  _environment.AngularConfigList); 
 
         // 1. sort
-		let _FEATURE_PAGES  : FeaturePage[] = [];
+		let _FEATURE_PAGES  : AngularFeatures[] = [];
 		//
-		_environment.featuresPagesList.forEach((element: any) => {
+		_environment.AngularDemosList.forEach((element: any) => {
 			_FEATURE_PAGES.push(element);
 			console.log(element)
 		});
@@ -94,7 +94,7 @@ export class FeaturesPagesListService {
 		_devpageList   = sort(_FEATURE_PAGES, sortColumn, sortDirection);
 
         // 2. filter
-		_devpageList   = _devpageList.filter((featurePage: FeaturePage) => matches(featurePage, searchTerm, this.pipe));
+		_devpageList   = _devpageList.filter((featurePage: AngularFeatures) => matches(featurePage, searchTerm, this.pipe));
 		_total         = _devpageList.length;
 
 		// 3. paginate

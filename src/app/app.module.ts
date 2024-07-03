@@ -11,37 +11,41 @@ import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstr
 import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent                           } from './_modules/_home/nav/nav.component';
 import { PageNotFoundComponent                  } from './_modules/_home/page-not-found/page-not-found.component';
-import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
-import { CurriculumSortableHeader               } from './_directives/curriculumSortable.directive';
-import { FeaturePageSortableHeader              } from './_directives/featurePageListSortable.directive';
-import { NodeJsDirective                        } from './_directives/node-js.directive';
-import { MarketingSortableHeader                } from './_directives/marketing.directive';
-import { devPagesListService                    } from './_services/devPagesList.service';
+import { devPagesListService                    } from './_services/angularDemo/devPagesList.service';
 import { ConfigService                          } from './_services/config.service';
+import { CppDemoComponent                       } from './_modules/_demos/CppDemo/cpp-demo/cpp-demo.component';
 import { CppWebComponent                        } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
 import { NetcoreWebComponent                    } from './_modules/_demos/NetCore/netcore-web/netcore-web.component';
 import { NodeJsWebComponent                     } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
 import { PhpWebComponent                        } from './_modules/_demos/Php/php-web/php-web.component';
-import { AngularComponent                       } from './_modules/_demos/angular/angular-web/angular.component';
-import { FeaturePagesComponent                  } from './_modules/_demos/angular/feature-pages/feature-pages.component';
+import { FeaturePagesComponent                  } from './_modules/_demos/angularDemo/feature-pages/feature-pages.component';
+import { AngularComponent                       } from './_modules/_demos/angularDemo/angular-web/angular.component';
+import { DemosComponent                         } from './_modules/_demos/_demosweb/demos.component';
 import { DevPagesListsComponent                 } from './_modules/_config/AngularConfig/devPagesList.component';
 import { ConfigWebComponent                     } from './_modules/_config/_config-web/config-web.component';
 import { CurriculumComponent                    } from './_modules/_education/AngularDemo/curriculum.component';
 import { EduWebComponent                        } from './_modules/_education/_edu-web/edu-web.component';
-import { DemosComponent                         } from './_modules/_demos/_demosweb/demos.component';
 import { HomeComponent                          } from './_modules/_home/_homeWeb/home.component';
 import { MarketingComponent                     } from './_modules/_marketing/marketing.component';
-import { AboutWebComponent } from './_modules/_about/about-web/about-web.component';
+import { AboutWebComponent                      } from './_modules/_about/about-web/about-web.component';
+import { DevPageSortableHeader                  } from './_directives/Demos/angularDemo/devPagesListSortable.directive';
+import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
+import { MarketingSortableHeader                } from './_directives/marketing/marketing.directive';
+import { CurriculumSortableHeader               } from './_directives/Demos/angularDemo/curriculumSortable.directive';
+import { NodeJsDirective                        } from './_directives/Demos/nodeJsDemo/node-js.directive';
+import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
-  _configService.loadFeaturesData();
+  _configService.loadAngularDemoData();
   //
-  _configService.loadDevPages();
+  _configService.loadAngularCurriculumData();
   //
-  _configService.loadCurriculumData();
+  _configService.loadAngularConfigData();
   //
-  _configService.loadMarketing();
+  _configService.loadCppDemoData();
+  //
+  _configService.loadMarketingData();
   // 
   return () =>  _configService.loadConfig();
 }
@@ -67,6 +71,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     EduWebComponent,
     ConfigWebComponent,
     AboutWebComponent,
+    CppDemoComponent,
+    CppFeatureListSortableHeader,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-export interface DevPage {
+export interface AngularConfig {
 	id               : number;
 	done             : boolean;
 	name             : string;
@@ -13,7 +13,7 @@ export interface DevPage {
 
 }
 
-export interface _DevPagesSearchResult {
-	devPages : DevPage[];
+export interface _AngularConfigSearchResult {
+	devPages : AngularConfig[];
 	total    : number;
 }

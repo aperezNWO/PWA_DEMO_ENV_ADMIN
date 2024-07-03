@@ -2,9 +2,9 @@ import { Injectable, PipeTransform                              } from '@angular
 import { DecimalPipe                                            } from '@angular/common';
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
-import { _environment                                           } from '../../environments/environment';
-import { _MarketingSortColumn, _MarketingSortDirection          } from '../_directives/marketing.directive';
-import { marketing, _MarketingSearchResult                      } from '../_models/marketing';
+import { _environment                                           } from '../../../environments/environment';
+import { marketing, _MarketingSearchResult                      } from '../../_models/Marketing/marketing';
+import { _MarketingSortColumn, _MarketingSortDirection          } from '../../_directives/marketing/marketing.directive';
 //
 interface _MarketingSearchState {
 	page           : number;

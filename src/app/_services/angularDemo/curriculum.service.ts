@@ -1,8 +1,8 @@
 import { Injectable, PipeTransform                                        } from '@angular/core';
 import { DecimalPipe                                                      } from '@angular/common';
-import { _CurriculumSortColumn, _CurriculumSortDirection                  } from '../_directives/curriculumSortable.directive';
-import { _CurriculumSearchResult, curriculum                              } from '../_models/curriculum';
-import { _environment                                                     } from '../../environments/environment';
+import { _CurriculumSortColumn, _CurriculumSortDirection                  } from '../../_directives/Demos/angularDemo/curriculumSortable.directive';
+import { _AngularCurriculumSearchResult, AngularCurriculum                              } from '../../_models/AngularDemo/AngularCurriculum';
+import { _environment                                                     } from '../../../environments/environment';
 import { BehaviorSubject, Observable, Subject, debounceTime, delay        } from 'rxjs';
 import { of, switchMap, tap                                               } from 'rxjs';
 
@@ -17,7 +17,7 @@ interface _CurriculumSearchState {
 //
 const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
-function sort(curriculumList: curriculum[], column: _CurriculumSortColumn, direction: string): curriculum[] {
+function sort(curriculumList: AngularCurriculum[], column: _CurriculumSortColumn, direction: string): AngularCurriculum[] {
 	if (direction === '' || column === '') {
 		return curriculumList;
 	} else {
@@ -28,7 +28,7 @@ function sort(curriculumList: curriculum[], column: _CurriculumSortColumn, direc
 	}
 }
 //
-function matches(_curriculum: curriculum, term: string, pipe: PipeTransform) {
+function matches(_curriculum: AngularCurriculum, term: string, pipe: PipeTransform) {
 	return (
 		_curriculum.name.toLowerCase().includes(term?.toLowerCase())          ||
 		_curriculum.description.toLowerCase().includes(term?.toLowerCase())   ||
@@ -43,7 +43,7 @@ export class CurriculumService {
   //
 	private _loading$          = new BehaviorSubject<boolean>(true);
 	private _search$           = new Subject<void>();
-	private _curriculumList$   = new BehaviorSubject<curriculum[]>([]);
+	private _curriculumList$   = new BehaviorSubject<AngularCurriculum[]>([]);
 	private _total$            = new BehaviorSubject<number>(0);
   //
   private _state: _CurriculumSearchState = {
@@ -71,21 +71,21 @@ export class CurriculumService {
     this._search$.next();
   }
   //
-	private _search(): Observable<_CurriculumSearchResult> {
+	private _search(): Observable<_AngularCurriculumSearchResult> {
 		//
 		let _curriculumList                       : any;
 		let _total                                : any;
-		let _searchResult                         : _CurriculumSearchResult  = {_curriculum  : _curriculumList
+		let _searchResult                         : _AngularCurriculumSearchResult  = {_curriculum  : _curriculumList
                                                                               , _total       : _total};
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
         //
-		console.log("external json data : " +  _environment.curriculumList); 
+		console.log("external json data : " +  _environment.AngularCurriculumList); 
 
         // 1. sort
-		let _CURRICULUM_PAGES  :  curriculum[] = [];
+		let _CURRICULUM_PAGES  :  AngularCurriculum[] = [];
 		//
-		_environment.curriculumList.forEach((element: any) => {
+		_environment.AngularCurriculumList.forEach((element: any) => {
 			_CURRICULUM_PAGES.push(element);
 			console.log(element)
 		});
@@ -93,7 +93,7 @@ export class CurriculumService {
 		_curriculumList   = sort(_CURRICULUM_PAGES, sortColumn, sortDirection);
 
         // 2. filter
-		_curriculumList   = _curriculumList.filter((curriculumPage: curriculum) => matches(curriculumPage, searchTerm, this.pipe));
+		_curriculumList   = _curriculumList.filter((curriculumPage: AngularCurriculum) => matches(curriculumPage, searchTerm, this.pipe));
 		_total            = _curriculumList.length;
 
 		// 3. paginate

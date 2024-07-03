@@ -13,10 +13,10 @@ export class ConfigService {
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadConfig() {
-    return this.http.get('./assets/config.json').toPromise()
+    return this.http.get('./assets/_config.json').toPromise()
       .then((data: any) => {
           //
-          console.log("loading configuration..." + data);
+          console.log("loading configuration..." + JSON.stringify(data));
           //
           _environment.externalConfig = data; // Assign loaded data to environment variable
       })
@@ -24,51 +24,64 @@ export class ConfigService {
         console.error('Error loading configuration:', error);
       });
   }
-  // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadFeaturesData() {
-    return this.http.get('./assets/angular_featuresPagesLists.json').toPromise()
+   // ONLY HAPPENS ONCE ON APPMODULE LOADING
+   loadCppDemoData() {
+    return this.http.get('./assets/cppDemo/cpp_Demos.json').toPromise()
       .then((data: any) => {
           //
-          console.log("loading features data ..." + data);
+          console.log("loading cpp demo data ..." + JSON.stringify(data));
           //
-          _environment.featuresPagesList = data; // Assign loaded data to environment variable
+          _environment.cppDemoList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading cppDemo data :', error);
+      });
+   }
+   // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadAngularDemoData() {
+    return this.http.get('./assets/angularDemo/angular_Demos.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading angular demo data ..." + JSON.stringify(data));
+          //
+          _environment.AngularDemosList = data; // Assign loaded data to environment variable
       })
       .catch(error => {
         console.error('Error loading configuration:', error);
       });
    }
    // ONLY HAPPENS ONCE ON APPMODULE LOADING
-   loadDevPages() {
-    return this.http.get('./assets/angular_devPagesList.json').toPromise()
+   loadAngularConfigData() {
+    return this.http.get('./assets/angularDemo/angular_Config.json').toPromise()
       .then((data: any) => {
           //
-          console.log("loading mainPagesList data ..." + data);
+          console.log("loading angular config data ..." + JSON.stringify(data));
           //
-          _environment.devPagesList = data; // Assign loaded data to environment variable
+          _environment.AngularConfigList = data; // Assign loaded data to environment variable
       })
       .catch(error => {
-        console.error('Error loading configuration:', error);
+        console.error('Error loading angular configuration data :', error);
       });
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadCurriculumData() {
-  return this.http.get('./assets/angular_curriculum.json').toPromise()
+  loadAngularCurriculumData() {
+  return this.http.get('./assets/angularDemo/angular_Curriculum.json').toPromise()
     .then((data: any) => {
         //
-        console.log("loading curriculum data ..." + data);
+        console.log("loading angular curriculum data ..." + JSON.stringify(data));
         //
-        _environment.curriculumList = data; // Assign loaded data to environment variable
+        _environment.AngularCurriculumList = data; // Assign loaded data to environment variable
     })
     .catch(error => {
-      console.error('Error loading curriculum:', error);
+      console.error('Error loading angular curriculum data:', error);
     });
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadMarketing() {
-    return this.http.get('./assets/marketing.json').toPromise()
+  loadMarketingData() {
+    return this.http.get('./assets/marketing/marketing.json').toPromise()
       .then((data: any) => {
           //
-          console.log("loading marketing data ..." + data);
+          console.log("loading marketing data ..." + JSON.stringify(data));
           //
           _environment.marketingList = data; // Assign loaded data to environment variable
       })

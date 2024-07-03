@@ -13,6 +13,10 @@ export class DemosComponent {
       'text': '[ANGULAR DEMO]',
     },
     {
+      'url': '/CppWeb',
+      'text': '[CPP DEMO]',
+    }/*,
+    {
       'url': '/NodeJsWeb',
       'text': '[NODE.JS DEMO]',
     },
@@ -23,10 +27,6 @@ export class DemosComponent {
     {
       'url': '/PhpWeb',
       'text': '[PHP DEMO]',
-    },
-    {
-      'url': '/CppWeb',
-      'text': '[CPP DEMO]',
-    },
+    }*/
   ]
 }

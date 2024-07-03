@@ -10,7 +10,7 @@ export class AngularComponent {
   pages = [
     {
       'url': '/FeaturePages',
-      'text': '[ANGULAR - CARACTERISTICAS]',
+      'text': '[ANGULAR - DEMOS / CARACTERISTICAS]',
     },
   ]
   constructor(){

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './cpp-web.component.css'
 })
 export class CppWebComponent {
-
+  //
+  pages = [
+    {
+      'url': '/CppDemo',
+      'text': '[C++ - DEMOS / CARACTERISTICAS]',
+    },
+  ]
 }

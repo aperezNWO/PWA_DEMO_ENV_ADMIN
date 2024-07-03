@@ -1,8 +1,8 @@
 
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
-import { DevPage                                } from '../_models/DevPage';
+import { AngularConfig                          } from '../../../_models/AngularDemo/AngularConfig';
 //
-export type _DevPageSortColumn    = keyof DevPage  | '';
+export type _DevPageSortColumn    = keyof AngularConfig  | '';
 export type _DevPageSortDirection = 'asc' | 'desc' | '';
 //
 const devpagerotate: { [key: string]: _DevPageSortDirection } = { asc: 'desc', desc: '', '': 'asc' };

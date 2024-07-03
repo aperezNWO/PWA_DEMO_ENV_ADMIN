@@ -1,8 +1,8 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
-import { curriculum } from '../_models/curriculum';
+import { AngularCurriculum                      } from '../../../_models/AngularDemo/AngularCurriculum';
 
 //
-export type _CurriculumSortColumn    = keyof curriculum   | '';
+export type _CurriculumSortColumn    = keyof AngularCurriculum   | '';
 export type _CurriculumSortDirection = 'asc' | 'desc'     | '';
 //
 const curriculumrotate: { [key: string]: _CurriculumSortDirection } = { asc: 'desc', desc: '', '': 'asc' };

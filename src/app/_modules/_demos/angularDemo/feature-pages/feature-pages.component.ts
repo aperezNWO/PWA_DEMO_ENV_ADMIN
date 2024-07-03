@@ -1,8 +1,8 @@
 import { Component, QueryList, ViewChildren               } from '@angular/core';
 import { Observable                                       } from 'rxjs';
-import { FeaturePageSortableHeader, _FeaturePageSortEvent } from '../../../../_directives/featurePageListSortable.directive';
-import { FeaturePage                                      } from '../../../../_models/FeaturePage';
-import { FeaturesPagesListService                         } from '../../../../_services/features-pages-list.service';
+import { AngularFeatures                                  } from '../../../../_models/AngularDemo/AngularFeatures';
+import { FeaturesPagesListService                         } from '../../../../_services/angularDemo/features-pages-list.service';
+import { FeaturePageSortableHeader, _FeaturePageSortEvent } from '../../../../_directives/Demos/angularDemo/featurePageListSortable.directive';
 //
 @Component({
   selector: 'app-feature-pages',
@@ -11,7 +11,7 @@ import { FeaturesPagesListService                         } from '../../../../_s
 })
 export class FeaturePagesComponent {
   //
-  public featurePagesList!: Observable<FeaturePage[]>;
+  public featurePagesList!: Observable<AngularFeatures[]>;
   public total!           : Observable<number>;
   // 
   @ViewChildren(FeaturePageSortableHeader) headers: QueryList<FeaturePageSortableHeader> | undefined;

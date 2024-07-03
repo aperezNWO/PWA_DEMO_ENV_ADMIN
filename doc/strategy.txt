@@ -237,5 +237,8 @@
 
 -- [_] Modules from previous todo list.
 
+-- [_] Fix Menu behaviour.
+
+-- [_] function appModule.ts LoadxxxData() as single function.
 
 /***********************************************/

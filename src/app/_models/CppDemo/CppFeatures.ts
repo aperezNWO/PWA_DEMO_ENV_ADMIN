@@ -1,4 +1,4 @@
-export interface FeaturePage
+export interface CppFeatures
 {
     id               : number;
     done             : boolean;
@@ -11,7 +11,8 @@ export interface FeaturePage
     urlCurriculum    : string;
 }
 
-export interface _FeaturePagesSearchResult {
-	featurePages : FeaturePage[];
-	total        : number;
-}
+export interface _CppFeaturesSearchResult {
+    featurePages : CppFeatures[];
+    total        : number;
+}   
+
