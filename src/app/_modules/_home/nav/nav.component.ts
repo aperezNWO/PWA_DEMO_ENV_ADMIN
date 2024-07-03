@@ -44,6 +44,14 @@ export class NavComponent {
     {
       'url': '/Marketing',
       'text': '[MARKETING]',
+    },
+    {
+      'url': '/ConfigWeb',
+      'text': '[CONFIG]',
+    },
+    {
+      'url': '/AboutWeb',
+      'text': '[ABOUT]',
     }
   ]
   //-----------------------------------------------------------------------------------------------------

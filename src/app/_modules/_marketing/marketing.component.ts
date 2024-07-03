@@ -1,15 +1,16 @@
 import { Component, QueryList, ViewChildren                        } from '@angular/core';
 import { Observable                                                } from 'rxjs';
-import { marketing                                                 } from '../../../_models/marketing';
-import { MarketingSortableHeader, _MarketingSortEvent              } from '../../../_directives/marketing.directive';
-import { MarketingService                                          } from '../../../_services/marketing.service';
+import { MarketingSortableHeader, _MarketingSortEvent              } from '../../_directives/marketing.directive';
+import { marketing                                                 } from '../../_models/marketing';
+import { MarketingService                                          } from '../../_services/marketing.service';
+
 //
 @Component({
   selector: 'app-marketing',
   templateUrl: './marketing.component.html',
   styleUrl: './marketing.component.css'
 })
-export class MarketingComponent {
+export class MarketingComponent {   
 //
 public marketingList!   : Observable<marketing[]>;
 public total!           : Observable<number>;

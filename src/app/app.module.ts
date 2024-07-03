@@ -9,9 +9,6 @@ import { HttpClientModule                       } from '@angular/common/http';
 import { BrowserModule, provideClientHydration  } from '@angular/platform-browser';
 import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
-import { DemosComponent                         } from './_modules/_home/demos/demos.component';
-import { MarketingComponent                     } from './_modules/_home/marketing/marketing.component';
-import { HomeComponent                          } from './_modules/_home/home/home.component';
 import { NavComponent                           } from './_modules/_home/nav/nav.component';
 import { PageNotFoundComponent                  } from './_modules/_home/page-not-found/page-not-found.component';
 import { DevPageSortableHeader                  } from './_directives/devPagesListSortable.directive';
@@ -26,10 +23,15 @@ import { NetcoreWebComponent                    } from './_modules/_demos/NetCor
 import { NodeJsWebComponent                     } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
 import { PhpWebComponent                        } from './_modules/_demos/Php/php-web/php-web.component';
 import { AngularComponent                       } from './_modules/_demos/angular/angular-web/angular.component';
-import { DevPagesListsComponent                 } from './_modules/_demos/angular/devPages/devPagesList.component';
 import { FeaturePagesComponent                  } from './_modules/_demos/angular/feature-pages/feature-pages.component';
-import { CurriculumComponent                    } from './_modules/_education/_Angular/curriculum.component';
-import { EduWebComponent                        } from './_modules/_education/edu-web/edu-web.component';
+import { DevPagesListsComponent                 } from './_modules/_config/AngularConfig/devPagesList.component';
+import { ConfigWebComponent                     } from './_modules/_config/_config-web/config-web.component';
+import { CurriculumComponent                    } from './_modules/_education/AngularDemo/curriculum.component';
+import { EduWebComponent                        } from './_modules/_education/_edu-web/edu-web.component';
+import { DemosComponent                         } from './_modules/_demos/_demosweb/demos.component';
+import { HomeComponent                          } from './_modules/_home/_homeWeb/home.component';
+import { MarketingComponent                     } from './_modules/_marketing/marketing.component';
+import { AboutWebComponent } from './_modules/_about/about-web/about-web.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -63,6 +65,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     DemosComponent,
     CppWebComponent,
     EduWebComponent,
+    ConfigWebComponent,
+    AboutWebComponent,
   ],
   imports: [
     BrowserModule,

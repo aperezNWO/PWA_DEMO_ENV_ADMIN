@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
-import { marketing                            } from '../_models/marketing';
+import { marketing                              } from '../_models/marketing';
 //
 export type _MarketingSortColumn    = keyof marketing    | '';
 export type _MarketingSortDirection = 'asc' | 'desc'     | '';

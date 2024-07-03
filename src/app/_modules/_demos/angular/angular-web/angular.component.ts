@@ -12,10 +12,6 @@ export class AngularComponent {
       'url': '/FeaturePages',
       'text': '[ANGULAR - CARACTERISTICAS]',
     },
-    {
-      'url': '/DevPages',
-      'text': '[ANGULAR - ENTORNOS]',
-    },
   ]
   constructor(){
     //

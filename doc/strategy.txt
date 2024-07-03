@@ -194,21 +194,23 @@
 
 -- [x] Angular End Points / Param Url.
 
--- [_] datagrid theming.
+-- [x] Change DEV_DEMO por SE_DEMO.
 
--- [_] Read json pages from somee.com.
+-- [x] datagrid theming.
 
--- [_] Table Check field.
+-- [x] Table Check field.
+
+-- [x] Pending OnSort.
+
+-- [x] Angular Submeno.
+
+-- [x] Marketing strategy table. 
+
+-- [x] Angular Directives. 
+
+-- [_] Read json pages from somee.com / database.
 
 -- [_] Datagrid row detail / relacion unos a muchos json.
-
--- [_] Pending OnSort.
-
--- [_] Angular Submeno.
-
--- [_] Angular Directives. 
-
--- [_] Marketing strategy table. 
 
 -- [_] OAUTH. 
 
@@ -225,13 +227,15 @@
       -- [_] SOLID.
       
 
--- [_] Change DEV_DEMO por SE_DEMO.
-
 -- [_] Enum Angular.
 
 -- [_] Config Module.
 
--- [_] Config About Module.
+-- [_] About Module.
+
+-- [_] Angular Community / dev-se community.
+
+-- [_] Modules from previous todo list.
 
 
 /***********************************************/
