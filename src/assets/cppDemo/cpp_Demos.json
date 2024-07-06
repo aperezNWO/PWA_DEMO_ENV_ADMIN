@@ -20,5 +20,27 @@
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/AlgorithmSort",
         "urlRepo"          : "https://github.com/aperezNWO/CppBuilder01/blob/master/Project2/SortBenchMark.cpp",
         "urlCurriculum"    : "https://en.wikipedia.org/wiki/Quicksort"   
+    },
+    {
+		"id"               : 3,
+        "done"             : true,
+        "name"             : "Shortest Path Algorithm",
+        "description"      : "Shortest Path Algorithm",
+        "framework"        : "CppBuilder",
+        "keywords"         : "Shortest Path, Graph, Dijkstra",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/AlgorithmDijkstra",
+        "urlRepo"          : "https://github.com/aperezNWO/CppBuilder01/blob/master/Project2/Dijkstra.cpp",
+        "urlCurriculum"    : "https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/"   
+    },
+    {
+		"id"               : 4,
+        "done"             : true,
+        "name"             : "Regex Demo",
+        "description"      : "Regex Demo",
+        "framework"        : "CppBuilder",
+        "keywords"         : "Regular Expressions",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/AlgorithmRegEx",
+        "urlRepo"          : "https://github.com/aperezNWO/CppBuilder01/blob/master/Project1/RegExManager.cpp",
+        "urlCurriculum"    : "https://en.cppreference.com/w/cpp/regex/regex_search"   
     }
 ]	
