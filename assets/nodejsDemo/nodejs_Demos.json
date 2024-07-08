@@ -1,0 +1,13 @@
+[
+	{
+		"id"               : 1,
+        "done"             : true,
+        "name"             : "OCR DEMO",
+        "description"      : "OCR DEMO",
+        "framework"        : "Nodejs",
+        "keywords"         : "NodeJs, OCR, Tesseract",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Ocr",
+        "urlRepo"          : "https://github.com/aperezNWO/cs_nodejs_ocr_/blob/main/index.js",
+        "urlCurriculum"    : "https://github.com/tesseract-ocr/tesseract"   
+    }
+]	
