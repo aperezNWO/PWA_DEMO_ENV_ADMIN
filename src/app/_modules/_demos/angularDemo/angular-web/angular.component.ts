@@ -9,7 +9,7 @@ export class AngularComponent {
   //
   pages = [
     {
-      'url': '/FeaturePages',
+      'url': '/AngularFeaturesPages',
       'text': '[ANGULAR - DEMOS / CARACTERISTICAS]',
     },
   ]

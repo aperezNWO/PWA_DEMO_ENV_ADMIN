@@ -35,6 +35,7 @@ import { MarketingSortableHeader                } from './_directives/marketing/
 import { CurriculumSortableHeader               } from './_directives/Demos/angularDemo/curriculumSortable.directive';
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
+import { NodeJsConfigComponent } from './_modules/_config/node-js-config/node-js-config.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -76,7 +77,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     CppDemoComponent,
     CppFeatureListSortableHeader,
     NodeJsFeatureListSortableHeader,
-    NodejsDemoComponent
+    NodejsDemoComponent,
+    NodeJsConfigComponent
   ],
   imports: [
     BrowserModule,

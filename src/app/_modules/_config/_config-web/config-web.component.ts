@@ -13,5 +13,9 @@ export class ConfigWebComponent {
       'url': '/AngularConfig',
       'text': '[ANGULAR - ENTORNOS]',
     },
+    {
+      'url': '/NodeJsConfig',
+      'text': '[NodeJs - ENTORNOS]',
+    },
   ]
 }

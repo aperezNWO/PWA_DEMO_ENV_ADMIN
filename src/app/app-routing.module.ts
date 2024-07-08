@@ -16,35 +16,38 @@ import { EduWebComponent         } from './_modules/_education/_edu-web/edu-web.
 import { MarketingComponent      } from './_modules/_marketing/marketing.component';
 import { DevPagesListsComponent  } from './_modules/_config/AngularConfig/devPagesList.component';
 import { ConfigWebComponent      } from './_modules/_config/_config-web/config-web.component';
+import { NodeJsConfigComponent   } from './_modules/_config/node-js-config/node-js-config.component';
 import { AboutWebComponent       } from './_modules/_about/about-web/about-web.component';
 
-
-
-
+//
 const routes: Routes = [
   {  path: 'Home'                     , component: HomeComponent                      },
   {  path: ''                         , component: HomeComponent                      },
-  {  path: 'Marketing'                , component: MarketingComponent                 },
   {  path: 'AngularWeb'               , component: AngularComponent                   }, 
-  {  path: 'FeaturePages'             , component: FeaturePagesComponent              },
+  {  path: 'AngularFeaturesPages'     , component: FeaturePagesComponent              },
+  {  path: 'AngularReference'         , component: CurriculumComponent                },
+  {  path: 'AngularConfig'            , component: DevPagesListsComponent             },
   {  path: 'NodeJsWeb'                , component: NodeJsWebComponent                 }, 
   {  path: 'NodeJsDemo'               , component: NodejsDemoComponent                }, 
+  {  path: 'NodeJsWeb'                , component: NodeJsWebComponent                 }, 
+  {  path: 'NodeJsConfig'             , component: NodeJsConfigComponent              }, 
   {  path: 'NetCoreWeb'               , component: NetcoreWebComponent                },
   {  path: 'PhpWeb'                   , component: PhpWebComponent                    }, 
   {  path: 'CppDemo'                  , component: CppDemoComponent                   }, 
   {  path: 'CppWeb'                   , component: CppWebComponent                    }, 
   {  path: 'DemosWeb'                 , component: DemosComponent                     }, 
-  {  path: 'AngularReference'         , component: CurriculumComponent                },
   {  path: 'EduWeb'                   , component: EduWebComponent                    },
   {  path: 'ConfigWeb'                , component: ConfigWebComponent                 },
-  {  path: 'AngularConfig'            , component: DevPagesListsComponent             },
   {  path: 'AboutWeb'                 , component: AboutWebComponent                  },
+  {  path: 'Marketing'                , component: MarketingComponent                 },
   {  path: '**'                       , component: PageNotFoundComponent              },
 ];
 
-
+//
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
+//
 export class AppRoutingModule { }

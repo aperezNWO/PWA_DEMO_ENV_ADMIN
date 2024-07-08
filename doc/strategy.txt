@@ -208,6 +208,8 @@
 
 -- [x] Angular Directives. 
 
+-- [_] php mdemo.
+
 -- [_] Read json pages from somee.com / database.
 
 -- [_] Datagrid row detail / relacion unos a muchos json.
