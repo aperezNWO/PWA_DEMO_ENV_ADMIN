@@ -1,6 +1,19 @@
-<div align="center"><h4><b>[NODE.JS Demo]</b></h4>
+<div align="center"><h4><b>[Node JS Demos]</b></h4>
+<hr>
+<img
+[src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1024px-Node.js_logo.svg.png'"
+[alt]="'NodeJs Logo'"
+class="me-1"
+style="width: 50px"
+/>
 </div>
 <hr>
+<ul class="navbar-nav" *ngFor="let page of pages">
+<li class="nav-item">
+    <a class="nav-link" routerLink="/{{page.url}}"><div align="left">{{page.text}}</div></a>
+</li>
+</ul>
+<hr>
 <div align="right">
-    <a routerLink="/DemosWeb">[Inicio]</a>
+<a routerLink="/DemosWeb">[Inicio]</a>
 </div>

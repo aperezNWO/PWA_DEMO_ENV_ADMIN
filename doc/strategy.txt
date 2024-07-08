@@ -241,4 +241,6 @@
 
 -- [_] function appModule.ts LoadxxxData() as single function.
 
+-- [_] fron icon as link.
+
 /***********************************************/

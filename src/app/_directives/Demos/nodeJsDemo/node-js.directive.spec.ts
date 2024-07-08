@@ -1,4 +1,4 @@
-import { NodeJsDirective } from './nodeJsDemo/node-js.directive';
+import { NodeJsDirective } from "./node-js.directive";
 
 describe('NodeJsDirective', () => {
   it('should create an instance', () => {

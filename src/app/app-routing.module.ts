@@ -7,6 +7,7 @@ import { FeaturePagesComponent   } from './_modules/_demos/angularDemo/feature-p
 import { CppDemoComponent        } from './_modules/_demos/CppDemo/cpp-demo/cpp-demo.component';
 import { CppWebComponent         } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
 import { NetcoreWebComponent     } from './_modules/_demos/NetCore/netcore-web/netcore-web.component';
+import { NodejsDemoComponent     } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
 import { NodeJsWebComponent      } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
 import { PhpWebComponent         } from './_modules/_demos/Php/php-web/php-web.component';
 import { DemosComponent          } from './_modules/_demos/_demosweb/demos.component';
@@ -19,6 +20,7 @@ import { AboutWebComponent       } from './_modules/_about/about-web/about-web.c
 
 
 
+
 const routes: Routes = [
   {  path: 'Home'                     , component: HomeComponent                      },
   {  path: ''                         , component: HomeComponent                      },
@@ -26,6 +28,7 @@ const routes: Routes = [
   {  path: 'AngularWeb'               , component: AngularComponent                   }, 
   {  path: 'FeaturePages'             , component: FeaturePagesComponent              },
   {  path: 'NodeJsWeb'                , component: NodeJsWebComponent                 }, 
+  {  path: 'NodeJsDemo'               , component: NodejsDemoComponent                }, 
   {  path: 'NetCoreWeb'               , component: NetcoreWebComponent                },
   {  path: 'PhpWeb'                   , component: PhpWebComponent                    }, 
   {  path: 'CppDemo'                  , component: CppDemoComponent                   }, 

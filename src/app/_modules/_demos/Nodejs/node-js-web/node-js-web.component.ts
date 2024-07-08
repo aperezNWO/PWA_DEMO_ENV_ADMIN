@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './node-js-web.component.css'
 })
 export class NodeJsWebComponent {
-
+  //
+  pages = [
+    {
+      'url': '/NodeJsDemo',
+      'text': '[NodeJS - DEMOS / CARACTERISTICAS]',
+    },
+  ]
 }

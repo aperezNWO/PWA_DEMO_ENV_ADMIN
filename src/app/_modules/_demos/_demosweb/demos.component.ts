@@ -15,11 +15,11 @@ export class DemosComponent {
     {
       'url': '/CppWeb',
       'text': '[CPP DEMO]',
-    }/*,
+    },
     {
       'url': '/NodeJsWeb',
       'text': '[NODE.JS DEMO]',
-    },
+    },/*
     {
       'url': '/NetCoreWeb',
       'text': '[.NET CORE DEMO]',

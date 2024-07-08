@@ -37,6 +37,19 @@ export class ConfigService {
         console.error('Error loading cppDemo data :', error);
       });
    }
+  // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadNodeJsDemoData() {
+    return this.http.get('./assets/nodejsDemo/nodejs_Demos.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading NodeJs demo data ..." + JSON.stringify(data));
+          //
+          _environment.NodeJsDemosList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading cppDemo data :', error);
+      });
+    }
    // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadAngularDemoData() {
     return this.http.get('./assets/angularDemo/angular_Demos.json').toPromise()

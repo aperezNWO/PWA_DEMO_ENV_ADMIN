@@ -28,12 +28,13 @@ import { EduWebComponent                        } from './_modules/_education/_e
 import { HomeComponent                          } from './_modules/_home/_homeWeb/home.component';
 import { MarketingComponent                     } from './_modules/_marketing/marketing.component';
 import { AboutWebComponent                      } from './_modules/_about/about-web/about-web.component';
+import { NodejsDemoComponent                    } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
 import { DevPageSortableHeader                  } from './_directives/Demos/angularDemo/devPagesListSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
 import { MarketingSortableHeader                } from './_directives/marketing/marketing.directive';
 import { CurriculumSortableHeader               } from './_directives/Demos/angularDemo/curriculumSortable.directive';
-import { NodeJsDirective                        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
+import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -44,6 +45,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   _configService.loadAngularConfigData();
   //
   _configService.loadCppDemoData();
+  //
+  _configService.loadNodeJsDemoData();
   //
   _configService.loadMarketingData();
   // 
@@ -63,7 +66,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NetcoreWebComponent,
     PhpWebComponent,
     NodeJsWebComponent,
-    NodeJsDirective,
     MarketingComponent,
     MarketingSortableHeader,
     DemosComponent,
@@ -73,6 +75,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     AboutWebComponent,
     CppDemoComponent,
     CppFeatureListSortableHeader,
+    NodeJsFeatureListSortableHeader,
+    NodejsDemoComponent
   ],
   imports: [
     BrowserModule,
