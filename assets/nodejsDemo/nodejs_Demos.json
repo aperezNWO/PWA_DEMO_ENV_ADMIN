@@ -5,9 +5,53 @@
         "name"             : "OCR DEMO",
         "description"      : "OCR DEMO",
         "framework"        : "Nodejs",
-        "keywords"         : "NodeJs, OCR, Tesseract",
+        "keywords"         : "NodeJs, codesandbox, OCR, Tesseract",
         "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Ocr",
         "urlRepo"          : "https://github.com/aperezNWO/cs_nodejs_ocr_/blob/main/index.js",
         "urlCurriculum"    : "https://github.com/tesseract-ocr/tesseract"   
+    },
+    {
+		"id"               : 2,
+        "done"             : true,
+        "name"             : "CHAT DEMO",
+        "description"      : "CHAT DEMO",
+        "framework"        : "Nodejs",
+        "keywords"         : "NodeJs, codesandbox, Chat, Socket.io",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chat",
+        "urlRepo"          : "https://github.com/aperezNWO/cs_node_js_test_chat/blob/main/index.js",
+        "urlCurriculum"    : "https://socket.io/"   
+    },
+    {
+		"id"               : 3,
+        "done"             : true,
+        "name"             : "CSV DEMO",
+        "description"      : "CSV DEMO",
+        "framework"        : "Nodejs",
+        "keywords"         : "NodeJs, codesandbox, ms sql server",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
+        "urlRepo"          : "https://github.com/aperezNWO/CS_NodeJs/blob/main/modules/database.js",
+        "urlCurriculum"    : "https://www.npmjs.com/package/mssql"   
+    },
+    {
+		"id"               : 4,
+        "done"             : true,
+        "name"             : "XLS DEMO",
+        "description"      : "XLS DEMO",
+        "framework"        : "Nodejs",
+        "keywords"         : "NodeJs, codesandbox, ms sql server",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationXLS",
+        "urlRepo"          : "https://github.com/aperezNWO/CS_NodeJs/blob/main/modules/database.js",
+        "urlCurriculum"    : "https://www.npmjs.com/package/mssql"   
+    },
+    {
+		"id"               : 5,
+        "done"             : true,
+        "name"             : "SUDOKU GAME",
+        "description"      : "SUDOKU GAME",
+        "framework"        : "Nodejs",
+        "keywords"         : "NodeJs, SUDOKU",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/GamesSudoku",
+        "urlRepo"          : "https://github.com/aperezNWO/CS_NodeJs/blob/main/modules/sudoku.js",
+        "urlCurriculum"    : "https://www.geeksforgeeks.org/sudoku-backtracking-7/"   
     }
 ]	
