@@ -5,6 +5,7 @@ export const _environment = {
     AngularDemosList       : [{}],   // Json pages
     AngularCurriculumList  : [{}],   // Json pages
     NodeJsDemosList        : [{}],   // Json pages
+    NodeJsConfigList       : [{}],   // Json pages
     cppDemoList            : [{}],   // Json pages
     marketingList          : [{}],   // Json pages
 };

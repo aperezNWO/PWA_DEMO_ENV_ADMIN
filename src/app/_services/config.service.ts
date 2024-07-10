@@ -38,6 +38,20 @@ export class ConfigService {
       });
    }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadNodeJsConfigData() {
+    return this.http.get('./assets/nodejsDemo/nodejs_Config.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading NodeJs config data ..." + JSON.stringify(data));
+          //
+          _environment.NodeJsConfigList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading NodeJs config data :', error);
+      });
+    }
+   
+  // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadNodeJsDemoData() {
     return this.http.get('./assets/nodejsDemo/nodejs_Demos.json').toPromise()
       .then((data: any) => {
@@ -47,7 +61,7 @@ export class ConfigService {
           _environment.NodeJsDemosList = data; // Assign loaded data to environment variable
       })
       .catch(error => {
-        console.error('Error loading cppDemo data :', error);
+        console.error('Error loading Nodejs demo data :', error);
       });
     }
    // ONLY HAPPENS ONCE ON APPMODULE LOADING
