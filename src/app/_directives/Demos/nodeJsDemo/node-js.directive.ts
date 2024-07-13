@@ -10,16 +10,16 @@ export interface _NodeJsFeaturePageSortEvent {
 	_column   :  _NodeJsFeatureSortColumn;
 	_direction:  _NodeJsFeatureSortDirection;
 }
+//
 @Directive({
   selector    : 'th[nodejsfeaturepagesort]',
-	host        : {
+  host        : {
 		'[class.asc]'  : 'direction === "asc"',
 		'[class.desc]' : 'direction === "desc"',
 		'(click)'      : '_rotateNodeJsFeaturePage()',
-	},
+  },
 })
 export class NodeJsFeatureListSortableHeader {
-
  //
  @Input()  nodejsfeaturepagesortable       :   _NodeJsFeatureSortColumn    = '';
  @Input()  nodejsfeaturepagedirection      :   _NodeJsFeatureSortDirection = '';

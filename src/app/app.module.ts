@@ -29,13 +29,14 @@ import { HomeComponent                          } from './_modules/_home/_homeWe
 import { MarketingComponent                     } from './_modules/_marketing/marketing.component';
 import { AboutWebComponent                      } from './_modules/_about/about-web/about-web.component';
 import { NodejsDemoComponent                    } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
+import { NodeJsConfigComponent                  } from './_modules/_config/node-js-config/node-js-config.component';
 import { DevPageSortableHeader                  } from './_directives/Demos/angularDemo/devPagesListSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
 import { MarketingSortableHeader                } from './_directives/marketing/marketing.directive';
 import { CurriculumSortableHeader               } from './_directives/Demos/angularDemo/curriculumSortable.directive';
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
-import { NodeJsConfigComponent } from './_modules/_config/node-js-config/node-js-config.component';
+import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -78,7 +79,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     CppFeatureListSortableHeader,
     NodeJsFeatureListSortableHeader,
     NodejsDemoComponent,
-    NodeJsConfigComponent
+    NodeJsConfigComponent,
+    NodeJsConfigListSortableHeader
   ],
   imports: [
     BrowserModule,
