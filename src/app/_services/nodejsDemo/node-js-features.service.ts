@@ -3,16 +3,17 @@ import { _environment                                            } from '../../.
 import { DecimalPipe                                             } from '@angular/common';
 import { BehaviorSubject, Observable, Subject                    } from 'rxjs';
 import { debounceTime, delay, of, switchMap, tap                 } from 'rxjs';
-import { _NodeJsFeatureSortColumn, _NodeJsFeatureSortDirection   } from '../../_directives/Demos/nodeJsDemo/node-js.directive';
+import { _NodeJsFeatureSortColumn                                } from '../../_directives/Demos/nodeJsDemo/node-js.directive';
 import { _NodeJsFeaturesSearchResult, NodeJsFeatures             } from '../../_models/nodejsDemo/NodeJsFeatures';
+import { _SortDirection                                          } from '../../_models/common/common';
 
 //
 interface _NodeJsFeaturePageSearchState {
-	page           : number;
+	page           : number;             
 	pageSize       : number;
 	searchTerm     : string;
 	sortColumn     :  _NodeJsFeatureSortColumn;
-	sortDirection  :  _NodeJsFeatureSortDirection;
+	sortDirection  :  _SortDirection;
 }
 //
 const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
@@ -40,12 +41,12 @@ function matches(featurePage: NodeJsFeatures, term: string, pipe: PipeTransform)
   providedIn: 'root'
 })
 export class NodeJsFeaturesService {
-  //
-  private _loading           = new BehaviorSubject<boolean>(true);
-  private _search$           = new Subject<void>();
-  private _featurepageList   = new BehaviorSubject<NodeJsFeatures[]>([]);
-  private _total             = new BehaviorSubject<number>(0);
-  //
+	//
+	private _loading           = new BehaviorSubject<boolean>(true);
+	private _search$           = new Subject<void>();
+	private _featurepageList   = new BehaviorSubject<NodeJsFeatures[]>([]);
+	private _total             = new BehaviorSubject<number>(0);
+	//
 	private _state: _NodeJsFeaturePageSearchState = {
 		page          : 1,
 		pageSize      : 4, 
@@ -70,30 +71,29 @@ export class NodeJsFeaturesService {
       //
       this._search$.next();
 	}
-  //
+    //
 	private _search(): Observable<_NodeJsFeaturesSearchResult> {
 		//
 		let _featurepageList                      : any;
 		let _total                                : any;
 		let _searchResult                         : _NodeJsFeaturesSearchResult  = {featurePages: _featurepageList, total : _total};
 
-    // 0. get state
+		// 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
-    
-    //
+        //
 		console.log("external json data : " +  _environment.NodeJsDemosList); 
 
-    // 1. sort
+		// 1. sort
 		let _FEATURE_PAGES  : NodeJsFeatures[] = [];
 		//
 		_environment.NodeJsDemosList.forEach((element: any) => {
 			_FEATURE_PAGES.push(element);
 			console.log(element)
 		});
-    //
+        //
 		_featurepageList   = sort(_FEATURE_PAGES, sortColumn, sortDirection);
 
-    // 2. filter
+		// 2. filter
 		_featurepageList   = _featurepageList.filter((featurePage: NodeJsFeatures) => matches(featurePage, searchTerm, this.pipe));
 		_total             = _featurepageList.length;
 
@@ -106,7 +106,7 @@ export class NodeJsFeaturesService {
 		// 5. return
 		return  of (_searchResult);
   }
-  //////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
 	// PROPERTIES
 	//////////////////////////////////////////////////////////////////////
 	//
@@ -150,10 +150,10 @@ export class NodeJsFeaturesService {
 		this._set({ sortColumn });
 	}
 	//
-	set sortDirection(sortDirection: _NodeJsFeatureSortDirection) {
+	set sortDirection(sortDirection: _SortDirection) {
 		this._set({ sortDirection });
 	}
-  //
+    //
 	private _set(patch: Partial<_NodeJsFeaturePageSearchState>) {
 		Object.assign(this._state, patch);
 		this._search$.next();

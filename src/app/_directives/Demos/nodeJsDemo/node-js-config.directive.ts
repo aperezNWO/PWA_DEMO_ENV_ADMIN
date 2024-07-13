@@ -1,14 +1,12 @@
 import { Directive, EventEmitter, Input, Output   } from '@angular/core';
 import { NodeJsConfig                             } from '../../../_models/nodejsDemo/NodeJsConfig';
+import { _SortDirection, pagerotate               } from '../../../_models/common/common';
 //
 export type _NodeJsConfigSortColumn    = keyof NodeJsConfig      | '';
-export type _NodeJsConfigSortDirection = 'asc' | 'desc'          | '';
-// DICTIONARY
-const nodejsconfigpagerotate: { [key: string]: _NodeJsConfigSortDirection } = { asc: 'desc', desc: '', '': 'asc' };
 //
 export interface _NodeJsConfigePageSortEvent {
 	_column   :  _NodeJsConfigSortColumn;
-	_direction:  _NodeJsConfigSortDirection;
+	_direction:  _SortDirection;
 }
 //
 @Directive({
@@ -22,12 +20,12 @@ export interface _NodeJsConfigePageSortEvent {
 export class NodeJsConfigListSortableHeader {
   //
   @Input()  nodejsconfigpagesortable       :   _NodeJsConfigSortColumn    = '';
-  @Input()  nodejsconfigpagedirection      :   _NodeJsConfigSortDirection = '';
+  @Input()  nodejsconfigpagedirection      :   _SortDirection             = '';
   @Output() nodejsconfigpagessort          = new EventEmitter<_NodeJsConfigePageSortEvent>();
   //
   _rotateNodeJsConfigPage()
   {
-    this.nodejsconfigpagedirection = nodejsconfigpagerotate[this.nodejsconfigpagedirection];
+    this.nodejsconfigpagedirection = pagerotate[this.nodejsconfigpagedirection];
     this.nodejsconfigpagessort.emit({ 
                 _column   : this.nodejsconfigpagesortable, 
                 _direction: this.nodejsconfigpagedirection 

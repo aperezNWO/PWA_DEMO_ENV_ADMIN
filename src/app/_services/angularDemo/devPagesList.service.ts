@@ -1,18 +1,19 @@
 /* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { Injectable, PipeTransform                              } from '@angular/core';
 import { DecimalPipe                                            } from '@angular/common';
+import { _environment                                           } from '../../../environments/environment';
+import { _DevPageSortColumn                                     } from '../../_directives/Demos/angularDemo/devPagesListSortable.directive';
+import { _SortDirection                                         } from '../../_models/common/common';
 import { AngularConfig, _AngularConfigSearchResult              } from '../../_models/AngularDemo/AngularConfig';
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
-import { _environment                                           } from '../../../environments/environment';
-import { _DevPageSortColumn, _DevPageSortDirection              } from '../../_directives/Demos/angularDemo/devPagesListSortable.directive';
 //
 interface _DevPageSearchState {
 	page           : number;
 	pageSize       : number;
 	searchTerm     : string;
 	sortColumn     :  _DevPageSortColumn;
-	sortDirection  :  _DevPageSortDirection;
+	sortDirection  :  _SortDirection;
 }
 //
 const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
@@ -150,7 +151,7 @@ export class devPagesListService {
 		this._set({ sortColumn });
 	}
 	//
-	set sortDirection(sortDirection: _DevPageSortDirection) {
+	set sortDirection(sortDirection: _SortDirection) {
 		this._set({ sortDirection });
 	}
     //

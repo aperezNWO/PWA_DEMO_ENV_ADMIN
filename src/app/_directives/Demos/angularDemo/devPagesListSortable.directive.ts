@@ -1,15 +1,13 @@
 
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { AngularConfig                          } from '../../../_models/AngularDemo/AngularConfig';
+import { _SortDirection, pagerotate             } from '../../../_models/common/common';
 //
 export type _DevPageSortColumn    = keyof AngularConfig  | '';
-export type _DevPageSortDirection = 'asc' | 'desc' | '';
-//
-const devpagerotate: { [key: string]: _DevPageSortDirection } = { asc: 'desc', desc: '', '': 'asc' };
 //
 export interface _DevPageSortEvent {
 	_column   :  _DevPageSortColumn;
-	_direction:  _DevPageSortDirection;
+	_direction:  _SortDirection;
 }
 //
 @Directive({
@@ -25,11 +23,11 @@ export interface _DevPageSortEvent {
 export class DevPageSortableHeader {
 	//
 	@Input() devpagesortable       :   _DevPageSortColumn    = '';
-	@Input() devpagedirection      :   _DevPageSortDirection = '';
+	@Input() devpagedirection      :   _SortDirection = '';
 	@Output() devpagesort          = new EventEmitter<_DevPageSortEvent>();
     //
 	_rotateDevPage() {
-		this.devpagedirection = devpagerotate[this.devpagedirection];
+		this.devpagedirection = pagerotate[this.devpagedirection];
 		this.devpagesort.emit({ 
 								_column   : this.devpagesortable, 
 								_direction: this.devpagedirection 

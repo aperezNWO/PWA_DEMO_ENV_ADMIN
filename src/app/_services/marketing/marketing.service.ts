@@ -4,14 +4,15 @@ import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
 import { _environment                                           } from '../../../environments/environment';
 import { marketing, _MarketingSearchResult                      } from '../../_models/Marketing/marketing';
-import { _MarketingSortColumn, _MarketingSortDirection          } from '../../_directives/marketing/marketing.directive';
+import { _MarketingSortColumn                                   } from '../../_directives/marketing/marketing.directive';
+import { _SortDirection                                         } from '../../_models/common/common';
 //
 interface _MarketingSearchState {
 	page           : number;
 	pageSize       : number;
 	searchTerm     : string;
 	sortColumn     :  _MarketingSortColumn;
-	sortDirection  :  _MarketingSortDirection;
+	sortDirection  :  _SortDirection;
 }
 //
 const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
@@ -148,7 +149,7 @@ export class MarketingService {
 		this._set({ sortColumn });
 	}
 	//
-	set sortDirection(sortDirection: _MarketingSortDirection) {
+	set sortDirection(sortDirection: _SortDirection) {
 		this._set({ sortDirection });
 	}
     //

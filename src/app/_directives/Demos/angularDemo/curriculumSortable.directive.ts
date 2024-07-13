@@ -1,15 +1,13 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { AngularCurriculum                      } from '../../../_models/AngularDemo/AngularCurriculum';
+import { _SortDirection, pagerotate             } from '../../../_models/common/common';
 
 //
 export type _CurriculumSortColumn    = keyof AngularCurriculum   | '';
-export type _CurriculumSortDirection = 'asc' | 'desc'     | '';
-//
-const curriculumrotate: { [key: string]: _CurriculumSortDirection } = { asc: 'desc', desc: '', '': 'asc' };
 //
 export interface _CurriculumSortEvent {
 	_column   :  _CurriculumSortColumn;
-	_direction:  _CurriculumSortDirection;
+	_direction:  _SortDirection;
 }
 //
 @Directive({
@@ -24,11 +22,11 @@ export interface _CurriculumSortEvent {
 //
 export class CurriculumSortableHeader {
     @Input() curriculumsortable       :   _CurriculumSortColumn    = '';
-	@Input() curriculumdirection      :   _CurriculumSortDirection = '';
+	@Input() curriculumdirection      :   _SortDirection = '';
 	@Output() curriculumsort          = new EventEmitter<_CurriculumSortEvent>();
      //
 	__rotateCurriculum() {
-		this.curriculumdirection = curriculumrotate[this.curriculumdirection];
+		this.curriculumdirection = pagerotate[this.curriculumdirection];
 		this.curriculumsort.emit({ 
 								_column   : this.curriculumsortable, 
 								_direction: this.curriculumdirection 

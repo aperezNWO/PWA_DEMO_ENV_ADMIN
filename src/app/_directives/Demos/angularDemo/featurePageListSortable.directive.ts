@@ -1,14 +1,12 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { AngularFeatures                        } from '../../../_models/AngularDemo/AngularFeatures';
+import { _SortDirection, pagerotate             } from '../../../_models/common/common';
 //
 export type _FeaturePageSortColumn    = keyof AngularFeatures  | '';
-export type _FeaturePageSortDirection = 'asc' | 'desc'         | '';
-//
-const featurepagerotate: { [key: string]: _FeaturePageSortDirection } = { asc: 'desc', desc: '', '': 'asc' };
 //
 export interface _FeaturePageSortEvent {
 	_column   :  _FeaturePageSortColumn;
-	_direction:  _FeaturePageSortDirection;
+	_direction:  _SortDirection;
 }
 //
 @Directive({
@@ -24,11 +22,11 @@ export interface _FeaturePageSortEvent {
 export class FeaturePageSortableHeader {
 	//
 	@Input() featurepagesortable       :   _FeaturePageSortColumn    = '';
-	@Input() featurepagedirection      :   _FeaturePageSortDirection = '';
+	@Input() featurepagedirection      :   _SortDirection = '';
 	@Output() featurepagesort          = new EventEmitter<_FeaturePageSortEvent>();
     //
 	_rotateFeaturePage() {
-		this.featurepagedirection = featurepagerotate[this.featurepagedirection];
+		this.featurepagedirection = pagerotate[this.featurepagedirection];
 		this.featurepagesort.emit({ 
 								_column   : this.featurepagesortable, 
 								_direction: this.featurepagedirection 

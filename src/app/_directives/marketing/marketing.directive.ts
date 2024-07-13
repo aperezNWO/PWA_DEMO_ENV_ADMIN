@@ -1,14 +1,14 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { marketing                              } from '../../_models/Marketing/marketing';
+import { _SortDirection                         } from '../../_models/common/common';
 //
 export type _MarketingSortColumn    = keyof marketing    | '';
-export type _MarketingSortDirection = 'asc' | 'desc'     | '';
 //
-const marketingrotate: { [key: string]: _MarketingSortDirection } = { asc: 'desc', desc: '', '': 'asc' };
+const marketingrotate: { [key: string]: _SortDirection } = { asc: 'desc', desc: '', '': 'asc' };
 //
 export interface _MarketingSortEvent {
 	_column   :  _MarketingSortColumn;
-	_direction:  _MarketingSortDirection;
+	_direction:  _SortDirection;
 }
 //
 @Directive({
@@ -27,7 +27,7 @@ export class MarketingSortableHeader {
   }
     //
     @Input() marketingsortable    :   _MarketingSortColumn    = '';
-	@Input() marketingdirection   :   _MarketingSortDirection = '';
+	@Input() marketingdirection   :   _SortDirection          = '';
 	@Output() marketingsort       = new EventEmitter<_MarketingSortEvent>();
     //
 	_rotateMarketing() {

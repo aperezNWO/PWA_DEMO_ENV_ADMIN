@@ -3,15 +3,16 @@ import { DecimalPipe                                            } from '@angular
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
 import { AngularFeatures, _AngularFeaturesSearchResult          } from '../../_models/AngularDemo/AngularFeatures';
+import { _SortDirection                                         } from '../../_models/common/common';
 import { _environment                                           } from '../../../environments/environment';
-import { _FeaturePageSortColumn, _FeaturePageSortDirection      } from '../../_directives/Demos/angularDemo/featurePageListSortable.directive';
+import { _FeaturePageSortColumn                                 } from '../../_directives/Demos/angularDemo/featurePageListSortable.directive';
 //
 interface _FeaturePageSearchState {
 	page           : number;
 	pageSize       : number;
 	searchTerm     : string;
 	sortColumn     :  _FeaturePageSortColumn;
-	sortDirection  :  _FeaturePageSortDirection;
+	sortDirection  :  _SortDirection;
 }
 //
 const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
@@ -150,7 +151,7 @@ export class FeaturesPagesListService {
 		this._set({ sortColumn });
 	}
 	//
-	set sortDirection(sortDirection: _FeaturePageSortDirection) {
+	set sortDirection(sortDirection: _SortDirection) {
 		this._set({ sortDirection });
 	}
     //

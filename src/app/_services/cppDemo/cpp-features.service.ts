@@ -3,8 +3,9 @@ import { DecimalPipe                                             } from '@angula
 import { BehaviorSubject, Observable, Subject                    } from 'rxjs';
 import { debounceTime, delay, of, switchMap, tap                 } from 'rxjs';
 import { _environment                                            } from '../../../environments/environment';
-import { _CppFeatureSortColumn, _CppFeatureSortDirection         } from '../../_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
+import { _CppFeatureSortColumn                                   } from '../../_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { CppFeatures, _CppFeaturesSearchResult                   } from '../../_models/CppDemo/CppFeatures';
+import { _SortDirection                                          } from '../../_models/common/common';
 
 //
 interface _CppFeaturePageSearchState {
@@ -12,7 +13,7 @@ interface _CppFeaturePageSearchState {
 	pageSize       : number;
 	searchTerm     : string;
 	sortColumn     :  _CppFeatureSortColumn;
-	sortDirection  :  _CppFeatureSortDirection;
+	sortDirection  :  _SortDirection;
 }
 //
 const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
@@ -151,7 +152,7 @@ export class CppFeaturesService {
 		this._set({ sortColumn });
 	}
 	//
-	set sortDirection(sortDirection: _CppFeatureSortDirection) {
+	set sortDirection(sortDirection: _SortDirection) {
 		this._set({ sortDirection });
 	}
     //

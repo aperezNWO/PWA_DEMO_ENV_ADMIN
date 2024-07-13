@@ -247,4 +247,8 @@
 
 -- [_] nodejs demo, backend url demo.
 
+-- [_] export type _NodeJsFeatureSortColumn    = keyof <FatherClass>      | ''; (inheritance)
+
+-- [_] sortirection dictionary;
+
 /***********************************************/
