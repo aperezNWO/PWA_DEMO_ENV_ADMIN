@@ -1,11 +1,11 @@
 import { Injectable, PipeTransform                               } from '@angular/core';
-import { _environment                                            } from '../../../environments/environment';
 import { DecimalPipe                                             } from '@angular/common';
 import { BehaviorSubject, Observable, Subject                    } from 'rxjs';
 import { debounceTime, delay, of, switchMap, tap                 } from 'rxjs';
+import { _environment                                            } from '../../../environments/environment';
 import { _NodeJsFeatureSortColumn                                } from '../../_directives/Demos/nodeJsDemo/node-js.directive';
 import { _NodeJsFeaturesSearchResult, NodeJsFeatures             } from '../../_models/nodejsDemo/NodeJsFeatures';
-import { _SortDirection                                          } from '../../_models/common/common';
+import { _SortDirection, compare                                 } from '../../_models/common/common';
 
 //
 interface _NodeJsFeaturePageSearchState {
@@ -15,8 +15,7 @@ interface _NodeJsFeaturePageSearchState {
 	sortColumn     :  _NodeJsFeatureSortColumn;
 	sortDirection  :  _SortDirection;
 }
-//
-const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
+
 //
 function sort(featurePagelist: NodeJsFeatures[], column: _NodeJsFeatureSortColumn, direction: string): NodeJsFeatures[] {
 	if (direction === '' || column === '') {
@@ -46,7 +45,7 @@ export class NodeJsFeaturesService {
 	private _search$           = new Subject<void>();
 	private _featurepageList   = new BehaviorSubject<NodeJsFeatures[]>([]);
 	private _total             = new BehaviorSubject<number>(0);
-	//
+    //
 	private _state: _NodeJsFeaturePageSearchState = {
 		page          : 1,
 		pageSize      : 4, 
@@ -79,7 +78,7 @@ export class NodeJsFeaturesService {
 		let _searchResult                         : _NodeJsFeaturesSearchResult  = {featurePages: _featurepageList, total : _total};
 
 		// 0. get state
-		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
+		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state!;
         //
 		console.log("external json data : " +  _environment.NodeJsDemosList); 
 
@@ -123,15 +122,15 @@ export class NodeJsFeaturesService {
 	}
 	//
 	get page() {
-		return this._state.page;
+		return this._state!.page;
 	}
 	//
 	public get pageSize() {
-		return this._state.pageSize;
+		return this._state!.pageSize;
 	}
 	//
 	get searchTerm() {
-		return this._state.searchTerm;
+		return this._state!.searchTerm;
 	}
     //
 	set page(page: number) {
@@ -155,7 +154,7 @@ export class NodeJsFeaturesService {
 	}
     //
 	private _set(patch: Partial<_NodeJsFeaturePageSearchState>) {
-		Object.assign(this._state, patch);
+		Object.assign(this._state!, patch);
 		this._search$.next();
 	}
 }

@@ -3,7 +3,7 @@ import { Injectable, PipeTransform                              } from '@angular
 import { DecimalPipe                                            } from '@angular/common';
 import { _environment                                           } from '../../../environments/environment';
 import { _DevPageSortColumn                                     } from '../../_directives/Demos/angularDemo/devPagesListSortable.directive';
-import { _SortDirection                                         } from '../../_models/common/common';
+import { _SortDirection, compare                                } from '../../_models/common/common';
 import { AngularConfig, _AngularConfigSearchResult              } from '../../_models/AngularDemo/AngularConfig';
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
@@ -15,8 +15,6 @@ interface _DevPageSearchState {
 	sortColumn     :  _DevPageSortColumn;
 	sortDirection  :  _SortDirection;
 }
-//
-const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
 function sort(devpageslist: AngularConfig[], column: _DevPageSortColumn, direction: string): AngularConfig[] {
 	if (direction === '' || column === '') {

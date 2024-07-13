@@ -5,7 +5,7 @@ import { debounceTime, delay, of, switchMap, tap                 } from 'rxjs';
 import { _environment                                            } from '../../../environments/environment';
 import { _CppFeatureSortColumn                                   } from '../../_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { CppFeatures, _CppFeaturesSearchResult                   } from '../../_models/CppDemo/CppFeatures';
-import { _SortDirection                                          } from '../../_models/common/common';
+import { _SortDirection, compare                                 } from '../../_models/common/common';
 
 //
 interface _CppFeaturePageSearchState {
@@ -15,8 +15,6 @@ interface _CppFeaturePageSearchState {
 	sortColumn     :  _CppFeatureSortColumn;
 	sortDirection  :  _SortDirection;
 }
-//
-const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
 function sort(featurePagelist: CppFeatures[], column: _CppFeatureSortColumn, direction: string): CppFeatures[] {
 	if (direction === '' || column === '') {

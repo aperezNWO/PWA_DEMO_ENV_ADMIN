@@ -4,9 +4,8 @@ import { BehaviorSubject, Observable, Subject, debounceTime, delay        } from
 import { of, switchMap, tap                                               } from 'rxjs';
 import { _CurriculumSortColumn                                            } from '../../_directives/Demos/angularDemo/curriculumSortable.directive';
 import { _AngularCurriculumSearchResult, AngularCurriculum                } from '../../_models/AngularDemo/AngularCurriculum';
+import { _SortDirection, compare                                          } from '../../_models/common/common';
 import { _environment                                                     } from '../../../environments/environment';
-import { _SortDirection } from '../../_models/common/common';
-
 
 //
 interface _CurriculumSearchState {
@@ -16,8 +15,6 @@ interface _CurriculumSearchState {
 	sortColumn     :  _CurriculumSortColumn;
 	sortDirection  :  _SortDirection;
 }
-//
-const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
 function sort(curriculumList: AngularCurriculum[], column: _CurriculumSortColumn, direction: string): AngularCurriculum[] {
 	if (direction === '' || column === '') {

@@ -19,7 +19,7 @@ export class NodeJsConfigComponent {
       this.mainPagesList = service.devpageLists;
       this.total         = service.total;
     }
-      //
+    //
     onSort({ _column, _direction }: _DevPageSortEvent) {
       //
       console.log ("onSort.column   :" + _column);
