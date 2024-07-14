@@ -4,8 +4,6 @@ export interface NodeJsConfig {
 	name             : string;
     description      : string;
     framework        : string;
-	FrameworkUrl     : string;
-	frameworkVersion : string;
     urlDemo          : string; 
 	urlRepo          : string;
 	urlBackend       : string;     
@@ -13,6 +11,6 @@ export interface NodeJsConfig {
 }
 
 export interface _NodeJsConfigSearchResult {
-	NodeJsPageList : NodeJsConfig[];
-	total          : number;
+	NodeJsConfigPageList : NodeJsConfig[];
+	total                : number;
 }
