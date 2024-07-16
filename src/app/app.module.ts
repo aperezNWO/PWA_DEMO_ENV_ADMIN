@@ -11,7 +11,6 @@ import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstr
 import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent                           } from './_modules/_home/nav/nav.component';
 import { PageNotFoundComponent                  } from './_modules/_home/page-not-found/page-not-found.component';
-import { devPagesListService                    } from './_services/angularDemo/devPagesList.service';
 import { ConfigService                          } from './_services/config.service';
 import { CppDemoComponent                       } from './_modules/_demos/CppDemo/cpp-demo/cpp-demo.component';
 import { CppWebComponent                        } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
@@ -49,6 +48,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   _configService.loadCppDemoData();
   //
   _configService.loadNodeJsDemoData();
+  //
+  _configService.loadNodeJsConfigData();
   //
   _configService.loadMarketingData();
   // 
@@ -109,7 +110,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
         multi     : true
       },
     ],
-    [devPagesListService,DatePipe,DecimalPipe,HttpClient],
+    [DatePipe,DecimalPipe,HttpClient],
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

@@ -3,7 +3,6 @@ export interface NodeJsConfig {
 	done             : boolean;
 	name             : string;
     description      : string;
-    framework        : string;
     urlDemo          : string; 
 	urlRepo          : string;
 	urlBackend       : string;     
