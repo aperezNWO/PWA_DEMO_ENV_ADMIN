@@ -18,6 +18,7 @@ import { DevPagesListsComponent  } from './_modules/_config/AngularConfig/devPag
 import { ConfigWebComponent      } from './_modules/_config/_config-web/config-web.component';
 import { NodeJsConfigComponent   } from './_modules/_config/node-js-config/node-js-config.component';
 import { AboutWebComponent       } from './_modules/_about/about-web/about-web.component';
+import { ProtectedComponent      } from './_modules/_config/protected/protected.component';
 
 //
 const routes: Routes = [
@@ -40,6 +41,8 @@ const routes: Routes = [
   {  path: 'ConfigWeb'                , component: ConfigWebComponent                 },
   {  path: 'AboutWeb'                 , component: AboutWebComponent                  },
   {  path: 'Marketing'                , component: MarketingComponent                 },
+  {  path: 'protected'                , component: ProtectedComponent,                }, // Protected component
+                                          //canActivate: [AuthGuard]   
   {  path: '**'                       , component: PageNotFoundComponent              },
 ];
 
