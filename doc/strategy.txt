@@ -255,6 +255,9 @@
 
 -- [_] oAuth
 
-      -- [_] https://gemini.google.com/app/5199f067a20bbeaf
+      -- [_] https://g.co/gemini/share/e39e3fc947a9
 
+      -- [_] https://g.co/gemini/share/e2c0ab68e41e
+
+ 
 /***********************************************/
