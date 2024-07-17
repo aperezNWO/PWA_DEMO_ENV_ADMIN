@@ -253,11 +253,16 @@
 
 -- [_] sortirection dictionary;
 
--- [_] oAuth
+-- [_] oAuth / gmail
 
       -- [_] https://g.co/gemini/share/e39e3fc947a9
 
       -- [_] https://g.co/gemini/share/e2c0ab68e41e
 
- 
+
+-- [_] oAuth / hotmail
+
+      -- [_] https://g.co/gemini/share/8d2cbc587cac
+
+
 /***********************************************/
