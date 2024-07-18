@@ -19,6 +19,7 @@ import { ConfigWebComponent      } from './_modules/_config/_config-web/config-w
 import { NodeJsConfigComponent   } from './_modules/_config/node-js-config/node-js-config.component';
 import { AboutWebComponent       } from './_modules/_about/about-web/about-web.component';
 import { ProtectedComponent      } from './_modules/_config/protected/protected.component';
+import { CanActivateGuard } from './_modules/_config/can-activate.guard';
 
 //
 const routes: Routes = [
@@ -38,11 +39,12 @@ const routes: Routes = [
   {  path: 'CppWeb'                   , component: CppWebComponent                    }, 
   {  path: 'DemosWeb'                 , component: DemosComponent                     }, 
   {  path: 'EduWeb'                   , component: EduWebComponent                    },
-  {  path: 'ConfigWeb'                , component: ConfigWebComponent                 },
+  {  path: 'ConfigWeb'                , component: ConfigWebComponent                 
+                                      , canActivate: [CanActivateGuard]               }, // Protected component
   {  path: 'AboutWeb'                 , component: AboutWebComponent                  },
-  {  path: 'Marketing'                , component: MarketingComponent                 },
-  {  path: 'protected'                , component: ProtectedComponent,                }, // Protected component
-                                          //canActivate: [AuthGuard]   
+  {  path: 'Marketing'                , component: MarketingComponent                 
+                                      , canActivate: [CanActivateGuard]               }, // Protected component
+  {  path: 'protected'                , component: ProtectedComponent                 },
   {  path: '**'                       , component: PageNotFoundComponent              },
 ];
 
