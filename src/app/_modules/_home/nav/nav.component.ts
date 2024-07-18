@@ -1,6 +1,7 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { Title                      } from '@angular/platform-browser';
 import { ConfigService              } from '../../../_services/config.service';
+import { _environment } from '../../../../environments/environment';
 //
 @Component({
   selector: 'app-nav',
@@ -28,7 +29,8 @@ export class NavComponent {
     this._navbarCollapsed = p_navbarCollapsed;
   }
   //
-  pages = [
+  pages = [{}];
+  /*
     {
       'url': '/Home',
       'text': '[INICIO]',
@@ -57,7 +59,7 @@ export class NavComponent {
       'url': '/protected',
       'text': '[LOGIN]',
     }
-  ]
+  ]*/
   //-----------------------------------------------------------------------------------------------------
   constructor(
     private _configService: ConfigService,
@@ -86,6 +88,8 @@ export class NavComponent {
     this.titleService.setTitle(title);
     //
     console.log("Setting Title : " + title);
+    //
+    this.pages = _environment.routesList;
   }
   //-----------------------------------------------------------------------------------------------------
   ngOnInit() {

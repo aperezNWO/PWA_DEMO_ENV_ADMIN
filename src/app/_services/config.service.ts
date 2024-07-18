@@ -13,7 +13,7 @@ export class ConfigService {
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadConfig() {
-    return this.http.get('./assets/_config.json').toPromise()
+    return this.http.get('./assets/config/_config.json').toPromise()
       .then((data: any) => {
           //
           console.log("loading configuration..." + JSON.stringify(data));
@@ -22,6 +22,19 @@ export class ConfigService {
       })
       .catch(error => {
         console.error('Error loading configuration:', error);
+      });
+  }
+  //
+  loadNavData() {
+    return this.http.get('./assets/config/_routes.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading routes data..." + JSON.stringify(data));
+          //
+          _environment.routesList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading routes dada...', error);
       });
   }
    // ONLY HAPPENS ONCE ON APPMODULE LOADING
