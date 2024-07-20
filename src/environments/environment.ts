@@ -1,8 +1,9 @@
 export const _environment = {
-    production             : true,   // Set to true in environment.prod.ts
+    loggedUser             : true,   // 
+    currentUserId          : 0,      //
     externalConfig         : {},     // Placeholder for external configuration
-    routesList             : [{}],     // Placeholder for external configuration
-    usersList              : [{}],     // Placeholder for external configuration
+    routesList             : [{}],   // Placeholder for external configuration
+    usersList              : [{}],   // Placeholder for external configuration
     AngularConfigList      : [{}],   // Json pages
     AngularDemosList       : [{}],   // Json pages
     AngularCurriculumList  : [{}],   // Json pages

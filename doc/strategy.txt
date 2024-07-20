@@ -271,5 +271,7 @@
       -- [_] enum roles.
 
       -- [_] routes on external files.
+
+ -- [_] hide repo links from demo info.     
       
 /***********************************************/

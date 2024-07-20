@@ -10,11 +10,6 @@
       "pageRoles" : "1"
     },
     {
-      "url"        : "/EduWeb",
-      "text"       : "[REFERENCES]",
-      "pageRoles"  : "1"
-    }, 
-    {
       "url"       : "/Marketing",
       "text"      : "[MARKETING]",
       "pageRoles" : "2"
@@ -24,6 +19,11 @@
       "text"      : "[CONFIG]",
       "pageRoles" : "3"
     },
+    {
+      "url"        : "/EduWeb",
+      "text"       : "[REFERENCES]",
+      "pageRoles"  : "4"
+    }, 
     {
       "url"       : "/AboutWeb",
       "text"      : "[ABOUT]",

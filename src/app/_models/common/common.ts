@@ -1,9 +1,11 @@
 //
 export enum SiteRole
 {
-    RoleAnonymous = 1,
-    RoleConfig    = 2,
-    RoleMarketing = 3
+    RoleAnonyumous = 0,
+    RoleAdmin      = 1,
+    RoleConfig     = 2,
+    RoleMarketing  = 3,
+    RoleEducation  = 4
 }
 export interface PageInfo
 {

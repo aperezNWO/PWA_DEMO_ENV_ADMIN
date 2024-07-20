@@ -1,5 +1,12 @@
 [
     {
+      "userId"     : 1,
+      "fullName"   : "Admin|",
+      "userName"   : "Admin",
+      "pwd"        : "Admin",
+      "userRoles"  : "1"
+    },
+    {
       "fullName"   : "Marketing",
       "userName"   : "Marketing",
       "pwd"        : "Marketing",
