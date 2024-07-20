@@ -24,9 +24,22 @@ export class ConfigService {
         console.error('Error loading configuration:', error);
       });
   }
+  // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadUsersData() {
+    return this.http.get('./assets/config/_UsersInfo.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading users..." + JSON.stringify(data));
+          //
+          _environment.usersList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading users:', error);
+      });
+  }
   //
-  loadNavData() {
-    return this.http.get('./assets/config/_routes.json').toPromise()
+  loadPagesInfoData() {
+    return this.http.get('./assets/config/_PagesInfo.json').toPromise()
       .then((data: any) => {
           //
           console.log("loading routes data..." + JSON.stringify(data));

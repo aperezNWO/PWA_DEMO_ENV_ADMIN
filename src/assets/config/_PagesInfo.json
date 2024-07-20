@@ -1,0 +1,37 @@
+[
+    {
+      "url"       : "/Home",
+      "text"      : "[INICIO]",
+      "pageRoles" : "1"
+    },
+    {
+      "url"       : "/DemosWeb",
+      "text"      : "[DEMOS]",
+      "pageRoles" : "1"
+    },
+    {
+      "url"        : "/EduWeb",
+      "text"       : "[REFERENCES]",
+      "pageRoles"  : "1"
+    }, 
+    {
+      "url"       : "/Marketing",
+      "text"      : "[MARKETING]",
+      "pageRoles" : "2"
+    },
+    {
+      "url"       : "/ConfigWeb",
+      "text"      : "[CONFIG]",
+      "pageRoles" : "3"
+    },
+    {
+      "url"       : "/AboutWeb",
+      "text"      : "[ABOUT]",
+      "pageRoles" : "1"
+    },
+    {
+      "url"        :  "/protected",
+      "text"       :  "[LOGIN]",
+      "pageRoles"  :  "1"
+    }
+  ]

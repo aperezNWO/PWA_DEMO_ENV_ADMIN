@@ -1,0 +1,14 @@
+[
+    {
+      "fullName"   : "Marketing",
+      "userName"   : "Marketing",
+      "pwd"        : "Marketing",
+      "userRoles"  : "2"
+    },
+    {
+      "fullName"   : "Config",
+      "userName"   : "Config",
+      "pwd"        : "Config",
+      "userRoles"  : "3"
+    }
+]

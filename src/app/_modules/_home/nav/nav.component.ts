@@ -1,7 +1,8 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { Title                      } from '@angular/platform-browser';
 import { ConfigService              } from '../../../_services/config.service';
-import { _environment } from '../../../../environments/environment';
+import { _environment               } from '../../../../environments/environment';
+import { PageInfo                    } from '../../../_models/common/common';
 //
 @Component({
   selector: 'app-nav',
@@ -29,37 +30,7 @@ export class NavComponent {
     this._navbarCollapsed = p_navbarCollapsed;
   }
   //
-  pages = [{}];
-  /*
-    {
-      'url': '/Home',
-      'text': '[INICIO]',
-    },
-    {
-      'url': '/DemosWeb',
-      'text': '[DEMOS]',
-    },
-    {
-      'url': '/EduWeb',
-      'text': '[REFERENCES]',
-    }, 
-    {
-      'url': '/Marketing',
-      'text': '[MARKETING]',
-    },
-    {
-      'url': '/ConfigWeb',
-      'text': '[CONFIG]',
-    },
-    {
-      'url': '/AboutWeb',
-      'text': '[ABOUT]',
-    },
-    {
-      'url': '/protected',
-      'text': '[LOGIN]',
-    }
-  ]*/
+  pages : PageInfo[] | undefined =  [];
   //-----------------------------------------------------------------------------------------------------
   constructor(
     private _configService: ConfigService,
@@ -89,7 +60,12 @@ export class NavComponent {
     //
     console.log("Setting Title : " + title);
     //
-    this.pages = _environment.routesList;
+    console.log("Route List    : " + _environment.routesList);
+		//
+		_environment.routesList.forEach((element: any) => {
+			this.pages!.push(element);
+			console.log(element)
+		});
   }
   //-----------------------------------------------------------------------------------------------------
   ngOnInit() {

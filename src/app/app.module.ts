@@ -55,7 +55,9 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   //
   _configService.loadMarketingData();
   //
-  _configService.loadNavData();
+  _configService.loadPagesInfoData();
+  //
+  _configService.loadUsersData();
   // 
   return () =>  _configService.loadConfig();
 }
