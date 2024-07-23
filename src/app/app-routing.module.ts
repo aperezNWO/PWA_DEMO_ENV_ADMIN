@@ -18,7 +18,7 @@ import { DevPagesListsComponent  } from './_modules/_config/AngularConfig/devPag
 import { ConfigWebComponent      } from './_modules/_config/_config-web/config-web.component';
 import { NodeJsConfigComponent   } from './_modules/_config/node-js-config/node-js-config.component';
 import { AboutWebComponent       } from './_modules/_about/about-web/about-web.component';
-import { ProtectedComponent      } from './_modules/_home/protected/protected.component';
+import { ProtectedComponent      } from './_modules/_login/protected/protected.component';
 import { CanActivateGuard } from './_modules/_config/can-activate.guard';
 
 //

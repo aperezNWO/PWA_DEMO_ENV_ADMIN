@@ -272,6 +272,8 @@
 
       -- [_] routes on external files.
 
+      -- [_] https://g.co/gemini/share/8f40611f1aed
+
  -- [_] hide repo links from demo info.     
       
 /***********************************************/

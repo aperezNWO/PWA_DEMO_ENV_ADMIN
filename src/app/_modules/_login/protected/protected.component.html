@@ -1,0 +1,13 @@
+<div align="center">
+  <h4><b>[LOGIN]</b></h4>
+  <hr>
+  <button class="btn btn-primary" (click)="openLogin()">Login</button>
+  <hr>
+   <ng-template #modalContent let-modalRef="modalRef">
+      <div class="modal fade" [ariaModal]="this.modalRef">
+        <div class="modal-content">
+          <ng-template [ngTemplateOutlet]="modalContent"></ng-template>
+        </div>
+      </div>
+  </ng-template>
+</div>

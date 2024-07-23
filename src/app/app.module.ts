@@ -36,8 +36,8 @@ import { CurriculumSortableHeader               } from './_directives/Demos/angu
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
-import { ProtectedComponent                     } from './_modules/_home/protected/protected.component';
-import { LoginContentComponent                  } from './_modules/_home/login-content/login-content.component';
+import { ProtectedComponent                     } from './_modules/_login/protected/protected.component';
+import { LoginComponentContent                  } from './_modules/_login/login-content/login-content.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -89,7 +89,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NodeJsConfigComponent,
     NodeJsConfigListSortableHeader,
     ProtectedComponent,
-    LoginContentComponent
+    LoginComponentContent
   ],
   imports: [
     BrowserModule,
