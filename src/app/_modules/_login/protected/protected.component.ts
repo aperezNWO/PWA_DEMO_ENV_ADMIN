@@ -24,10 +24,4 @@ export class ProtectedComponent {
     modalRef.componentInstance.username = this.username; // Pass initial username to modal
     modalRef.componentInstance.password = this.password; // Pass initial password to modal (optional for pre-filling)
   }
-
-  // Handle login logic here (form submission, authentication service call, etc.)
-  onSubmit() {
-    // Implement your login logic using username and password
-    console.log(`Username: ${this.username}, Password: ${this.password}`); // Example log
-  }
 }
