@@ -1,7 +1,7 @@
 import { Component                     } from '@angular/core';
 import { ActivatedRoute, Router        } from '@angular/router';
 import { Title                         } from '@angular/platform-browser';
-import { ConfigService                 } from './_services/config.service';
+import { ConfigService                 } from './_services/config/config.service';
 
 @Component({
   selector: 'app-root',

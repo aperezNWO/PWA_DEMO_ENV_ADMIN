@@ -18,19 +18,19 @@ export class AuthService {
   router: any;
   constructor(
     private http: HttpClient,
-    @Inject(OAuthService) private oauthService: OAuthService
+    //@Inject(OAuthService) private oauthService: OAuthService
   ) {
-    this.oauthService.configure(authConfig);
-    this.oauthService.initImplicitFlow();
+    //this.oauthService.configure(authConfig);
+    //this.oauthService.initImplicitFlow();
   }
 
   canActivate(): boolean {
-    if (this.oauthService.hasValidAccessToken()) {
+    //if (this.oauthService.hasValidAccessToken()) {
       return true;
-    } else {
-      this.router.navigate(['/login']);
-      return false;
-    }
+    //} else {
+    //  this.router.navigate(['/login']);
+    //  return false;
+    // }
   }
   // Methods for login, logout, retrieving user info, access token, etc. (see below)
 }

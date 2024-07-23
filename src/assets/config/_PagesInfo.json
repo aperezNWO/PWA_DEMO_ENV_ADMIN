@@ -31,7 +31,7 @@
     },
     {
       "url"        :  "/protected",
-      "text"       :  "[LOGIN]",
+      "text"       :  "[ACCESS]",
       "pageRoles"  :  "1"
     }
   ]

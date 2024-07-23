@@ -1,6 +1,6 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { Title                      } from '@angular/platform-browser';
-import { ConfigService              } from '../../../_services/config.service';
+import { ConfigService              } from '../../../_services/config/config.service';
 import { _environment               } from '../../../../environments/environment';
 import { PageInfo                    } from '../../../_models/common/common';
 //

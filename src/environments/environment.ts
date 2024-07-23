@@ -1,5 +1,5 @@
 export const _environment = {
-    loggedUser             : true,   // 
+    loggedUser             : false,  // 
     currentUserId          : 0,      //
     externalConfig         : {},     // Placeholder for external configuration
     routesList             : [{}],   // Placeholder for external configuration
