@@ -23,7 +23,16 @@ export class LoginComponentContent {
 
     //
     _environment.loggedUser = true;
+    _environment.userName   = this.username;
+    _environment.password   = this.password;
+    
+    // SEARCH LOGGED USER ON USER LIST
+    //_environment.usersList.find(user  )
 
+    // MATCH PASSEWORD
+
+    // GET THE ROLES FROM THE CURRENT USER
+    
     //
     this.router.navigateByUrl("/");
   }
