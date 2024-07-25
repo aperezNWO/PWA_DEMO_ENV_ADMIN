@@ -1,6 +1,7 @@
 import { Injectable   } from '@angular/core';
 import { HttpClient   } from '@angular/common/http';
 import { _environment } from '../../../environments/environment';
+import { UserInfo, UserInfoType     } from '../../_models/common/common';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,17 @@ export class ConfigService {
           console.log("loading users..." + JSON.stringify(data));
           //
           _environment.usersList = data; // Assign loaded data to environment variable
+          //
+          let _usersList : UserInfo[] = data;
+          // Creating a dictionary with id as the key and the entire person object as the value
+          const userseDictionary: Record<string, UserInfoType> = _usersList.reduce((acc, userInfo) => {
+            console.log('userInfo : ' + userInfo);
+            acc[userInfo.userName] = userInfo;
+            return acc;
+          }, {} as Record<string, UserInfoType>);
+
+          //
+          console.log('Admin ' + userseDictionary['Admin']);
       })
       .catch(error => {
         console.error('Error loading users:', error);

@@ -16,11 +16,14 @@ export interface PageInfo
 //
 export interface UserInfo
 {
+    userId     : number;
     fullName   : string;
     userName   : string;
     pwd        : string;
     userRoles  : string;
 }
+//
+export type UserInfoType = UserInfo; 
 //
 export type _SortDirection = 'asc' | 'desc' | '';
 //

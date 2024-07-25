@@ -264,7 +264,12 @@
 
       -- [_] https://g.co/gemini/share/8d2cbc587cac
 
--- [_] custom autn
+
+ -- [_] hide repo links from demo info.     
+
+ -- [_] OWASP.    
+
+ -- [_] custom autn
 
       -- [_] Guards.
 
@@ -272,10 +277,8 @@
 
       -- [_] routes on external files.
 
+      -- [_] search through pushed dictionary.
+
       -- [_] https://g.co/gemini/share/8f40611f1aed
-
- -- [_] hide repo links from demo info.     
-
- -- [_] OWASP.    
       
 /***********************************************/
