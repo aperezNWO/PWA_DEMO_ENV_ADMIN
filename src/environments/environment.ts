@@ -1,4 +1,3 @@
-
 export const _environment = {
     loggedUser             : false,  // 
     userName               : ""   ,  //
@@ -9,7 +8,8 @@ export const _environment = {
     usersInfo              : [{}],   // Placeholder for external configuration
     routesList             : [{}],   // Placeholder for external configuration
     usersList              : [{}],   // Placeholder for external configuration
-    AngularConfigList      : [{}],   // Json pages
+    usersDictionary        : [{}],   // Placeholder for external configuration
+    AngularConfigList      : [{}],   // Json pages[{}],   // Placeholder for external configuration
     AngularDemosList       : [{}],   // Json pages
     AngularCurriculumList  : [{}],   // Json pages
     NodeJsDemosList        : [{}],   // Json pages

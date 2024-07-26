@@ -1,7 +1,8 @@
-import { Component      } from '@angular/core';
-import { NgbModal       } from '@ng-bootstrap/ng-bootstrap';
-import { _environment   } from '../../../../environments/environment';
-import { Router         } from '@angular/router';
+import { Component              } from '@angular/core';
+import { NgbModal               } from '@ng-bootstrap/ng-bootstrap';
+import { _environment           } from '../../../../environments/environment';
+import { Router                 } from '@angular/router';
+import { UserInfo, UserInfoType } from '../../../_models/common/common';
 
 @Component({
   selector: 'app-login-modal-content',
@@ -25,9 +26,23 @@ export class LoginComponentContent {
     _environment.loggedUser = true;
     _environment.userName   = this.username;
     _environment.password   = this.password;
+
+    //
+    let _usersList : UserInfo[] = [];
+    //
+    _environment.usersList.forEach((element: any) => {
+        _usersList.push(element);
+        console.log(element)
+    });
+    //
+    const _userseDictionary: Record<string, UserInfoType> = _usersList.reduce((acc, userInfo) => {
+        console.log('userInfo : ' + userInfo);
+        acc[userInfo.userName] = userInfo;
+        return acc;
+    }, {} as Record<string, UserInfoType>);
     
     // SEARCH LOGGED USER ON USER LIST
-    //_environment.usersList.find(user  )
+    console.log('Users Dictionary Match' + _userseDictionary[_environment.userName]);
 
     // MATCH PASSEWORD
 

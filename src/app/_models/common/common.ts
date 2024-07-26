@@ -1,3 +1,5 @@
+import { _environment } from "../../../environments/environment";
+
 //
 export enum SiteRole
 {
@@ -23,7 +25,7 @@ export interface UserInfo
     userRoles  : string;
 }
 //
-export type UserInfoType = UserInfo; 
+export type UserInfoType   = UserInfo; 
 //
 export type _SortDirection = 'asc' | 'desc' | '';
 //
