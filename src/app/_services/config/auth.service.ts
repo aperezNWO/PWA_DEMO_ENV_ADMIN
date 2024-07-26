@@ -15,11 +15,15 @@ const authConfig = {
   providedIn: 'root'
 })
 export class AuthService {
-  router: any;
+  //
+  public  router      : any;
+  private _loggedUser : boolean = false;
+  //
   constructor(
     private http: HttpClient,
     //@Inject(OAuthService) private oauthService: OAuthService
-  ) {
+  ) 
+  {
     //this.oauthService.configure(authConfig);
     //this.oauthService.initImplicitFlow();
   }
@@ -33,4 +37,11 @@ export class AuthService {
     // }
   }
   // Methods for login, logout, retrieving user info, access token, etc. (see below)
+  public get loggedUser(): boolean { 
+    return this._loggedUser;
+  }
+  //
+  public set loggedUser(value : boolean) { 
+    this._loggedUser = value;
+  }
 }

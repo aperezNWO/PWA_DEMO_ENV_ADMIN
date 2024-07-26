@@ -1,5 +1,4 @@
 export const _environment = {
-    loggedUser             : false,  // 
     userName               : ""   ,  //
     password               : ""   ,  //
     currentUserId          : 0,      //

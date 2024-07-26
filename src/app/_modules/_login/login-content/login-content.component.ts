@@ -3,6 +3,7 @@ import { NgbModal               } from '@ng-bootstrap/ng-bootstrap';
 import { _environment           } from '../../../../environments/environment';
 import { Router                 } from '@angular/router';
 import { UserInfo, UserInfoType } from '../../../_models/common/common';
+import { AuthService            } from '../../../_services/config/auth.service';
 
 @Component({
   selector: 'app-login-modal-content',
@@ -13,8 +14,12 @@ export class LoginComponentContent {
   //
   username: string = '';
   password: string = '';
-  //
-  constructor(public modalService: NgbModal,  public router: Router) {} // Inject NgbModal for closing modal
+  // Inject NgbModal for closing modal
+  constructor(public modalService: NgbModal,  
+              public router: Router,
+              public authService: AuthService) {
+    //              
+  } 
   //
   onSubmit() {
     // Implement your login logic using username and password
@@ -23,7 +28,7 @@ export class LoginComponentContent {
     this.modalService.dismissAll('Login attempt'); // Close modal after submit
 
     //
-    _environment.loggedUser = true;
+    this.authService.loggedUser = true;
     _environment.userName   = this.username;
     _environment.password   = this.password;
 

@@ -1,8 +1,8 @@
 <div align="center">
   <h4><b>[ACCESS]</b></h4>
   <hr>
-  <button class="btn btn-primary"   *ngIf="(this.loggedUser==false)" (click)="this.openLogin()">[Login]</button>
-  <button class="btn btn-secondary" *ngIf="(this.loggedUser==true)"  (click)="this.signOut()">[Sign Out]</button>
+  <button class="btn btn-primary"   *ngIf="(this.authService.loggedUser==false)" (click)="this.openLogin()">[Login]</button>
+  <button class="btn btn-secondary" *ngIf="(this.authService.loggedUser==true)"  (click)="this.signOut()">[Sign Out]</button>
   <hr>
    <ng-template #modalContent let-modalRef="modalRef">
       <div class="modal fade" [ariaModal]="this.modalRef">
