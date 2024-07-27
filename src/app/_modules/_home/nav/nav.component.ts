@@ -3,6 +3,7 @@ import { Title                      } from '@angular/platform-browser';
 import { ConfigService              } from '../../../_services/config/config.service';
 import { _environment               } from '../../../../environments/environment';
 import { PageInfo                    } from '../../../_models/common/common';
+import { AuthService } from '../../../_services/config/auth.service';
 //
 @Component({
   selector: 'app-nav',
@@ -33,8 +34,9 @@ export class NavComponent {
   pages : PageInfo[] | undefined =  [];
   //-----------------------------------------------------------------------------------------------------
   constructor(
-    private _configService: ConfigService,
-    private titleService: Title
+    private _configService : ConfigService,
+    private titleService   : Title,
+    public  authService   : AuthService 
   ) {
     //
     console.log("Loading AppComponent...");

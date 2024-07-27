@@ -18,6 +18,9 @@ export class AuthService {
   //
   public  router      : any;
   private _loggedUser : boolean = false;
+  public userName     : string | undefined;
+  public password     : string | undefined;
+  public fullUserName : string | undefined;;
   //
   constructor(
     private http: HttpClient,
@@ -37,7 +40,7 @@ export class AuthService {
     // }
   }
   // Methods for login, logout, retrieving user info, access token, etc. (see below)
-  public get loggedUser(): boolean { 
+  public get loggedUser()    : boolean  { 
     return this._loggedUser;
   }
   //

@@ -24,14 +24,11 @@ export class LoginComponentContent {
   onSubmit() {
     // Implement your login logic using username and password
     console.log(`Username: ${this.username}, Password: ${this.password}`); // Example log
+
     // Handle form submission logic here (potentially call parent component's onSubmit)
-    this.modalService.dismissAll('Login attempt'); // Close modal after submit
-
-    //
-    this.authService.loggedUser = true;
-    _environment.userName   = this.username;
-    _environment.password   = this.password;
-
+    this.authService.userName   = this.username;
+    this.authService.password   = this.password;
+    this.authService.loggedUser = false;
     //
     let _usersList : UserInfo[] = [];
     //
@@ -45,15 +42,24 @@ export class LoginComponentContent {
         acc[userInfo.userName] = userInfo;
         return acc;
     }, {} as Record<string, UserInfoType>);
-    
-    // SEARCH LOGGED USER ON USER LIST
-    console.log('Users Dictionary Match' + _userseDictionary[_environment.userName]);
 
-    // MATCH PASSEWORD
-
-    // GET THE ROLES FROM THE CURRENT USER
-    
     //
-    this.router.navigateByUrl("/");
+    if (_userseDictionary[this.authService.userName] != null) { 
+      // MATCH PASSEWORD
+      this.authService.loggedUser = (_userseDictionary[this.authService.userName].userName.toUpperCase() == this.authService.userName.toUpperCase())
+                                    &&
+                                    (_userseDictionary[this.authService.userName].pwd                    == this.authService.password);
+      // GET THE ROLES FROM THE CURRENT USER
+      this.authService.fullUserName = _userseDictionary[this.authService.userName].fullName;
+    }
+    //
+    if (this.authService.loggedUser) {
+      // SEARCH LOGGED USER ON USER LIST
+      console.log('Users Dictionary Match : ' + this.authService.loggedUser);
+      //
+      this.modalService.dismissAll('Login attempt'); // Close modal after submit
+      //
+      this.router.navigateByUrl("/");
+    }
   }
 }

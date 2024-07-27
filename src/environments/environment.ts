@@ -1,6 +1,4 @@
 export const _environment = {
-    userName               : ""   ,  //
-    password               : ""   ,  //
     currentUserId          : 0,      //
     currentUserRoles       : "",     //
     externalConfig         : {},     // Placeholder for external configuration
