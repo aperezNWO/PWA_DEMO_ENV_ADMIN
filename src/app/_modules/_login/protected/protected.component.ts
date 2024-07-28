@@ -32,8 +32,11 @@ export class ProtectedComponent {
   //
   signOut() {
     //
-    this.authService.loggedUser = false;
-   
+    this.authService.loggedUser   = false;
+    this.authService.userName     = '';
+    this.authService.password     = '';
+    this.authService.userRoles    = '';
+    this.authService.fullUserName = '';
     //
     this.router.navigateByUrl("/");
   }

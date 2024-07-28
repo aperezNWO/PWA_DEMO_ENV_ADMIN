@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse subtitle" id="navbarItems" #navbarItems
             [ngbCollapse]="this._NavbarCollapsed" align="left">
             <ul class="navbar-nav" *ngFor="let page of pages">
-                <div *ngIf="(page.pageRoles == '1')">
+                <div *ngIf="(this.authService.matchRoles(page.pageRoles))">
                   <li class="nav-item">
                       <a class="nav-link" routerLink="/{{page.url}}" (click)="this._navbarCollapsed = true;"><div align="left">{{page.text}}</div></a>
                   </li>

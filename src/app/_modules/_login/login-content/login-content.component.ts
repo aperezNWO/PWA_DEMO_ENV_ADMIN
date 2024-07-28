@@ -49,8 +49,11 @@ export class LoginComponentContent {
       this.authService.loggedUser = (_userseDictionary[this.authService.userName].userName.toUpperCase() == this.authService.userName.toUpperCase())
                                     &&
                                     (_userseDictionary[this.authService.userName].pwd                    == this.authService.password);
-      // GET THE ROLES FROM THE CURRENT USER
+      // GET FULL USER NAME
       this.authService.fullUserName = _userseDictionary[this.authService.userName].fullName;
+
+      // GET THE ROLES FROM THE CURRENT USER
+      this.authService.userRoles    = _userseDictionary[this.authService.userName].userRoles;   
     }
     //
     if (this.authService.loggedUser) {

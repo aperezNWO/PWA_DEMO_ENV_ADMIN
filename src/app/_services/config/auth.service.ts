@@ -20,7 +20,8 @@ export class AuthService {
   private _loggedUser : boolean = false;
   public userName     : string | undefined;
   public password     : string | undefined;
-  public fullUserName : string | undefined;;
+  public fullUserName : string | undefined;
+  public userRoles    : string | undefined;
   //
   constructor(
     private http: HttpClient,
@@ -46,5 +47,18 @@ export class AuthService {
   //
   public set loggedUser(value : boolean) { 
     this._loggedUser = value;
+  }
+  //
+  matchRoles(pageRoles: string): boolean {
+    //
+    let bMatchRoles = false;
+    //
+    if (pageRoles == '1')
+        return true; 
+    
+    if (pageRoles == this.userRoles) 
+        return true;
+    //
+    return bMatchRoles;
   }
 }

@@ -9,7 +9,7 @@ export enum SiteRole
 }
 export interface PageInfo
 {
-    url         : string;
+    url          : string;
     text         : string;
     pageRoles    : string;
 }
