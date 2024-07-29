@@ -1,9 +1,11 @@
-import { Component              } from '@angular/core';
-import { NgbModal               } from '@ng-bootstrap/ng-bootstrap';
-import { _environment           } from '../../../../environments/environment';
-import { Router                 } from '@angular/router';
-import { UserInfo, UserInfoType } from '../../../_models/common/common';
-import { AuthService            } from '../../../_services/config/auth.service';
+import { Component                 } from '@angular/core';
+import { NgbModal                  } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, Validators   } from '@angular/forms';
+import { Router                    } from '@angular/router';
+import { _environment              } from '../../../../environments/environment';
+import { UserInfo, UserInfoType    } from '../../../_models/common/common';
+import { AuthService               } from '../../../_services/config/auth.service';
+import { LoginInfo                 } from '../../../_models/common/common';
 
 @Component({
   selector: 'app-login-modal-content',
@@ -12,23 +14,43 @@ import { AuthService            } from '../../../_services/config/auth.service';
 })
 export class LoginComponentContent {
   //
-  username: string = '';
-  password: string = '';
+  td_model                           = new LoginInfo( 
+     ""
+    ,""
+  );
+  //
+  rf_LoginForm            = this.formBuilder.group({
+    P_LOGIN_NAME         : [""  , Validators.required],
+    P_LOGIN_PASSWORD     : [""  , Validators.required],
+  });
+  //
+  td_form_submit           : boolean = false;
+  //
+  td_textStatus            : string  = "";
   // Inject NgbModal for closing modal
-  constructor(public modalService: NgbModal,  
-              public router: Router,
-              public authService: AuthService) {
+  constructor(public modalService : NgbModal,  
+              public router       : Router,
+              public authService  : AuthService,
+              public formBuilder  : FormBuilder) {
     //              
   } 
   //
   onSubmit() {
-    // Implement your login logic using username and password
-    console.log(`Username: ${this.username}, Password: ${this.password}`); // Example log
-
-    // Handle form submission logic here (potentially call parent component's onSubmit)
-    this.authService.userName   = this.username;
-    this.authService.password   = this.password;
+    //
+    this.td_textStatus  = "";
+    //
+    this.td_form_submit = true;
+    //
+    this.authService.userName   = this.td_model.P_LOGIN_NAME;
+    this.authService.password   = this.td_model.P_LOGIN_PASSWORD;
     this.authService.loggedUser = false;
+    // Implement your login logic using username and password
+    console.log(`Username  : ${this.td_model.P_LOGIN_NAME}, Password: ${this.td_model.P_LOGIN_PASSWORD}`); // Example log
+    // Implement your login logic using username and password
+    console.log(`Valid Form: ${this.td_valid_form()}`); // Example log
+    //
+    if ((this.td_valid_form() == false))
+      return;
     //
     let _usersList : UserInfo[] = [];
     //
@@ -63,6 +85,28 @@ export class LoginComponentContent {
       this.modalService.dismissAll('Login attempt'); // Close modal after submit
       //
       this.router.navigateByUrl("/");
+    } 
+    else 
+    {
+      this.td_textStatus = "Usuario o contraseña inválidos";
     }
+  }
+  //
+  onCancel(){
+    //
+    this.modalService.dismissAll('Login attempt'); // Close modal after submit
+  }
+  //
+  onInputChange(event: any) {
+    // Perform actions with the new value
+    this.td_textStatus = "";
+  }
+  //
+  td_valid_form() : boolean {
+    return (       
+        ( ( this.td_model.P_LOGIN_NAME          != "" ) && (this.td_model.P_LOGIN_NAME         !=  null) ) 
+        && 
+        ( ( this.td_model.P_LOGIN_PASSWORD      != "" ) && (this.td_model.P_LOGIN_PASSWORD     !=  null) ) 
+    );  
   }
 }

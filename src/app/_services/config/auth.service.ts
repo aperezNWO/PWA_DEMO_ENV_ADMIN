@@ -53,7 +53,7 @@ export class AuthService {
     //
     let bMatchRoles = false;
     //
-    if (pageRoles == '1')
+    if (pageRoles == '0')
         return true; 
     
     if (pageRoles == this.userRoles) 

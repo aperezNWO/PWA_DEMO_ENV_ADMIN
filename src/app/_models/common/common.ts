@@ -7,6 +7,9 @@ export enum SiteRole
     RoleMarketing  = 3,
     RoleEducation  = 4
 }
+//
+export type SiteRoleType   = SiteRole; 
+//
 export interface PageInfo
 {
     url          : string;
@@ -21,6 +24,19 @@ export interface UserInfo
     userName   : string;
     pwd        : string;
     userRoles  : string;
+}
+//
+//
+export class  LoginInfo
+{
+    //
+    constructor(
+        public    P_LOGIN_NAME       : string,
+        public    P_LOGIN_PASSWORD   : string,
+    )
+    {
+        //
+    }
 }
 //
 export type UserInfoType   = UserInfo; 

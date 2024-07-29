@@ -2,12 +2,12 @@
     {
       "url"       : "/Home",
       "text"      : "[INICIO]",
-      "pageRoles" : "1"
+      "pageRoles" : "0"
     },
     {
       "url"       : "/DemosWeb",
       "text"      : "[DEMOS]",
-      "pageRoles" : "1"
+      "pageRoles" : "0"
     },
     {
       "url"       : "/Marketing",
@@ -27,11 +27,11 @@
     {
       "url"       : "/AboutWeb",
       "text"      : "[ABOUT]",
-      "pageRoles" : "1"
+      "pageRoles" : "0"
     },
     {
       "url"        :  "/protected",
       "text"       :  "[ACCESS]",
-      "pageRoles"  :  "1"
+      "pageRoles"  :  "0"
     }
   ]

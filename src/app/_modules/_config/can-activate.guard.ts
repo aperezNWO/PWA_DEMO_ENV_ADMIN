@@ -8,9 +8,6 @@ export const CanActivateGuard: CanActivateFn = (route, state) => {
   //
   let canActivate : boolean = true;
   //
-  if (route.url.toString() == 'Marketing')
-    return false;
-  //
   return canActivate;
 };
 
