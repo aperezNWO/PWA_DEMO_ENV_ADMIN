@@ -25,7 +25,8 @@
 				<th scope="col" nodejsfeaturepagesortable="done"            (nodejsfeaturepagesort)="onSort($event)">(hecho)</th>
 				<th scope="col" nodejsfeaturepagesortable="name"            (nodejsfeaturepagesort)="onSort($event)">Nombre</th>
 				<th scope="col" nodejsfeaturepagesortable="urlDemo"         (nodejsfeaturepagesort)="onSort($event)">Demo</th>
-				<th scope="col" nodejsfeaturepagesortable="urlRepo"         (nodejsfeaturepagesort)="onSort($event)">Repo</th>
+				<th scope="col" *ngIf="this.authService.matchRoles('3')"
+								nodejsfeaturepagesortable="urlRepo"         (nodejsfeaturepagesort)="onSort($event)">Repo</th>
 				<th scope="col" nodejsfeaturepagesortable="urlCurriculum"   (nodejsfeaturepagesort)="onSort($event)">Tema</th>
 				<th scope="col" nodejsfeaturepagesortable="keywords"        (nodejsfeaturepagesort)="onSort($event)">P. Clave</th>
 				<th scope="col" nodejsfeaturepagesortable="description"     (nodejsfeaturepagesort)="onSort($event)">Descripción</th>
@@ -48,7 +49,7 @@
 							[Demo]
 						</a>
 					</td>
-					<td>
+					<td *ngIf="this.authService.matchRoles('3')">
 						<a ngb-highlight [href]="featurePage.urlRepo" target="_blank">
 							[Repo]
 						</a>

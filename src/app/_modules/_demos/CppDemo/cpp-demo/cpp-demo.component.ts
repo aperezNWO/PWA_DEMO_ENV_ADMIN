@@ -3,6 +3,7 @@ import { Observable                                             } from 'rxjs';
 import { CppFeatures                                            } from '../../../../_models/CppDemo/CppFeatures';
 import { CppFeatureListSortableHeader, _CppFeaturePageSortEvent } from '../../../../_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { CppFeaturesService                                     } from '../../../../_services/cppDemo/cpp-features.service';
+import { AuthService                                            } from '../../../../_services/config/auth.service';
 //
 @Component({
   selector: 'app-cpp-demo',
@@ -16,7 +17,10 @@ export class CppDemoComponent {
     // 
     @ViewChildren(CppFeatureListSortableHeader) headers: QueryList<CppFeatureListSortableHeader> | undefined;
     //
-    constructor(public service: CppFeaturesService) {
+    constructor(public service    : CppFeaturesService,
+                public authService: AuthService,
+    ) 
+    {
       this.featurePagesList = service.featurepageLists;
       this.total            = service.total;
     }

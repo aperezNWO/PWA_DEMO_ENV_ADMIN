@@ -97,7 +97,12 @@ export class LoginComponentContent {
     this.modalService.dismissAll('Login attempt'); // Close modal after submit
   }
   //
-  onInputChange(event: any) {
+  onInputChange_LOGIN(event: any) {
+    // Perform actions with the new value
+    this.td_textStatus = "";
+  }
+  //
+  onInputChange_PWD(event: any) {
     // Perform actions with the new value
     this.td_textStatus = "";
   }

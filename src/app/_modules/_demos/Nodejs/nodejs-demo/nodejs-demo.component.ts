@@ -3,6 +3,7 @@ import { Observable                                                     } from '
 import { NodeJsFeatures                                                 } from '../../../../_models/nodejsDemo/NodeJsFeatures';
 import { _NodeJsFeaturePageSortEvent, NodeJsFeatureListSortableHeader   } from '../../../../_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsFeaturesService                                          } from '../../../../_services/nodejsDemo/node-js-features.service';
+import { AuthService                                                    } from '../../../../_services/config/auth.service';
 
 @Component({
   selector: 'app-nodejs-demo',
@@ -16,7 +17,9 @@ export class NodejsDemoComponent {
  // 
  @ViewChildren(NodeJsFeatureListSortableHeader) headers: QueryList<NodeJsFeatureListSortableHeader> | undefined;
  //
- constructor(public service: NodeJsFeaturesService) {
+ constructor(public service: NodeJsFeaturesService,
+             public authService : AuthService, 
+ ) {
    this.featurePagesList = service.featurepageLists;
    this.total            = service.total;
  }
