@@ -19,11 +19,11 @@ export class DemosComponent {
     {
       'url': '/NodeJsWeb',
       'text': '[NODE.JS DEMO]',
-    },/*
+    },
     {
       'url': '/NetCoreWeb',
       'text': '[.NET CORE DEMO]',
-    },
+    }/*,
     {
       'url': '/PhpWeb',
       'text': '[PHP DEMO]',

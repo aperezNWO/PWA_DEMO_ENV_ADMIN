@@ -16,7 +16,6 @@ const authConfig = {
 })
 export class AuthService {
   //
-  public  router      : any;
   private _loggedUser : boolean = false;
   public userName     : string | undefined;
   public password     : string | undefined;
@@ -31,7 +30,7 @@ export class AuthService {
     //this.oauthService.configure(authConfig);
     //this.oauthService.initImplicitFlow();
   }
-
+  //
   canActivate(): boolean {
     //if (this.oauthService.hasValidAccessToken()) {
       return true;

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './netcore-web.component.css'
 })
 export class NetcoreWebComponent {
-
+  //
+  pages = [
+    {
+      'url': '/NetCoreDemo',
+      'text': '[Net Core / CARACTERISTICAS]',
+    },
+  ]
 }

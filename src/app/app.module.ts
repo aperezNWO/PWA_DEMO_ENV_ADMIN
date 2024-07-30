@@ -14,7 +14,7 @@ import { PageNotFoundComponent                  } from './_modules/_home/page-no
 import { ConfigService                          } from './_services/config/config.service';
 import { CppDemoComponent                       } from './_modules/_demos/CppDemo/cpp-demo/cpp-demo.component';
 import { CppWebComponent                        } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
-import { NetcoreWebComponent                    } from './_modules/_demos/NetCore/netcore-web/netcore-web.component';
+import { NetcoreWebComponent                    } from './_modules/_demos/NetCore/netcore-web/netcoreweb/netcore-web.component';
 import { NodeJsWebComponent                     } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
 import { PhpWebComponent                        } from './_modules/_demos/Php/php-web/php-web.component';
 import { FeaturePagesComponent                  } from './_modules/_demos/angularDemo/feature-pages/feature-pages.component';
@@ -40,6 +40,7 @@ import { CurriculumSortableHeader               } from './_directives/Demos/angu
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
+import { NetcoredemoComponent } from './_modules/_demos/NetCore/netcore-web/netcoredemo/netcoredemo.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -93,7 +94,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     ProtectedComponent,
     LoginComponentContent,
     ContactComponent,
-    TechInfoComponent
+    TechInfoComponent,
+    NetcoredemoComponent
   ],
   imports: [
     BrowserModule,

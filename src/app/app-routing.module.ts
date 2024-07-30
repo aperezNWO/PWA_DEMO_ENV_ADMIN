@@ -6,7 +6,8 @@ import { AngularComponent        } from './_modules/_demos/angularDemo/angular-w
 import { FeaturePagesComponent   } from './_modules/_demos/angularDemo/feature-pages/feature-pages.component';
 import { CppDemoComponent        } from './_modules/_demos/CppDemo/cpp-demo/cpp-demo.component';
 import { CppWebComponent         } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
-import { NetcoreWebComponent     } from './_modules/_demos/NetCore/netcore-web/netcore-web.component';
+import { NetcoreWebComponent     } from './_modules/_demos/NetCore/netcore-web/netcoreweb/netcore-web.component';
+import { NetcoredemoComponent    } from './_modules/_demos/NetCore/netcore-web/netcoredemo/netcoredemo.component';
 import { NodejsDemoComponent     } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
 import { NodeJsWebComponent      } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
 import { PhpWebComponent         } from './_modules/_demos/Php/php-web/php-web.component';
@@ -22,7 +23,6 @@ import { TechInfoComponent       } from './_modules/_about/tech-info/tech-info.c
 import { AboutWebComponent       } from './_modules/_about/about-web/about-web.component';
 import { ProtectedComponent      } from './_modules/_login/protected/protected.component';
 import { CanActivateGuard        } from './_modules/_config/can-activate.guard';
-
 //
 const routes: Routes = [
   {  path: 'Home'                     , component: HomeComponent                      },
@@ -35,6 +35,7 @@ const routes: Routes = [
   {  path: 'NodeJsDemo'               , component: NodejsDemoComponent                }, 
   {  path: 'NodeJsWeb'                , component: NodeJsWebComponent                 }, 
   {  path: 'NodeJsConfig'             , component: NodeJsConfigComponent              }, 
+  {  path: 'NetCoreDemo'              , component: NetcoredemoComponent               },
   {  path: 'NetCoreWeb'               , component: NetcoreWebComponent                },
   {  path: 'PhpWeb'                   , component: PhpWebComponent                    }, 
   {  path: 'CppDemo'                  , component: CppDemoComponent                   }, 
