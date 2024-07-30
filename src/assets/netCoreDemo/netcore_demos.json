@@ -1,0 +1,14 @@
+[
+	{
+		"id"               : 1,
+        "done"             : true,
+        "name"             : "Lectura de archivos de configuración",
+        "description"      : "Archivo config.json",
+        "framework"        : "Angular",
+        "keywords"         : "Json, Config, HttpClient, Environment",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
+        "urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_services/-config.service.ts",
+        "urlCurriculum"    : "https://angular.dev/guide/http/setup"   
+    }
+]       
+
