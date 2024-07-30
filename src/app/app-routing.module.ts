@@ -17,9 +17,11 @@ import { MarketingComponent      } from './_modules/_marketing/marketing.compone
 import { DevPagesListsComponent  } from './_modules/_config/AngularConfig/devPagesList.component';
 import { ConfigWebComponent      } from './_modules/_config/_config-web/config-web.component';
 import { NodeJsConfigComponent   } from './_modules/_config/node-js-config/node-js-config.component';
+import { ContactComponent        } from './_modules/_about/contact/contact.component';
+import { TechInfoComponent       } from './_modules/_about/tech-info/tech-info.component';
 import { AboutWebComponent       } from './_modules/_about/about-web/about-web.component';
 import { ProtectedComponent      } from './_modules/_login/protected/protected.component';
-import { CanActivateGuard } from './_modules/_config/can-activate.guard';
+import { CanActivateGuard        } from './_modules/_config/can-activate.guard';
 
 //
 const routes: Routes = [
@@ -41,6 +43,8 @@ const routes: Routes = [
   {  path: 'EduWeb'                   , component: EduWebComponent                    },
   {  path: 'ConfigWeb'                , component: ConfigWebComponent                 
                                       , canActivate: [CanActivateGuard]               }, // Protected component
+  {  path: 'Contact'                  , component: ContactComponent                   },
+  {  path: 'TechInfo'                 , component: TechInfoComponent                  },
   {  path: 'AboutWeb'                 , component: AboutWebComponent                  },
   {  path: 'Marketing'                , component: MarketingComponent                 
                                       , canActivate: [CanActivateGuard]               }, // Protected component

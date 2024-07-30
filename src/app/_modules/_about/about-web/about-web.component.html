@@ -2,6 +2,12 @@
     <hr>
 </div>
 <hr>
+<ul class="navbar-nav" *ngFor="let page of pages">
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/{{page.url}}"><div align="left">{{page.text}}</div></a>
+    </li>
+</ul>
+<hr>
 <div align="right">
     <a routerLink="/Home">[Inicio]</a>
 </div>

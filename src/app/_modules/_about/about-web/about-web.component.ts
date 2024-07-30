@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrl: './about-web.component.css'
 })
 export class AboutWebComponent {
-
+  //
+  pages = [
+    {
+      'url': '/Contact',
+      'text': '[Contacto]',
+    },
+    {
+      'url': '/TechInfo',
+      'text': '[Especificaciones Técnicas]',
+    },
+  ]
 }

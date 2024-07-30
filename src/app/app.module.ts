@@ -26,9 +26,13 @@ import { CurriculumComponent                    } from './_modules/_education/An
 import { EduWebComponent                        } from './_modules/_education/_edu-web/edu-web.component';
 import { HomeComponent                          } from './_modules/_home/_homeWeb/home.component';
 import { MarketingComponent                     } from './_modules/_marketing/marketing.component';
+import { ContactComponent                       } from './_modules/_about/contact/contact.component';
+import { TechInfoComponent                      } from './_modules/_about/tech-info/tech-info.component';
 import { AboutWebComponent                      } from './_modules/_about/about-web/about-web.component';
 import { NodejsDemoComponent                    } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
 import { NodeJsConfigComponent                  } from './_modules/_config/node-js-config/node-js-config.component';
+import { ProtectedComponent                     } from './_modules/_login/protected/protected.component';
+import { LoginComponentContent                  } from './_modules/_login/login-content/login-content.component';
 import { DevPageSortableHeader                  } from './_directives/Demos/angularDemo/devPagesListSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
 import { MarketingSortableHeader                } from './_directives/marketing/marketing.directive';
@@ -36,8 +40,6 @@ import { CurriculumSortableHeader               } from './_directives/Demos/angu
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
-import { ProtectedComponent                     } from './_modules/_login/protected/protected.component';
-import { LoginComponentContent                  } from './_modules/_login/login-content/login-content.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -89,7 +91,9 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NodeJsConfigComponent,
     NodeJsConfigListSortableHeader,
     ProtectedComponent,
-    LoginComponentContent
+    LoginComponentContent,
+    ContactComponent,
+    TechInfoComponent
   ],
   imports: [
     BrowserModule,
