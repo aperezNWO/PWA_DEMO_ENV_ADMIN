@@ -157,6 +157,19 @@ export class ConfigService {
       });
   }
   //
+  loadNetCoreConfigData() {
+    return this.http.get('./assets/netCoreDemo/netcore_config.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading net core demo config data ..." + JSON.stringify(data));
+          //
+          _environment.netCoreDemoConfigList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading net core demo  config data:', error);
+      });
+  }
+  //
   getConfigValue(key: string) {
     //
     let jsonData : string = JSON.parse(JSON.stringify(_environment.externalConfig))[key];

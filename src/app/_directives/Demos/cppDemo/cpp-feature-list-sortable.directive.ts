@@ -1,6 +1,6 @@
 import { Directive, EventEmitter, Input, Output   } from '@angular/core';
 import { CppFeatures                              } from '../../../_models/CppDemo/CppFeatures';
-import { _SortDirection, pagerotate                           } from '../../../_models/common/common';
+import { _SortDirection, pagerotate               } from '../../../_models/common/common';
 //
 export type _CppFeatureSortColumn    = keyof CppFeatures      | '';
 //
@@ -20,7 +20,7 @@ export interface _CppFeaturePageSortEvent {
 export class CppFeatureListSortableHeader {
   //
   @Input()  cppfeaturepagesortable       :   _CppFeatureSortColumn    = '';
-  @Input()  cppfeaturepagedirection      :   _SortDirection = '';
+  @Input()  cppfeaturepagedirection      :   _SortDirection           = '';
   @Output() cppfeaturepagesort          = new EventEmitter<_CppFeaturePageSortEvent>();
   //
   _rotateCppFeaturePage() {

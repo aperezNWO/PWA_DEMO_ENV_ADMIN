@@ -1,16 +1,16 @@
 [
 	{
 		"id"               : 1,
-		"done"             : true,
-		"name"             : "[PWA_DEMO - ENV_LANDING]",
-		"description"      : "Angular Learning - Landing Page",
-		"framework"        : "Angular",
-		"frameworkUrl"     : "https://v17.angular.io/docs/",
-		"frameworkVersion" : "17.3.8",
-		"uixFramework"     : "NGBOOTSTRAP", 
-		"uixFrameworkUrl"  : "https://ng-bootstrap.github.io/#/home",      
-		"urlPage"          : "https://apereznwo.github.io/PWA_DEMO_ENV_LANDING/",
-		"urlRepo"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING.git",
-		"urlCurriculum"    : ""
+        "done"             : true,
+        "name"             : ".net core / sql server hosting",
+        "description"      : ".net core / sql server hosting",
+        "framework"        : ".net core",
+        "keywords"         : ".net core, sql server, api rest, somee",
+        "urlDemo"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV/",
+        "urlRepo"          : "https://github.com/aperezNWO/mcsdNetCoreBackup/blob/main/mcsd.Web/Controllers/DemosController.cs",
+        "urlBackend"       : "https://angularwebapidemo.somee.com/demos/GenerarInformeCSVJson",
+	    "urlHosting"       : "https://www.somee.com/",
+		"userName"         : "alejandro.perez.acosta@gmail.com",
+		"password"         : "p@bloPerez.2023.01"
 	}
 ]      

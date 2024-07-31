@@ -37,11 +37,11 @@ function matches(netcoreDemoPagelist: netCoreDemo, term: string, pipe: PipeTrans
 @Injectable({
   providedIn: 'root'
 })
-export class NetcoreDemoService {
+export class NetcoreConfigService {
 	//
 	private _loading               = new BehaviorSubject<boolean>(true);
 	private _search$               = new Subject<void>();
-	private _netcoreDemoPagelist   = new BehaviorSubject<netCoreDemo[]>([]);
+	private _netcoreConfigPagelist = new BehaviorSubject<netCoreDemo[]>([]);
 	private _total                 = new BehaviorSubject<number>(0);
     //
 	private _state: _NetCoreDemoPageSearchState = {
@@ -62,7 +62,7 @@ export class NetcoreDemoService {
         tap(() => this._loading!.next(false)),
       )
       .subscribe((result) => {
-          this._netcoreDemoPagelist!.next(result.netcoreDemoPages);
+          this._netcoreConfigPagelist!.next(result.netcoreDemoPages);
           this._total!.next(result.total);
       });
       //

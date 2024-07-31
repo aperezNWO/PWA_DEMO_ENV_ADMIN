@@ -58,6 +58,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   //
   _configService.loadNetCoreDemoData();
   //
+  _configService.loadNetCoreConfigData();
+  //
   _configService.loadMarketingData();
   //
   _configService.loadPagesInfoData();
