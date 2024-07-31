@@ -12,5 +12,6 @@ export const _environment = {
     NodeJsDemosList        : [{}],   // Json pages
     NodeJsConfigList       : [{}],   // Json pages
     cppDemoList            : [{}],   // Json pages
+    netCoreDemoList        : [{}],   // Json pages
     marketingList          : [{}],   // Json pages
 };
