@@ -33,6 +33,8 @@ import { NodejsDemoComponent                    } from './_modules/_demos/Nodejs
 import { NodeJsConfigComponent                  } from './_modules/_config/node-js-config/node-js-config.component';
 import { ProtectedComponent                     } from './_modules/_login/protected/protected.component';
 import { LoginComponentContent                  } from './_modules/_login/login-content/login-content.component';
+import { NetcoredemoComponent                   } from './_modules/_demos/NetCore/netcore-web/netcoredemo/netcoredemo.component';
+import { NetCoreConfigComponent                 } from './_modules/_config/net-core-config/net-core-config.component';
 import { DevPageSortableHeader                  } from './_directives/Demos/angularDemo/devPagesListSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
 import { MarketingSortableHeader                } from './_directives/marketing/marketing.directive';
@@ -40,7 +42,6 @@ import { CurriculumSortableHeader               } from './_directives/Demos/angu
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
-import { NetcoredemoComponent } from './_modules/_demos/NetCore/netcore-web/netcoredemo/netcoredemo.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -99,7 +100,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     LoginComponentContent,
     ContactComponent,
     TechInfoComponent,
-    NetcoredemoComponent
+    NetcoredemoComponent,
+    NetCoreConfigComponent
   ],
   imports: [
     BrowserModule,

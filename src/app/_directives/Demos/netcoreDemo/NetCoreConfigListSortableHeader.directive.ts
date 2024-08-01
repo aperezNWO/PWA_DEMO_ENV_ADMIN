@@ -1,8 +1,8 @@
 import { Directive, EventEmitter, Input, Output   } from '@angular/core';
-import { netCoreDemo                              } from '../../../_models/netCoreDemo/netCoreDemo';
 import { _SortDirection, pagerotate               } from '../../../_models/common/common';
+import { NetCoreConfig                            } from '../../../_models/netCoreDemo/netCoreConfig';
 //
-export type _NetCoreConfigSortColumn               = keyof netCoreDemo      | '';
+export type _NetCoreConfigSortColumn               = keyof NetCoreConfig      | '';
 //
 export interface _NetCoreConfigPageSortEvent {
 	_column   :  _NetCoreConfigSortColumn;
@@ -21,11 +21,11 @@ export class NetCoreConfigListSortableHeader {
   //
   @Input()  netcoreconfigpagesortable       :   _NetCoreConfigSortColumn    = '';
   @Input()  netcoreconfigpagedirection      :   _SortDirection = '';
-  @Output() netcoredemopagesort          =   new EventEmitter<_NetCoreConfigPageSortEvent>();
+  @Output() netcoreconfigpagesort          =   new EventEmitter<_NetCoreConfigPageSortEvent>();
   //
   _rotateNetCoreConfigPage() {
     this.netcoreconfigpagedirection = pagerotate[this.netcoreconfigpagedirection];
-    this.netcoredemopagesort.emit({ 
+    this.netcoreconfigpagesort.emit({ 
                 _column   : this.netcoreconfigpagesortable, 
                 _direction: this.netcoreconfigpagedirection 
                 });

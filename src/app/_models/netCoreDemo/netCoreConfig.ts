@@ -1,4 +1,4 @@
-export interface netCoreConfig
+export interface NetCoreConfig
 {
     id               : number;
     done             : boolean;
@@ -15,7 +15,7 @@ export interface netCoreConfig
 }
 
 export interface _NetCorConfigSearchResult {
-    netcoreDemoPages : netCoreConfig[];
-    total            : number;
+    netcoreConfigPages : NetCoreConfig[];
+    total              : number;
 }   
 

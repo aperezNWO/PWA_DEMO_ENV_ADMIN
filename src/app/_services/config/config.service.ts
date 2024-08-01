@@ -163,7 +163,7 @@ export class ConfigService {
           //
           console.log("loading net core demo config data ..." + JSON.stringify(data));
           //
-          _environment.netCoreDemoConfigList = data; // Assign loaded data to environment variable
+          _environment.netCoreConfigList = data; // Assign loaded data to environment variable
       })
       .catch(error => {
         console.error('Error loading net core demo  config data:', error);

@@ -17,5 +17,9 @@ export class ConfigWebComponent {
       'url': '/NodeJsConfig',
       'text': '[NodeJs - ENTORNOS]',
     },
+    {
+      'url': '/NetCoreConfig',
+      'text': '[.Net Core - ENTORNOS]',
+    },
   ]
 }

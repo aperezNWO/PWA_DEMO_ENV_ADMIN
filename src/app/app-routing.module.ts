@@ -8,6 +8,7 @@ import { CppDemoComponent        } from './_modules/_demos/CppDemo/cpp-demo/cpp-
 import { CppWebComponent         } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
 import { NetcoreWebComponent     } from './_modules/_demos/NetCore/netcore-web/netcoreweb/netcore-web.component';
 import { NetcoredemoComponent    } from './_modules/_demos/NetCore/netcore-web/netcoredemo/netcoredemo.component';
+import { NetCoreConfigComponent  } from './_modules/_config/net-core-config/net-core-config.component';
 import { NodejsDemoComponent     } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
 import { NodeJsWebComponent      } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
 import { PhpWebComponent         } from './_modules/_demos/Php/php-web/php-web.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   {  path: 'NodeJsDemo'               , component: NodejsDemoComponent                }, 
   {  path: 'NodeJsWeb'                , component: NodeJsWebComponent                 }, 
   {  path: 'NodeJsConfig'             , component: NodeJsConfigComponent              }, 
+  {  path: 'NetCoreConfig'            , component: NetCoreConfigComponent             },
   {  path: 'NetCoreDemo'              , component: NetcoredemoComponent               },
   {  path: 'NetCoreWeb'               , component: NetcoreWebComponent                },
   {  path: 'PhpWeb'                   , component: PhpWebComponent                    }, 
