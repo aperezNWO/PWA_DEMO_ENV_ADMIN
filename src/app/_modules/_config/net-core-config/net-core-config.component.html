@@ -21,13 +21,13 @@
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
-                    <th scope="col" netcoreconfigpagesortable="id"                    >#</th>
-                    <th scope="col" >(Hecho)</th>
-                    <th scope="col" >Nombre</th>
-                    <th scope="col" >Descripción</th>
-                    <th scope="col" >Repo</th>
-                    <th scope="col" >Backend</th>
-                    <th scope="col"  >Hosting</th>
+                    <th scope="col" netcoreconfigpagesortable="id"          (netcoreconfigpagesort)="onSort($event)">#</th>
+                    <th scope="col" netcoreconfigpagesortable="done"        (netcoreconfigpagesort)="onSort($event)">(Hecho)</th>
+                    <th scope="col" netcoreconfigpagesortable="name"        (netcoreconfigpagesort)="onSort($event)">Nombre</th>
+                    <th scope="col" netcoreconfigpagesortable="description" (netcoreconfigpagesort)="onSort($event)">Descripción</th>
+                    <th scope="col" netcoreconfigpagesortable="urlRepo"     (netcoreconfigpagesort)="onSort($event)">Repo</th>
+                    <th scope="col" netcoreconfigpagesortable="urlBackend"  (netcoreconfigpagesort)="onSort($event)">Backend</th>
+                    <th scope="col" netcoreconfigpagesortable="urlHosting"  (netcoreconfigpagesort)="onSort($event)">Hosting</th>
 
                 </tr>
             </thead>
