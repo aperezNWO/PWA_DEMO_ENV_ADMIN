@@ -10,13 +10,13 @@
       "pageRoles" : "0"
     },
     {
-      "url"       : "/Marketing",
-      "text"      : "[MARKETING]",
+      "url"       : "/ConfigWeb",
+      "text"      : "[CONFIG]",
       "pageRoles" : "2"
     },
     {
-      "url"       : "/ConfigWeb",
-      "text"      : "[CONFIG]",
+      "url"       : "/Marketing",
+      "text"      : "[MARKETING]",
       "pageRoles" : "3"
     },
     {

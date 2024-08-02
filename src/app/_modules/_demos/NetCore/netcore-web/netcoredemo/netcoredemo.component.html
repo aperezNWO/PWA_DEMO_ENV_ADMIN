@@ -26,9 +26,9 @@
 				<th scope="col" netcoredemosortable="done"        (netcoredemosort)="onSort($event)">(hecho)</th>
 				<th scope="col" netcoredemosortable="name"        (netcoredemosort)="onSort($event)">Nombre</th>
 				<th scope="col" netcoredemosortable="urlDemo"     (netcoredemosort)="onSort($event)">Demo</th>
-				<th scope="col" *ngIf="this.authService.matchRoles('3')"
+				<th scope="col" *ngIf="this.authService.matchRoles(this.ConfigRoleString)"
 								netcoredemosortable="urlRepo"     (netcoredemosort)="onSort($event)"	>Repo</th>
-				<th scope="col" *ngIf="this.authService.matchRoles('3')" 
+				<th scope="col" *ngIf="this.authService.matchRoles(this.ConfigRoleString)" 
 				                netcoredemosortable="urlBackend"  (netcoredemosort)="onSort($event)">Backend</th>
 				<th scope="col" netcoredemosortable="keywords"    (netcoredemosort)="onSort($event)">P. Clave</th>
 				<th scope="col" netcoredemosortable="description" (netcoredemosort)="onSort($event)">Descripción</th>
@@ -51,12 +51,12 @@
 							[Demo]
 						</a>
 					</td>
-					<td *ngIf="this.authService.matchRoles('3')">
+					<td *ngIf="this.authService.matchRoles(this.ConfigRoleString)">
 						<a ngb-highlight [href]="netcoreDemoPage.urlRepo" target="_blank">
 							[Repo]
 						</a>
 					</td>
-					<td *ngIf="this.authService.matchRoles('3')">
+					<td *ngIf="this.authService.matchRoles(this.ConfigRoleString)">
 						<a ngb-highlight [href]="netcoreDemoPage.urlBackend" target="_blank">
 							[Backend]
 						</a>

@@ -42,8 +42,8 @@ import { CurriculumSortableHeader               } from './_directives/Demos/angu
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
-import { NetCoreDemoSortableHeader } from './_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
-import { NetCoreConfigListSortableHeader } from './_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
+import { NetCoreDemoSortableHeader              } from './_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
+import { NetCoreConfigListSortableHeader        } from './_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //

@@ -4,6 +4,7 @@ import { CppFeatures                                            } from '../../..
 import { CppFeatureListSortableHeader, _CppFeaturePageSortEvent } from '../../../../_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { CppFeaturesService                                     } from '../../../../_services/cppDemo/cpp-features.service';
 import { AuthService                                            } from '../../../../_services/config/auth.service';
+import { SiteRole                                               } from '../../../../_models/common/common';
 //
 @Component({
   selector: 'app-cpp-demo',
@@ -14,6 +15,8 @@ export class CppDemoComponent {
     //
     public featurePagesList!: Observable<CppFeatures[]>;
     public total!           : Observable<number>;
+    //
+    public ConfigRoleString : string = SiteRole.RoleConfig.toString();
     // 
     @ViewChildren(CppFeatureListSortableHeader) headers: QueryList<CppFeatureListSortableHeader> | undefined;
     //

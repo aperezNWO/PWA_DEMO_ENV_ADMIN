@@ -1,9 +1,10 @@
 import { Component, QueryList, ViewChildren                       } from '@angular/core';
 import { Observable                                               } from 'rxjs';
 import { netCoreDemo                                              } from '../../../../../_models/netCoreDemo/netCoreDemo';
-import { _NetCoreDemoSortEvent, NetCoreDemoSortableHeader } from '../../../../../_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
+import { _NetCoreDemoSortEvent, NetCoreDemoSortableHeader         } from '../../../../../_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
 import { NetcoreDemoService                                       } from '../../../../../_services/netcoreDemo/netcore-demo.service';
 import { AuthService                                              } from '../../../../../_services/config/auth.service';
+import { SiteRole                                                 } from '../../../../../_models/common/common';
 
 @Component({
   selector: 'app-netcoredemo',
@@ -14,6 +15,8 @@ export class NetcoredemoComponent {
     //
     public netCoreDemoPageList!: Observable<netCoreDemo[]>;
     public total!             : Observable<number>;
+    //
+    public ConfigRoleString : string = SiteRole.RoleConfig.toString();
     // 
     @ViewChildren(NetCoreDemoSortableHeader) headers: QueryList<NetCoreDemoSortableHeader> | undefined;
     //

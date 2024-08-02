@@ -4,6 +4,7 @@ import { NodeJsFeatures                                                 } from '
 import { _NodeJsFeaturePageSortEvent, NodeJsFeatureListSortableHeader   } from '../../../../_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsFeaturesService                                          } from '../../../../_services/nodejsDemo/node-js-features.service';
 import { AuthService                                                    } from '../../../../_services/config/auth.service';
+import { SiteRole                                                       } from '../../../../_models/common/common';
 
 @Component({
   selector: 'app-nodejs-demo',
@@ -15,6 +16,8 @@ export class NodejsDemoComponent {
  public featurePagesList!: Observable<NodeJsFeatures[]>;
  public total!           : Observable<number>;
  // 
+ public ConfigRoleString : string = SiteRole.RoleConfig.toString();
+ //   
  @ViewChildren(NodeJsFeatureListSortableHeader) headers: QueryList<NodeJsFeatureListSortableHeader> | undefined;
  //
  constructor(public service: NodeJsFeaturesService,

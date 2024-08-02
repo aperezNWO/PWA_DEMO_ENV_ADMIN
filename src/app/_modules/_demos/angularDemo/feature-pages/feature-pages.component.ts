@@ -15,6 +15,8 @@ export class FeaturePagesComponent {
   //
   public featurePagesList!: Observable<AngularFeatures[]>;
   public total!           : Observable<number>;
+  //
+  public ConfigRoleString : string = SiteRole.RoleConfig.toString();
   // 
   @ViewChildren(FeaturePageSortableHeader) headers: QueryList<FeaturePageSortableHeader> | undefined;
   //
