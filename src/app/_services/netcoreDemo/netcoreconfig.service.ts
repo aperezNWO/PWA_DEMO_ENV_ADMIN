@@ -91,8 +91,8 @@ export class NetcoreconfigService {
 		_netCoreConfigList = sort(_NETCORECONFIG_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
-		_netCoreConfigList = _netCoreConfigList.filter((NetCoreDemoPage: NetCoreConfig) => matches(NetCoreDemoPage, searchTerm, this.pipe));
-		_total = _netCoreConfigList.length;
+		_netCoreConfigList = _netCoreConfigList.filter((NetCoreDemoPage: NetCoreConfig) => matches(_netCoreConfigList, searchTerm, this.pipe));
+		_total             = _netCoreConfigList.length;
 
 		// 3. paginate
 		_netCoreConfigList = _netCoreConfigList.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);

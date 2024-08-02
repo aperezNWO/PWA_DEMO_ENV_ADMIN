@@ -22,16 +22,16 @@
 	<table class="table table-striped table-dark">
 		<thead>
 			<tr>
-				<th scope="col" netcoredemopagesortable="id"              >#</th>
-				<th scope="col" netcoredemopagesortable="done"            >(hecho)</th>
-				<th scope="col" netcoredemopagesortable="name"            >Nombre</th>
-				<th scope="col" netcoredemopagesortable="urlDemo"         >Demo</th>
+				<th scope="col" netcoredemosortable="id"          (netcoredemosort)="onSort($event)">#</th>
+				<th scope="col" netcoredemosortable="done"        (netcoredemosort)="onSort($event)">(hecho)</th>
+				<th scope="col" netcoredemosortable="name"        (netcoredemosort)="onSort($event)">Nombre</th>
+				<th scope="col" netcoredemosortable="urlDemo"     (netcoredemosort)="onSort($event)">Demo</th>
 				<th scope="col" *ngIf="this.authService.matchRoles('3')"
-                                netcoredemopagesortable="urlRepo"         >Repo</th>
+								netcoredemosortable="urlRepo"     (netcoredemosort)="onSort($event)"	>Repo</th>
 				<th scope="col" *ngIf="this.authService.matchRoles('3')" 
-				                netcoredemopagesortable="urlBackend"      >Backend</th>
-				<th scope="col" netcoredemopagesortable="keywords"        >P. Clave</th>
-				<th scope="col" netcoredemopagesortable="description"     >Descripción</th>
+				                netcoredemosortable="urlBackend"  (netcoredemosort)="onSort($event)">Backend</th>
+				<th scope="col" netcoredemosortable="keywords"    (netcoredemosort)="onSort($event)">P. Clave</th>
+				<th scope="col" netcoredemosortable="description" (netcoredemosort)="onSort($event)">Descripción</th>
 			</tr>
 		</thead>
 		<tbody>

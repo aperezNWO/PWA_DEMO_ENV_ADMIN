@@ -4,30 +4,30 @@ import { _SortDirection, pagerotate               } from '../../../_models/commo
 //
 export type _NetCoreDemoSortColumn               = keyof netCoreDemo      | '';
 //
-export interface _NetCoreDemoPageSortEvent {
+export interface _NetCoreDemoSortEvent {
 	_column   :  _NetCoreDemoSortColumn;
 	_direction:  _SortDirection;
 }
 //
 @Directive({
-	selector    : 'th[netcoredemopagesort]',
+	selector    : 'th[netcoredemosort]',
 	host        : {
 		'[class.asc]'  : 'direction === "asc"',
 		'[class.desc]' : 'direction === "desc"',
 		'(click)'      : '_rotateNetCoreDemoPage()',
 	},
 })
-export class NetCoreDemoListSortableHeader {
+export class NetCoreDemoSortableHeader {
   //
-  @Input()  netcoredemopagesortable       :   _NetCoreDemoSortColumn    = '';
-  @Input()  netcoredemopagedirection      :   _SortDirection = '';
-  @Output() netcoredemopagesort          =   new EventEmitter<_NetCoreDemoPageSortEvent>();
+  @Input()  netcoredemosortable       :   _NetCoreDemoSortColumn    = '';
+  @Input()  netcoredemodirection      :   _SortDirection = '';
+  @Output() netcoredemosort           =   new EventEmitter<_NetCoreDemoSortEvent>();
   //
   _rotateNetCoreDemoPage() {
-    this.netcoredemopagedirection = pagerotate[this.netcoredemopagedirection];
-    this.netcoredemopagesort.emit({ 
-                _column   : this.netcoredemopagesortable, 
-                _direction: this.netcoredemopagedirection 
+    this.netcoredemodirection = pagerotate[this.netcoredemodirection];
+    this.netcoredemosort.emit({ 
+                _column   : this.netcoredemosortable, 
+                _direction: this.netcoredemodirection 
                 });
   }
 }

@@ -10,8 +10,8 @@ export interface _CppFeaturePageSortEvent {
 }
 //
 @Directive({
-	selector    : 'th[cppfeaturepagesort]',
-	host        : {
+	selector         : 'th[cppfeaturepagesort]',
+	host             : {
 		'[class.asc]'  : 'direction === "asc"',
 		'[class.desc]' : 'direction === "desc"',
 		'(click)'      : '_rotateCppFeaturePage()',

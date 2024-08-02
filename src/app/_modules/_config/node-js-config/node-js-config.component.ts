@@ -1,9 +1,10 @@
 import { Component, QueryList, ViewChildren    } from '@angular/core';
+import { Observable                            } from 'rxjs';
 import { NodeJsConfig                          } from '../../../_models/nodejsDemo/NodeJsConfig';
 import { _NodeJsConfigePageSortEvent           } from '../../../_directives/Demos/nodeJsDemo/node-js-config.directive';
 import { NodeJsConfigListSortableHeader        } from '../../../_directives/Demos/nodeJsDemo/node-js-config.directive';
 import { NodeJsConfigService                   } from '../../../_services/nodejsDemo/node-js-config.service';
-import { Observable                            } from 'rxjs';
+
 @Component({
   selector: 'app-node-js-config',
   templateUrl: './node-js-config.component.html',

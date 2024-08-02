@@ -1,7 +1,7 @@
 import { Component, QueryList, ViewChildren                       } from '@angular/core';
 import { Observable                                               } from 'rxjs';
 import { netCoreDemo                                              } from '../../../../../_models/netCoreDemo/netCoreDemo';
-import { _NetCoreDemoPageSortEvent, NetCoreDemoListSortableHeader } from '../../../../../_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
+import { _NetCoreDemoSortEvent, NetCoreDemoSortableHeader } from '../../../../../_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
 import { NetcoreDemoService                                       } from '../../../../../_services/netcoreDemo/netcore-demo.service';
 import { AuthService                                              } from '../../../../../_services/config/auth.service';
 
@@ -15,7 +15,7 @@ export class NetcoredemoComponent {
     public netCoreDemoPageList!: Observable<netCoreDemo[]>;
     public total!             : Observable<number>;
     // 
-    @ViewChildren(NetCoreDemoListSortableHeader) headers: QueryList<NetCoreDemoListSortableHeader> | undefined;
+    @ViewChildren(NetCoreDemoSortableHeader) headers: QueryList<NetCoreDemoSortableHeader> | undefined;
     //
     constructor(public service    : NetcoreDemoService,
                 public authService: AuthService,
@@ -25,15 +25,15 @@ export class NetcoredemoComponent {
         this.total               = service.total;
     }
     //
-    onSort({ _column, _direction }: _NetCoreDemoPageSortEvent) {
+    onSort({ _column, _direction }: _NetCoreDemoSortEvent) {
       //
       console.log ("onSort.column   :" + _column);
       //
       console.log ("onSort.direction:" + _column);
       // resetting other headers
       this.headers?.forEach((header) => {
-        if (header.netcoredemopagesortable !== _column) {
-          header.netcoredemopagedirection= '';
+        if (header.netcoredemosortable !== _column) {
+          header.netcoredemodirection= '';
         }
       });
       //

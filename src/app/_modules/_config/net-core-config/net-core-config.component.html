@@ -22,12 +22,12 @@
             <thead>
                 <tr>
                     <th scope="col" netcoreconfigpagesortable="id"                    >#</th>
-                    <th scope="col" netcoreconfigpagesortable="done"                  >(Hecho)</th>
-                    <th scope="col" netcoreconfigpagesortable="name"                  >Nombre</th>
-                    <th scope="col" netcoreconfigpagesortable="description"           >Descripción</th>
-                    <th scope="col" netcoreconfigpagesortable="urlRepo"               >Repo</th>
-                    <th scope="col" netcoreconfigpagesortable="urlBackend"            >Backend</th>
-                    <th scope="col" netcoreconfigpagesortable="urlHosting"            >Hosting</th>
+                    <th scope="col" >(Hecho)</th>
+                    <th scope="col" >Nombre</th>
+                    <th scope="col" >Descripción</th>
+                    <th scope="col" >Repo</th>
+                    <th scope="col" >Backend</th>
+                    <th scope="col"  >Hosting</th>
 
                 </tr>
             </thead>
@@ -43,7 +43,7 @@
                                 <ngb-highlight [result]="mainPage.name" [term]="service.searchTerm" />
                             </a>
                         </td>
-                        <td><ngb-highlight [result]="mainPage.description"           [term]="service.searchTerm" /></td>
+                        <td><ngb-highlight [result]="mainPage.description" [term]="service.searchTerm" /></td>
                         <td>
                             <a ngb-highlight [href]="mainPage.urlRepo"     target="_blank">
                                 [Repo]

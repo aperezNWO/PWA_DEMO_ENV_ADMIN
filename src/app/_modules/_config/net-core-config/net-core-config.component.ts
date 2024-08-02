@@ -1,7 +1,8 @@
 import { Component, QueryList, ViewChildren                           } from '@angular/core';
 import { Observable                                                   } from 'rxjs';
 import { NetCoreConfig                                                } from '../../../_models/netCoreDemo/netCoreConfig';
-import { _NetCoreConfigPageSortEvent, NetCoreConfigListSortableHeader } from '../../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
+import { _NetCoreConfigPageSortEvent                                  } from '../../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
+import { NetCoreConfigListSortableHeader                              } from '../../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
 import { NetcoreconfigService                                         } from '../../../_services/netcoreDemo/netcoreconfig.service';
 
 @Component({
