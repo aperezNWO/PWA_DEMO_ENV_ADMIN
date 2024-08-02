@@ -19,5 +19,12 @@
       "userName"   : "Config",
       "pwd"        : "Config",
       "userRoles"  : "3"
+    },
+    {
+      "userId"     : 4,
+      "fullName"   : "Education",
+      "userName"   : "Education",
+      "pwd"        : "Education",
+      "userRoles"  : "4"
     }
 ]
