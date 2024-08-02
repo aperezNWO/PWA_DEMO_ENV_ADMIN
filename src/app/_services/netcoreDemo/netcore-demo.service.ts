@@ -1,7 +1,7 @@
 import { Injectable, PipeTransform               } from '@angular/core';
 import { DecimalPipe                             } from '@angular/common';
 import { _NetCoreDemoSortColumn                  } from '../../_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
-import { _SortDirection, compare                 } from '../../_models/common/common';
+import { _SortDirection, BaseService, compare                 } from '../../_models/common/common';
 import { _NetCoreDemoSearchResult, netCoreDemo   } from '../../_models/netCoreDemo/netCoreDemo';
 import { _environment                            } from '../../../environments/environment';
 import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
@@ -37,12 +37,9 @@ function matches(netcoreDemoPagelist: netCoreDemo, term: string, pipe: PipeTrans
 @Injectable({
   providedIn: 'root'
 })
-export class NetcoreDemoService {
+export class NetcoreDemoService extends BaseService {
 	//
-	private _loading               = new BehaviorSubject<boolean>(true);
-	private _search$               = new Subject<void>();
 	private _netcoreDemoPagelist   = new BehaviorSubject<netCoreDemo[]>([]);
-	private _total                 = new BehaviorSubject<number>(0);
     //
 	private _state: _NetCoreDemoPageSearchState = {
 		page          : 1,
@@ -53,6 +50,9 @@ export class NetcoreDemoService {
 	};
 	//
 	constructor(private pipe: DecimalPipe) {
+	  //
+	  super()
+	  //	
       this._search$
         .pipe(
         tap(() => this._loading!.next(true)),
@@ -110,14 +110,6 @@ export class NetcoreDemoService {
 	//
 	public get NetcoreDemoPagelist () {
 		return this._netcoreDemoPagelist!.asObservable();
-	}
-	//
-	get total() {
-		return this._total!.asObservable();
-	}
-	//
-	get loading() {
-		return this._loading!.asObservable();
 	}
 	//
 	get page() {

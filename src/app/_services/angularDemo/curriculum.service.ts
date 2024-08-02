@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, Subject, debounceTime, delay        } from
 import { of, switchMap, tap                                               } from 'rxjs';
 import { _CurriculumSortColumn                                            } from '../../_directives/Demos/angularDemo/curriculumSortable.directive';
 import { _AngularCurriculumSearchResult, AngularCurriculum                } from '../../_models/AngularDemo/AngularCurriculum';
-import { _SortDirection, compare                                          } from '../../_models/common/common';
+import { _SortDirection, BaseService, compare                             } from '../../_models/common/common';
 import { _environment                                                     } from '../../../environments/environment';
 
 //
@@ -38,38 +38,38 @@ function matches(_curriculum: AngularCurriculum, term: string, pipe: PipeTransfo
 @Injectable({
   providedIn: 'root'
 })
-export class CurriculumService {
-  //
-	private _loading$          = new BehaviorSubject<boolean>(true);
-	private _search$           = new Subject<void>();
+export class CurriculumService extends BaseService {
+	//
 	private _curriculumList$   = new BehaviorSubject<AngularCurriculum[]>([]);
-	private _total$            = new BehaviorSubject<number>(0);
-  //
-  private _state: _CurriculumSearchState = {
-    page          : 1,
-    pageSize      : 4, 
-    searchTerm    : '',
-    sortColumn    : '',
-    sortDirection : '',
-  };
-  //
-  constructor(private pipe: DecimalPipe) {
-    this._search$
-    .pipe(
-      tap(() => this._loading$.next(true)),
-      debounceTime(200),
-      switchMap(() => this._search()),
-      delay(200),
-      tap(() => this._loading$.next(false)),
-    )
-    .subscribe((result) => {
-      this._curriculumList$.next(result._curriculum);
-      this._total$.next(result._total);
-    });
-    //
-    this._search$.next();
-  }
-  //
+	//
+	private _state: _CurriculumSearchState = {
+		page          : 1,
+		pageSize      : 4, 
+		searchTerm    : '',
+		sortColumn    : '',
+		sortDirection : '',
+	};
+	//
+	constructor(private pipe: DecimalPipe) {
+		//
+		super();
+		//
+		this._search$
+			.pipe(
+				tap(() => this._loading!.next(true)),
+				debounceTime(200),
+				switchMap(() => this._search()),
+				delay(200),
+				tap(() => this._loading!.next(false)),
+			)
+			.subscribe((result) => {
+				this._curriculumList$.next(result._curriculum);
+				this._total!.next(result._total);
+			});
+		//
+		this._search$.next();
+	}
+	//
 	private _search(): Observable<_AngularCurriculumSearchResult> {
 		//
 		let _curriculumList                       : any;
@@ -104,39 +104,31 @@ export class CurriculumService {
 		// 5. return
 		return  of (_searchResult);
 	}
-  //////////////////////////////////////////////////////////////////////
-  // PROPERTIES
-  //////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
+    // PROPERTIES
+    //////////////////////////////////////////////////////////////////////
  	public get curriculumList () {
 		return this._curriculumList$.asObservable();
 	}
 	//
-	get total() {
-		return this._total$.asObservable();
-	}
-	//
-	get loading() {
-		return this._loading$.asObservable();
-	}
-	//
 	get page() {
 		return this._state.page;
-	}
-	//
-	public get pageSize() {
-		return this._state.pageSize;
-	}
-	//
-	get searchTerm() {
-		return this._state.searchTerm;
 	}
     //
 	set page(page: number) {
 		this._set({ page });
 	}
 	//
+	public get pageSize() {
+		return this._state.pageSize;
+	}
+	//
 	set pageSize(pageSize: number) {
 		this._set({ pageSize });
+	}
+	//
+	get searchTerm() {
+		return this._state.searchTerm;
 	}
 	//
 	set searchTerm(searchTerm: string) {
@@ -150,7 +142,7 @@ export class CurriculumService {
 	set sortDirection(sortDirection: _SortDirection) {
 		this._set({ sortDirection });
 	}
-  //
+    //
 	private _set(patch: Partial<_CurriculumSearchState>) {
 		Object.assign(this._state, patch);
 		this._search$.next();

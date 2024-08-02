@@ -2,7 +2,7 @@ import { Directive, EventEmitter, Input, Output   } from '@angular/core';
 import { _SortDirection, pagerotate               } from '../../../_models/common/common';
 import { NetCoreConfig                            } from '../../../_models/netCoreDemo/netCoreConfig';
 //
-export type _NetCoreConfigSortColumn               = keyof NetCoreConfig      | '';
+export type _NetCoreConfigSortColumn              = keyof NetCoreConfig      | '';
 //
 export interface _NetCoreConfigPageSortEvent {
 	_column   :  _NetCoreConfigSortColumn;

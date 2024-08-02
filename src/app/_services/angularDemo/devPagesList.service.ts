@@ -3,7 +3,7 @@ import { Injectable, PipeTransform                              } from '@angular
 import { DecimalPipe                                            } from '@angular/common';
 import { _environment                                           } from '../../../environments/environment';
 import { _DevPageSortColumn                                     } from '../../_directives/Demos/angularDemo/devPagesListSortable.directive';
-import { _SortDirection, compare                                } from '../../_models/common/common';
+import { _SortDirection, compare, BaseService                   } from '../../_models/common/common';
 import { AngularConfig, _AngularConfigSearchResult              } from '../../_models/AngularDemo/AngularConfig';
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
@@ -39,12 +39,9 @@ function matches(devPage: AngularConfig, term: string, pipe: PipeTransform) {
 @Injectable({
   providedIn: 'root'
 })
-export class devPagesListService {
+export class devPagesListService extends BaseService {
     // 
-	private _loading$     = new BehaviorSubject<boolean>(true);
-	private _search$      = new Subject<void>();
 	private _devpageList$ = new BehaviorSubject<AngularConfig[]>([]);
-	private _total$       = new BehaviorSubject<number>(0);
     //
 	private _state: _DevPageSearchState = {
 		page          : 1,
@@ -55,17 +52,20 @@ export class devPagesListService {
 	};
     //
 	constructor(private pipe: DecimalPipe) {
+		//
+		super();
+		//
 		this._search$
 			.pipe(
-				tap(() => this._loading$.next(true)),
+				tap(() => this._loading!.next(true)),
 				debounceTime(200),
 				switchMap(() => this._search()),
 				delay(200),
-				tap(() => this._loading$.next(false)),
+				tap(() => this._loading!.next(false)),
 			)
 			.subscribe((result) => {
 				this._devpageList$.next(result.devPages);
-				this._total$.next(result.total);
+				this._total!.next(result.total);
 			});
         //
 		this._search$.next();
@@ -113,32 +113,24 @@ export class devPagesListService {
 		return this._devpageList$.asObservable();
 	}
 	//
-	get total() {
-		return this._total$.asObservable();
-	}
-	//
-	get loading() {
-		return this._loading$.asObservable();
-	}
-	//
 	get page() {
 		return this._state.page;
+	}
+	//
+	set page(page: number) {
+		this._set({ page });
 	}
 	//
 	public get pageSize() {
 		return this._state.pageSize;
 	}
 	//
-	get searchTerm() {
-		return this._state.searchTerm;
-	}
-    //
-	set page(page: number) {
-		this._set({ page });
-	}
-	//
 	set pageSize(pageSize: number) {
 		this._set({ pageSize });
+	}
+	//
+	get searchTerm() {
+		return this._state.searchTerm;
 	}
 	//
 	set searchTerm(searchTerm: string) {

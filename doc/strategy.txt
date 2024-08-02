@@ -280,5 +280,9 @@
       -- [_] search through pushed dictionary.
 
       -- [_] https://g.co/gemini/share/8f40611f1aed
+
+ -- [_] ng grid service
+
+      -- [_] inheritance.
       
 /***********************************************/

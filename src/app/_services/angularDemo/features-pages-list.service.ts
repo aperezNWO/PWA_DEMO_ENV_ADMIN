@@ -3,7 +3,7 @@ import { DecimalPipe                                            } from '@angular
 import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
 import { AngularFeatures, _AngularFeaturesSearchResult          } from '../../_models/AngularDemo/AngularFeatures';
-import { _SortDirection, compare                                } from '../../_models/common/common';
+import { _SortDirection, BaseService, compare                   } from '../../_models/common/common';
 import { _environment                                           } from '../../../environments/environment';
 import { _FeaturePageSortColumn                                 } from '../../_directives/Demos/angularDemo/featurePageListSortable.directive';
 //
@@ -39,12 +39,9 @@ function matches(featurePage: AngularFeatures, term: string, pipe: PipeTransform
   providedIn: 'root'
 })
 // 
-export class FeaturesPagesListService {
-    //
-	private _loading$          = new BehaviorSubject<boolean>(true);
-	private _search$           = new Subject<void>();
+export class FeaturesPagesListService extends BaseService {
+	//
 	private _featurepageList$  = new BehaviorSubject<AngularFeatures[]>([]);
-	private _total$            = new BehaviorSubject<number>(0);
     //
 	private _state: _FeaturePageSearchState = {
 		page          : 1,
@@ -55,17 +52,20 @@ export class FeaturesPagesListService {
 	};
 	//
 	constructor(private pipe: DecimalPipe) {
+		//
+		super();
+		//
 		this._search$
 		.pipe(
-			tap(() => this._loading$.next(true)),
+			tap(() => this._loading!.next(true)),
 			debounceTime(200),
 			switchMap(() => this._search()),
 			delay(200),
-			tap(() => this._loading$.next(false)),
+			tap(() => this._loading!.next(false)),
 		)
 		.subscribe((result) => {
 			this._featurepageList$.next(result.featurePages);
-			this._total$.next(result.total);
+			this._total!.next(result.total);
 		});
 		//
 		this._search$.next();
@@ -111,14 +111,6 @@ export class FeaturesPagesListService {
     //
 	public get featurepageLists () {
 		return this._featurepageList$.asObservable();
-	}
-	//
-	get total() {
-		return this._total$.asObservable();
-	}
-	//
-	get loading() {
-		return this._loading$.asObservable();
 	}
 	//
 	get page() {

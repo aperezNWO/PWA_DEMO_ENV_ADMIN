@@ -1,3 +1,6 @@
+import { BehaviorSubject, Subject } from "rxjs";
+import { _NetCoreConfigSortColumn } from "../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive";
+
 //
 export enum SiteRole
 {
@@ -46,3 +49,18 @@ export type _SortDirection = 'asc' | 'desc' | '';
 export const pagerotate: { [key: string]: _SortDirection } = { asc: 'desc', desc: '', '': 'asc' };
 //
 export const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
+//
+export class BaseService {
+    //
+	public _loading               = new BehaviorSubject<boolean>(true);
+	public _total                 = new BehaviorSubject<number>(0);
+    public _search$               = new Subject<void>();
+    //
+	get total() {
+		return this._total!.asObservable();
+	}
+    //
+	get loading() {
+		return this._loading!.asObservable();
+	}
+}

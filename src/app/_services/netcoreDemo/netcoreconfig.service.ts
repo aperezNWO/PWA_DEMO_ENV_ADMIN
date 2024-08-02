@@ -1,19 +1,19 @@
 import { Injectable, PipeTransform                } from '@angular/core';
 import { DecimalPipe                              } from '@angular/common';
 import { _NetCoreConfigSortColumn                 } from '../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
-import { _SortDirection, compare                  } from '../../_models/common/common';
+import { _SortDirection, BaseService, compare     } from '../../_models/common/common';
 import { _NetCorConfigSearchResult, NetCoreConfig } from '../../_models/netCoreDemo/netCoreConfig';
 import { _environment                             } from '../../../environments/environment';
 import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
 //
-interface _NetCoreConfigPageSearchState {
-	page: number;
-	pageSize: number;
-	searchTerm: string;
-	sortColumn: _NetCoreConfigSortColumn;
-	sortDirection: _SortDirection;
+interface _SearchState {
+	page          : number;
+	pageSize      : number;
+	searchTerm    : string;
+	sortColumn    : _NetCoreConfigSortColumn;
+	sortDirection : _SortDirection;
 }
-//
+
 function sort(netcoreConfigPagelist: NetCoreConfig[], column: _NetCoreConfigSortColumn, direction: string): NetCoreConfig[] {
 	if (direction === '' || column === '') {
 		return netcoreConfigPagelist;
@@ -36,22 +36,22 @@ function matches(netcoreConfigPagelist: NetCoreConfig, term: string, pipe: PipeT
 @Injectable({
 	providedIn: 'root'
 })
-export class NetcoreconfigService {
+export class NetcoreconfigService extends BaseService {
 	//
-	private _loading               = new BehaviorSubject<boolean>(true);
-	private _search$               = new Subject<void>();
 	private _netcoreConfigPagelist = new BehaviorSubject<NetCoreConfig[]>([]);
-	private _total                 = new BehaviorSubject<number>(0);
 	//
-	private _state: _NetCoreConfigPageSearchState = {
-		page: 1,
-		pageSize: 4,
-		searchTerm: '',
-		sortColumn: '',
-		sortDirection: '',
+	public _state: _SearchState = {
+		page          : 1,
+		pageSize      : 4,
+		searchTerm    : '',
+		sortColumn    : '',
+		sortDirection : '',
 	};
 	//
 	constructor(private pipe: DecimalPipe) {
+		//
+		super();
+		//
 		this._search$
 			.pipe(
 				tap(() => this._loading!.next(true)),
@@ -111,32 +111,24 @@ export class NetcoreconfigService {
 		return this._netcoreConfigPagelist!.asObservable();
 	}
 	//
-	get total() {
-		return this._total!.asObservable();
-	}
-	//
-	get loading() {
-		return this._loading!.asObservable();
-	}
-	//
 	get page() {
 		return this._state.page;
-	}
-	//
-	public get pageSize() {
-		return this._state.pageSize;
-	}
-	//
-	get searchTerm() {
-		return this._state.searchTerm;
 	}
 	//
 	set page(page: number) {
 		this._set({ page });
 	}
 	//
+	public get pageSize() {
+		return this._state.pageSize;
+	}
+	//
 	set pageSize(pageSize: number) {
 		this._set({ pageSize });
+	}
+	//
+	get searchTerm() {
+		return this._state.searchTerm;
 	}
 	//
 	set searchTerm(searchTerm: string) {
@@ -151,7 +143,7 @@ export class NetcoreconfigService {
 		this._set({ sortDirection });
 	}
 	//
-	private _set(patch: Partial<_NetCoreConfigPageSearchState>) {
+	private _set(patch: Partial<_SearchState>) {
 		Object.assign(this._state, patch);
 		this._search$.next();
 	}
