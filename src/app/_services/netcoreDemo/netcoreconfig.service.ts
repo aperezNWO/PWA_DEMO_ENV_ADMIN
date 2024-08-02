@@ -38,10 +38,10 @@ function matches(netcoreConfigPagelist: NetCoreConfig, term: string, pipe: PipeT
 })
 export class NetcoreconfigService {
 	//
-	private _loading = new BehaviorSubject<boolean>(true);
-	private _search$ = new Subject<void>();
+	private _loading               = new BehaviorSubject<boolean>(true);
+	private _search$               = new Subject<void>();
 	private _netcoreConfigPagelist = new BehaviorSubject<NetCoreConfig[]>([]);
-	private _total = new BehaviorSubject<number>(0);
+	private _total                 = new BehaviorSubject<number>(0);
 	//
 	private _state: _NetCoreConfigPageSearchState = {
 		page: 1,
@@ -91,7 +91,7 @@ export class NetcoreconfigService {
 		_netCoreConfigList = sort(_NETCORECONFIG_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
-		_netCoreConfigList = _netCoreConfigList.filter((NetCoreDemoPage: NetCoreConfig) => matches(_netCoreConfigList, searchTerm, this.pipe));
+		_netCoreConfigList = _netCoreConfigList.filter((_netCoreConfigList: NetCoreConfig) => matches(_netCoreConfigList, searchTerm, this.pipe));
 		_total             = _netCoreConfigList.length;
 
 		// 3. paginate
