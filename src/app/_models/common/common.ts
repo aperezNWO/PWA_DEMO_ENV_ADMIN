@@ -6,8 +6,8 @@ export enum SiteRole
 {
     RoleAnonyumous = 0,
     RoleAdmin      = 1,
-    RoleConfig     = 2,
-    RoleMarketing  = 3,
+    RoleMarketing  = 2,
+    RoleConfig     = 3,
     RoleEducation  = 4
 }
 //
@@ -63,4 +63,12 @@ export class BaseService {
 	get loading() {
 		return this._loading!.asObservable();
 	}
+}
+// 
+export interface BaseModel
+{
+    id               : number;
+    done             : boolean;
+    name             : string;
+    description      : string;
 }

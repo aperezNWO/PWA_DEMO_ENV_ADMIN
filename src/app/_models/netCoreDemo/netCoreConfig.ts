@@ -1,9 +1,7 @@
-export interface NetCoreConfig
+import { BaseModel } from "../common/common";
+
+export interface NetCoreConfig extends BaseModel
 {
-    id               : number;
-    done             : boolean;
-    name             : string;
-    description      : string;
     framework        : string;
     keywords         : string;
     urlDemo          : string;

@@ -281,8 +281,11 @@
 
       -- [_] https://g.co/gemini/share/8f40611f1aed
 
- -- [_] ng grid service
+ -- [_] inheritance / interfaces.
 
-      -- [_] inheritance.
+        -- [_] ng grid service
+
+        -- [_] Models.
+
       
 /***********************************************/

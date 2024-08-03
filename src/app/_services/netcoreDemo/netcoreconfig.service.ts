@@ -1,7 +1,7 @@
 import { Injectable, PipeTransform                } from '@angular/core';
 import { DecimalPipe                              } from '@angular/common';
 import { _NetCoreConfigSortColumn                 } from '../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
-import { _SortDirection, BaseService, compare     } from '../../_models/common/common';
+import { _SortDirection, BaseModel, BaseService, compare     } from '../../_models/common/common';
 import { _NetCorConfigSearchResult, NetCoreConfig } from '../../_models/netCoreDemo/netCoreConfig';
 import { _environment                             } from '../../../environments/environment';
 import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
@@ -13,7 +13,7 @@ interface _SearchState {
 	sortColumn    : _NetCoreConfigSortColumn;
 	sortDirection : _SortDirection;
 }
-
+//
 function sort(netcoreConfigPagelist: NetCoreConfig[], column: _NetCoreConfigSortColumn, direction: string): NetCoreConfig[] {
 	if (direction === '' || column === '') {
 		return netcoreConfigPagelist;
@@ -24,6 +24,7 @@ function sort(netcoreConfigPagelist: NetCoreConfig[], column: _NetCoreConfigSort
 		});
 	}
 }
+
 //
 function matches(netcoreConfigPagelist: NetCoreConfig, term: string, pipe: PipeTransform) {
 	return (
