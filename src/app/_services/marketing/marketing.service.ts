@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, Observer, of, Subject     } from 'rxjs';
 import { debounceTime, delay, switchMap, tap                    } from 'rxjs/operators';
 import { _environment                                           } from '../../../environments/environment';
 import { marketing, _MarketingSearchResult                      } from '../../_models/Marketing/marketing';
-import { _SortDirection, compare                                } from '../../_models/common/common';
+import { _SortDirection, BaseService, compare                   } from '../../_models/common/common';
 import { _MarketingSortColumn                                   } from '../../_directives/marketing/marketing.directive';
 
 //
@@ -39,12 +39,9 @@ function matches(marketingPage: marketing, term: string, pipe: PipeTransform) {
   providedIn: 'root'
 })
 // 
-export class MarketingService {
+export class MarketingService extends BaseService {
     //
-	private _loading$          = new BehaviorSubject<boolean>(true);
-	private _search$           = new Subject<void>();
 	private _marketingList$    = new BehaviorSubject<marketing[]>([]);
-	private _total$            = new BehaviorSubject<number>(0);
     //
 	private _state: _MarketingSearchState = {
 		page          : 1,
@@ -55,17 +52,20 @@ export class MarketingService {
 	};
 	//
 	constructor(private pipe: DecimalPipe) {
+		//
+		super();
+		//
 		this._search$
 		.pipe(
-			tap(() => this._loading$.next(true)),
+			tap(() => this._loading!.next(true)),
 			debounceTime(200),
 			switchMap(() => this._search()),
 			delay(200),
-			tap(() => this._loading$.next(false)),
+			tap(() => this._loading!.next(false)),
 		)
 		.subscribe((result) => {
 			this._marketingList$.next(result._marketing);
-			this._total$.next(result._total);
+			this._total!.next(result._total);
 		});
 		//
 		this._search$.next();
@@ -110,14 +110,6 @@ export class MarketingService {
     //
 	public get msarketingLists () {
 		return this._marketingList$.asObservable();
-	}
-	//
-	get total() {
-		return this._total$.asObservable();
-	}
-	//
-	get loading() {
-		return this._loading$.asObservable();
 	}
 	//
 	get page() {

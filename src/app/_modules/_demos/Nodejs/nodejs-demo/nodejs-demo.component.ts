@@ -3,7 +3,7 @@ import { Observable                                                     } from '
 import { NodeJsFeatures                                                 } from '../../../../_models/nodejsDemo/NodeJsFeatures';
 import { _NodeJsFeaturePageSortEvent, NodeJsFeatureListSortableHeader   } from '../../../../_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsFeaturesService                                          } from '../../../../_services/nodejsDemo/node-js-features.service';
-import { AuthService                                                    } from '../../../../_services/config/auth.service';
+import { AuthService                                                    } from '../../../../_services/_config/auth.service';
 import { SiteRole                                                       } from '../../../../_models/common/common';
 
 @Component({

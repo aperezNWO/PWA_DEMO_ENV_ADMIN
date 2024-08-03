@@ -5,7 +5,7 @@ import { debounceTime, delay, of, switchMap, tap                 } from 'rxjs';
 import { _environment                                            } from '../../../environments/environment';
 import { _NodeJsFeatureSortColumn                                } from '../../_directives/Demos/nodeJsDemo/node-js.directive';
 import { _NodeJsFeaturesSearchResult, NodeJsFeatures             } from '../../_models/nodejsDemo/NodeJsFeatures';
-import { _SortDirection, compare                                 } from '../../_models/common/common';
+import { _SortDirection, BaseService, compare                    } from '../../_models/common/common';
 
 //
 interface _NodeJsFeaturePageSearchState {
@@ -39,12 +39,9 @@ function matches(featurePage: NodeJsFeatures, term: string, pipe: PipeTransform)
 @Injectable({
   providedIn: 'root'
 })
-export class NodeJsFeaturesService {
+export class NodeJsFeaturesService extends BaseService {
 	//
-	private _loading           = new BehaviorSubject<boolean>(true);
-	private _search$           = new Subject<void>();
 	private _featurepageList   = new BehaviorSubject<NodeJsFeatures[]>([]);
-	private _total             = new BehaviorSubject<number>(0);
     //
 	private _state: _NodeJsFeaturePageSearchState = {
 		page          : 1,
@@ -55,17 +52,20 @@ export class NodeJsFeaturesService {
 	};
 	//
 	constructor(private pipe: DecimalPipe) {
-		this._search$
-      .pipe(
-      tap(() => this._loading!.next(true)),
-      debounceTime(200),
-      switchMap(() => this._search()),
-      delay(200),
-      tap(() => this._loading!.next(false)),
-      )
-      .subscribe((result) => {
-      this._featurepageList!.next(result.featurePages);
-      this._total!.next(result.total);
+	  //
+	  super();
+	  //
+	  this._search$
+		.pipe(
+			tap(() => this._loading!.next(true)),
+			debounceTime(200),
+			switchMap(() => this._search()),
+			delay(200),
+			tap(() => this._loading!.next(false)),
+		)
+		.subscribe((result) => {
+			this._featurepageList!.next(result.featurePages);
+			this._total!.next(result.total);
       });
       //
       this._search$.next();
@@ -111,14 +111,6 @@ export class NodeJsFeaturesService {
 	//
 	public get featurepageLists () {
 		return this._featurepageList!.asObservable();
-	}
-	//
-	get total() {
-		return this._total!.asObservable();
-	}
-	//
-	get loading() {
-		return this._loading!.asObservable();
 	}
 	//
 	get page() {

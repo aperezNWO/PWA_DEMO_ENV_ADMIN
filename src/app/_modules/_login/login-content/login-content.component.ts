@@ -4,7 +4,7 @@ import { FormBuilder, Validators   } from '@angular/forms';
 import { Router                    } from '@angular/router';
 import { _environment              } from '../../../../environments/environment';
 import { UserInfo, UserInfoType    } from '../../../_models/common/common';
-import { AuthService               } from '../../../_services/config/auth.service';
+import { AuthService               } from '../../../_services/_config/auth.service';
 import { LoginInfo                 } from '../../../_models/common/common';
 
 @Component({

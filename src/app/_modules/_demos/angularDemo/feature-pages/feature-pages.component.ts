@@ -3,7 +3,7 @@ import { Observable                                       } from 'rxjs';
 import { AngularFeatures                                  } from '../../../../_models/AngularDemo/AngularFeatures';
 import { FeaturesPagesListService                         } from '../../../../_services/angularDemo/features-pages-list.service';
 import { FeaturePageSortableHeader, _FeaturePageSortEvent } from '../../../../_directives/Demos/angularDemo/featurePageListSortable.directive';
-import { AuthService                                      } from '../../../../_services/config/auth.service';
+import { AuthService                                      } from '../../../../_services/_config/auth.service';
 import { SiteRole                                         } from '../../../../_models/common/common'; 
 //
 @Component({

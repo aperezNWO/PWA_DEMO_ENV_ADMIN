@@ -3,7 +3,7 @@ import { Observable                                             } from 'rxjs';
 import { CppFeatures                                            } from '../../../../_models/CppDemo/CppFeatures';
 import { CppFeatureListSortableHeader, _CppFeaturePageSortEvent } from '../../../../_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { CppFeaturesService                                     } from '../../../../_services/cppDemo/cpp-features.service';
-import { AuthService                                            } from '../../../../_services/config/auth.service';
+import { AuthService                                            } from '../../../../_services/_config/auth.service';
 import { SiteRole                                               } from '../../../../_models/common/common';
 //
 @Component({

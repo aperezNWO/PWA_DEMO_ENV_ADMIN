@@ -11,7 +11,7 @@ import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstr
 import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent                           } from './_modules/_home/nav/nav.component';
 import { PageNotFoundComponent                  } from './_modules/_home/page-not-found/page-not-found.component';
-import { ConfigService                          } from './_services/config/config.service';
+import { ConfigService                          } from './_services/_config/config.service';
 import { CppDemoComponent                       } from './_modules/_demos/CppDemo/cpp-demo/cpp-demo.component';
 import { CppWebComponent                        } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
 import { NetcoreWebComponent                    } from './_modules/_demos/NetCore/netcore-web/netcoreweb/netcore-web.component';

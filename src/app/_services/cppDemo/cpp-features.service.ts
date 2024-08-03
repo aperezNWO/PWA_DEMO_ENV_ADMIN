@@ -5,7 +5,7 @@ import { debounceTime, delay, of, switchMap, tap                 } from 'rxjs';
 import { _environment                                            } from '../../../environments/environment';
 import { _CppFeatureSortColumn                                   } from '../../_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { CppFeatures, _CppFeaturesSearchResult                   } from '../../_models/CppDemo/CppFeatures';
-import { _SortDirection, compare                                 } from '../../_models/common/common';
+import { _SortDirection, BaseService, compare                    } from '../../_models/common/common';
 
 //
 interface _CppFeaturePageSearchState {
@@ -39,12 +39,9 @@ function matches(featurePage: CppFeatures, term: string, pipe: PipeTransform) {
 @Injectable({
   providedIn: 'root'
 })
-export class CppFeaturesService {
+export class CppFeaturesService extends BaseService {
 	//
-	private _loading           = new BehaviorSubject<boolean>(true);
-	private _search$           = new Subject<void>();
 	private _featurepageList   = new BehaviorSubject<CppFeatures[]>([]);
-	private _total             = new BehaviorSubject<number>(0);
 	//
 	private _state: _CppFeaturePageSearchState = {
 		page          : 1,
@@ -55,17 +52,20 @@ export class CppFeaturesService {
 	};
 	//
 	constructor(private pipe: DecimalPipe) {
+		//
+		super();
+		//
 		this._search$
-		.pipe(
-		tap(() => this._loading!.next(true)),
-		debounceTime(200),
-		switchMap(() => this._search()),
-		delay(200),
-		tap(() => this._loading!.next(false)),
+			.pipe(
+			tap(() => this._loading!.next(true)),
+			debounceTime(200),
+			switchMap(() => this._search()),
+			delay(200),
+			tap(() => this._loading!.next(false)),
 		)
 		.subscribe((result) => {
-		this._featurepageList!.next(result.featurePages);
-		this._total!.next(result.total);
+			this._featurepageList!.next(result.featurePages);
+			this._total!.next(result.total);
 		});
 		//
 		this._search$.next();
@@ -112,14 +112,6 @@ export class CppFeaturesService {
 	//
 	public get featurepageLists () {
 		return this._featurepageList!.asObservable();
-	}
-	//
-	get total() {
-		return this._total!.asObservable();
-	}
-	//
-	get loading() {
-		return this._loading!.asObservable();
 	}
 	//
 	get page() {

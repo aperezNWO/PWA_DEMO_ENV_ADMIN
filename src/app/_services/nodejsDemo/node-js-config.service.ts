@@ -3,7 +3,7 @@ import { DecimalPipe                                        } from '@angular/com
 import { BehaviorSubject, debounceTime, delay, Observable   } from 'rxjs';
 import { of, Subject, switchMap, tap                        } from 'rxjs';
 import { _NodeJsConfigSortColumn                            } from '../../_directives/Demos/nodeJsDemo/node-js-config.directive';
-import { _SortDirection, compare                            } from '../../_models/common/common';
+import { _SortDirection, BaseService, compare               } from '../../_models/common/common';
 import { _NodeJsConfigSearchResult, NodeJsConfig            } from '../../_models/nodejsDemo/NodeJsConfig';
 import { _environment                                       } from '../../../environments/environment';
 //
@@ -35,14 +35,10 @@ function matches(featurePage: NodeJsConfig, term: string, pipe: PipeTransform) {
 @Injectable({
   providedIn: 'root'
 })
-export class NodeJsConfigService {
+export class NodeJsConfigService extends BaseService {
 
 	//
-	private _loading           = new BehaviorSubject<boolean>(true);
 	private _featurepageList   = new BehaviorSubject<NodeJsConfig[]>([]);
-	private _total             = new BehaviorSubject<number>(0);
-	private _search$           = new Subject<void>();
-
     //
 	private _state: _NodeJsConfigSearchState = {
 		page          : 1,
@@ -53,6 +49,9 @@ export class NodeJsConfigService {
 	};
 	//
 	constructor(private pipe: DecimalPipe) {
+		//
+		super();
+		//
 		this._search$
 			.pipe(
 				tap(() => this._loading!.next(true)),
@@ -110,14 +109,6 @@ export class NodeJsConfigService {
 	//
 	public get configPageLists () {
 		return this._featurepageList!.asObservable();
-	}
-	//
-	get total() {
-		return this._total!.asObservable();
-	}
-	//
-	get loading() {
-		return this._loading!.asObservable();
 	}
 	//
 	get page() {

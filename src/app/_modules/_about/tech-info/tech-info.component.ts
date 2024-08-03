@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { ConfigService } from '../../../_services/config/config.service';
+import { ConfigService } from '../../../_services/_config/config.service';
 
 @Component({
   selector: 'app-tech-info',

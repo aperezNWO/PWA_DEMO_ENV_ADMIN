@@ -3,7 +3,7 @@ import { Observable                                               } from 'rxjs';
 import { netCoreDemo                                              } from '../../../../../_models/netCoreDemo/netCoreDemo';
 import { _NetCoreDemoSortEvent, NetCoreDemoSortableHeader         } from '../../../../../_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
 import { NetcoreDemoService                                       } from '../../../../../_services/netcoreDemo/netcore-demo.service';
-import { AuthService                                              } from '../../../../../_services/config/auth.service';
+import { AuthService                                              } from '../../../../../_services/_config/auth.service';
 import { SiteRole                                                 } from '../../../../../_models/common/common';
 
 @Component({

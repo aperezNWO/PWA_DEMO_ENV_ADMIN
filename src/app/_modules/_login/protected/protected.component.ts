@@ -2,7 +2,7 @@ import { Component, TemplateRef   } from '@angular/core';
 import { NgbModal                 } from '@ng-bootstrap/ng-bootstrap'; // Import NgbModal for modal
 import { Router                   } from '@angular/router';
 import { LoginComponentContent    } from '../login-content/login-content.component';
-import { AuthService              } from '../../../_services/config/auth.service';
+import { AuthService              } from '../../../_services/_config/auth.service';
 import { _environment             } from '../../../../environments/environment';
 
 @Component({

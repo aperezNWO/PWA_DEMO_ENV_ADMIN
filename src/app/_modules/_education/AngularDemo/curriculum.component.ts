@@ -4,7 +4,7 @@ import { CurriculumSortableHeader, _CurriculumSortEvent           } from '../../
 import { AngularCurriculum                                        } from '../../../_models/AngularDemo/AngularCurriculum';
 import { CurriculumService                                        } from '../../../_services/angularDemo/curriculum.service';
 import { SiteRole                                                 } from '../../../_models/common/common';
-import { AuthService                                              } from '../../../_services/config/auth.service';
+import { AuthService                                              } from '../../../_services/_config/auth.service';
 //
 @Component({
   selector: 'app-curriculum',

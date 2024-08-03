@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild            } from '@angular/core';
 import { NavComponent                            } from '../nav/nav.component';
-import { ConfigService                           } from '../../../_services/config/config.service';
+import { ConfigService                           } from '../../../_services/_config/config.service';
 //
 @Component({
   selector    : 'app-home',
