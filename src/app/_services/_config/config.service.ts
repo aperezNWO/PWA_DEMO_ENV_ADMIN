@@ -156,19 +156,6 @@ export class ConfigService {
       });
   }
   //
-  loadNetCoreConfigData() {
-    return this.http.get('./assets/netCoreDemo/netcore_config.json').toPromise()
-      .then((data: any) => {
-          //
-          //console.log("loading net core demo config data ..." + JSON.stringify(data));
-          //
-          _environment.netCoreConfigList = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading net core demo  config data:', error);
-      });
-  }
-  //
   loadNetCoreConfigData_base() {
     return this.http.get('./assets/netCoreDemo/netcore_config_base.json').toPromise()
       .then((data: any) => {

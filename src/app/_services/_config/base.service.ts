@@ -3,7 +3,6 @@ import { BehaviorSubject, debounceTime, delay, Observable, of, switchMap, tap } 
 import { DecimalPipe                                                          } from '@angular/common';
 import { _BaseModel, _BaseSearchResult, _SortDirection, BaseService, compare  } from '../../_models/common/common';
 import { _SortColumn                                                          } from '../../_directives/BaseSortableHeader.directive';
-import { _environment                                                         } from '../../../environments/environment';
 
 //
 interface _SearchState {
@@ -31,14 +30,14 @@ function matches(netcoreConfigPagelist: _BaseModel, term: string, pipe: PipeTran
 		netcoreConfigPagelist.description.toLowerCase().includes(term?.toLowerCase()) ||
 		netcoreConfigPagelist.field_1?.toLowerCase().includes(term?.toLowerCase())    ||
 		netcoreConfigPagelist.field_2?.toLowerCase().includes(term?.toLowerCase())    ||
-    netcoreConfigPagelist.field_3?.toLowerCase().includes(term?.toLowerCase())    ||
-    netcoreConfigPagelist.field_4?.toLowerCase().includes(term?.toLowerCase())    ||
-    netcoreConfigPagelist.field_5?.toLowerCase().includes(term?.toLowerCase())    ||
-    netcoreConfigPagelist.field_6?.toLowerCase().includes(term?.toLowerCase())    ||
-    netcoreConfigPagelist.field_7?.toLowerCase().includes(term?.toLowerCase())    ||
-    netcoreConfigPagelist.field_8?.toLowerCase().includes(term?.toLowerCase())    ||
-    netcoreConfigPagelist.field_9?.toLowerCase().includes(term?.toLowerCase())    ||
-    netcoreConfigPagelist.field_10?.toLowerCase().includes(term?.toLowerCase())    
+		netcoreConfigPagelist.field_3?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_4?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_5?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_6?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_7?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_8?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_9?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_10?.toLowerCase().includes(term?.toLowerCase())    
 	);
 }
 
@@ -47,7 +46,9 @@ function matches(netcoreConfigPagelist: _BaseModel, term: string, pipe: PipeTran
 })
 export class _BaseService extends BaseService {
 	//
-	private _Pagelist = new BehaviorSubject<_BaseModel[]>([]);
+	private _Pagelist                     = new BehaviorSubject<_BaseModel[]>([]);
+	//
+	public _SEARCH_PAGES  : _BaseModel[] = [];
 	//
 	public _state: _SearchState = {
 		page          : 1,
@@ -87,17 +88,7 @@ export class _BaseService extends BaseService {
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
 		//
-		console.log("external json data : " + _environment.netCoreConfigList_base);
-
-		// 1. sort
-		let _SEARCH_PAGES: _BaseModel[] = [];
-		//
-		_environment.netCoreConfigList_base.forEach((element: any) => {
-			_SEARCH_PAGES.push(element);
-			console.log(element)
-		});
-		//
-		_searchPages = sort(_SEARCH_PAGES, sortColumn, sortDirection);
+		_searchPages = sort(this._SEARCH_PAGES, sortColumn, sortDirection);
 
 		// 2. filter
 		_searchPages = _searchPages.filter((_searchPage: _BaseModel) => matches(_searchPage, searchTerm, this.pipe));
