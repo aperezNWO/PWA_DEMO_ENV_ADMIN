@@ -44,6 +44,7 @@ import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/node
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
 import { NetCoreDemoSortableHeader              } from './_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
 import { NetCoreConfigListSortableHeader        } from './_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
+import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -62,6 +63,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   _configService.loadNetCoreDemoData();
   //
   _configService.loadNetCoreConfigData();
+  //
+  _configService.loadNetCoreConfigData_base();
   //
   _configService.loadMarketingData();
   //
@@ -106,6 +109,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NetCoreDemoSortableHeader,
     NetCoreConfigComponent,
     NetCoreConfigListSortableHeader,
+    BaseSortableHeader,
   ],
   imports: [
     BrowserModule,

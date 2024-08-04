@@ -14,5 +14,6 @@ export const _environment = {
     cppDemoList            : [{}],   // Json pages
     netCoreDemoList        : [{}],   // Json pages
     netCoreConfigList      : [{}],   // Json pages
+    netCoreConfigList_base : [{}],   // Json pages
     marketingList          : [{}],   // Json pages
 };

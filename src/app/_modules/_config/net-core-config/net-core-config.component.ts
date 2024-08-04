@@ -4,6 +4,9 @@ import { NetCoreConfig                                                } from '..
 import { _NetCoreConfigPageSortEvent                                  } from '../../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
 import { NetCoreConfigListSortableHeader                              } from '../../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
 import { NetcoreconfigService                                         } from '../../../_services/netcoreDemo/netcoreconfig.service';
+import { _BaseModel } from '../../../_models/common/common';
+import { _BaseService } from '../../../_services/_config/base.service';
+import { _BaseSortEvent, BaseSortableHeader } from '../../../_directives/BaseSortableHeader.directive';
 
 @Component({
   selector: 'app-net-core-config',
@@ -12,25 +15,25 @@ import { NetcoreconfigService                                         } from '..
 })
 export class NetCoreConfigComponent {
     //
-    public mainPagesList!: Observable<NetCoreConfig[]>;
+    public mainPagesList!: Observable<_BaseModel[]>;
     public total!        : Observable<number>;
     //
-	  @ViewChildren(NetCoreConfigListSortableHeader) headers: QueryList<NetCoreConfigListSortableHeader> | undefined;
+	  @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
      //
-     constructor(public service: NetcoreconfigService) {
-      this.mainPagesList = service.NetcoreConfigPagelist;
+     constructor(public service: _BaseService) {
+      this.mainPagesList = service.Pagelist;
       this.total         = service.total;
     }
     //
-    onSort({ _column, _direction }: _NetCoreConfigPageSortEvent) {
+    onSort({ _column, _direction }: _BaseSortEvent) {
       //
       console.log ("onSort.column   :" + _column);
       //
       console.log ("onSort.direction:" + _column);
       // resetting other headers
       this.headers?.forEach((header) => {
-        if (header.netcoreconfigpagesortable !== _column) {
-          header.netcoreconfigpagedirection = '';
+        if (header.sortable !== _column) {
+          header.direction = '';
         }
       });
       //
