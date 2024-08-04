@@ -1,12 +1,8 @@
 import { Component, QueryList, ViewChildren                           } from '@angular/core';
 import { Observable                                                   } from 'rxjs';
-import { NetCoreConfig                                                } from '../../../_models/netCoreDemo/netCoreConfig';
-import { _NetCoreConfigPageSortEvent                                  } from '../../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
-import { NetCoreConfigListSortableHeader                              } from '../../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
-import { NetcoreconfigService                                         } from '../../../_services/netcoreDemo/netcoreconfig.service';
-import { _BaseModel } from '../../../_models/common/common';
-import { _BaseService } from '../../../_services/_config/base.service';
-import { _BaseSortEvent, BaseSortableHeader } from '../../../_directives/BaseSortableHeader.directive';
+import { _BaseModel                                                   } from '../../../_models/common/common';
+import { _BaseService                                                 } from '../../../_services/_config/base.service';
+import { _BaseSortEvent, BaseSortableHeader                           } from '../../../_directives/BaseSortableHeader.directive';
 
 @Component({
   selector: 'app-net-core-config',

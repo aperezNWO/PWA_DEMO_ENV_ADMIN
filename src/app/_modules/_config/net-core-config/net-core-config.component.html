@@ -25,7 +25,8 @@
                     <th scope="col" sortable="done"         (sortevent)="onSort($event)">(Hecho)</th>
                     <th scope="col" sortable="name"         (sortevent)="onSort($event)">Nombre</th>
                     <th scope="col" sortable="description"  (sortevent)="onSort($event)">Descripción</th>
-                    <th scope="col" sortable="field_3"      (sortevent)="onSort($event)">Repo</th>
+                    <th scope="col" sortable="field_3"      (sortevent)="onSort($event)">Demo</th>
+                    <th scope="col" sortable="field_4"      (sortevent)="onSort($event)">Repo</th>
                     <th scope="col" sortable="field_5"      (sortevent)="onSort($event)">Backend</th>
                     <th scope="col" sortable="field_6"      (sortevent)="onSort($event)">Hosting</th>
 
@@ -38,14 +39,15 @@
                         <td>
                             <input ngb-highlight type="checkbox" name="done" id="done" value="done" [checked]="mainPage.done" readonly>
                         </td>
-                        <td>
-                            <a ngb-highlight [href]="mainPage.field_4" target="_blank">
-                                <ngb-highlight [result]="mainPage.name" [term]="service.searchTerm" />
-                            </a>
-                        </td>
+                        <td><ngb-highlight [result]="mainPage.name"        [term]="service.searchTerm" /></td>
                         <td><ngb-highlight [result]="mainPage.description" [term]="service.searchTerm" /></td>
                         <td>
                             <a ngb-highlight [href]="mainPage.field_3"     target="_blank">
+                                [Demo]
+                            </a>
+                        </td>
+                        <td>
+                            <a ngb-highlight [href]="mainPage.field_4"     target="_blank">
                                 [Repo]
                             </a>
                         </td>

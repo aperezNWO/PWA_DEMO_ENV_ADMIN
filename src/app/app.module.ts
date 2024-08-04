@@ -43,7 +43,6 @@ import { CppFeatureListSortableHeader           } from './_directives/Demos/cppD
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
 import { NetCoreDemoSortableHeader              } from './_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
-import { NetCoreConfigListSortableHeader        } from './_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive';
 import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
@@ -108,7 +107,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NetcoredemoComponent,
     NetCoreDemoSortableHeader,
     NetCoreConfigComponent,
-    NetCoreConfigListSortableHeader,
     BaseSortableHeader,
   ],
   imports: [

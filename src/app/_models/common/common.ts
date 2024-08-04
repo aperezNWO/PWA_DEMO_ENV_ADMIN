@@ -1,5 +1,4 @@
 import { BehaviorSubject, Subject } from "rxjs";
-import { _NetCoreConfigSortColumn } from "../../_directives/Demos/netcoreDemo/NetCoreConfigListSortableHeader.directive";
 
 //
 export enum SiteRole
