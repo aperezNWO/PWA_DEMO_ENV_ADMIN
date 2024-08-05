@@ -38,6 +38,8 @@ export class ProtectedComponent {
     this.authService.userRoles    = '';
     this.authService.fullUserName = '';
     //
+    _environment.currentUserRoles  = '';  
+    //
     this.router.navigateByUrl("/");
   }
 }

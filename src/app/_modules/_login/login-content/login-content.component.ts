@@ -75,7 +75,8 @@ export class LoginComponentContent {
       this.authService.fullUserName = _userseDictionary[this.authService.userName].fullName;
 
       // GET THE ROLES FROM THE CURRENT USER
-      this.authService.userRoles    = _userseDictionary[this.authService.userName].userRoles;   
+      this.authService.userRoles     = _userseDictionary[this.authService.userName].userRoles;   
+      _environment.currentUserRoles  = _userseDictionary[this.authService.userName].userRoles;  
     }
     //
     if (this.authService.loggedUser) {

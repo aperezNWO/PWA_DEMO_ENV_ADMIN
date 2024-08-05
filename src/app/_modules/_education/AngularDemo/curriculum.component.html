@@ -21,14 +21,14 @@
 	<table class="table table-striped table-dark">
 		<thead>
 			<tr>
-				<th scope="col" curriculumsortable="id"             (curriculumsort)="onSort($event)">#</th>
-				<th scope="col" curriculumsortable="done"           (curriculumsort)="onSort($event)">(Hecho)</th>
-				<th scope="col" curriculumsortable="name"           (curriculumsort)="onSort($event)">Nombre</th>
-				<th scope="col" curriculumsortable="urlDemo"        (curriculumsort)="onSort($event)">Demo</th>
-				<th scope="col" curriculumsortable="urlRepo"        (curriculumsort)="onSort($event)">Repo</th>
-				<th scope="col" curriculumsortable="urlCurriculum"  (curriculumsort)="onSort($event)">Tema</th>
-				<th scope="col" curriculumsortable="keywords"       (curriculumsort)="onSort($event)">P. Clave</th>
-				<th scope="col" curriculumsortable="description"    (curriculumsort)="onSort($event)">Descripción</th>
+				<th scope="col" sortable="id"             (sortevent)="onSort($event)">#</th>
+				<th scope="col" sortable="done"           (sortevent)="onSort($event)">(Hecho)</th>
+				<th scope="col" sortable="name"           (sortevent)="onSort($event)">Nombre</th>
+				<th scope="col" sortable="field_3"        (sortevent)="onSort($event)">Demo</th>
+				<th scope="col" sortable="field_4"        (sortevent)="onSort($event)">Repo</th>
+				<th scope="col" sortable="field_5"        (sortevent)="onSort($event)">Tema</th>
+				<th scope="col" sortable="field_2"        (sortevent)="onSort($event)">P. Clave</th>
+				<th scope="col" sortable="description"    (sortevent)="onSort($event)">Descripción</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -39,26 +39,26 @@
 						<input type="checkbox" name="done" id="done" value="done" [checked]="curriculumPage.done" readonly>
 					</td>
 					<td>
-						<a [href]="curriculumPage.urlDemo" target="_blank">
+						<a [href]="curriculumPage.field_4" target="_blank">
 							<ngb-highlight [result]="curriculumPage.name" [term]="service.searchTerm" />
 						</a>
 					</td>
 					<td>
-						<a ngb-highlight [href]="curriculumPage.urlDemo" target="_blank">
+						<a ngb-highlight [href]="curriculumPage.field_3" target="_blank">
 							[Demo]
 						</a>
 					</td>
 					<td>
-						<a ngb-highlight [href]="curriculumPage.urlRepo" target="_blank">
+						<a ngb-highlight [href]="curriculumPage.field_4" target="_blank">
 							[Repo]
 						</a>
 					</td>
 					<td>
-						<a ngb-highlight [href]="curriculumPage.urlCurriculum" target="_blank">
+						<a ngb-highlight [href]="curriculumPage.field_5" target="_blank">
 							[Tema]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="curriculumPage.keywords"              [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="curriculumPage.field_2"               [term]="service.searchTerm" /></td>
 					<td><ngb-highlight [result]="curriculumPage.description"           [term]="service.searchTerm" /></td>
 				</tr>
 			} @empty {

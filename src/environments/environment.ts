@@ -9,6 +9,7 @@ export const _environment = {
     AngularConfigList      : [{}],   // Json pages[{}],   // Placeholder for external configuration
     AngularDemosList       : [{}],   // Json pages
     AngularCurriculumList  : [{}],   // Json pages
+    AngularCurriculum_base : [{}],   // Json pages
     NodeJsDemosList        : [{}],   // Json pages
     NodeJsConfigList       : [{}],   // Json pages
     cppDemoList            : [{}],   // Json pages

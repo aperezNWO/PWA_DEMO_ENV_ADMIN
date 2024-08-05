@@ -130,6 +130,19 @@ export class ConfigService {
     });
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadAngularCurriculumData_base() {
+    return this.http.get('./assets/angularDemo/angular_Curriculum_base.json').toPromise()
+      .then((data: any) => {
+          //
+          //console.log("loading angular curriculum data ..." + JSON.stringify(data));
+          //
+          _environment.AngularCurriculum_base = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading angular curriculum data:', error);
+      });
+    }
+  // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadMarketingData() {
     return this.http.get('./assets/marketing/marketing.json').toPromise()
       .then((data: any) => {

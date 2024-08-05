@@ -3,7 +3,7 @@ import { Observable                                                   } from 'rx
 import { _BaseModel                                                   } from '../../../_models/common/common';
 import { _BaseService                                                 } from '../../../_services/_config/base.service';
 import { _BaseSortEvent, BaseSortableHeader                           } from '../../../_directives/BaseSortableHeader.directive';
-import { _environment } from '../../../../environments/environment';
+import { _environment                                                 } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-net-core-config',
@@ -21,7 +21,7 @@ export class NetCoreConfigComponent {
       //
       _environment.netCoreConfigList_base.forEach((element: any) => {
         service._SEARCH_PAGES.push(element);
-        console.log(element)
+        //console.log(element)
       });
       //
       this.mainPagesList = service.Pagelist;

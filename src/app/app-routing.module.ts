@@ -30,7 +30,8 @@ const routes: Routes = [
   {  path: ''                         , component: HomeComponent                      },
   {  path: 'AngularWeb'               , component: AngularComponent                   }, 
   {  path: 'AngularFeaturesPages'     , component: FeaturePagesComponent              },
-  {  path: 'AngularReference'         , component: CurriculumComponent                },
+  {  path: 'AngularReference'         , component: CurriculumComponent               
+                                      , canActivate: [CanActivateGuard]               }, // Protected component
   {  path: 'AngularConfig'            , component: DevPagesListsComponent             },
   {  path: 'NodeJsWeb'                , component: NodeJsWebComponent                 }, 
   {  path: 'NodeJsDemo'               , component: NodejsDemoComponent                }, 

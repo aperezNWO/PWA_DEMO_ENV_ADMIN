@@ -38,7 +38,6 @@ import { NetCoreConfigComponent                 } from './_modules/_config/net-c
 import { DevPageSortableHeader                  } from './_directives/Demos/angularDemo/devPagesListSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
 import { MarketingSortableHeader                } from './_directives/marketing/marketing.directive';
-import { CurriculumSortableHeader               } from './_directives/Demos/angularDemo/curriculumSortable.directive';
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
@@ -49,7 +48,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   //
   _configService.loadAngularDemoData();
   //
-  _configService.loadAngularCurriculumData();
+  _configService.loadAngularCurriculumData_base();
   //
   _configService.loadAngularConfigData();
   //
@@ -117,7 +116,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NgbHighlight, 
     NgbPaginationModule,
     DevPageSortableHeader,
-    CurriculumSortableHeader,
     FeaturePageSortableHeader,
     DecimalPipe, 
     FormsModule, 
