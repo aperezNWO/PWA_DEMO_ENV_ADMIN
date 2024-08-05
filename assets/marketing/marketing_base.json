@@ -1,0 +1,12 @@
+[
+	{
+		"id"               : 1,
+        "done"             : true,
+        "name"             : "Programadores C#",
+        "description"      : "[Programadores C#]",
+        "field_1_name"     : "category",
+        "field_1"          : "Facebook_Group",
+        "field_2_name"     : "urlPage",
+        "field_2"          : "https://www.facebook.com/groups/csharpdevs"
+    }
+] 
