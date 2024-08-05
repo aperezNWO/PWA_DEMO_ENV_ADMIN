@@ -143,13 +143,13 @@ export class ConfigService {
       });
     }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadMarketingData() {
-    return this.http.get('./assets/marketing/marketing.json').toPromise()
+  loadMarketingData_base() {
+    return this.http.get('./assets/marketing/marketing_base.json').toPromise()
       .then((data: any) => {
           //
           //console.log("loading marketing data ..." + JSON.stringify(data));
           //
-          _environment.marketingList = data; // Assign loaded data to environment variable
+          _environment.marketingList_base = data; // Assign loaded data to environment variable
       })
       .catch(error => {
         console.error('Error loading marketing data:', error);

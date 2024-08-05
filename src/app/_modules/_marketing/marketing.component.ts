@@ -1,9 +1,9 @@
 import { Component, QueryList, ViewChildren                        } from '@angular/core';
 import { Observable                                                } from 'rxjs';
-import { marketing                                                 } from '../../_models/Marketing/marketing';
-import { MarketingService                                          } from '../../_services/marketing/marketing.service';
-import { MarketingSortableHeader, _MarketingSortEvent              } from '../../_directives/marketing/marketing.directive';
-
+import { _BaseService                                              } from '../../_services/_config/base.service';
+import { _BaseModel                                                } from '../../_models/common/common';
+import { _environment                                              } from '../../../environments/environment';
+import { _BaseSortEvent, BaseSortableHeader                        } from '../../_directives/BaseSortableHeader.directive';
 //
 @Component({
   selector: 'app-marketing',
@@ -12,25 +12,32 @@ import { MarketingSortableHeader, _MarketingSortEvent              } from '../..
 })
 export class MarketingComponent {   
 //
-public marketingList!   : Observable<marketing[]>;
+public marketingList!   : Observable<_BaseModel[]>;
 public total!           : Observable<number>;
 // 
-@ViewChildren(MarketingSortableHeader) headers: QueryList<MarketingSortableHeader> | undefined;
+@ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
 //
-constructor(public service: MarketingService) {
-  this.marketingList = service.msarketingLists;
-  this.total         = service.total;
+constructor(public service: _BaseService) 
+{
+  //
+  this.marketingList   = service.Pagelist;
+  this.total            = service.total;
+  //
+  _environment.marketingList_base.forEach((element: any) => {
+    service._SEARCH_PAGES.push(element);
+    //console.log(element)
+});
 }
 //
-onSort({ _column, _direction }: _MarketingSortEvent) {
+onSort({ _column, _direction }: _BaseSortEvent) {
     //
     console.log ("onSort.column   :" + _column);
     //
     console.log ("onSort.direction:" + _column);
     // resetting other headers
     this.headers?.forEach((header) => {
-      if (header.marketingsortable !== _column) {
-        header.marketingdirection= '';
+      if (header.sortable !== _column) {
+        header.direction= '';
       }
     });
     //
