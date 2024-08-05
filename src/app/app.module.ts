@@ -37,7 +37,6 @@ import { NetcoredemoComponent                   } from './_modules/_demos/NetCor
 import { NetCoreConfigComponent                 } from './_modules/_config/net-core-config/net-core-config.component';
 import { DevPageSortableHeader                  } from './_directives/Demos/angularDemo/devPagesListSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
-import { MarketingSortableHeader                } from './_directives/marketing/marketing.directive';
 import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
@@ -85,7 +84,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     PhpWebComponent,
     NodeJsWebComponent,
     MarketingComponent,
-    MarketingSortableHeader,
     DemosComponent,
     CppWebComponent,
     EduWebComponent,

@@ -249,7 +249,7 @@
 
 -- [_] export type _NodeJsFeatureSortColumn    = keyof <FatherClass>      | ''; (inheritance)
 
--- [_] sortirection dictionary;
+-- [_] page not found triggers logout. 
 
 -- [_] sortirection dictionary;
 
@@ -288,5 +288,7 @@
         -- [_] Models.
 
  -- [_] load config as dictionary. 
+
+ 
       
 /***********************************************/
