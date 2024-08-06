@@ -12,6 +12,20 @@ export class ConfigService {
 
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadJsonData(p_Path: string, array : string[]) {
+    return this.http.get(p_Path).toPromise()
+      .then((data: any) => {
+          //
+          data.forEach((element: any) => {
+            //
+            array.push(element);
+          });
+      })
+      .catch(error => {
+        console.error('Error loading configuration:', error);
+      });
+  }  
+  // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadConfig() {
     return this.http.get('./assets/config/_config.json').toPromise()
       .then((data: any) => {
@@ -91,19 +105,6 @@ export class ConfigService {
       });
     }
    // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadAngularDemoData() {
-    return this.http.get('./assets/angularDemo/angular_Demos.json').toPromise()
-      .then((data: any) => {
-          //
-          //console.log("loading angular demo data ..." + JSON.stringify(data));
-          //
-          _environment.AngularDemosList = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading configuration:', error);
-      });
-   }
-   // ONLY HAPPENS ONCE ON APPMODULE LOADING
    loadAngularConfigData() {
     return this.http.get('./assets/angularDemo/angular_Config.json').toPromise()
       .then((data: any) => {
@@ -116,32 +117,6 @@ export class ConfigService {
         console.error('Error loading angular configuration data :', error);
       });
   }
-  // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadAngularCurriculumData() {
-  return this.http.get('./assets/angularDemo/angular_Curriculum.json').toPromise()
-    .then((data: any) => {
-        //
-        //console.log("loading angular curriculum data ..." + JSON.stringify(data));
-        //
-        _environment.AngularCurriculumList = data; // Assign loaded data to environment variable
-    })
-    .catch(error => {
-      console.error('Error loading angular curriculum data:', error);
-    });
-  }
-  // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadAngularCurriculumData_base() {
-    return this.http.get('./assets/angularDemo/angular_Curriculum_base.json').toPromise()
-      .then((data: any) => {
-          //
-          //console.log("loading angular curriculum data ..." + JSON.stringify(data));
-          //
-          _environment.AngularCurriculum_base = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading angular curriculum data:', error);
-      });
-    }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadMarketingData_base() {
     return this.http.get('./assets/marketing/marketing_base.json').toPromise()

@@ -1,7 +1,7 @@
 
 import { AppRoutingModule                         } from './app-routing.module';
 import { AppComponent                             } from './app.component';
-import { APP_INITIALIZER, NgModule                } from '@angular/core';
+import { APP_INITIALIZER, NgModule, ɵNG_PIPE_DEF                } from '@angular/core';
 import { AsyncPipe, DatePipe, DecimalPipe         } from '@angular/common';
 import { FormsModule                              } from '@angular/forms';
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
@@ -42,14 +42,49 @@ import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/node
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
 import { NetCoreDemoSortableHeader              } from './_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
 import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
+import { _environment                           } from '../environments/environment';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
-  _configService.loadAngularDemoData();
+  interface PageSetting {
+    p_Path           : string;
+    _environmentList: string[];
+  }
   //
-  _configService.loadAngularCurriculumData_base();
+  interface PageSettingDictionary {
+    [key: string]: PageSetting;
+  }
   //
-  _configService.loadAngularConfigData();
+  const pageSettingDictionary: PageSettingDictionary = {
+    loadAngularDemoData               : 
+                { 
+                    p_Path            : './assets/angularDemo/angular_Demos.json',
+                    _environmentList  : _environment.AngularDemosList
+                },
+    loadAngularCurriculumData_base    :            
+                {
+                    p_Path             : './assets/angularDemo/angular_Curriculum_base.json',
+                    _environmentList   : _environment.AngularCurriculum_base
+                },
+    loadAngularConfigData              :
+                {
+                  p_Path             : './assets/angularDemo/angular_Config.json',
+                  _environmentList   : _environment.AngularConfigList                
+                }
+
+  };
+  //
+  for (const key in pageSettingDictionary) {
+     //
+     const pageSetting = pageSettingDictionary[key];
+     //
+     console.log('reding setting : ' + key);
+     //
+     _configService.loadJsonData(pageSetting.p_Path,
+                                 pageSetting._environmentList).then(() => {
+           //
+     });
+  }
   //
   _configService.loadCppDemoData();
   //

@@ -26,7 +26,7 @@ constructor(public service: _BaseService)
   _environment.marketingList_base.forEach((element: any) => {
     service._SEARCH_PAGES.push(element);
     console.log(element)
-});
+  });
 }
 //
 onSort({ _column, _direction }: _BaseSortEvent) {
