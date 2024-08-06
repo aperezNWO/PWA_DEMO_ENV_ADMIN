@@ -208,6 +208,21 @@
 
 -- [x] Angular Directives. 
 
+-- [x] hide repo links from demo info.  
+
+-- [x] inheritance / interfaces.
+
+        -- [x] ng grid service
+
+        -- [x] Models.
+
+
+-- [x] Enum Angular.
+
+-- [x] About Module.
+
+-- [x] export type _NodeJsFeatureSortColumn    = keyof <FatherClass>      | ''; (inheritance)
+
 -- [_] php mdemo.
 
 -- [_] Read json pages from somee.com / database.
@@ -227,13 +242,8 @@
       -- [_] Patterns.
       
       -- [_] SOLID.
-      
-
--- [_] Enum Angular.
 
 -- [_] Config Module.
-
--- [_] About Module.
 
 -- [_] Angular Community / dev-se community.
 
@@ -241,13 +251,9 @@
 
 -- [_] Fix Menu behaviour.
 
--- [_] function appModule.ts LoadxxxData() as single function.
-
 -- [_] fron icon as link.
 
 -- [_] nodejs demo, backend url demo.
-
--- [_] export type _NodeJsFeatureSortColumn    = keyof <FatherClass>      | ''; (inheritance)
 
 -- [_] page not found triggers logout. 
 
@@ -264,9 +270,6 @@
 
       -- [_] https://g.co/gemini/share/8d2cbc587cac
 
-
- -- [_] hide repo links from demo info.     
-
  -- [_] OWASP.    
 
  -- [_] custom autn
@@ -281,14 +284,12 @@
 
       -- [_] https://g.co/gemini/share/8f40611f1aed
 
- -- [_] inheritance / interfaces.
-
-        -- [_] ng grid service
-
-        -- [_] Models.
+ -- [_] preserve session info.
 
  -- [_] load config as dictionary. 
 
- -- [_] preserve session info.
-      
+      -- [_] function appModule.ts LoadxxxData() as single function.
+
+      -- [_] load dictionary from external list.
+
 /***********************************************/
