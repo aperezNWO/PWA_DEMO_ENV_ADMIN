@@ -289,6 +289,6 @@
 
  -- [_] load config as dictionary. 
 
- 
+ -- [_] preserve session info.
       
 /***********************************************/

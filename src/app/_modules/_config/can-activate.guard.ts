@@ -1,15 +1,15 @@
 import { CanActivateFn, Router } from '@angular/router';
-import { _environment          }  from '../../../environments/environment';
-import { SiteRole              } from '../../_models/common/common';
 import { inject                } from '@angular/core';
+import { _environment          } from '../../../environments/environment';
+import { SiteRole              } from '../../_models/common/common';
 //
 export const CanActivateGuard: CanActivateFn = (route, state) => {
   //
-  const router = inject(Router);   
+  const router              = inject(Router);   
   //
   let canActivate : boolean = true;
   //
-  let _route      : string = route.url.toString();
+  let _route      : string  = route.url.toString();
   //
   console.log('Route     : ' + _route);
   //
