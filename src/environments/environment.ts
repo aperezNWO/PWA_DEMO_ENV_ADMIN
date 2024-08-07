@@ -1,4 +1,8 @@
 export const _environment = {
+    apiEndpoints: [{
+        users: '/api/users',
+        products: '/api/products'
+    }],
     currentUserId          : 0,      //
     currentUserRoles       : "",     //
     externalConfig         : {},     // 
@@ -6,6 +10,7 @@ export const _environment = {
     routesList             : [{}],   // 
     usersList              : [{}],   // 
     usersDictionary        : [{}],   // 
+    jsonList               : [{}],   // 
     AngularConfigList      : [],     // Json pages
     AngularDemosList       : [],     // Json pages
     AngularCurriculum_base : [],     // Json pages

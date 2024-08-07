@@ -46,14 +46,33 @@ import { _environment                           } from '../environments/environm
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
+  _configService.loadJsonist();
+  //
   interface PageSetting {
     p_Path           : string;
-    _environmentList: string[];
+    _environmentList : string[];
   }
   //
   interface PageSettingDictionary {
     [key: string]: PageSetting;
   }
+ 
+  /*
+  type PageSettingType  = PageSetting; 
+  //
+  let _jsonList : PageSetting[] = [];
+  //
+  _environment.jsonList.forEach((element: any) => {
+      _jsonList.push(element);
+      //console.log(element)
+  });
+  //
+  const pageSettingDictionary: Record<string, PageSetting> = _jsonList.reduce((acc, pageSetting) => {
+    console.log('pageSetting : ' + pageSetting);
+    acc[pageSetting.f_name] = pageSetting;
+    return acc;
+  }, {} as Record<string, PageSetting>);
+  */
   //
   const pageSettingDictionary: PageSettingDictionary = {
     loadAngularDemoData               : 

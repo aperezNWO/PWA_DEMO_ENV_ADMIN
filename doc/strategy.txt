@@ -288,7 +288,7 @@
 
  -- [_] load config as dictionary. 
 
-      -- [_] function appModule.ts LoadxxxData() as single function.
+      -- [x] function appModule.ts LoadxxxData() as single function.
 
       -- [_] load dictionary from external list.
 

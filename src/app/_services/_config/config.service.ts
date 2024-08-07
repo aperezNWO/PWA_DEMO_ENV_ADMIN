@@ -38,6 +38,19 @@ export class ConfigService {
         console.error('Error loading configuration:', error);
       });
   }
+  //
+  loadJsonist() {
+    return this.http.get('./assets/config/_jsonList.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading json list.." + JSON.stringify(data));
+          //
+          _environment.jsonList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading configuration:', error);
+      });
+  }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadUsersData() {
     return this.http.get('./assets/config/_UsersInfo.json').toPromise()
