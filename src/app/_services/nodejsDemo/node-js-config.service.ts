@@ -78,14 +78,14 @@ export class NodeJsConfigService extends BaseService {
 		// 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state!;
         //
-		console.log("external json data : " +  _environment.NodeJsConfigList); 
+		//console.log("external json data : " +  _environment.NodeJsConfigList); 
 
 		// 1. sort
 		let _CONFIG_PAGES  : NodeJsConfig[] = [];
 		//
 		_environment.NodeJsConfigList.forEach((element: any) => {
 			_CONFIG_PAGES.push(element);
-			console.log(element)
+			//console.log(element)
 		});
         //
 		_configpageList   = sort(_CONFIG_PAGES, sortColumn, sortDirection);

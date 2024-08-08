@@ -43,7 +43,7 @@ export class AppComponent {
     this._appVersion  = this._configService.getConfigValue('appVersion'); //
     let title: string = `${this._appBrand} - ${this._appVersion}`;
     //
-    console.log("Setting Title : " + title);
+    //console.log("Setting Title : " + title);
     //
     this._title = `${this._appBrand}`;
     //
@@ -56,7 +56,7 @@ export class AppComponent {
       if (this.redirectPage !== undefined)
       {
         //
-        console.log("Redirecting To Page : "  +  this.redirectPage );
+        //console.log("Redirecting To Page : "  +  this.redirectPage );
         //
         switch (this.redirectPage)
         {

@@ -30,15 +30,15 @@ export class CurriculumComponent {
     //
     _environment.AngularCurriculum_base.forEach((element: any) => {
       service._SEARCH_PAGES.push(element);
-      //console.log(element)
+      ////console.log(element)
     });
   }
   //
   onSort({ _column, _direction }: _BaseSortEvent) {
     //
-    console.log ("onSort.column   :" + _column);
+    //console.log ("onSort.column   :" + _column);
     //
-    console.log ("onSort.direction:" + _column);
+    //console.log ("onSort.direction:" + _column);
     // resetting other headers
     this.headers?.forEach((header) => {
       if (header.sortable !== _column) {

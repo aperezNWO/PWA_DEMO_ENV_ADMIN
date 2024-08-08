@@ -80,14 +80,14 @@ export class NodeJsFeaturesService extends BaseService {
 		// 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state!;
         //
-		console.log("external json data : " +  _environment.NodeJsDemosList); 
+		//console.log("external json data : " +  _environment.NodeJsDemosList); 
 
 		// 1. sort
 		let _FEATURE_PAGES  : NodeJsFeatures[] = [];
 		//
 		_environment.NodeJsDemosList.forEach((element: any) => {
 			_FEATURE_PAGES.push(element);
-			console.log(element)
+			//console.log(element)
 		});
         //
 		_featurepageList   = sort(_FEATURE_PAGES, sortColumn, sortDirection);

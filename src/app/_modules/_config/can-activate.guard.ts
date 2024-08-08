@@ -11,11 +11,11 @@ export const CanActivateGuard: CanActivateFn = (route, state) => {
   //
   let _route      : string  = route.url.toString();
   //
-  console.log('Route     : ' + _route);
+  //console.log('Route     : ' + _route);
   //
-  console.log('State     : ' + state);
+  //console.log('State     : ' + state);
   //
-  console.log('UserRole  : ' + _environment.currentUserRoles);
+  //console.log('UserRole  : ' + _environment.currentUserRoles);
   //
   switch(_route) {
     case 'AngularReference' :

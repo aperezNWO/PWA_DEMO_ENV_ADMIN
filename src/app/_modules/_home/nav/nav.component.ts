@@ -39,7 +39,7 @@ export class NavComponent {
     public  authService   : AuthService 
   ) {
     //
-    console.log("Loading AppComponent...");
+    //console.log("Loading AppComponent...");
     // IMPLEMENT AS MAP AND ITERATE
     let keyName: string = '';
     let keyValue: string = '';
@@ -60,13 +60,13 @@ export class NavComponent {
     //
     this.titleService.setTitle(title);
     //
-    console.log("Setting Title : " + title);
+    //console.log("Setting Title : " + title);
     //
-    console.log("Route List    : " + _environment.routesList);
+    //console.log("Route List    : " + _environment.routesList);
 		//
 		_environment.routesList.forEach((element: any) => {
 			this.pages!.push(element);
-			console.log(element)
+			//console.log(element)
 		});
   }
   //-----------------------------------------------------------------------------------------------------

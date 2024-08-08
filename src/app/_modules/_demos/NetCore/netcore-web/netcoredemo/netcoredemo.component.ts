@@ -30,9 +30,9 @@ export class NetcoredemoComponent {
     //
     onSort({ _column, _direction }: _NetCoreDemoSortEvent) {
       //
-      console.log ("onSort.column   :" + _column);
+      //console.log ("onSort.column   :" + _column);
       //
-      console.log ("onSort.direction:" + _column);
+      //console.log ("onSort.direction:" + _column);
       // resetting other headers
       this.headers?.forEach((header) => {
         if (header.netcoredemosortable !== _column) {

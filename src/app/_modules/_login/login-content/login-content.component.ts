@@ -45,9 +45,9 @@ export class LoginComponentContent {
     this.authService.password   = this.td_model.P_LOGIN_PASSWORD;
     this.authService.loggedUser = false;
     // Implement your login logic using username and password
-    console.log(`Username  : ${this.td_model.P_LOGIN_NAME}, Password: ${this.td_model.P_LOGIN_PASSWORD}`); // Example log
+    //console.log(`Username  : ${this.td_model.P_LOGIN_NAME}, Password: ${this.td_model.P_LOGIN_PASSWORD}`); // Example log
     // Implement your login logic using username and password
-    console.log(`Valid Form: ${this.td_valid_form()}`); // Example log
+    //console.log(`Valid Form: ${this.td_valid_form()}`); // Example log
     //
     if ((this.td_valid_form() == false))
       return;
@@ -56,11 +56,11 @@ export class LoginComponentContent {
     //
     _environment.usersList.forEach((element: any) => {
         _usersList.push(element);
-        console.log(element)
+        //console.log(element)
     });
     //
     const _userseDictionary: Record<string, UserInfoType> = _usersList.reduce((acc, userInfo) => {
-        console.log('userInfo : ' + userInfo);
+        //console.log('userInfo : ' + userInfo);
         acc[userInfo.userName] = userInfo;
         return acc;
     }, {} as Record<string, UserInfoType>);
@@ -81,7 +81,7 @@ export class LoginComponentContent {
     //
     if (this.authService.loggedUser) {
       // SEARCH LOGGED USER ON USER LIST
-      console.log('Users Dictionary Match : ' + this.authService.loggedUser);
+      //console.log('Users Dictionary Match : ' + this.authService.loggedUser);
       //
       this.modalService.dismissAll('Login attempt'); // Close modal after submit
       //

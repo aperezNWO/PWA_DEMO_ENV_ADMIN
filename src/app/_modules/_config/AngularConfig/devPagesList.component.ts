@@ -25,9 +25,9 @@ export class DevPagesListsComponent {
     //
 	onSort({ _column, _direction }: _DevPageSortEvent) {
 		//
-		console.log ("onSort.column   :" + _column);
+		//console.log ("onSort.column   :" + _column);
 		//
-		console.log ("onSort.direction:" + _column);
+		//console.log ("onSort.direction:" + _column);
 		// resetting other headers
 		this.headers?.forEach((header) => {
 			if (header.devpagesortable !== _column) {

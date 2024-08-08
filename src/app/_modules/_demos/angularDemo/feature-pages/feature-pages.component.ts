@@ -29,9 +29,9 @@ export class FeaturePagesComponent {
   //
   onSort({ _column, _direction }: _FeaturePageSortEvent) {
       //
-      console.log ("onSort.column   :" + _column);
+      //console.log ("onSort.column   :" + _column);
       //
-      console.log ("onSort.direction:" + _column);
+      //console.log ("onSort.direction:" + _column);
       // resetting other headers
       this.headers?.forEach((header) => {
         if (header.featurepagesortable !== _column) {

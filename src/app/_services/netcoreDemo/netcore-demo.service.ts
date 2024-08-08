@@ -79,14 +79,14 @@ export class NetcoreDemoService extends BaseService {
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
     
         //
-		console.log("external json data : " +  _environment.netCoreDemoList); 
+		//console.log("external json data : " +  _environment.netCoreDemoList); 
 
         // 1. sort
 		let _NETCOREDEMO_PAGES  : netCoreDemo[] = [];
 		//
 		_environment.netCoreDemoList.forEach((element: any) => {
 			_NETCOREDEMO_PAGES.push(element);
-			console.log(element)
+			//console.log(element)
 		});
 		//
 		_netCoreDemoList   = sort(_NETCOREDEMO_PAGES, sortColumn, sortDirection);

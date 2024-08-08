@@ -29,9 +29,9 @@ export class NodejsDemoComponent {
  //
  onSort({ _column, _direction }: _NodeJsFeaturePageSortEvent) {
      //
-     console.log ("onSort.column   :" + _column);
+     //console.log ("onSort.column   :" + _column);
      //
-     console.log ("onSort.direction:" + _column);
+     //console.log ("onSort.direction:" + _column);
      // resetting other headers
      this.headers?.forEach((header) => {
        if (header.nodejsfeaturepagesortable !== _column) {

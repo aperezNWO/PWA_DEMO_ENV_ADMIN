@@ -80,14 +80,14 @@ export class devPagesListService extends BaseService {
         // 0. get state
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
-		console.log("external json data : " +  _environment.AngularConfigList); 
+		//console.log("external json data : " +  _environment.AngularConfigList); 
 
 		// 1. sort
 		let _DEV_PAGES  : AngularConfig[] = [];
 		
 		_environment.AngularConfigList.forEach((element: any) => {
 			_DEV_PAGES.push(element);
-			console.log(element)
+			//console.log(element)
 		});
 
 		_devpageList   = sort(_DEV_PAGES, sortColumn, sortDirection);

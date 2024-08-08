@@ -24,7 +24,7 @@
 				<th scope="col" sortable="id"              (sortevent)="onSort($event)">#</th>
 				<th scope="col" sortable="done"            (sortevent)="onSort($event)">(hecho)</th>
 				<th scope="col" sortable="name"            (sortevent)="onSort($event)">Nombre</th>
-				<th scope="col" sortable="field_3"         (sortevent)="onSort($event)">Demo</th>
+				<th scope="col" sortable="field_1"         (sortevent)="onSort($event)">Demo</th>
 				<th scope="col" *ngIf="this.authService.matchRoles(this.ConfigRoleString)"
 								sortable="field_4"         (sortevent)="onSort($event)">Repo</th>
 				<th scope="col" sortable="field_5"         (sortevent)="onSort($event)">Tema</th>
@@ -40,7 +40,7 @@
 						<input type="checkbox" name="done" id="done" value="done" [checked]="featurePage.done" readonly>
 					</td>
 					<td>
-						<a [href]="featurePage.field_2" target="_blank">
+						<a [href]="featurePage.field_1" target="_blank">
 							<ngb-highlight [result]="featurePage.name" [term]="service.searchTerm" />
 						</a>
 					</td>
@@ -59,7 +59,7 @@
 							[Tema]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="featurePage.field_1"               [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="featurePage.field_2"               [term]="service.searchTerm" /></td>
 					<td><ngb-highlight [result]="featurePage.description"           [term]="service.searchTerm" /></td>
 				</tr>
 			} @empty {

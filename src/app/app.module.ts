@@ -52,7 +52,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
         //
         const pageSetting = _environment.pageSettingDictionary[key];
         //
-        console.log('modifying setting : ' + key);
+        //console.log('modifying setting : ' + key);
         //
         _configService.loadJsonData(pageSetting.p_Path,
                                     pageSetting._environmentList).then(() => {
@@ -86,15 +86,13 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
      //
      const pageSetting = pageSettingDictionary[key];
      //
-     console.log('reding setting : ' + key);
+     //console.log('reding setting : ' + key);
      //
      _configService.loadJsonData(pageSetting.p_Path,
                                  pageSetting._environmentList).then(() => {
            //
      });
   }
-  //
-  _configService.loadCppDemoData();
   //
   _configService.loadCppDemoData_base();
   //

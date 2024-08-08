@@ -24,9 +24,9 @@ export class NodeJsConfigComponent {
     //
     onSort({ _column, _direction }: _NodeJsConfigePageSortEvent) {
       //
-      console.log ("onSort.column   :" + _column);
+      //console.log ("onSort.column   :" + _column);
       //
-      console.log ("onSort.direction:" + _column);
+      //console.log ("onSort.direction:" + _column);
       // resetting other headers
       this.headers?.forEach((header) => {
         if (header.nodejsconfigpagesortable !== _column) {
