@@ -37,7 +37,6 @@ import { NetcoredemoComponent                   } from './_modules/_demos/NetCor
 import { NetCoreConfigComponent                 } from './_modules/_config/net-core-config/net-core-config.component';
 import { DevPageSortableHeader                  } from './_directives/Demos/angularDemo/devPagesListSortable.directive';
 import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
-import { CppFeatureListSortableHeader           } from './_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
 import { NetCoreDemoSortableHeader              } from './_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
@@ -47,7 +46,20 @@ import { PageSettingDictionary                  } from './_models/common/common'
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
-  _configService.loadJsonist();
+  _configService.loadJsonist().then(()=> {
+      //
+      for (const key in _environment.pageSettingDictionary) {
+        //
+        const pageSetting = _environment.pageSettingDictionary[key];
+        //
+        console.log('modifying setting : ' + key);
+        //
+        _configService.loadJsonData(pageSetting.p_Path,
+                                    pageSetting._environmentList).then(() => {
+              //
+        });
+      }
+  });
   //
   const pageSettingDictionary: PageSettingDictionary = {
     loadAngularDemoData:
@@ -82,11 +94,9 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
      });
   }
   //
-  //_environment.pageSettingDictionary['loadAngularDemoData']._environmentList            = _environment.AngularDemosList;
-  //_environment.pageSettingDictionary['loadAngularCurriculumData_base']._environmentList = _environment.AngularCurriculum_base;
-  //_environment.pageSettingDictionary['loadAngularConfigData']._environmentList          = _environment.AngularDemosList;
-  //
   _configService.loadCppDemoData();
+  //
+  _configService.loadCppDemoData_base();
   //
   _configService.loadNodeJsDemoData();
   //
@@ -125,7 +135,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     ConfigWebComponent,
     AboutWebComponent,
     CppDemoComponent,
-    CppFeatureListSortableHeader,
     NodeJsFeatureListSortableHeader,
     NodejsDemoComponent,
     NodeJsConfigComponent,

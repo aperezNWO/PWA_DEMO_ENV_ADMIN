@@ -286,10 +286,18 @@
 
  -- [_] preserve session info.
 
- -- [_] load config as dictionary. 
+ -- [>>] load config as dictionary. 
 
       -- [x] function appModule.ts LoadxxxData() as single function.
 
       -- [_] load dictionary from external list.
+
+ -- [>>] Implement base service.
+
+      -- [_] Eliminate services.
+
+      -- [_] Eliminate directives.
+
+      -- [_] Eliminate models.
 
 /***********************************************/

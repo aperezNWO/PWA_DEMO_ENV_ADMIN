@@ -16,6 +16,7 @@ interface EnvironmentConfig {
     NodeJsDemosList        : [{}];   // Json pages
     NodeJsConfigList       : [{}];   // Json pages
     cppDemoList            : [{}];   // Json pages
+    cppDemoList_base       : [{}];   // Json pages
     netCoreDemoList        : [{}];   // Json pages
     netCoreConfigList_base : [{}];   // Json pages
     marketingList_base     : [{}];   // Json pages
@@ -38,6 +39,7 @@ export const _environment : EnvironmentConfig  = {
     NodeJsDemosList        : [{}],   // Json pages
     NodeJsConfigList       : [{}],   // Json pages
     cppDemoList            : [{}],   // Json pages
+    cppDemoList_base       : [{}],   // Json pages
     netCoreDemoList        : [{}],   // Json pages
     netCoreConfigList_base : [{}],   // Json pages
     marketingList_base     : [{}],   // Json pages

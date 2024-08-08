@@ -97,6 +97,19 @@ export class ConfigService {
         console.error('Error loading cppDemo data :', error);
       });
    }
+    // ONLY HAPPENS ONCE ON APPMODULE LOADING
+    loadCppDemoData_base() {
+      return this.http.get('./assets/cppDemo/cpp_Demos_base.json').toPromise()
+        .then((data: any) => {
+            //
+            //console.log("loading cpp demo data ..." + JSON.stringify(data));
+            //
+            _environment.cppDemoList_base = data; // Assign loaded data to environment variable
+        })
+        .catch(error => {
+          console.error('Error loading cppDemo data :', error);
+        });
+     }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadNodeJsConfigData() {
     return this.http.get('./assets/nodejsDemo/nodejs_Config.json').toPromise()

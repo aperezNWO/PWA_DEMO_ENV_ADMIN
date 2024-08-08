@@ -1,10 +1,10 @@
 import { Component, QueryList, ViewChildren                     } from '@angular/core';
 import { Observable                                             } from 'rxjs';
-import { CppFeatures                                            } from '../../../../_models/CppDemo/CppFeatures';
-import { CppFeatureListSortableHeader, _CppFeaturePageSortEvent } from '../../../../_directives/Demos/cppDemo/cpp-feature-list-sortable.directive';
-import { CppFeaturesService                                     } from '../../../../_services/cppDemo/cpp-features.service';
 import { AuthService                                            } from '../../../../_services/_config/auth.service';
-import { SiteRole                                               } from '../../../../_models/common/common';
+import { _BaseModel, SiteRole                                   } from '../../../../_models/common/common';
+import { _BaseSortEvent, BaseSortableHeader                     } from '../../../../_directives/BaseSortableHeader.directive';
+import { _BaseService                                           } from '../../../../_services/_config/base.service';
+import { _environment                                           } from '../../../../../environments/environment';
 //
 @Component({
   selector: 'app-cpp-demo',
@@ -13,30 +13,36 @@ import { SiteRole                                               } from '../../..
 })
 export class CppDemoComponent {
     //
-    public featurePagesList!: Observable<CppFeatures[]>;
+    public featurePagesList!: Observable<_BaseModel[]>;
     public total!           : Observable<number>;
     //
     public ConfigRoleString : string = SiteRole.RoleConfig.toString();
     // 
-    @ViewChildren(CppFeatureListSortableHeader) headers: QueryList<CppFeatureListSortableHeader> | undefined;
+    @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
     //
-    constructor(public service    : CppFeaturesService,
+    constructor(public service    : _BaseService,
                 public authService: AuthService,
     ) 
     {
-      this.featurePagesList = service.featurepageLists;
+        //
+        _environment.cppDemoList_base.forEach((element: any) => {
+          service._SEARCH_PAGES.push(element);
+          //console.log(element)
+        });
+      //
+      this.featurePagesList = service.Pagelist;
       this.total            = service.total;
     }
     //
-    onSort({ _column, _direction }: _CppFeaturePageSortEvent) {
+    onSort({ _column, _direction }: _BaseSortEvent) {
         //
         console.log ("onSort.column   :" + _column);
         //
         console.log ("onSort.direction:" + _column);
         // resetting other headers
         this.headers?.forEach((header) => {
-          if (header.cppfeaturepagesortable !== _column) {
-            header.cppfeaturepagedirection= '';
+          if (header.sortable !== _column) {
+            header.direction= '';
           }
         });
         //
