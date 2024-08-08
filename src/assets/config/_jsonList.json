@@ -3,16 +3,16 @@
                 { 
                     "f_Name"            : "loadAngularDemoData",
                     "p_Path"            : "./assets/angularDemo/angular_Demos.json",
-                    "_environmentList"  : "environment.AngularDemosList"
+                    "_environmentList"  : []
                 },
                 {
-                    "f_name"             : "loadAngularCurriculumData_base",   
+                    "f_Name"             : "loadAngularCurriculumData_base",   
                     "p_Path"             : "./assets/angularDemo/angular_Curriculum_base.json",
-                    "_environmentList"   : "_environment.AngularCurriculum_base"
+                    "_environmentList"   : []
                 },
                 {
                   "f_Name"           : "loadAngularConfigData",
                   "p_Path"           : "./assets/angularDemo/angular_Config.json",
-                  "_environmentList" : "_environment.AngularConfigList"                
+                  "_environmentList" : []              
                 }
 ]            

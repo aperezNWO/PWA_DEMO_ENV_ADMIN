@@ -1,7 +1,7 @@
 
 import { AppRoutingModule                         } from './app-routing.module';
 import { AppComponent                             } from './app.component';
-import { APP_INITIALIZER, NgModule, ɵNG_PIPE_DEF                } from '@angular/core';
+import { APP_INITIALIZER, NgModule                } from '@angular/core';
 import { AsyncPipe, DatePipe, DecimalPipe         } from '@angular/common';
 import { FormsModule                              } from '@angular/forms';
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
@@ -43,54 +43,31 @@ import { NodeJsConfigListSortableHeader         } from './_directives/Demos/node
 import { NetCoreDemoSortableHeader              } from './_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
 import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
 import { _environment                           } from '../environments/environment';
+import { PageSettingDictionary                  } from './_models/common/common';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
   _configService.loadJsonist();
   //
-  interface PageSetting {
-    p_Path           : string;
-    _environmentList : string[];
-  }
-  //
-  interface PageSettingDictionary {
-    [key: string]: PageSetting;
-  }
- 
-  /*
-  type PageSettingType  = PageSetting; 
-  //
-  let _jsonList : PageSetting[] = [];
-  //
-  _environment.jsonList.forEach((element: any) => {
-      _jsonList.push(element);
-      //console.log(element)
-  });
-  //
-  const pageSettingDictionary: Record<string, PageSetting> = _jsonList.reduce((acc, pageSetting) => {
-    console.log('pageSetting : ' + pageSetting);
-    acc[pageSetting.f_name] = pageSetting;
-    return acc;
-  }, {} as Record<string, PageSetting>);
-  */
-  //
   const pageSettingDictionary: PageSettingDictionary = {
-    loadAngularDemoData               : 
+    loadAngularDemoData:
                 { 
+                    f_Name            : 'loadAngularDemoData',
                     p_Path            : './assets/angularDemo/angular_Demos.json',
                     _environmentList  : _environment.AngularDemosList
                 },
-    loadAngularCurriculumData_base    :            
+    loadAngularCurriculumData_base:
                 {
-                    p_Path             : './assets/angularDemo/angular_Curriculum_base.json',
-                    _environmentList   : _environment.AngularCurriculum_base
+                   f_Name              : 'loadAngularCurriculumData_base',   
+                   p_Path              : './assets/angularDemo/angular_Curriculum_base.json',
+                   _environmentList    : _environment.AngularCurriculum_base
                 },
-    loadAngularConfigData              :
+    loadAngularConfigData:
                 {
+                  f_Name             : 'loadAngularConfigData',
                   p_Path             : './assets/angularDemo/angular_Config.json',
                   _environmentList   : _environment.AngularConfigList                
                 }
-
   };
   //
   for (const key in pageSettingDictionary) {
@@ -104,6 +81,10 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
            //
      });
   }
+  //
+  //_environment.pageSettingDictionary['loadAngularDemoData']._environmentList            = _environment.AngularDemosList;
+  //_environment.pageSettingDictionary['loadAngularCurriculumData_base']._environmentList = _environment.AngularCurriculum_base;
+  //_environment.pageSettingDictionary['loadAngularConfigData']._environmentList          = _environment.AngularDemosList;
   //
   _configService.loadCppDemoData();
   //

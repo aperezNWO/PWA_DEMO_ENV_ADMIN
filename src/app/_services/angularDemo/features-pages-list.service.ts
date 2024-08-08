@@ -81,11 +81,13 @@ export class FeaturesPagesListService extends BaseService {
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
         //
 		console.log("external json data : " +  _environment.AngularConfigList); 
+		//console.log("external json data : " +  _environment.pageSettingDictionary['loadAngularDemoData']); 
 
         // 1. sort
 		let _FEATURE_PAGES  : AngularFeatures[] = [];
 		//
 		_environment.AngularDemosList.forEach((element: any) => {
+		//_environment.pageSettingDictionary['loadAngularDemoData']._environmentList.forEach((element: any) => {
 			_FEATURE_PAGES.push(element);
 			console.log(element)
 		});

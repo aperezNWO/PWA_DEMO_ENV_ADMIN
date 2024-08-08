@@ -92,3 +92,14 @@ export interface _BaseSearchResult {
     searchPages : _BaseModel[];
     total       : number;
 }   
+
+export interface PageSetting {
+    f_Name           : string;
+    p_Path           : string;
+    _environmentList : string[];
+}
+//
+export interface PageSettingDictionary {
+   [key: string]: PageSetting;
+}
+ 

@@ -1,6 +1,7 @@
 import { Injectable                 } from '@angular/core';
 import { HttpClient                 } from '@angular/common/http';
 import { _environment               } from '../../../environments/environment';
+import { PageSetting } from '../../_models/common/common';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,12 @@ export class ConfigService {
           console.log("loading json list.." + JSON.stringify(data));
           //
           _environment.jsonList = data; // Assign loaded data to environment variable
+          //
+          _environment.jsonList.forEach((element: PageSetting) => {
+            _environment.pageSettingDictionary[element.f_Name] = element;
+            _environment.pageSettingDictionary[element.f_Name]._environmentList = [];
+            console.log('Loading pagesettings element ' + element.f_Name)
+        });
       })
       .catch(error => {
         console.error('Error loading configuration:', error);
