@@ -5,9 +5,6 @@ interface EnvironmentConfig {
     currentUserId           : number;
     currentUserRoles        : string;     
     externalConfig          : {};     //
-    AngularConfigList       : [];     // Json pages
-    AngularDemosList        : [];     // Json pages
-    AngularCurriculum_base  : [];     // Json pages
     usersInfo               : [{}];   // 
     routesList              : [{}];   // 
     usersList               : [{}];   // 
@@ -17,8 +14,6 @@ interface EnvironmentConfig {
     NodeJsConfigList        : [{}];   // Json pages
     cppDemoList             : [{}];   // Json pages
     cppDemoList_base        : [{}];   // Json pages
-    netCoreDemoList_base    : [{}];   // Json pages
-    netCoreConfigList_base_ : [{}];   // Json pages
     marketingList_base      : [{}];   // Json pages
 }
 
@@ -28,9 +23,6 @@ export const _environment : EnvironmentConfig  = {
     currentUserId           : 0,      //
     currentUserRoles        : "",     //
     externalConfig          : {},     // 
-    AngularConfigList       : [],     // Json pages
-    AngularDemosList        : [],     // Json pages
-    AngularCurriculum_base  : [],     // Json pages
     usersInfo               : [{}],   // 
     routesList              : [{}],   // 
     usersList               : [{}],   // 
@@ -40,7 +32,5 @@ export const _environment : EnvironmentConfig  = {
     NodeJsConfigList        : [{}],   // Json pages
     cppDemoList             : [{}],   // Json pages
     cppDemoList_base        : [{}],   // Json pages
-    netCoreDemoList_base    : [{}],   // Json pages
-    netCoreConfigList_base_ : [{}],   // Json pages
     marketingList_base      : [{}],   // Json pages
 };

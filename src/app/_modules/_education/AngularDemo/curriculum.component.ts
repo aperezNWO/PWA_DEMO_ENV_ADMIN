@@ -28,7 +28,7 @@ export class CurriculumComponent {
     this.curriculumList   = service.Pagelist;
     this.total            = service.total;
     //
-    _environment.AngularCurriculum_base.forEach((element: any) => {
+    _environment.pageSettingDictionary['loadAngularCurriculumData_base']._environmentList.forEach((element: any) => {
       service._SEARCH_PAGES.push(element);
       ////console.log(element)
     });

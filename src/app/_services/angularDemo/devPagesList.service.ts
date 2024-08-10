@@ -85,7 +85,7 @@ export class devPagesListService extends BaseService {
 		// 1. sort
 		let _DEV_PAGES  : AngularConfig[] = [];
 		
-		_environment.AngularConfigList.forEach((element: any) => {
+		_environment.pageSettingDictionary['loadAngularDemoData']._environmentList.forEach((element: any) => {
 			_DEV_PAGES.push(element);
 			//console.log(element)
 		});

@@ -121,19 +121,6 @@ export class ConfigService {
         console.error('Error loading Nodejs demo data :', error);
       });
     }
-   // ONLY HAPPENS ONCE ON APPMODULE LOADING
-   loadAngularConfigData() {
-    return this.http.get('./assets/angularDemo/angular_Config.json').toPromise()
-      .then((data: any) => {
-          //
-          ////console.log("loading angular config data ..." + JSON.stringify(data));
-          //
-          _environment.AngularConfigList = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading angular configuration data :', error);
-      });
-  }
   //
   getConfigValue(key: string) {
     //

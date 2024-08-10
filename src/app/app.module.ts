@@ -41,7 +41,6 @@ import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/node
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
 import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
 import { _environment                           } from '../environments/environment';
-import { PageSettingDictionary                  } from './_models/common/common';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //

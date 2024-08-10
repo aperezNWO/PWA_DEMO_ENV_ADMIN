@@ -25,7 +25,7 @@ export class NetcoredemoComponent {
     ) 
     {
         //
-        _environment.netCoreDemoList_base.forEach((element: any) => {
+        _environment.pageSettingDictionary['loadNetCoreDemoData_base']._environmentList.forEach((element: any) => {
           service._SEARCH_PAGES.push(element);
         });     
         //
