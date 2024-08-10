@@ -304,6 +304,8 @@
 
  -- [_] Sotable Grid Component.      
 
- -- [_] Contact Form Dynamic List.      
+ -- [_] Contact Form Dynamic List.  
+
+-- [_] promise exception handling.       
 
 /***********************************************/
