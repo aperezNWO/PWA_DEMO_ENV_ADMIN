@@ -1,7 +1,7 @@
 import { Injectable                 } from '@angular/core';
 import { HttpClient                 } from '@angular/common/http';
 import { _environment               } from '../../../environments/environment';
-import { PageSetting } from '../../_models/common/common';
+import { PageSetting                } from '../../_models/common/common';
 
 @Injectable({
   providedIn: 'root'
@@ -44,14 +44,11 @@ export class ConfigService {
     return this.http.get('./assets/config/_jsonList.json').toPromise()
       .then((data: any) => {
           //
-          //console.log("loading json list.." + JSON.stringify(data));
-          //
           _environment.jsonList = data; // Assign loaded data to environment variable
           //
           _environment.jsonList.forEach((element: PageSetting) => {
             _environment.pageSettingDictionary[element.f_Name] = element;
             _environment.pageSettingDictionary[element.f_Name]._environmentList = [];
-            //console.log('Loading pagesettings element ' + element.f_Name)
         });
       })
       .catch(error => {
@@ -135,43 +132,6 @@ export class ConfigService {
       })
       .catch(error => {
         console.error('Error loading angular configuration data :', error);
-      });
-  }
-  // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadMarketingData_base() {
-    return this.http.get('./assets/marketing/marketing_base.json').toPromise()
-      .then((data: any) => {
-          //
-          ////console.log("loading marketing data ..." + JSON.stringify(data));
-          //
-          _environment.marketingList_base = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading marketing data:', error);
-      });
-  }
-  //
-  loadNetCoreDemoData_base() {
-    return this.http.get('./assets/netCoreDemo/netcore_demos_base.json').toPromise()
-      .then((data: any) => {
-          //
-          // console.log("loading net core demo config data ..." + JSON.stringify(data));
-          //
-          _environment.netCoreDemoList_base = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading net core demo data:', error);
-      });
-  }
-  //
-  loadNetCoreConfigData_base() {
-    return this.http.get('./assets/netCoreDemo/netcore_config_base.json').toPromise()
-      .then((data: any) => {
-          //
-          _environment.netCoreConfigList_base = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading net core demo  config data:', error);
       });
   }
   //

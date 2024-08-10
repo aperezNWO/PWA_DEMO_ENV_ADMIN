@@ -14,5 +14,15 @@
                   "f_Name"           : "loadAngularConfigData",
                   "p_Path"           : "./assets/angularDemo/angular_Config.json",
                   "_environmentList" : []              
+                },
+                {
+                  "f_Name"           : "loadNetCoreDemoData_base",
+                  "p_Path"           : "./assets/netCoreDemo/netcore_demos_base.json",
+                  "_environmentList" : []              
+                },
+                {
+                  "f_Name"           : "loadNetCoreConfigData_base",
+                  "p_Path"           : "./assets/netCoreDemo/netcore_config_base.json'",
+                  "_environmentList" : []              
                 }
 ]            

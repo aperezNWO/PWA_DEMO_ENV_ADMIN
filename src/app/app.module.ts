@@ -58,48 +58,13 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
       }
   });
   //
-  const pageSettingDictionary: PageSettingDictionary = {
-    loadAngularDemoData:
-                { 
-                    f_Name            : 'loadAngularDemoData',
-                    p_Path            : './assets/angularDemo/angular_Demos.json',
-                    _environmentList  : _environment.AngularDemosList
-                },
-    loadAngularCurriculumData_base:
-                {
-                   f_Name              : 'loadAngularCurriculumData_base',   
-                   p_Path              : './assets/angularDemo/angular_Curriculum_base.json',
-                   _environmentList    : _environment.AngularCurriculum_base
-                },
-    loadAngularConfigData:
-                {
-                  f_Name             : 'loadAngularConfigData',
-                  p_Path             : './assets/angularDemo/angular_Config.json',
-                  _environmentList   : _environment.AngularConfigList                
-                }
-  };
-  //
-  for (const key in pageSettingDictionary) {
-     //
-     const pageSetting = pageSettingDictionary[key];
-     //
-     _configService.loadJsonData(pageSetting.p_Path,
-                                 pageSetting._environmentList).then(() => {
-           //
-     });
-  }
-  //
   _configService.loadCppDemoData_base();
   //
   _configService.loadNodeJsDemoData();
   //
   _configService.loadNodeJsConfigData();
   //
-  _configService.loadNetCoreDemoData_base();
-  //
-  _configService.loadNetCoreConfigData_base();
-  //
-  _configService.loadMarketingData_base();
+  //_configService.loadMarketingData_base();
   //
   _configService.loadPagesInfoData();
   //

@@ -19,7 +19,7 @@ export class NetCoreConfigComponent {
     //
     constructor(public service: _BaseService) {
       //
-      _environment.netCoreConfigList_base.forEach((element: any) => {
+      _environment.netCoreConfigList_base_.forEach((element: any) => {
         console.log("loading to service : " + element);
         service._SEARCH_PAGES.push(element);
       });
