@@ -20,8 +20,8 @@ export class NetCoreConfigComponent {
     constructor(public service: _BaseService) {
       //
       _environment.netCoreConfigList_base.forEach((element: any) => {
+        console.log("loading to service : " + element);
         service._SEARCH_PAGES.push(element);
-        ////console.log(element)
       });
       //
       this.mainPagesList = service.Pagelist;
@@ -29,10 +29,6 @@ export class NetCoreConfigComponent {
     }
     //
     onSort({ _column, _direction }: _BaseSortEvent) {
-      //
-      //console.log ("onSort.column   :" + _column);
-      //
-      //console.log ("onSort.direction:" + _column);
       // resetting other headers
       this.headers?.forEach((header) => {
         if (header.sortable !== _column) {

@@ -1,10 +1,10 @@
 import { Component, QueryList, ViewChildren                       } from '@angular/core';
 import { Observable                                               } from 'rxjs';
-import { netCoreDemo                                              } from '../../../../../_models/netCoreDemo/netCoreDemo';
-import { _NetCoreDemoSortEvent, NetCoreDemoSortableHeader         } from '../../../../../_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
-import { NetcoreDemoService                                       } from '../../../../../_services/netcoreDemo/netcore-demo.service';
 import { AuthService                                              } from '../../../../../_services/_config/auth.service';
-import { SiteRole                                                 } from '../../../../../_models/common/common';
+import { _BaseModel, SiteRole                                     } from '../../../../../_models/common/common';
+import { _BaseSortEvent , BaseSortableHeader                      } from '../../../../../_directives/BaseSortableHeader.directive';
+import { _BaseService                                             } from '../../../../../_services/_config/base.service';
+import { _environment                                             } from '../../../../../../environments/environment';
 
 @Component({
   selector: 'app-netcoredemo',
@@ -13,30 +13,31 @@ import { SiteRole                                                 } from '../../
 })
 export class NetcoredemoComponent {
     //
-    public netCoreDemoPageList!: Observable<netCoreDemo[]>;
-    public total!             : Observable<number>;
+    public netCoreDemoPageList!: Observable<_BaseModel[]>;
+    public total!              : Observable<number>;
     //
     public ConfigRoleString : string = SiteRole.RoleConfig.toString();
     // 
-    @ViewChildren(NetCoreDemoSortableHeader) headers: QueryList<NetCoreDemoSortableHeader> | undefined;
+    @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
     //
-    constructor(public service    : NetcoreDemoService,
+    constructor(public service    : _BaseService,
                 public authService: AuthService,
     ) 
     {
-        this.netCoreDemoPageList = service.NetcoreDemoPagelist;
+        //
+        _environment.netCoreDemoList_base.forEach((element: any) => {
+          service._SEARCH_PAGES.push(element);
+        });     
+        //
+        this.netCoreDemoPageList = service.Pagelist;
         this.total               = service.total;
     }
     //
-    onSort({ _column, _direction }: _NetCoreDemoSortEvent) {
+    onSort({ _column, _direction }: _BaseSortEvent) {
       //
-      //console.log ("onSort.column   :" + _column);
-      //
-      //console.log ("onSort.direction:" + _column);
-      // resetting other headers
       this.headers?.forEach((header) => {
-        if (header.netcoredemosortable !== _column) {
-          header.netcoredemodirection= '';
+        if (header.sortable !== _column) {
+          header.direction= '';
         }
       });
       //

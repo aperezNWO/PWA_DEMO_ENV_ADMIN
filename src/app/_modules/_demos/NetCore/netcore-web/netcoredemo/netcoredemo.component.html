@@ -22,16 +22,16 @@
 	<table class="table table-striped table-dark">
 		<thead>
 			<tr>
-				<th scope="col" netcoredemosortable="id"          (netcoredemosort)="onSort($event)">#</th>
-				<th scope="col" netcoredemosortable="done"        (netcoredemosort)="onSort($event)">(hecho)</th>
-				<th scope="col" netcoredemosortable="name"        (netcoredemosort)="onSort($event)">Nombre</th>
-				<th scope="col" netcoredemosortable="urlDemo"     (netcoredemosort)="onSort($event)">Demo</th>
+				<th scope="col" sortable="id"          (sortevent)="onSort($event)">#</th>
+				<th scope="col" sortable="done"        (sortevent)="onSort($event)">(hecho)</th>
+				<th scope="col" sortable="name"        (sortevent)="onSort($event)">Nombre</th>
+				<th scope="col" sortable="field_2"     (sortevent)="onSort($event)">Demo</th>
 				<th scope="col" *ngIf="this.authService.matchRoles(this.ConfigRoleString)"
-								netcoredemosortable="urlRepo"     (netcoredemosort)="onSort($event)"	>Repo</th>
+								sortable="field_3"     (sortevent)="onSort($event)"	>Repo</th>
 				<th scope="col" *ngIf="this.authService.matchRoles(this.ConfigRoleString)" 
-				                netcoredemosortable="urlBackend"  (netcoredemosort)="onSort($event)">Backend</th>
-				<th scope="col" netcoredemosortable="keywords"    (netcoredemosort)="onSort($event)">P. Clave</th>
-				<th scope="col" netcoredemosortable="description" (netcoredemosort)="onSort($event)">Descripción</th>
+				                sortable="field_4"     (sortevent)="onSort($event)">Backend</th>
+				<th scope="col" sortable="field_1"     (sortevent)="onSort($event)">P. Clave</th>
+				<th scope="col" sortable="description" (sortevent)="onSort($event)">Descripción</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -42,26 +42,26 @@
 						<input type="checkbox" name="done" id="done" value="done" [checked]="netcoreDemoPage.done" readonly>
 					</td>
 					<td>
-						<a [href]="netcoreDemoPage.urlDemo" target="_blank">
+						<a [href]="netcoreDemoPage.field_2" target="_blank">
 							<ngb-highlight [result]="netcoreDemoPage.name" [term]="service.searchTerm" />
 						</a>
 					</td>
 					<td>
-						<a ngb-highlight [href]="netcoreDemoPage.urlDemo" target="_blank">
+						<a ngb-highlight [href]="netcoreDemoPage.field_2" target="_blank">
 							[Demo]
 						</a>
 					</td>
 					<td *ngIf="this.authService.matchRoles(this.ConfigRoleString)">
-						<a ngb-highlight [href]="netcoreDemoPage.urlRepo" target="_blank">
+						<a ngb-highlight [href]="netcoreDemoPage.field_3" target="_blank">
 							[Repo]
 						</a>
 					</td>
 					<td *ngIf="this.authService.matchRoles(this.ConfigRoleString)">
-						<a ngb-highlight [href]="netcoreDemoPage.urlBackend" target="_blank">
+						<a ngb-highlight [href]="netcoreDemoPage.field_4" target="_blank">
 							[Backend]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="netcoreDemoPage.keywords"              [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="netcoreDemoPage.field_1"               [term]="service.searchTerm" /></td>
 					<td><ngb-highlight [result]="netcoreDemoPage.description"           [term]="service.searchTerm" /></td>
 				</tr>
 			} @empty {

@@ -151,13 +151,13 @@ export class ConfigService {
       });
   }
   //
-  loadNetCoreDemoData() {
-    return this.http.get('./assets/netCoreDemo/netcore_demos.json').toPromise()
+  loadNetCoreDemoData_base() {
+    return this.http.get('./assets/netCoreDemo/netcore_demos_base.json').toPromise()
       .then((data: any) => {
           //
-          ////console.log("loading net core demo data ..." + JSON.stringify(data));
+          // console.log("loading net core demo config data ..." + JSON.stringify(data));
           //
-          _environment.netCoreDemoList = data; // Assign loaded data to environment variable
+          _environment.netCoreDemoList_base = data; // Assign loaded data to environment variable
       })
       .catch(error => {
         console.error('Error loading net core demo data:', error);
@@ -167,8 +167,6 @@ export class ConfigService {
   loadNetCoreConfigData_base() {
     return this.http.get('./assets/netCoreDemo/netcore_config_base.json').toPromise()
       .then((data: any) => {
-          //
-          ////console.log("loading net core demo config data ..." + JSON.stringify(data));
           //
           _environment.netCoreConfigList_base = data; // Assign loaded data to environment variable
       })

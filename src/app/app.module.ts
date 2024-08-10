@@ -39,7 +39,6 @@ import { DevPageSortableHeader                  } from './_directives/Demos/angu
 import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
 import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
 import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
-import { NetCoreDemoSortableHeader              } from './_directives/Demos/netcoreDemo/NetCoreDemoListSortableHeader.directive';
 import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
 import { _environment                           } from '../environments/environment';
 import { PageSettingDictionary                  } from './_models/common/common';
@@ -51,8 +50,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
       for (const key in _environment.pageSettingDictionary) {
         //
         const pageSetting = _environment.pageSettingDictionary[key];
-        //
-        //console.log('modifying setting : ' + key);
         //
         _configService.loadJsonData(pageSetting.p_Path,
                                     pageSetting._environmentList).then(() => {
@@ -86,8 +83,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
      //
      const pageSetting = pageSettingDictionary[key];
      //
-     //console.log('reding setting : ' + key);
-     //
      _configService.loadJsonData(pageSetting.p_Path,
                                  pageSetting._environmentList).then(() => {
            //
@@ -100,7 +95,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   //
   _configService.loadNodeJsConfigData();
   //
-  _configService.loadNetCoreDemoData();
+  _configService.loadNetCoreDemoData_base();
   //
   _configService.loadNetCoreConfigData_base();
   //
@@ -142,7 +137,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     ContactComponent,
     TechInfoComponent,
     NetcoredemoComponent,
-    NetCoreDemoSortableHeader,
     NetCoreConfigComponent,
     BaseSortableHeader,
   ],
