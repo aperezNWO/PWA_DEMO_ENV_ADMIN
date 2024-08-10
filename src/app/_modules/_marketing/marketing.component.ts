@@ -23,9 +23,8 @@ constructor(public service: _BaseService)
   this.marketingList   = service.Pagelist;
   this.total            = service.total;
   //
-  _environment.marketingList_base.forEach((element: any) => {
+  _environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
     service._SEARCH_PAGES.push(element);
-    //console.log(element)
   });
 }
 //

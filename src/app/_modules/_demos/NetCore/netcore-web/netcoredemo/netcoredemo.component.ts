@@ -25,23 +25,24 @@ export class NetcoredemoComponent {
     ) 
     {
         //
-        _environment.pageSettingDictionary['loadNetCoreDemoData_base']._environmentList.forEach((element: any) => {
+        _environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
           service._SEARCH_PAGES.push(element);
-        });     
-        //
-        this.netCoreDemoPageList = service.Pagelist;
-        this.total               = service.total;
+          ////console.log(element)
+        });
+      //
+      this.netCoreDemoPageList = service.Pagelist;
+      this.total            = service.total;
     }
     //
     onSort({ _column, _direction }: _BaseSortEvent) {
-      //
-      this.headers?.forEach((header) => {
-        if (header.sortable !== _column) {
-          header.direction= '';
-        }
-      });
-      //
-      this.service.sortColumn    = _column;
-      this.service.sortDirection = _direction;
-  }
+        // resetting other headers
+        this.headers?.forEach((header) => {
+          if (header.sortable !== _column) {
+            header.direction= '';
+          }
+        });
+        //
+        this.service.sortColumn    = _column;
+        this.service.sortDirection = _direction;
+    }
 }

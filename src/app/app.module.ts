@@ -35,39 +35,28 @@ import { ProtectedComponent                     } from './_modules/_login/protec
 import { LoginComponentContent                  } from './_modules/_login/login-content/login-content.component';
 import { NetcoredemoComponent                   } from './_modules/_demos/NetCore/netcore-web/netcoredemo/netcoredemo.component';
 import { NetCoreConfigComponent                 } from './_modules/_config/net-core-config/net-core-config.component';
-import { DevPageSortableHeader                  } from './_directives/Demos/angularDemo/devPagesListSortable.directive';
-import { FeaturePageSortableHeader              } from './_directives/Demos/angularDemo/featurePageListSortable.directive';
-import { NodeJsFeatureListSortableHeader        } from './_directives/Demos/nodeJsDemo/node-js.directive';
-import { NodeJsConfigListSortableHeader         } from './_directives/Demos/nodeJsDemo/node-js-config.directive';
 import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
 import { _environment                           } from '../environments/environment';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
-  _configService.loadJsonist().then(()=> {
+   _configService.loadJsonist().then(()=> {
       //
       for (const key in _environment.pageSettingDictionary) {
         //
         const pageSetting = _environment.pageSettingDictionary[key];
-        //
+
         _configService.loadJsonData(pageSetting.p_Path,
                                     pageSetting._environmentList).then(() => {
               //
+              console.log(`Reading Setting ${pageSetting._environmentList}`);
         });
       }
+      //
+      _configService.loadPagesInfoData();
+      //
+      _configService.loadUsersData();
   });
-  //
-  _configService.loadCppDemoData_base();
-  //
-  _configService.loadNodeJsDemoData();
-  //
-  _configService.loadNodeJsConfigData();
-  //
-  //_configService.loadMarketingData_base();
-  //
-  _configService.loadPagesInfoData();
-  //
-  _configService.loadUsersData();
   // 
   return () =>  _configService.loadConfig();
 }
@@ -92,10 +81,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     ConfigWebComponent,
     AboutWebComponent,
     CppDemoComponent,
-    NodeJsFeatureListSortableHeader,
     NodejsDemoComponent,
     NodeJsConfigComponent,
-    NodeJsConfigListSortableHeader,
     ProtectedComponent,
     LoginComponentContent,
     ContactComponent,
@@ -113,8 +100,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NgbAlertModule,
     NgbHighlight, 
     NgbPaginationModule,
-    DevPageSortableHeader,
-    FeaturePageSortableHeader,
     DecimalPipe, 
     FormsModule, 
     AsyncPipe, 

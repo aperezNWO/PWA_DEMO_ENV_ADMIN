@@ -4,33 +4,23 @@ interface EnvironmentConfig {
     pageSettingDictionary   : PageSettingDictionary;
     currentUserId           : number;
     currentUserRoles        : string;     
-    externalConfig          : {};     //
-    usersInfo               : [{}];   // 
-    routesList              : [{}];   // 
-    usersList               : [{}];   // 
-    usersDictionary         : [{}];   // 
-    jsonList                : PageSetting[];   // 
-    NodeJsDemosList         : [{}];   // Json pages
-    NodeJsConfigList        : [{}];   // Json pages
-    cppDemoList             : [{}];   // Json pages
-    cppDemoList_base        : [{}];   // Json pages
-    marketingList_base      : [{}];   // Json pages
+    externalConfig          : {};                //
+    usersInfo               : [];                // 
+    routesList              : [];                // 
+    usersList               : [];                // 
+    usersDictionary         : [];                // 
+    jsonList                : PageSetting[];     // 
 }
 
 
 export const _environment : EnvironmentConfig  = {
     pageSettingDictionary   : {},
-    currentUserId           : 0,      //
-    currentUserRoles        : "",     //
-    externalConfig          : {},     // 
-    usersInfo               : [{}],   // 
-    routesList              : [{}],   // 
-    usersList               : [{}],   // 
-    usersDictionary         : [{}],   // 
-    jsonList                : [],      // 
-    NodeJsDemosList         : [{}],   // Json pages
-    NodeJsConfigList        : [{}],   // Json pages
-    cppDemoList             : [{}],   // Json pages
-    cppDemoList_base        : [{}],   // Json pages
-    marketingList_base      : [{}],   // Json pages
+    currentUserId           : 0,       
+    currentUserRoles        : "",      
+    externalConfig          : {},        // 
+    usersInfo               : [],        // 
+    routesList              : [],        // 
+    usersList               : [],        // 
+    usersDictionary         : [],        // 
+    jsonList                : [],        // 
 };

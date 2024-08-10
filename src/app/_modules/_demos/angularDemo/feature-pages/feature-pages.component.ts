@@ -1,10 +1,10 @@
 import { Component, QueryList, ViewChildren               } from '@angular/core';
 import { Observable                                       } from 'rxjs';
-import { AngularFeatures                                  } from '../../../../_models/AngularDemo/AngularFeatures';
-import { FeaturesPagesListService                         } from '../../../../_services/angularDemo/features-pages-list.service';
-import { FeaturePageSortableHeader, _FeaturePageSortEvent } from '../../../../_directives/Demos/angularDemo/featurePageListSortable.directive';
 import { AuthService                                      } from '../../../../_services/_config/auth.service';
-import { SiteRole                                         } from '../../../../_models/common/common'; 
+import { _BaseModel, ENV_LIST_ANGULAR_DEMO, SiteRole      } from '../../../../_models/common/common'; 
+import { _BaseSortEvent, BaseSortableHeader               } from '../../../../_directives/BaseSortableHeader.directive';
+import { _BaseService                                     } from '../../../../_services/_config/base.service';
+import { _environment                                     } from '../../../../../environments/environment';
 //
 @Component({
   selector: 'app-feature-pages',
@@ -13,29 +13,31 @@ import { SiteRole                                         } from '../../../../_m
 })
 export class FeaturePagesComponent {
   //
-  public featurePagesList!: Observable<AngularFeatures[]>;
+  public featurePagesList!: Observable<_BaseModel[]>;
   public total!           : Observable<number>;
   //
   public ConfigRoleString : string = SiteRole.RoleConfig.toString();
   // 
-  @ViewChildren(FeaturePageSortableHeader) headers: QueryList<FeaturePageSortableHeader> | undefined;
+  @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
   //
-  constructor(public service     : FeaturesPagesListService,
+  constructor(public service     : _BaseService,
               public authService : AuthService
-  ) {
-      this.featurePagesList = service.featurepageLists;
+  ) 
+  {
+      //
+      _environment.pageSettingDictionary[ENV_LIST_ANGULAR_DEMO]._environmentList.forEach((element: any) => {
+        service._SEARCH_PAGES.push(element);
+        ////console.log(element)
+      });
+      this.featurePagesList = service.Pagelist;
       this.total            = service.total;
   }
   //
-  onSort({ _column, _direction }: _FeaturePageSortEvent) {
-      //
-      //console.log ("onSort.column   :" + _column);
-      //
-      //console.log ("onSort.direction:" + _column);
+  onSort({ _column, _direction }: _BaseSortEvent) {
       // resetting other headers
       this.headers?.forEach((header) => {
-        if (header.featurepagesortable !== _column) {
-          header.featurepagedirection= '';
+        if (header.sortable !== _column) {
+          header.direction= '';
         }
       });
       //

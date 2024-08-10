@@ -47,6 +47,7 @@ export class ConfigService {
           _environment.jsonList = data; // Assign loaded data to environment variable
           //
           _environment.jsonList.forEach((element: PageSetting) => {
+            console.log('Loading Page Setting' + element);
             _environment.pageSettingDictionary[element.f_Name] = element;
             _environment.pageSettingDictionary[element.f_Name]._environmentList = [];
         });
@@ -81,46 +82,6 @@ export class ConfigService {
         console.error('Error loading routes dada...', error);
       });
   }
-    // ONLY HAPPENS ONCE ON APPMODULE LOADING
-    loadCppDemoData_base() {
-      return this.http.get('./assets/cppDemo/cpp_Demos_base.json').toPromise()
-        .then((data: any) => {
-            //
-            ////console.log("loading cpp demo data ..." + JSON.stringify(data));
-            //
-            _environment.cppDemoList_base = data; // Assign loaded data to environment variable
-        })
-        .catch(error => {
-          console.error('Error loading cppDemo data :', error);
-        });
-     }
-  // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadNodeJsConfigData() {
-    return this.http.get('./assets/nodejsDemo/nodejs_Config.json').toPromise()
-      .then((data: any) => {
-          //
-          ////console.log("loading NodeJs config data ..." + JSON.stringify(data));
-          //
-          _environment.NodeJsConfigList = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading NodeJs config data :', error);
-      });
-    }
-   
-  // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadNodeJsDemoData() {
-    return this.http.get('./assets/nodejsDemo/nodejs_Demos.json').toPromise()
-      .then((data: any) => {
-          //
-          ////console.log("loading NodeJs demo data ..." + JSON.stringify(data));
-          //
-          _environment.NodeJsDemosList = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading Nodejs demo data :', error);
-      });
-    }
   //
   getConfigValue(key: string) {
     //

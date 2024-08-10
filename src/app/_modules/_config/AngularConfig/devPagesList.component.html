@@ -21,13 +21,13 @@
 	<table class="table table-striped table-dark">
 		<thead>
 			<tr>
-				<th scope="col" devpagesortable="id"                    (devpagesort)="onSort($event)">#</th>
-				<th scope="col" devpagesortable="done"                  (devpagesort)="onSort($event)">(Hecho)</th>
-				<th scope="col" devpagesortable="name"                  (devpagesort)="onSort($event)">Nombre</th>
-				<th scope="col" devpagesortable="urlRepo"               (devpagesort)="onSort($event)">Repo</th>
-				<th scope="col" devpagesortable="framework"             (devpagesort)="onSort($event)">Framework</th>
-				<th scope="col" devpagesortable="uixFramework"          (devpagesort)="onSort($event)">UixFramework</th>
-				<th scope="col" devpagesortable="description"           (devpagesort)="onSort($event)">Descripción</th>
+				<th scope="col" sortable="id"                    (sortevent)="onSort($event)">#</th>
+				<th scope="col" sortable="done"                  (sortevent)="onSort($event)">(Hecho)</th>
+				<th scope="col" sortable="name"                  (sortevent)="onSort($event)">Nombre</th>
+				<th scope="col" sortable="field_2"               (sortevent)="onSort($event)">Repo</th>
+				<th scope="col" sortable="field_3"               (sortevent)="onSort($event)">Framework</th>
+				<th scope="col" sortable="field_5"               (sortevent)="onSort($event)">UixFramework</th>
+				<th scope="col" sortable="description"           (sortevent)="onSort($event)">Descripción</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -38,26 +38,26 @@
 						<input ngb-highlight type="checkbox" name="done" id="done" value="done" [checked]="mainPage.done" readonly>
 					</td>
 					<td>
-						<a ngb-highlight [href]="mainPage.urlPage" target="_blank">
-							<ngb-highlight [result]="mainPage.name" [term]="service.searchTerm" />
+						<a ngb-highlight [href]="mainPage.field_1"   target="_blank">
+							<ngb-highlight [result]="mainPage.name"  [term]="service.searchTerm" />
 						</a>
 					</td>
 					<td>
-						<a ngb-highlight [href]="mainPage.urlRepo" target="_blank">
+						<a ngb-highlight [href]="mainPage.field_2"    target="_blank">
 							[Repo]
 						</a>
 					</td>
 					<td>
-						<a ngb-highlight [href]="mainPage.FrameworkUrl"  target="_blank">
-							<ngb-highlight [result]="mainPage.framework" [term]="service.searchTerm" />
+						<a ngb-highlight [href]="mainPage.field_4"     target="_blank">
+							<ngb-highlight [result]="mainPage.field_3" [term]="service.searchTerm" />
 						</a>
 					</td>
 					<td>
-						<a ngb-highlight [href]="mainPage.uixFrameworkUrl"      target="_blank">
-						   <ngb-highlight [result]="mainPage.uixFramework"      [term]="service.searchTerm" />
+						<a ngb-highlight [href]="mainPage.field_6"      target="_blank">
+						   <ngb-highlight [result]="mainPage.field_5"   [term]="service.searchTerm" />
 					   </a>
 					</td>
-					<td><ngb-highlight [result]="mainPage.description"           [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="mainPage.description"  [term]="service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>

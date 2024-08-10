@@ -1,9 +1,9 @@
 import { Component, QueryList, ViewChildren    } from '@angular/core';
 import { Observable                            } from 'rxjs';
-import { NodeJsConfig                          } from '../../../_models/nodejsDemo/NodeJsConfig';
-import { _NodeJsConfigePageSortEvent           } from '../../../_directives/Demos/nodeJsDemo/node-js-config.directive';
-import { NodeJsConfigListSortableHeader        } from '../../../_directives/Demos/nodeJsDemo/node-js-config.directive';
-import { NodeJsConfigService                   } from '../../../_services/nodejsDemo/node-js-config.service';
+import { _BaseModel                            } from '../../../_models/common/common';
+import { _BaseSortEvent, BaseSortableHeader    } from '../../../_directives/BaseSortableHeader.directive';
+import { _BaseService                          } from '../../../_services/_config/base.service';
+import { _environment                          } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-node-js-config',
@@ -12,25 +12,27 @@ import { NodeJsConfigService                   } from '../../../_services/nodejs
 })
 export class NodeJsConfigComponent {
     //
-    public mainPagesList!: Observable<NodeJsConfig[]>;
+    public mainPagesList!: Observable<_BaseModel[]>;
     public total!        : Observable<number>;
-    // 
-	  @ViewChildren(NodeJsConfigListSortableHeader) headers: QueryList<NodeJsConfigListSortableHeader> | undefined;
     //
-    constructor(public service: NodeJsConfigService) {
-      this.mainPagesList = service.configPageLists;
+	  @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
+    //
+    constructor(public service: _BaseService) {
+      //
+      _environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
+        console.log("loading to service : " + element);
+        service._SEARCH_PAGES.push(element);
+      });
+      //
+      this.mainPagesList = service.Pagelist;
       this.total         = service.total;
     }
     //
-    onSort({ _column, _direction }: _NodeJsConfigePageSortEvent) {
-      //
-      //console.log ("onSort.column   :" + _column);
-      //
-      //console.log ("onSort.direction:" + _column);
+    onSort({ _column, _direction }: _BaseSortEvent) {
       // resetting other headers
       this.headers?.forEach((header) => {
-        if (header.nodejsconfigpagesortable !== _column) {
-          header.nodejsconfigpagedirection = '';
+        if (header.sortable !== _column) {
+          header.direction = '';
         }
       });
       //

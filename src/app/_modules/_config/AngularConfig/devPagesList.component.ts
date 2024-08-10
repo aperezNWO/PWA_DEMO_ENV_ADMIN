@@ -1,8 +1,8 @@
 import { Component, QueryList, ViewChildren        } from '@angular/core';
 import { Observable                                } from 'rxjs';
-import { AngularConfig                             } from '../../../_models/AngularDemo/AngularConfig';
-import { devPagesListService                       } from '../../../_services/angularDemo/devPagesList.service';
-import { DevPageSortableHeader, _DevPageSortEvent  } from '../../../_directives/Demos/angularDemo/devPagesListSortable.directive';
+import { _BaseModel                                } from '../../../_models/common/common';
+import { _BaseSortEvent, BaseSortableHeader        } from '../../../_directives/BaseSortableHeader.directive';
+import { _BaseService                              } from '../../../_services/_config/base.service';
 
 //
 @Component({
@@ -13,25 +13,21 @@ import { DevPageSortableHeader, _DevPageSortEvent  } from '../../../_directives/
 //
 export class DevPagesListsComponent {
     //
-	public mainPagesList!: Observable<AngularConfig[]>;
+	public mainPagesList!: Observable<_BaseModel[]>;
 	public total!        : Observable<number>;
     // 
-	@ViewChildren(DevPageSortableHeader) headers: QueryList<DevPageSortableHeader> | undefined;
+	@ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
     //
-	constructor(public service: devPagesListService) {
-		this.mainPagesList = service.devpageLists;
+	constructor(public service: _BaseService) {
+		this.mainPagesList = service.Pagelist;
 		this.total         = service.total;
 	}
     //
-	onSort({ _column, _direction }: _DevPageSortEvent) {
-		//
-		//console.log ("onSort.column   :" + _column);
-		//
-		//console.log ("onSort.direction:" + _column);
+	onSort({ _column, _direction }: _BaseSortEvent) {
 		// resetting other headers
 		this.headers?.forEach((header) => {
-			if (header.devpagesortable !== _column) {
-				header.devpagedirection = '';
+			if (header.sortable !== _column) {
+				header.direction = '';
 			}
 		});
 		//

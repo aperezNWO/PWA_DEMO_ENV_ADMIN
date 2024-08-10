@@ -1,10 +1,10 @@
 import { Component, QueryList, ViewChildren                             } from '@angular/core';
 import { Observable                                                     } from 'rxjs';
-import { NodeJsFeatures                                                 } from '../../../../_models/nodejsDemo/NodeJsFeatures';
-import { _NodeJsFeaturePageSortEvent, NodeJsFeatureListSortableHeader   } from '../../../../_directives/Demos/nodeJsDemo/node-js.directive';
-import { NodeJsFeaturesService                                          } from '../../../../_services/nodejsDemo/node-js-features.service';
 import { AuthService                                                    } from '../../../../_services/_config/auth.service';
-import { SiteRole                                                       } from '../../../../_models/common/common';
+import { _BaseModel, SiteRole                                           } from '../../../../_models/common/common';
+import { _BaseSortEvent, BaseSortableHeader                             } from '../../../../_directives/BaseSortableHeader.directive';
+import { _BaseService                                                   } from '../../../../_services/_config/base.service';
+import { _environment                                                   } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-nodejs-demo',
@@ -13,29 +13,31 @@ import { SiteRole                                                       } from '
 })
 export class NodejsDemoComponent {
  //
- public featurePagesList!: Observable<NodeJsFeatures[]>;
+ public featurePagesList!: Observable<_BaseModel[]>;
  public total!           : Observable<number>;
  // 
  public ConfigRoleString : string = SiteRole.RoleConfig.toString();
- //   
- @ViewChildren(NodeJsFeatureListSortableHeader) headers: QueryList<NodeJsFeatureListSortableHeader> | undefined;
+ // 
+ @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
  //
- constructor(public service: NodeJsFeaturesService,
-             public authService : AuthService, 
- ) {
-   this.featurePagesList = service.featurepageLists;
+ constructor(public service    : _BaseService,
+             public authService: AuthService,
+ ) 
+ {
+     //
+     _environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
+       service._SEARCH_PAGES.push(element);
+     });
+   //
+   this.featurePagesList = service.Pagelist;
    this.total            = service.total;
  }
  //
- onSort({ _column, _direction }: _NodeJsFeaturePageSortEvent) {
-     //
-     //console.log ("onSort.column   :" + _column);
-     //
-     //console.log ("onSort.direction:" + _column);
+ onSort({ _column, _direction }: _BaseSortEvent) {
      // resetting other headers
      this.headers?.forEach((header) => {
-       if (header.nodejsfeaturepagesortable !== _column) {
-         header.nodejsfeaturepagedirection= '';
+       if (header.sortable !== _column) {
+         header.direction= '';
        }
      });
      //

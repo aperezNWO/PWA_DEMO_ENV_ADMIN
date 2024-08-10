@@ -300,4 +300,10 @@
 
       -- [_] Eliminate models.
 
+ -- [_] Sotable Grid Inheritance.      
+
+ -- [_] Sotable Grid Component.      
+
+ -- [_] Contact Form Dynamic List.      
+
 /***********************************************/

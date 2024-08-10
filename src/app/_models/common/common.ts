@@ -103,3 +103,4 @@ export interface PageSettingDictionary {
    [key: string]: PageSetting;
 }
  
+export const ENV_LIST_ANGULAR_DEMO = 'ANGULAR_DEMO';
