@@ -1,18 +1,8 @@
 
 [
-                { 
-                    "f_Name"            : "loadAngularDemoData",
-                    "p_Path"            : "./assets/angularDemo/angular_Demos.json",
-                    "_environmentList"  : []
-                },
-                {
-                    "f_Name"             : "loadAngularCurriculumData_base",   
-                    "p_Path"             : "./assets/angularDemo/angular_Curriculum_base.json",
-                    "_environmentList"   : []
-                },
-                {
-                  "f_Name"           : "loadAngularConfigData",
-                  "p_Path"           : "./assets/angularDemo/angular_Config.json",
-                  "_environmentList" : []              
-                }
-]            
+    { 
+        "f_Name"            : "ANGULAR_DEMO",
+        "p_Path"            : "./assets/angularDemo/angular_Demos_base.json",
+        "_environmentList"  : []
+    }
+] 
