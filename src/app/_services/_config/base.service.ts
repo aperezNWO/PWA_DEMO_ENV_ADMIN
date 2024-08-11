@@ -45,20 +45,12 @@ function matches(netcoreConfigPagelist: _BaseModel, term: string, pipe: PipeTran
   providedIn: 'root'
 })
 export class BaseService  {
-	  //
-	  public _loading               = new BehaviorSubject<boolean>(true);
-	  public _total                 = new BehaviorSubject<number>(0);
-	  public _search$               = new Subject<void>();
-	  //
-	  get total() {
-		  return this._total!.asObservable();
-	  }
-	  //
-	  get loading() {
-		  return this._loading!.asObservable();
-	  }
 	//
-	private _Pagelist                     = new BehaviorSubject<_BaseModel[]>([]);
+	public _loading               = new BehaviorSubject<boolean>(true);
+	public _total                 = new BehaviorSubject<number>(0);
+	public _search$               = new Subject<void>();
+	//
+	private _Pagelist             = new BehaviorSubject<_BaseModel[]>([]);
 	//
 	public _SEARCH_PAGES  : _BaseModel[] = [];
 	//
@@ -116,6 +108,14 @@ export class BaseService  {
 	//////////////////////////////////////////////////////////////////////
 	// PROPERTIES
 	//////////////////////////////////////////////////////////////////////
+	//
+	get total() {
+		return this._total!.asObservable();
+	}
+	//
+	get loading() {
+		return this._loading!.asObservable();
+	}
 	//
 	public get Pagelist() {
 		return this._Pagelist!.asObservable();

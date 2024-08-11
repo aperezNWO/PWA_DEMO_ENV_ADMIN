@@ -306,6 +306,8 @@
 
  -- [_] Contact Form Dynamic List.  
 
--- [_] promise exception handling.       
+-- [_] promise exception handling.    
+
+-- [_] clear base service cache.  
 
 /***********************************************/

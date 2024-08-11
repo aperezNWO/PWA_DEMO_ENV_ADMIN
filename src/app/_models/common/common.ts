@@ -115,9 +115,8 @@ export class BaseComponent {
             this.service._SEARCH_PAGES.push(element);
             ////console.log(element)
         });
-        //
-        this.featurePagesList = service.Pagelist;
-        this.total            = service.total;
+        this.featurePagesList  = service.Pagelist;
+        this.total             = service.total;
     } 
     //
     onSort({ _column, _direction }: _BaseSortEvent) {
