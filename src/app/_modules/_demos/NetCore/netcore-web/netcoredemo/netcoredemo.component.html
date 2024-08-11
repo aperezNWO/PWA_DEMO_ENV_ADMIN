@@ -35,7 +35,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@for (netcoreDemoPage of netCoreDemoPageList | async; track netcoreDemoPage.id) {
+			@for (netcoreDemoPage of PagesList | async; track netcoreDemoPage.id) {
 				<tr>
 					<th scope="row">{{ netcoreDemoPage.id }}</th>
 					<td>

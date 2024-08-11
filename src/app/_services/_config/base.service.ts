@@ -52,7 +52,7 @@ export class BaseService  {
 	//
 	private _Pagelist             = new BehaviorSubject<_BaseModel[]>([]);
 	//
-	public _SEARCH_PAGES  : _BaseModel[] = [];
+	public _SEARCH_PAGES          : _BaseModel[] = [];
 	//
 	public _state: _SearchState = {
 		page          : 1,
@@ -119,6 +119,10 @@ export class BaseService  {
 	//
 	public get Pagelist() {
 		return this._Pagelist!.asObservable();
+	}
+	//
+	public set Pagelist(value: any) {
+		this._Pagelist! = value;
 	}
 	//
 	get page() {

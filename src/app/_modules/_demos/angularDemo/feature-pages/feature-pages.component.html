@@ -33,7 +33,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@for (featurePage of featurePagesList | async; track featurePage.id) {
+			@for (featurePage of PagesList | async; track featurePage.id) {
 				<tr>
 					<th scope="row">{{ featurePage.id }}</th>
 					<td>

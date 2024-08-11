@@ -13,14 +13,10 @@ import { BaseComponent                                          } from '../../..
 })
 export class CppDemoComponent  extends BaseComponent {
     //
-    public ConfigRoleString : string = SiteRole.RoleConfig.toString();
-
-    //
     constructor(public _service    : BaseService,
                 public _authService: AuthService,)
     {
       //
       super(_service, _authService,ENV_LIST_CPP_DEMO)
     }
- 
 }

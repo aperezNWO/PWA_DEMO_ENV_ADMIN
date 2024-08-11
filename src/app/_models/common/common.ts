@@ -94,3 +94,6 @@ export interface PageSettingDictionary {
 export const ENV_LIST_ANGULAR_DEMO = 'ANGULAR_DEMO';
 
 export const ENV_LIST_CPP_DEMO     = 'CPP_DEMO';
+
+export const ENV_LIST_NETCORE_DEMO = 'NETCORE_DEMO';
+
