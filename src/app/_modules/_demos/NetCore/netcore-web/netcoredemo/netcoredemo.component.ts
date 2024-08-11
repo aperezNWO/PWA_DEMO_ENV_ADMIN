@@ -3,7 +3,7 @@ import { Observable                                               } from 'rxjs';
 import { AuthService                                              } from '../../../../../_services/_config/auth.service';
 import { _BaseModel, SiteRole                                     } from '../../../../../_models/common/common';
 import { _BaseSortEvent , BaseSortableHeader                      } from '../../../../../_directives/BaseSortableHeader.directive';
-import { _BaseService                                             } from '../../../../../_services/_config/base.service';
+import {  BaseService                                             } from '../../../../../_services/_config/base.service';
 import { _environment                                             } from '../../../../../../environments/environment';
 
 @Component({
@@ -20,7 +20,7 @@ export class NetcoredemoComponent {
     // 
     @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
     //
-    constructor(public service    : _BaseService,
+    constructor(public service    : BaseService,
                 public authService: AuthService,
     ) 
     {

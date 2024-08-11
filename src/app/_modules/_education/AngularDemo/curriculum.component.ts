@@ -2,7 +2,7 @@ import { Component, QueryList, ViewChildren                       } from '@angul
 import { Observable                                               } from 'rxjs';
 import { _BaseModel, SiteRole                                     } from '../../../_models/common/common';
 import { AuthService                                              } from '../../../_services/_config/auth.service';
-import { _BaseService                                             } from '../../../_services/_config/base.service';
+import {  BaseService                                             } from '../../../_services/_config/base.service';
 import { _BaseSortEvent, BaseSortableHeader                       } from '../../../_directives/BaseSortableHeader.directive';
 import { _environment                                             } from '../../../../environments/environment';
 //
@@ -21,7 +21,7 @@ export class CurriculumComponent {
   @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
   //
   constructor( public authService: AuthService,
-               public service: _BaseService
+               public service    : BaseService
               ) 
   {
     //

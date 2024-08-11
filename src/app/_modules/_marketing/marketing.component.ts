@@ -1,6 +1,6 @@
 import { Component, QueryList, ViewChildren                        } from '@angular/core';
 import { Observable                                                } from 'rxjs';
-import { _BaseService                                              } from '../../_services/_config/base.service';
+import { BaseService                                               } from '../../_services/_config/base.service';
 import { _BaseModel                                                } from '../../_models/common/common';
 import { _environment                                              } from '../../../environments/environment';
 import { _BaseSortEvent, BaseSortableHeader                        } from '../../_directives/BaseSortableHeader.directive';
@@ -17,7 +17,7 @@ public total!           : Observable<number>;
 // 
 @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
 //
-constructor(public service: _BaseService) 
+constructor(public service: BaseService) 
 {
   //
   this.marketingList   = service.Pagelist;
@@ -29,10 +29,6 @@ constructor(public service: _BaseService)
 }
 //
 onSort({ _column, _direction }: _BaseSortEvent) {
-    //
-    //console.log ("onSort.column   :" + _column);
-    //
-    //console.log ("onSort.direction:" + _column);
     // resetting other headers
     this.headers?.forEach((header) => {
       if (header.sortable !== _column) {

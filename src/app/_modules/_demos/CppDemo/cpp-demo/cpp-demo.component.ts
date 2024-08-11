@@ -1,9 +1,8 @@
-import { Component, QueryList, ViewChildren                     } from '@angular/core';
-import { Observable                                             } from 'rxjs';
+import { Component                                              } from '@angular/core';
 import { AuthService                                            } from '../../../../_services/_config/auth.service';
-import { _BaseModel, SiteRole                                   } from '../../../../_models/common/common';
-import { _BaseSortEvent, BaseSortableHeader                     } from '../../../../_directives/BaseSortableHeader.directive';
-import { _BaseService                                           } from '../../../../_services/_config/base.service';
+import { _BaseModel, BaseComponent, ENV_LIST_CPP_DEMO, SiteRole } from '../../../../_models/common/common';
+import { _BaseSortEvent                                         } from '../../../../_directives/BaseSortableHeader.directive';
+import {  BaseService                                           } from '../../../../_services/_config/base.service';
 import { _environment                                           } from '../../../../../environments/environment';
 //
 @Component({
@@ -11,38 +10,16 @@ import { _environment                                           } from '../../..
   templateUrl: './cpp-demo.component.html',
   styleUrl: './cpp-demo.component.css'
 })
-export class CppDemoComponent {
-    //
-    public featurePagesList!: Observable<_BaseModel[]>;
-    public total!           : Observable<number>;
+export class CppDemoComponent  extends BaseComponent {
     //
     public ConfigRoleString : string = SiteRole.RoleConfig.toString();
-    // 
-    @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
+
     //
-    constructor(public service    : _BaseService,
-                public authService: AuthService,
-    ) 
+    constructor(public _service    : BaseService,
+                public _authService: AuthService,)
     {
       //
-      _environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
-        service._SEARCH_PAGES.push(element);
-        ////console.log(element)
-      });
-      //
-      this.featurePagesList = service.Pagelist;
-      this.total            = service.total;
+      super(_service, _authService,ENV_LIST_CPP_DEMO)
     }
-    //
-    onSort({ _column, _direction }: _BaseSortEvent) {
-        // resetting other headers
-        this.headers?.forEach((header) => {
-          if (header.sortable !== _column) {
-            header.direction= '';
-          }
-        });
-        //
-        this.service.sortColumn    = _column;
-        this.service.sortDirection = _direction;
-    }
+ 
 }

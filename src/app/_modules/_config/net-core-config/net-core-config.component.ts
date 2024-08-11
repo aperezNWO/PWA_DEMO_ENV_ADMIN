@@ -1,7 +1,7 @@
 import { Component, QueryList, ViewChildren                           } from '@angular/core';
 import { Observable                                                   } from 'rxjs';
 import { _BaseModel                                                   } from '../../../_models/common/common';
-import { _BaseService                                                 } from '../../../_services/_config/base.service';
+import { BaseService                                                  } from '../../../_services/_config/base.service';
 import { _BaseSortEvent, BaseSortableHeader                           } from '../../../_directives/BaseSortableHeader.directive';
 import { _environment                                                 } from '../../../../environments/environment';
 
@@ -17,7 +17,7 @@ export class NetCoreConfigComponent {
     //
 	  @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
     //
-    constructor(public service: _BaseService) {
+    constructor(public service: BaseService) {
       //
       _environment.pageSettingDictionary['loadNetCoreConfigData_base']._environmentList.forEach((element: any) => {
         console.log("loading to service : " + element);

@@ -1,8 +1,8 @@
-import { Injectable, PipeTransform                                            } from '@angular/core';
-import { BehaviorSubject, debounceTime, delay, Observable, of, switchMap, tap } from 'rxjs';
-import { DecimalPipe                                                          } from '@angular/common';
-import { _BaseModel, _BaseSearchResult, _SortDirection, BaseService, compare  } from '../../_models/common/common';
-import { _SortColumn                                                          } from '../../_directives/BaseSortableHeader.directive';
+import { Injectable, PipeTransform                                                     } from '@angular/core';
+import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
+import { DecimalPipe                                                                   } from '@angular/common';
+import { _BaseModel, _BaseSearchResult, _SortDirection,  compare                       } from '../../_models/common/common';
+import { _SortColumn                                                                   } from '../../_directives/BaseSortableHeader.directive';
 
 //
 interface _SearchState {
@@ -17,7 +17,7 @@ function sort(pagelist: _BaseModel[], column: _SortColumn, direction: string): _
 	if (direction === '' || column === '') {
 		return pagelist;
 	} else {
-		return [...pagelist].sort((a, b) => {
+		return [...pagelist].sort((a, b) => { 
 			const res = compare(a[column], b[column]);
 			return direction === 'asc' ? res : -res;
 		});
@@ -44,7 +44,19 @@ function matches(netcoreConfigPagelist: _BaseModel, term: string, pipe: PipeTran
 @Injectable({
   providedIn: 'root'
 })
-export class _BaseService extends BaseService {
+export class BaseService  {
+	  //
+	  public _loading               = new BehaviorSubject<boolean>(true);
+	  public _total                 = new BehaviorSubject<number>(0);
+	  public _search$               = new Subject<void>();
+	  //
+	  get total() {
+		  return this._total!.asObservable();
+	  }
+	  //
+	  get loading() {
+		  return this._loading!.asObservable();
+	  }
 	//
 	private _Pagelist                     = new BehaviorSubject<_BaseModel[]>([]);
 	//
@@ -59,8 +71,6 @@ export class _BaseService extends BaseService {
 	};
 	//
 	constructor(private pipe: DecimalPipe) {
-		//
-		super();
 		//
 		this._search$
 			.pipe(

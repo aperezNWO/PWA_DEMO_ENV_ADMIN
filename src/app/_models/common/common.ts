@@ -1,4 +1,9 @@
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject, Observable, Subject        } from "rxjs";
+import { _BaseSortEvent, BaseSortableHeader          } from "../../_directives/BaseSortableHeader.directive";
+import { Inject, Injectable, QueryList, ViewChildren } from "@angular/core";
+import { AuthService                                 } from "../../_services/_config/auth.service";
+import {  BaseService                                } from "../../_services/_config/base.service";
+import { _environment                                } from "../../../environments/environment";
 
 //
 export enum SiteRole
@@ -49,23 +54,6 @@ export const pagerotate: { [key: string]: _SortDirection } = { asc: 'desc', desc
 //
 export const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
-export class BaseService {
-    //
-	public _loading               = new BehaviorSubject<boolean>(true);
-	public _total                 = new BehaviorSubject<number>(0);
-    public _search$               = new Subject<void>();
-    //
-	get total() {
-		return this._total!.asObservable();
-	}
-    //
-	get loading() {
-		return this._loading!.asObservable();
-	}
-    //
-    
-}
-// 
 export interface BaseModel
 {
     id               : number;
@@ -104,3 +92,44 @@ export interface PageSettingDictionary {
 }
  
 export const ENV_LIST_ANGULAR_DEMO = 'ANGULAR_DEMO';
+
+export const ENV_LIST_CPP_DEMO     = 'CPP_DEMO';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class BaseComponent {
+    //
+    public featurePagesList!: Observable<_BaseModel[]>;
+    public total!           : Observable<number>; 
+    //
+    @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
+    //
+    constructor(public service                                 : BaseService,
+                public authService                             : AuthService,
+                @Inject('dictionaryName') public dictionaryName: string,
+    )
+    {
+        //
+        _environment.pageSettingDictionary[dictionaryName]._environmentList.forEach((element: any) => {
+            this.service._SEARCH_PAGES.push(element);
+            ////console.log(element)
+        });
+        //
+        this.featurePagesList = service.Pagelist;
+        this.total            = service.total;
+    } 
+    //
+    onSort({ _column, _direction }: _BaseSortEvent) {
+        // resetting other headers
+        this.headers?.forEach((header) => {
+            if (header.sortable !== _column) {
+            header.direction= '';
+            }
+        });
+        //
+        this.service.sortColumn    = _column;
+        this.service.sortDirection = _direction;
+    }
+
+}
