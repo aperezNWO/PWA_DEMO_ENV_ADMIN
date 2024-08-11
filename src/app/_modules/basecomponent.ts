@@ -22,16 +22,13 @@ export class BaseComponent {
     )
     {
         //
-        this.service._SEARCH_PAGES.forEach((element: any) => {
-            this.service._SEARCH_PAGES.pop();
-            ////console.log(element)
-        });
+        this.service._SEARCH_PAGES.splice(0,this.service._SEARCH_PAGES.length);
         //
         _environment.pageSettingDictionary[dictionaryName]._environmentList.forEach((element: any) => {
             this.service._SEARCH_PAGES.push(element);
             ////console.log(element)
         });
-        this.featurePagesList  = of([]);;
+        this.featurePagesList  = of([]);
         this.featurePagesList  = service.Pagelist;
         this.total             = service.total;
     } 
