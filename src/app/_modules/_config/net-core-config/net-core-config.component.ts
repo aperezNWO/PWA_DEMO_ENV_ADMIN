@@ -20,7 +20,7 @@ export class NetCoreConfigComponent {
     constructor(public service: BaseService) {
       //
       _environment.pageSettingDictionary['loadNetCoreConfigData_base']._environmentList.forEach((element: any) => {
-        console.log("loading to service : " + element);
+        //console.log("loading to service : " + element);
         service._SEARCH_PAGES.push(element);
       });
       //

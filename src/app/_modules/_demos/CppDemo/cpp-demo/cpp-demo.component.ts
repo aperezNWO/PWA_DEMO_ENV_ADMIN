@@ -1,9 +1,10 @@
 import { Component                                              } from '@angular/core';
 import { AuthService                                            } from '../../../../_services/_config/auth.service';
-import { _BaseModel, BaseComponent, ENV_LIST_CPP_DEMO, SiteRole } from '../../../../_models/common/common';
+import { _BaseModel,                ENV_LIST_CPP_DEMO, SiteRole } from '../../../../_models/common/common';
 import { _BaseSortEvent                                         } from '../../../../_directives/BaseSortableHeader.directive';
 import {  BaseService                                           } from '../../../../_services/_config/base.service';
 import { _environment                                           } from '../../../../../environments/environment';
+import { BaseComponent                                          } from '../../../basecomponent';
 //
 @Component({
   selector: 'app-cpp-demo',
