@@ -54,16 +54,12 @@ export const pagerotate: { [key: string]: _SortDirection } = { asc: 'desc', desc
 //
 export const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 //
-export interface BaseModel
+export interface _BaseModel 
 {
     id               : number;
     done             : boolean;
     name             : string;
     description      : string;
-}
-
-export interface _BaseModel extends BaseModel
-{
     field_1          : string;
     field_2          : string;
     field_3          : string;

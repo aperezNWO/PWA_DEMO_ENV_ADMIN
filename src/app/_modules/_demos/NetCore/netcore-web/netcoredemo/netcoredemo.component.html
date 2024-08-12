@@ -11,10 +11,10 @@
 				type="text"
 				class="form-control"
 				name="searchTerm"
-				[(ngModel)]="service.searchTerm"
+				[(ngModel)]="_service.searchTerm"
 			/>
 		</div>
-		@if (service.loading | async) {
+		@if (_service.loading | async) {
 			<span class="col col-form-label">[Cargando...]</span>
 		}
 	</div>
@@ -26,9 +26,9 @@
 				<th scope="col" sortable="done"        (sortevent)="onSort($event)">(hecho)</th>
 				<th scope="col" sortable="name"        (sortevent)="onSort($event)">Nombre</th>
 				<th scope="col" sortable="field_2"     (sortevent)="onSort($event)">Demo</th>
-				<th scope="col" *ngIf="this.authService.matchRoles(this.ConfigRoleString)"
+				<th scope="col" *ngIf="this._authService.matchRoles(this.ConfigRoleString)"
 								sortable="field_3"     (sortevent)="onSort($event)"	>Repo</th>
-				<th scope="col" *ngIf="this.authService.matchRoles(this.ConfigRoleString)" 
+				<th scope="col" *ngIf="this._authService.matchRoles(this.ConfigRoleString)" 
 				                sortable="field_4"     (sortevent)="onSort($event)">Backend</th>
 				<th scope="col" sortable="field_1"     (sortevent)="onSort($event)">P. Clave</th>
 				<th scope="col" sortable="description" (sortevent)="onSort($event)">Descripción</th>
@@ -43,7 +43,7 @@
 					</td>
 					<td>
 						<a [href]="netcoreDemoPage.field_2" target="_blank">
-							<ngb-highlight [result]="netcoreDemoPage.name" [term]="service.searchTerm" />
+							<ngb-highlight [result]="netcoreDemoPage.name" [term]="_service.searchTerm" />
 						</a>
 					</td>
 					<td>
@@ -51,18 +51,18 @@
 							[Demo]
 						</a>
 					</td>
-					<td *ngIf="this.authService.matchRoles(this.ConfigRoleString)">
+					<td *ngIf="this._authService.matchRoles(this.ConfigRoleString)">
 						<a ngb-highlight [href]="netcoreDemoPage.field_3" target="_blank">
 							[Repo]
 						</a>
 					</td>
-					<td *ngIf="this.authService.matchRoles(this.ConfigRoleString)">
+					<td *ngIf="this._authService.matchRoles(this.ConfigRoleString)">
 						<a ngb-highlight [href]="netcoreDemoPage.field_4" target="_blank">
 							[Backend]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="netcoreDemoPage.field_1"               [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="netcoreDemoPage.description"           [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="netcoreDemoPage.field_1"               [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="netcoreDemoPage.description"           [term]="_service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>
@@ -73,10 +73,10 @@
 	</table>
 
 	<div class="d-flex justify-content-between p-2">
-		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="_service.page" [pageSize]="_service.pageSize">
 		</ngb-pagination>
 
-		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="_service.pageSize">
 			<option [ngValue]="2">2 items por Pagina</option>
 			<option [ngValue]="4">4 items por Pagina</option>
 			<option [ngValue]="6">6 items por Pagina</option>

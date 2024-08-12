@@ -10,10 +10,10 @@
 				type="text"
 				class="form-control"
 				name="searchTerm"
-				[(ngModel)]="service.searchTerm"
+				[(ngModel)]="_service.searchTerm"
 			/>
 		</div>
-		@if (service.loading | async) {
+		@if (_service.loading | async) {
 			<span class="col col-form-label">[Cargando...]</span>
 		}
 	</div>
@@ -25,7 +25,7 @@
 				<th scope="col" sortable="done"            (sortevent)="onSort($event)">(hecho)</th>
 				<th scope="col" sortable="name"            (sortevent)="onSort($event)">Nombre</th>
 				<th scope="col" sortable="field_2"         (sortevent)="onSort($event)">Demo</th>
-				<th *ngIf="this.authService.matchRoles(this.ConfigRoleString)" 
+				<th *ngIf="this._authService.matchRoles(this.ConfigRoleString)" 
 					scope="col" sortable="field_3"         (sortevent)="onSort($event)">Repo</th>
 				<th scope="col" sortable="field_4"         (sortevent)="onSort($event)">Tema</th>
 				<th scope="col" sortable="field_1"         (sortevent)="onSort($event)">P. Clave</th>
@@ -41,7 +41,7 @@
 					</td>
 					<td>
 						<a [href]="featurePage.field_2" target="_blank">
-							<ngb-highlight [result]="featurePage.name" [term]="service.searchTerm" />
+							<ngb-highlight [result]="featurePage.name" [term]="_service.searchTerm" />
 						</a>
 					</td>
 					<td>
@@ -49,7 +49,7 @@
 							[Demo]
 						</a>
 					</td>
-					<td *ngIf="this.authService.matchRoles(this.ConfigRoleString)">
+					<td *ngIf="this._authService.matchRoles(this.ConfigRoleString)">
 						<a  ngb-highlight [href]="featurePage.field_3" target="_blank">
 							[Repo]
 						</a>
@@ -59,8 +59,8 @@
 							[Tema]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="featurePage.field_1"               [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="featurePage.description"           [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="featurePage.field_1"               [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="featurePage.description"           [term]="_service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>
@@ -71,10 +71,10 @@
 	</table>
 
 	<div class="d-flex justify-content-between p-2">
-		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="_service.page" [pageSize]="_service.pageSize">
 		</ngb-pagination>
 
-		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="_service.pageSize">
 			<option [ngValue]="2">2 items por Pagina</option>
 			<option [ngValue]="4">4 items por Pagina</option>
 			<option [ngValue]="6">6 items por Pagina</option>

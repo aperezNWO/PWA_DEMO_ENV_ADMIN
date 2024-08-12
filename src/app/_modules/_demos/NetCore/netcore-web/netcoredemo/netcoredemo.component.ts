@@ -1,18 +1,23 @@
-import { Component, QueryList, ViewChildren                                                } from '@angular/core';
+import { Component, QueryList, ViewChildren                       } from '@angular/core';
 import { AuthService                                              } from '../../../../../_services/_config/auth.service';
-import { _BaseModel, ENV_LIST_NETCORE_DEMO                        } from '../../../../../_models/common/common';
-import { _BaseSortEvent, BaseSortableHeader                                           } from '../../../../../_directives/BaseSortableHeader.directive';
+import { _BaseModel, ENV_LIST_NETCORE_DEMO, SiteRole                        } from '../../../../../_models/common/common';
+import { _BaseSortEvent, BaseSortableHeader                       } from '../../../../../_directives/BaseSortableHeader.directive';
 import {  BaseService                                             } from '../../../../../_services/_config/base.service';
 import { _environment                                             } from '../../../../../../environments/environment';
-import { BaseComponent                                            } from '../../../../basecomponent';
 import { ConfigService                                            } from '../../../../../_services/_config/config.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-netcoredemo',
   templateUrl: './netcoredemo.component.html',
   styleUrl: './netcoredemo.component.css'
 })
-export class NetcoredemoComponent extends BaseComponent {
+export class NetcoredemoComponent {
+    //
+    public PagesList!       : Observable<_BaseModel[]>;
+    public total!           : Observable<number>; 
+    //
+    public ConfigRoleString : string = SiteRole.RoleConfig.toString(); 
     //
     @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
     //
@@ -20,8 +25,7 @@ export class NetcoredemoComponent extends BaseComponent {
                 public _authService: AuthService,
                 public _configService: ConfigService)
     {
-        //
-        super(_service, _authService,_configService, ENV_LIST_NETCORE_DEMO)
+
     }
       //
       onSort({ _column, _direction }: _BaseSortEvent) {
@@ -32,7 +36,7 @@ export class NetcoredemoComponent extends BaseComponent {
             }
         });
         //
-        this.service.sortColumn    = _column;
-        this.service.sortDirection = _direction;
+        this._service.sortColumn    = _column;
+        this._service.sortDirection = _direction;
     }
 }
