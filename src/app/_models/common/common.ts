@@ -1,9 +1,6 @@
-import { Inject, Injectable, PipeTransform, QueryList, ViewChildren } from "@angular/core";
-import { Observable, of                              } from "rxjs";
-import { _BaseSortEvent, _SortColumn, BaseSortableHeader          } from "../../_directives/BaseSortableHeader.directive";
-import { AuthService                                 } from "../../_services/_config/auth.service";
-import {  BaseService                                } from "../../_services/_config/base.service";
-import { _environment                                } from "../../../environments/environment";
+import { PipeTransform                        } from "@angular/core";
+import { _BaseSortEvent, _SortColumn          } from "../../_directives/BaseSortableHeader.directive";
+import { _environment                         } from "../../../environments/environment";
 
 //
 export enum SiteRole
@@ -86,12 +83,6 @@ export interface PageSettingDictionary {
    [key: string]: PageSetting;
 }
  
-export const ENV_LIST_ANGULAR_DEMO = 'ANGULAR_DEMO';
-
-export const ENV_LIST_CPP_DEMO     = 'CPP_DEMO';
-
-export const ENV_LIST_NETCORE_DEMO = 'NETCORE_DEMO';
-
 //
 export interface _SearchState {
 	page          : number;
@@ -128,3 +119,11 @@ export function matches(netcoreConfigPagelist: _BaseModel, term: string, pipe: P
 		netcoreConfigPagelist.field_10?.toLowerCase().includes(term?.toLowerCase())    
 	);
 }
+
+export const ENV_LIST_ANGULAR_DEMO = 'ANGULAR_DEMO';
+
+export const ENV_LIST_CPP_DEMO     = 'CPP_DEMO';
+
+export const ENV_LIST_NETCORE_DEMO = 'NETCORE_DEMO';
+
+export const ENV_LIST_NODEJS_DEMO  = 'NODEJS_DEMO'
