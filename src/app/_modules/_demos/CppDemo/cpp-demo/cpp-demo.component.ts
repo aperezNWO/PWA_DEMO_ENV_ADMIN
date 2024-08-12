@@ -5,6 +5,7 @@ import { _BaseSortEvent                                         } from '../../..
 import {  BaseService                                           } from '../../../../_services/_config/base.service';
 import { _environment                                           } from '../../../../../environments/environment';
 import { BaseComponent                                          } from '../../../basecomponent';
+import { ActivatedRoute, Router } from '@angular/router';
 //
 @Component({
   selector: 'app-cpp-demo',
@@ -14,9 +15,10 @@ import { BaseComponent                                          } from '../../..
 export class CppDemoComponent  extends BaseComponent {
     //
     constructor(public _service    : BaseService,
-                public _authService: AuthService,)
+                public _authService: AuthService)
     {
-      //
-      super(_service, _authService,ENV_LIST_CPP_DEMO)
+        //
+        super(_service, _authService,ENV_LIST_CPP_DEMO)
+ 
     }
 }

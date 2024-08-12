@@ -310,4 +310,8 @@
 
 -- [_] clear base service cache.  
 
+-- [_] datagrid record number.  
+
+-- [_] load grid info at request.  
+
 /***********************************************/

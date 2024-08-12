@@ -28,7 +28,6 @@ export class BaseComponent {
         //
         _environment.pageSettingDictionary[dictionaryName]._environmentList.forEach((element: any) => {
             this.service._SEARCH_PAGES.push(element);
-            ////console.log(element)
         });
         //
         this.PagesList  = of([]);

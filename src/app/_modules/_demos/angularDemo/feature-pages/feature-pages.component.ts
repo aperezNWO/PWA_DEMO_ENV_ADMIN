@@ -5,6 +5,8 @@ import { _BaseSortEvent, BaseSortableHeader               } from '../../../../_d
 import {  BaseService                                     } from '../../../../_services/_config/base.service';
 import { _environment                                     } from '../../../../../environments/environment';
 import { BaseComponent } from '../../../basecomponent';
+import { Action } from 'rxjs/internal/scheduler/Action';
+import { ActivatedRoute, Router } from '@angular/router';
 //
 @Component({
   selector: 'app-feature-pages',
@@ -18,5 +20,6 @@ export class FeaturePagesComponent extends BaseComponent {
    {
       //
       super(_service, _authService,ENV_LIST_ANGULAR_DEMO)
+  
    }
 }
