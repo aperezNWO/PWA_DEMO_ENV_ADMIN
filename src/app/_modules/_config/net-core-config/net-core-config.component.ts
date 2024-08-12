@@ -19,10 +19,10 @@ export class NetCoreConfigComponent {
     //
     constructor(public service: BaseService) {
       //
-      _environment.pageSettingDictionary['loadNetCoreConfigData_base']._environmentList.forEach((element: any) => {
+      //_environment.pageSettingDictionary['loadNetCoreConfigData_base']._environmentList.forEach((element: any) => {
         //console.log("loading to service : " + element);
-        service._SEARCH_PAGES.push(element);
-      });
+      //  service._SEARCH_PAGES.push(element);
+      //});
       //
       this.mainPagesList = service.Pagelist;
       this.total         = service.total;

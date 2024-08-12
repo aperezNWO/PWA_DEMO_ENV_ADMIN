@@ -43,14 +43,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
    _configService.loadJsonist().then(()=> {
       //
       for (const key in _environment.pageSettingDictionary) {
-        //
-        const pageSetting = _environment.pageSettingDictionary[key];
-
-        _configService.loadJsonData(pageSetting.p_Path,
-                                    pageSetting._environmentList).then(() => {
-              //
-              //console.log(`Reading Setting ${pageSetting._environmentList}`);
-        });
+          //
       }
       //
       _configService.loadPagesInfoData();

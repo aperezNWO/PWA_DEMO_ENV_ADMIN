@@ -47,10 +47,8 @@ export class ConfigService {
           _environment.jsonList = data; // Assign loaded data to environment variable
           //
           _environment.jsonList.forEach((element: PageSetting) => {
-             //console.log('Loading Page Setting' + element);
-            _environment.pageSettingDictionary[element.f_Name] = element;
-            _environment.pageSettingDictionary[element.f_Name]._environmentList = [];
-        });
+               _environment.pageSettingDictionary[element.f_Name] = element;
+          });
       })
       .catch(error => {
         console.error('Error loading configuration:', error);

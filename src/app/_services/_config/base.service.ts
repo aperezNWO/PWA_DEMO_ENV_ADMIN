@@ -1,45 +1,8 @@
 import { Injectable, PipeTransform                                                     } from '@angular/core';
 import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
 import { DecimalPipe                                                                   } from '@angular/common';
-import { _BaseModel, _BaseSearchResult, _SortDirection,  compare                       } from '../../_models/common/common';
+import { _BaseModel, _BaseSearchResult, _SearchState, _SortDirection,  compare, matches, sort                       } from '../../_models/common/common';
 import { _SortColumn                                                                   } from '../../_directives/BaseSortableHeader.directive';
-
-//
-interface _SearchState {
-	page          : number;
-	pageSize      : number;
-	searchTerm    : string;
-	sortColumn    : _SortColumn;
-	sortDirection : _SortDirection;
-}
-//
-function sort(pagelist: _BaseModel[], column: _SortColumn, direction: string): _BaseModel[] {
-	if (direction === '' || column === '') {
-		return pagelist;
-	} else {
-		return [...pagelist].sort((a, b) => { 
-			const res = compare(a[column], b[column]);
-			return direction === 'asc' ? res : -res;
-		});
-	}
-}
-//
-function matches(netcoreConfigPagelist: _BaseModel, term: string, pipe: PipeTransform) {
-	return (
-		netcoreConfigPagelist.name.toLowerCase().includes(term?.toLowerCase())        ||
-		netcoreConfigPagelist.description.toLowerCase().includes(term?.toLowerCase()) ||
-		netcoreConfigPagelist.field_1?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_2?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_3?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_4?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_5?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_6?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_7?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_8?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_9?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_10?.toLowerCase().includes(term?.toLowerCase())    
-	);
-}
 
 @Injectable({
   providedIn: 'root'

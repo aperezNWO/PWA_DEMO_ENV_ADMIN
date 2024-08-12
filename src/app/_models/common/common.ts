@@ -1,6 +1,6 @@
-import { Inject, Injectable, QueryList, ViewChildren } from "@angular/core";
+import { Inject, Injectable, PipeTransform, QueryList, ViewChildren } from "@angular/core";
 import { Observable, of                              } from "rxjs";
-import { _BaseSortEvent, BaseSortableHeader          } from "../../_directives/BaseSortableHeader.directive";
+import { _BaseSortEvent, _SortColumn, BaseSortableHeader          } from "../../_directives/BaseSortableHeader.directive";
 import { AuthService                                 } from "../../_services/_config/auth.service";
 import {  BaseService                                } from "../../_services/_config/base.service";
 import { _environment                                } from "../../../environments/environment";
@@ -84,7 +84,6 @@ export interface _BaseSearchResult {
 export interface PageSetting {
     f_Name           : string;
     p_Path           : string;
-    _environmentList : string[];
 }
 //
 export interface PageSettingDictionary {
@@ -97,3 +96,39 @@ export const ENV_LIST_CPP_DEMO     = 'CPP_DEMO';
 
 export const ENV_LIST_NETCORE_DEMO = 'NETCORE_DEMO';
 
+//
+export interface _SearchState {
+	page          : number;
+	pageSize      : number;
+	searchTerm    : string;
+	sortColumn    : _SortColumn;
+	sortDirection : _SortDirection;
+}
+//
+export function sort(pagelist: _BaseModel[], column: _SortColumn, direction: string): _BaseModel[] {
+	if (direction === '' || column === '') {
+		return pagelist;
+	} else {
+		return [...pagelist].sort((a, b) => { 
+			const res = compare(a[column], b[column]);
+			return direction === 'asc' ? res : -res;
+		});
+	}
+}
+//
+export function matches(netcoreConfigPagelist: _BaseModel, term: string, pipe: PipeTransform) {
+	return (
+		netcoreConfigPagelist.name.toLowerCase().includes(term?.toLowerCase())        ||
+		netcoreConfigPagelist.description.toLowerCase().includes(term?.toLowerCase()) ||
+		netcoreConfigPagelist.field_1?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_2?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_3?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_4?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_5?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_6?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_7?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_8?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_9?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.field_10?.toLowerCase().includes(term?.toLowerCase())    
+	);
+}

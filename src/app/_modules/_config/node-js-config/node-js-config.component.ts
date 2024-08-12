@@ -19,10 +19,10 @@ export class NodeJsConfigComponent {
     //
     constructor(public service:  BaseService) {
       //
-      _environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
-        console.log("loading to service : " + element);
-        service._SEARCH_PAGES.push(element);
-      });
+      //_environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
+      //  console.log("loading to service : " + element);
+      //  service._SEARCH_PAGES.push(element);
+      //});
       //
       this.mainPagesList = service.Pagelist;
       this.total         = service.total;

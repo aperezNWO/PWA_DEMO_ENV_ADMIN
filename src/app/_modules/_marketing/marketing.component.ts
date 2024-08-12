@@ -23,9 +23,9 @@ constructor(public service: BaseService)
   this.marketingList   = service.Pagelist;
   this.total            = service.total;
   //
-  _environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
-    service._SEARCH_PAGES.push(element);
-  });
+  //_environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
+  //  service._SEARCH_PAGES.push(element);
+  //});
 }
 //
 onSort({ _column, _direction }: _BaseSortEvent) {

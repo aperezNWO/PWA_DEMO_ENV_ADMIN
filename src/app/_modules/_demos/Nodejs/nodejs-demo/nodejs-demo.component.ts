@@ -25,9 +25,9 @@ export class NodejsDemoComponent {
  ) 
  {
      //
-     _environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
-       service._SEARCH_PAGES.push(element);
-     });
+     //_environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
+     //  service._SEARCH_PAGES.push(element);
+     //});
    //
    this.featurePagesList = service.Pagelist;
    this.total            = service.total;
