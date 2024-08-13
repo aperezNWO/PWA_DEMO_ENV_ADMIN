@@ -1,8 +1,10 @@
-import { Component, QueryList, ViewChildren        } from '@angular/core';
-import { Observable                                } from 'rxjs';
-import { _BaseModel                                } from '../../../_models/common/common';
-import { _BaseSortEvent, BaseSortableHeader        } from '../../../_directives/BaseSortableHeader.directive';
+import { Component, Injectable                     } from '@angular/core';
+import { BaseComponent                             } from '../../basecomponent';
+import { _BaseModel, ENV_LIST_ANGULAR_CONFIG       } from '../../../_models/common/common';
+import { _BaseSortEvent                            } from '../../../_directives/BaseSortableHeader.directive';
 import {  BaseService                              } from '../../../_services/_config/base.service';
+import { AuthService                               } from '../../../_services/_config/auth.service';
+import { ConfigService                             } from '../../../_services/_config/config.service';
 
 //
 @Component({
@@ -11,29 +13,22 @@ import {  BaseService                              } from '../../../_services/_c
   styleUrl: './devPagesList.component.css'
 })
 //
-export class DevPagesListsComponent {
-    //
-	public mainPagesList!: Observable<_BaseModel[]>;
-	public total!        : Observable<number>;
-    // 
-	@ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
-    //
-	constructor(public service: BaseService) {
-		this.mainPagesList = service.Pagelist;
-		this.total         = service.total;
+export class DevPagesListsComponent extends BaseComponent {
+	//
+	constructor(public _service: _BaseService,
+	  public _authService: AuthService,
+	  public _configService: ConfigService
+	) {
+	  //
+	  super(_service, _authService, _configService, ENV_LIST_ANGULAR_CONFIG);
 	}
-    //
-	onSort({ _column, _direction }: _BaseSortEvent) {
-		// resetting other headers
-		this.headers?.forEach((header) => {
-			if (header.sortable !== _column) {
-				header.direction = '';
-			}
-		});
-		//
-		this.service.sortColumn    = _column;
-		this.service.sortDirection = _direction;
-	}
-}
+  }
+  //
+  @Injectable({
+	providedIn: 'root'
+  })
+  class _BaseService extends BaseService {
+  
+  }
 
 
