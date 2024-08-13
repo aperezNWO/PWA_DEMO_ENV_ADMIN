@@ -31,5 +31,9 @@
     { 
         "f_Name"            : "ANGULAR_CONFIG",
         "p_Path"            : "./assets/angularDemo/angular_Config_base.json"
+    },
+    { 
+        "f_Name"            : "ANGULAR_EDU",
+        "p_Path"            : "./assets/angularDemo/angular_Curriculum_base.json"
     }
 ] 

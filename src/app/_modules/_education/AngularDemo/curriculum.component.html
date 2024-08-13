@@ -10,10 +10,10 @@
 				type="text"
 				class="form-control"
 				name="searchTerm"
-				[(ngModel)]="service.searchTerm"
+				[(ngModel)]="_service.searchTerm"
 			/>
 		</div>
-		@if (service.loading | async) {
+		@if (_service.loading | async) {
 			<span class="col col-form-label">[Cargando...]</span>
 		}
 	</div>
@@ -32,15 +32,15 @@
 			</tr>
 		</thead>
 		<tbody>
-			@for (curriculumPage of curriculumList | async; track curriculumPage.id) {
+			@for (curriculumPage of PagesList | async; track curriculumPage.id) {
 				<tr>
 					<th scope="row">{{ curriculumPage.id }}</th>
 					<td>
 						<input type="checkbox" name="done" id="done" value="done" [checked]="curriculumPage.done" readonly>
 					</td>
 					<td>
-						<a [href]="curriculumPage.field_4" target="_blank">
-							<ngb-highlight [result]="curriculumPage.name" [term]="service.searchTerm" />
+						<a [href]="curriculumPage.field_3" target="_blank">
+							<ngb-highlight [result]="curriculumPage.name" [term]="_service.searchTerm" />
 						</a>
 					</td>
 					<td>
@@ -58,8 +58,8 @@
 							[Tema]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="curriculumPage.field_2"               [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="curriculumPage.description"           [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="curriculumPage.field_2"               [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="curriculumPage.description"           [term]="_service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>
@@ -70,10 +70,10 @@
 	</table>
 
 	<div class="d-flex justify-content-between p-2">
-		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="_service.page" [pageSize]="_service.pageSize">
 		</ngb-pagination>
 
-		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="_service.pageSize">
 			<option [ngValue]="2">2 items por Pagina</option>
 			<option [ngValue]="4">4 items por Pagina</option>
 			<option [ngValue]="6">6 items por Pagina</option>

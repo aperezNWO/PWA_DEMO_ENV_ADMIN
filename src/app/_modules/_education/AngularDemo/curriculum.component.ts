@@ -1,56 +1,31 @@
-import { Component, QueryList, ViewChildren                       } from '@angular/core';
-import { Observable                                               } from 'rxjs';
-import { _BaseModel, SiteRole                                     } from '../../../_models/common/common';
-import { AuthService                                              } from '../../../_services/_config/auth.service';
-import {  BaseService                                             } from '../../../_services/_config/base.service';
-import { _BaseSortEvent, BaseSortableHeader                       } from '../../../_directives/BaseSortableHeader.directive';
-import { _environment                                             } from '../../../../environments/environment';
+import { Component, Injectable                       } from '@angular/core';
+import { BaseComponent                               } from '../../basecomponent';
+import { _BaseModel, ENV_LIST_ANGULAR_EDU,           } from '../../../_models/common/common';
+import { AuthService                                 } from '../../../_services/_config/auth.service';
+import {  BaseService                                } from '../../../_services/_config/base.service';
+import { _BaseSortEvent                              } from '../../../_directives/BaseSortableHeader.directive';
+import { _environment                                } from '../../../../environments/environment';
+import { ConfigService                               } from '../../../_services/_config/config.service';
 //
 @Component({
   selector: 'app-curriculum',
   templateUrl: './curriculum.component.html',
   styleUrl: './curriculum.component.css'
 })
-export class CurriculumComponent {
-	//
-  public curriculumList!: Observable<_BaseModel[]>;
-  public total!         : Observable<number>;
+export class CurriculumComponent extends BaseComponent {
   //
-  public ConfigRoleString : string = SiteRole.RoleConfig.toString();
-  // 
-  @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
-  //
-  constructor( public authService: AuthService,
-               public service    : BaseService
-              ) 
-  {
+  constructor(public _service: _BaseService,
+    public _authService: AuthService,
+    public _configService: ConfigService
+  ) {
     //
-    this.curriculumList   = service.Pagelist;
-    this.total            = service.total;
-    //
-    //_environment.pageSettingDictionary['loadAngularCurriculumData_base']._environmentList.forEach((element: any) => {
-    //  service._SEARCH_PAGES.push(element);
-      ////console.log(element)
-    //});
-  }
-  //
-  onSort({ _column, _direction }: _BaseSortEvent) {
-    //
-    //console.log ("onSort.column   :" + _column);
-    //
-    //console.log ("onSort.direction:" + _column);
-    // resetting other headers
-    this.headers?.forEach((header) => {
-      if (header.sortable !== _column) {
-        header.direction = '';
-      }
-    });
-    //
-    this.service.sortColumn    = _column;
-    this.service.sortDirection = _direction; 
+    super(_service, _authService, _configService, ENV_LIST_ANGULAR_EDU);
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
+class _BaseService extends BaseService {
 
-
-
+}
