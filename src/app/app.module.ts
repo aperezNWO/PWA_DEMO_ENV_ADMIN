@@ -42,10 +42,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
   //
    _configService.loadJsonist().then(()=> {
       //
-      for (const key in _environment.pageSettingDictionary) {
-          //
-      }
-      //
       _configService.loadPagesInfoData();
       //
       _configService.loadUsersData();
