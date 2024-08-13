@@ -1,46 +1,33 @@
-import { Component, QueryList, ViewChildren                        } from '@angular/core';
-import { Observable                                                } from 'rxjs';
-import { BaseService                                               } from '../../_services/_config/base.service';
-import { _BaseModel                                                } from '../../_models/common/common';
-import { _environment                                              } from '../../../environments/environment';
-import { _BaseSortEvent, BaseSortableHeader                        } from '../../_directives/BaseSortableHeader.directive';
+import { Component, Injectable } from '@angular/core';
+import { BaseService } from '../../_services/_config/base.service';
+import { _BaseModel, ENV_LIST_MARKETING_DEMO } from '../../_models/common/common';
+import { _environment } from '../../../environments/environment';
+import { _BaseSortEvent } from '../../_directives/BaseSortableHeader.directive';
+import { AuthService } from '../../_services/_config/auth.service';
+import { ConfigService } from '../../_services/_config/config.service';
+import { BaseComponent } from '../basecomponent';
 //
 @Component({
   selector: 'app-marketing',
   templateUrl: './marketing.component.html',
   styleUrl: './marketing.component.css'
 })
-export class MarketingComponent {   
-//
-public marketingList!   : Observable<_BaseModel[]>;
-public total!           : Observable<number>;
-// 
-@ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
-//
-constructor(public service: BaseService) 
-{
+export class MarketingComponent extends BaseComponent {
   //
-  this.marketingList   = service.Pagelist;
-  this.total            = service.total;
-  //
-  //_environment.pageSettingDictionary['']._environmentList.forEach((element: any) => {
-  //  service._SEARCH_PAGES.push(element);
-  //});
-}
-//
-onSort({ _column, _direction }: _BaseSortEvent) {
-    // resetting other headers
-    this.headers?.forEach((header) => {
-      if (header.sortable !== _column) {
-        header.direction= '';
-      }
-    });
+  constructor(public _service: _BaseService,
+    public _authService: AuthService,
+    public _configService: ConfigService
+  ) 
+  {
     //
-    this.service.sortColumn    = _column;
-    this.service.sortDirection = _direction;
+    super(_service, _authService, _configService, ENV_LIST_MARKETING_DEMO);
+  }
 }
+
+//
+@Injectable({
+  providedIn: 'root'
+})
+class _BaseService extends BaseService {
+
 }
-
-
-
-

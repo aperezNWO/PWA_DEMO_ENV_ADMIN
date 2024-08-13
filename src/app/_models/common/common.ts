@@ -127,3 +127,5 @@ export const ENV_LIST_CPP_DEMO     = 'CPP_DEMO';
 export const ENV_LIST_NETCORE_DEMO = 'NETCORE_DEMO';
 
 export const ENV_LIST_NODEJS_DEMO  = 'NODEJS_DEMO'
+
+export const ENV_LIST_MARKETING_DEMO = 'MARKETING_DEMO'

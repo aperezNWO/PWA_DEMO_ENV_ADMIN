@@ -27,24 +27,21 @@ export class BaseComponent
                )
     {
         //
-        const pageSetting    = _environment.pageSettingDictionary[_dictionaryKey];
+        this.PagesList  = of([]);
         //
-        //console.log("loading dictionary '" + _dictionaryKey + "', path : " + pageSetting.p_Path);
+        const pageSetting    = _environment.pageSettingDictionary[_dictionaryKey];
         //
         let _environmentList : string[] = [];
 
         __configService.loadJsonData(pageSetting.p_Path,
                                     _environmentList).then(() => {
             //
-            //console.log("loaded data ... '" + JSON.stringify(_environmentList));
-            //
             this.__service._SEARCH_PAGES.splice(0,this.__service._SEARCH_PAGES.length);
             //
             _environmentList.forEach((element: any) => {
                 this.__service._SEARCH_PAGES.push(element);
             });
-            //
-            this.PagesList  = of([]);
+            //    
             this.PagesList  = __service.Pagelist;
             this.total      = __service.total;
         });

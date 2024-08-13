@@ -11,10 +11,10 @@
 				type="text"
 				class="form-control"
 				name="searchTerm"
-				[(ngModel)]="service.searchTerm"
+				[(ngModel)]="_service.searchTerm"
 			/>
 		</div>
-		@if (service.loading | async) {
+		@if (_service.loading | async) {
 			<span class="col col-form-label">[Cargando...]</span>
 		}
 	</div>
@@ -30,7 +30,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@for (marketingPage of marketingList | async; track marketingPage.id) {
+			@for (marketingPage of PagesList | async; track marketingPage.id) {
 				<tr>
 					<th scope="row">{{ marketingPage.id }}</th>
 					<td>
@@ -38,11 +38,11 @@
 					</td>
 					<td>
 						<a ngb-highlight [href]="marketingPage.field_2" target="_blank">
-							<ngb-highlight [result]="marketingPage.name" [term]="service.searchTerm" />
+							<ngb-highlight [result]="marketingPage.name" [term]="_service.searchTerm" />
 						</a>
 					</td>
-					<td><ngb-highlight [result]="marketingPage.field_1"               [term]="service.searchTerm" /></td>
-					<td><ngb-highlight [result]="marketingPage.description"           [term]="service.searchTerm" /></td>
+					<td><ngb-highlight [result]="marketingPage.field_1"               [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="marketingPage.description"           [term]="_service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>
@@ -53,10 +53,10 @@
 	</table>
 
 	<div class="d-flex justify-content-between p-2">
-		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="_service.page" [pageSize]="_service.pageSize">
 		</ngb-pagination>
 
-		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="_service.pageSize">
 			<option [ngValue]="2">2 items por Pagina</option>
 			<option [ngValue]="4">4 items por Pagina</option>
 			<option [ngValue]="6">6 items por Pagina</option>
