@@ -15,5 +15,9 @@
     { 
         "f_Name"            : "NODEJS_DEMO",
         "p_Path"            : "./assets/nodejsDemo/nodejs_Demos_base.json"
+    },
+    { 
+        "f_Name"            : "MARKETING_DEMO",
+        "p_Path"            : "./assets/marketing/marketing_base.json"
     }
 ] 
