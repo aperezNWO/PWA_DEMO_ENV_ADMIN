@@ -19,5 +19,17 @@
     { 
         "f_Name"            : "MARKETING_DEMO",
         "p_Path"            : "./assets/marketing/marketing_base.json"
+    },
+    { 
+        "f_Name"            : "NODEJS_CONFIG",
+        "p_Path"            : "./assets/nodejsDemo/nodejs_Config_base.json"
+    },
+    { 
+        "f_Name"            : "NETCORE_CONFIG",
+        "p_Path"            : "./assets/netCoreDemo/netcore_config_base.json"
+    },
+    { 
+        "f_Name"            : "ANGULAR_CONFIG",
+        "p_Path"            : "./assets/angularDemo/angular_Config_base.json"
     }
 ] 
