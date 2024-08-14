@@ -32,7 +32,7 @@ export class NavComponent {
   }
   //
   pages : PageInfo[] | undefined =  [];
-  //-----------------------------------------------------------------------------------------------------
+  //
   constructor(
     private _configService : ConfigService,
     private titleService   : Title,
@@ -59,17 +59,13 @@ export class NavComponent {
     let title: string = `${this._appBrand} -- ${this._appEnv} -- ${this._appVersion}`;
     //
     this.titleService.setTitle(title);
-    //
-    //console.log("Setting Title : " + title);
-    //
-    //console.log("Route List    : " + _environment.routesList);
 		//
 		_environment.routesList.forEach((element: any) => {
 			this.pages!.push(element);
 			//console.log(element)
 		});
   }
-  //-----------------------------------------------------------------------------------------------------
+  //
   ngOnInit() {
     //
   }

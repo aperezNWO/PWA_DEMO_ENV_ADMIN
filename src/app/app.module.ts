@@ -16,7 +16,6 @@ import { CppDemoComponent                       } from './_modules/_demos/CppDem
 import { CppWebComponent                        } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
 import { NetcoreWebComponent                    } from './_modules/_demos/NetCore/netcore-web/netcoreweb/netcore-web.component';
 import { NodeJsWebComponent                     } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
-import { PhpWebComponent                        } from './_modules/_demos/Php/php-web/php-web.component';
 import { FeaturePagesComponent                  } from './_modules/_demos/angularDemo/feature-pages/feature-pages.component';
 import { AngularComponent                       } from './_modules/_demos/angularDemo/angular-web/angular.component';
 import { DemosComponent                         } from './_modules/_demos/_demosweb/demos.component';
@@ -61,7 +60,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     FeaturePagesComponent,
     AngularComponent,
     NetcoreWebComponent,
-    PhpWebComponent,
     NodeJsWebComponent,
     MarketingComponent,
     DemosComponent,

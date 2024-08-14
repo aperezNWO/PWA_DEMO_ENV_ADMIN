@@ -12,7 +12,7 @@ import { ConfigService                 } from './_services/_config/config.servic
 
 export class AppComponent {
   //
-  title = 'NG_BOOTSTRAP_DEMO_ENV_LANDING';
+  title = 'PWA_DEMO_ENV_LANDING';
   // propiedades publicas
   public readonly _title     : string | undefined = "";
   public readonly _appBrand  : string | undefined = "";

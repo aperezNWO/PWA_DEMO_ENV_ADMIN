@@ -44,10 +44,6 @@ export class LoginComponentContent {
     this.authService.userName   = this.td_model.P_LOGIN_NAME;
     this.authService.password   = this.td_model.P_LOGIN_PASSWORD;
     this.authService.loggedUser = false;
-    // Implement your login logic using username and password
-    //console.log(`Username  : ${this.td_model.P_LOGIN_NAME}, Password: ${this.td_model.P_LOGIN_PASSWORD}`); // Example log
-    // Implement your login logic using username and password
-    //console.log(`Valid Form: ${this.td_valid_form()}`); // Example log
     //
     if ((this.td_valid_form() == false))
       return;

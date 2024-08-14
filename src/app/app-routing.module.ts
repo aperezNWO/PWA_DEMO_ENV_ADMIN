@@ -11,7 +11,6 @@ import { NetcoredemoComponent    } from './_modules/_demos/NetCore/netcore-web/n
 import { NetCoreConfigComponent  } from './_modules/_config/net-core-config/net-core-config.component';
 import { NodejsDemoComponent     } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
 import { NodeJsWebComponent      } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
-import { PhpWebComponent         } from './_modules/_demos/Php/php-web/php-web.component';
 import { DemosComponent          } from './_modules/_demos/_demosweb/demos.component';
 import { CurriculumComponent     } from './_modules/_education/AngularDemo/curriculum.component';
 import { EduWebComponent         } from './_modules/_education/_edu-web/edu-web.component';
@@ -40,7 +39,6 @@ const routes: Routes = [
   {  path: 'NetCoreConfig'            , component: NetCoreConfigComponent             },
   {  path: 'NetCoreDemo'              , component: NetcoredemoComponent               },
   {  path: 'NetCoreWeb'               , component: NetcoreWebComponent                },
-  {  path: 'PhpWeb'                   , component: PhpWebComponent                    }, 
   {  path: 'CppDemo'                  , component: CppDemoComponent                   }, 
   {  path: 'CppWeb'                   , component: CppWebComponent                    }, 
   {  path: 'DemosWeb'                 , component: DemosComponent                     }, 

@@ -12,9 +12,6 @@ import { _environment             } from '../../../../environments/environment';
 })
 export class ProtectedComponent {
   //
-  //username: string = '';
-  //password: string = '';
-  //
   modalRef : TemplateRef<any> | undefined;
   //
   constructor(private modalService: NgbModal
@@ -26,8 +23,6 @@ export class ProtectedComponent {
   // Inject NgbModal for modal
   openLogin() {
     const modalRef                      = this.modalService.open(LoginComponentContent); // Open modal with LoginComponentContent
-    //modalRef.componentInstance.username = this.username; // Pass initial username to modal
-    //modalRef.componentInstance.password = this.password; // Pass initial password to modal (optional for pre-filling)
   }
   //
   signOut() {
