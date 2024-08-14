@@ -223,9 +223,22 @@
 
 -- [x] export type _NodeJsFeatureSortColumn    = keyof <FatherClass>      | ''; (inheritance)
 
--- [_] php mdemo.
 
--- [_] Read json pages from somee.com / database.
+ -- [x] load config as dictionary. 
+
+      -- [x] function appModule.ts LoadxxxData() as single function.
+
+      -- [x] load dictionary from external list.
+
+ -- [x] Implement base service.
+
+      -- [x] Eliminate services.
+
+      -- [x] Eliminate directives.
+
+      -- [x] Eliminate models.
+
+-- [_] php mdemo.
 
 -- [_] Datagrid row detail / relacion unos a muchos json.
 
@@ -284,34 +297,33 @@
 
       -- [_] https://g.co/gemini/share/8f40611f1aed
 
- -- [_] preserve session info.
+ -- [x] Sotable Grid Inheritance.      
 
- -- [>>] load config as dictionary. 
+ -- [x] Sotable Grid Component.      
 
-      -- [x] function appModule.ts LoadxxxData() as single function.
+ -- [_] Contact Form 
+ 
+       -- [_]  Dynamic List.  
 
-      -- [_] load dictionary from external list.
+       -- [_] Read json pages from somee.com / database.
 
- -- [>>] Implement base service.
+  -- [_] Marketing Grid
+ 
+       -- [_]  Crud.  
 
-      -- [_] Eliminate services.
-
-      -- [_] Eliminate directives.
-
-      -- [_] Eliminate models.
-
- -- [_] Sotable Grid Inheritance.      
-
- -- [_] Sotable Grid Component.      
-
- -- [_] Contact Form Dynamic List.  
+       -- [_] Read json pages from somee.com / database.      
 
 -- [_] promise exception handling.    
 
--- [_] clear base service cache.  
+-- [x] clear base service cache.  
 
 -- [_] datagrid record number.  
 
--- [_] load grid info at request.  
+-- [x] load grid info at request.  
+
+ -- [_] preserve session info.
+
+ -- [>>] Angular curriculum.
+
 
 /***********************************************/
