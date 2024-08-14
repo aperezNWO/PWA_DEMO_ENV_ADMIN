@@ -238,6 +238,15 @@
 
       -- [x] Eliminate models.
 
+
+ -- [x] Sotable Grid Inheritance.      
+
+ -- [x] Sotable Grid Component.      
+
+-- [x] clear base service cache.  
+
+-- [x] load grid info at request.  
+
 -- [_] php mdemo.
 
 -- [_] Datagrid row detail / relacion unos a muchos json.
@@ -297,33 +306,24 @@
 
       -- [_] https://g.co/gemini/share/8f40611f1aed
 
- -- [x] Sotable Grid Inheritance.      
-
- -- [x] Sotable Grid Component.      
-
- -- [_] Contact Form 
- 
-       -- [_]  Dynamic List.  
-
-       -- [_] Read json pages from somee.com / database.
-
-  -- [_] Marketing Grid
- 
-       -- [_]  Crud.  
-
-       -- [_] Read json pages from somee.com / database.      
-
 -- [_] promise exception handling.    
 
--- [x] clear base service cache.  
-
 -- [_] datagrid record number.  
-
--- [x] load grid info at request.  
 
  -- [_] preserve session info.
 
  -- [>>] Angular curriculum.
 
+ -- [_] Contact Form 
+ 
+       -- [_] Dynamic Form.  
+
+       -- [_] Read json pages from somee.com / database.
+
+  -- [_] Marketing Grid
+ 
+       -- [_] Crud.  
+
+       -- [_] Read json pages from somee.com / database.  
 
 /***********************************************/
