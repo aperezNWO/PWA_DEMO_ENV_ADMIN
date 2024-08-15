@@ -326,4 +326,8 @@
 
        -- [_] Read json pages from somee.com / database.  
 
+  -- [_] RXJS
+
+       -- [_]  https://v17.angular.io/guide/rx-library      
+
 /***********************************************/
