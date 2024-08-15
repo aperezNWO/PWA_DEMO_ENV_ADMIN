@@ -1,7 +1,7 @@
 import { Injectable, PipeTransform                                                     } from '@angular/core';
 import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
 import { DecimalPipe                                                                   } from '@angular/common';
-import { _BaseModel, _BaseSearchResult, _SearchState, _SortDirection,  compare, matches, sort                       } from '../../_models/common/common';
+import { _BaseModel, _BaseSearchResult, _SearchState, _SortDirection,  matches, sort   } from '../../_models/common/common';
 import { _SortColumn                                                                   } from '../../_directives/BaseSortableHeader.directive';
 
 @Injectable({
