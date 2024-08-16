@@ -36,8 +36,17 @@ import { NetcoredemoComponent                   } from './_modules/_demos/NetCor
 import { NetCoreConfigComponent                 } from './_modules/_config/net-core-config/net-core-config.component';
 import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
 import { _environment                           } from '../environments/environment';
+import { of                                     } from 'rxjs';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
+  //
+  const numbers$ = of(1, 2, 3); // simple observable that emits three values
+  //
+  numbers$.subscribe({
+    next(value) { console.log('Observable emitted the next value: ' + value); },
+    error(err)  { console.error('Observable emitted an error: ' + err); },
+    complete()  { console.log('Observable emitted the complete notification'); }
+  });
   //
    _configService.loadJsonist().then(()=> {
       //

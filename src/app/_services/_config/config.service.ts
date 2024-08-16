@@ -26,19 +26,6 @@ export class ConfigService {
         console.error('Error loading configuration:', error);
       });
   }  
-  // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadConfig() {
-    return this.http.get('./assets/config/_config.json').toPromise()
-      .then((data: any) => {
-          //
-          ////console.log("loading configuration..." + JSON.stringify(data));
-          //
-          _environment.externalConfig = data; // Assign loaded data to environment variable
-      })
-      .catch(error => {
-        console.error('Error loading configuration:', error);
-      });
-  }
   //
   loadJsonist() {
     return this.http.get('./assets/config/_jsonList.json').toPromise()
@@ -78,6 +65,19 @@ export class ConfigService {
       })
       .catch(error => {
         console.error('Error loading routes dada...', error);
+      });
+  }
+  // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadConfig() {
+    return this.http.get('./assets/config/_config.json').toPromise()
+      .then((data: any) => {
+          //
+          ////console.log("loading configuration..." + JSON.stringify(data));
+          //
+          _environment.externalConfig = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading configuration:', error);
       });
   }
   //
