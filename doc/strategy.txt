@@ -247,6 +247,10 @@
 
 -- [x] load grid info at request.  
 
+  -- [x] about info
+
+       -- [x] A.I. PROMT LIST.   
+       
 -- [_] php mdemo.
 
 -- [_] Datagrid row detail / relacion unos a muchos json.
@@ -326,12 +330,14 @@
 
        -- [_] Read json pages from somee.com / database.  
 
-  -- [_] RXJS
+  -- [x] RXJS
 
-       -- [_]  https://v17.angular.io/guide/rx-library      
+       -- [x]  https://v17.angular.io/guide/rx-library      
 
+-- [_] SSR.
 
-  -- [_] about info
+-- [_] oAUTH.
 
-       -- [_] A.I. PROMT LIST.   
+-- [_] PWA / SPA.
+
 /***********************************************/
