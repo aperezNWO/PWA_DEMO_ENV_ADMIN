@@ -130,5 +130,16 @@
         "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationXLS",
         "field_3"          : "https://github.com/aperezNWO/mcsdNetCoreBackup/blob/main/mcsd.Core.Library/Managers/XlsManager.cs",
         "field_4"          : "https://www.nuget.org/packages/EPPlus/"  
+    },
+    {
+		"id"               : 13,
+        "done"             : true,
+        "name"             : "Juego Torres de Hanoi",
+        "description"      : "Juego Torres de Nanoi",
+        "field_6"          : "Angular",
+        "field_1"          : "Algoritmo recursión, observable,",
+        "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/GamesHanoiAuto",
+        "field_3"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC/blob/main/src/app/_engines/hanoi-engine.ts",
+        "field_4"          : "https://en.wikipedia.org/wiki/Tower_of_Hanoi"  
     }
 ]       
