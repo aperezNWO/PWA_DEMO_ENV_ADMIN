@@ -9,8 +9,6 @@ import { HttpClientModule                       } from '@angular/common/http';
 import { BrowserModule, provideClientHydration  } from '@angular/platform-browser';
 import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
-import { NavComponent                           } from './_modules/_home/nav/nav.component';
-import { PageNotFoundComponent                  } from './_modules/_home/page-not-found/page-not-found.component';
 import { ConfigService                          } from './_services/_config/config.service';
 import { CppDemoComponent                       } from './_modules/_demos/CppDemo/cpp-demo/cpp-demo.component';
 import { CppWebComponent                        } from './_modules/_demos/CppDemo/cpp-web/cpp-web.component';
@@ -18,25 +16,27 @@ import { NetcoreWebComponent                    } from './_modules/_demos/NetCor
 import { NodeJsWebComponent                     } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
 import { FeaturePagesComponent                  } from './_modules/_demos/angularDemo/feature-pages/feature-pages.component';
 import { AngularComponent                       } from './_modules/_demos/angularDemo/angular-web/angular.component';
+import { NetcoredemoComponent                   } from './_modules/_demos/NetCore/netcore-web/netcoredemo/netcoredemo.component';
+import { NodejsDemoComponent                    } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
 import { DemosComponent                         } from './_modules/_demos/_demosweb/demos.component';
 import { DevPagesListsComponent                 } from './_modules/_config/AngularConfig/devPagesList.component';
 import { ConfigWebComponent                     } from './_modules/_config/_config-web/config-web.component';
+import { NodeJsConfigComponent                  } from './_modules/_config/node-js-config/node-js-config.component';
+import { NetCoreConfigComponent                 } from './_modules/_config/net-core-config/net-core-config.component';
 import { CurriculumComponent                    } from './_modules/_education/AngularDemo/curriculum.component';
 import { EduWebComponent                        } from './_modules/_education/_edu-web/edu-web.component';
-import { HomeComponent                          } from './_modules/_home/_homeWeb/home.component';
 import { MarketingComponent                     } from './_modules/_marketing/marketing.component';
 import { ContactComponent                       } from './_modules/_about/contact/contact.component';
 import { TechInfoComponent                      } from './_modules/_about/tech-info/tech-info.component';
+import { AiPromtsComponent                      } from './_modules/_about/ai-promts/ai-promts.component';
 import { AboutWebComponent                      } from './_modules/_about/about-web/about-web.component';
-import { NodejsDemoComponent                    } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
-import { NodeJsConfigComponent                  } from './_modules/_config/node-js-config/node-js-config.component';
 import { ProtectedComponent                     } from './_modules/_login/protected/protected.component';
 import { LoginComponentContent                  } from './_modules/_login/login-content/login-content.component';
-import { NetcoredemoComponent                   } from './_modules/_demos/NetCore/netcore-web/netcoredemo/netcoredemo.component';
-import { NetCoreConfigComponent                 } from './_modules/_config/net-core-config/net-core-config.component';
+import { NavComponent                           } from './_modules/_home/nav/nav.component';
+import { PageNotFoundComponent                  } from './_modules/_home/page-not-found/page-not-found.component';
+import { HomeComponent                          } from './_modules/_home/_homeWeb/home.component';
 import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
 import { _environment                           } from '../environments/environment';
-import { of                                     } from 'rxjs';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -78,6 +78,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NetcoredemoComponent,
     NetCoreConfigComponent,
     BaseSortableHeader,
+    AiPromtsComponent,
   ],
   imports: [
     BrowserModule,

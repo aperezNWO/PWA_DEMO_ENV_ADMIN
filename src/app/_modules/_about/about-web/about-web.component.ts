@@ -16,5 +16,9 @@ export class AboutWebComponent {
       'url': '/TechInfo',
       'text': '[Especificaciones Técnicas]',
     },
+    {
+      'url': '/AiPrompts',
+      'text': '[A.I. Prompts]',
+    },
   ]
 }
