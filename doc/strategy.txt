@@ -346,4 +346,8 @@
 
 -- [_] hanoi tower manual option.
 
+-- [_] Angular curriculum re-order.
+
+-- [_] marketkng update list.
+
 /***********************************************/
