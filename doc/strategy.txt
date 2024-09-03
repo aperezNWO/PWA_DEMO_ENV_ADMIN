@@ -344,4 +344,6 @@
 
 -- [_] ngb grid login link on repo column.
 
+-- [_] hanoi tower manual option.
+
 /***********************************************/
