@@ -342,4 +342,6 @@
 
 -- [_] ngb grid on public csv query.
 
+-- [_] ngb grid login link on repo column.
+
 /***********************************************/
