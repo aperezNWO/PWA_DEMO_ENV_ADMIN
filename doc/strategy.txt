@@ -324,12 +324,6 @@
 
        -- [_] Read json pages from somee.com / database.
 
-  -- [_] Marketing Grid
- 
-       -- [_] Crud.  
-
-       -- [_] Read json pages from somee.com / database.  
-
   -- [x] RXJS
 
        -- [x]  https://v17.angular.io/guide/rx-library      
@@ -342,12 +336,18 @@
 
 -- [_] ngb grid on public csv query.
 
--- [_] ngb grid login link on repo column.
-
 -- [_] hanoi tower manual option.
+
+  -- [_] Marketing Grid
+ 
+       -- [_] Crud.  
+
+       -- [_] Read json pages from somee.com / database.  
+
+      -- [_] marketkng update list.
 
 -- [_] Angular curriculum re-order.
 
--- [_] marketkng update list.
+-- [_] ngb grid login link on repo column.
 
 /***********************************************/
