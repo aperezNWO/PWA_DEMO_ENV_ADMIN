@@ -21,5 +21,9 @@ export class ConfigWebComponent {
       'url': '/NetCoreConfig',
       'text': '[.Net Core - ENTORNOS]',
     },
+    {
+      'url': '/SpringBootConfig',
+      'text': '[SPRINB BOOT - ENTORNOS]',
+    },
   ]
 }

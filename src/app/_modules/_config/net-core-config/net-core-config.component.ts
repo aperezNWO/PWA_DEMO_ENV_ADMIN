@@ -1,11 +1,11 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable               } from '@angular/core';
 import { _BaseModel, ENV_LIST_NETCORE_CONFIG } from '../../../_models/common/common';
-import { BaseService } from '../../../_services/_config/base.service';
-import { _BaseSortEvent } from '../../../_directives/BaseSortableHeader.directive';
-import { _environment } from '../../../../environments/environment';
-import { AuthService } from '../../../_services/_config/auth.service';
-import { ConfigService } from '../../../_services/_config/config.service';
-import { BaseComponent } from '../../basecomponent';
+import { BaseService                         } from '../../../_services/_config/base.service';
+import { _BaseSortEvent                      } from '../../../_directives/BaseSortableHeader.directive';
+import { _environment                        } from '../../../../environments/environment';
+import { AuthService                         } from '../../../_services/_config/auth.service';
+import { ConfigService                       } from '../../../_services/_config/config.service';
+import { BaseComponent                       } from '../../basecomponent';
 
 @Component({
   selector: 'app-net-core-config',

@@ -1,6 +1,6 @@
 import { Component, Injectable                 } from '@angular/core';
 import { BaseComponent                         } from '../../basecomponent';
-import { _BaseModel, ENV_LIST_ANGULAR_DEMO, ENV_LIST_NODEJS_CONFIG     } from '../../../_models/common/common';
+import { _BaseModel, ENV_LIST_NODEJS_CONFIG    } from '../../../_models/common/common';
 import { _BaseSortEvent                        } from '../../../_directives/BaseSortableHeader.directive';
 import {  BaseService                          } from '../../../_services/_config/base.service';
 import { _environment                          } from '../../../../environments/environment';
