@@ -350,4 +350,6 @@
 
 -- [_] ngb grid login link on repo column.
 
+-- [_] MARKETING GRID CRUD.
+
 /***********************************************/
