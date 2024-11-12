@@ -1,7 +1,7 @@
 <div align="left">
     <h1>[SPRING BOOT - DEMOS / CARACTERISTICAS]</h1>
 <hr>
-<!--
+
 <form>
     <div class="mb-3 row">
 		<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Busqueda de Texto Completo:</label>
@@ -25,11 +25,11 @@
 				<th scope="col" sortable="id"              (sortevent)="onSort($event)">#</th>
 				<th scope="col" sortable="done"            (sortevent)="onSort($event)">(hecho)</th>
 				<th scope="col" sortable="name"            (sortevent)="onSort($event)">Nombre</th>
-				<th scope="col" sortable="field_1"         (sortevent)="onSort($event)">Demo</th>
+				<th scope="col" sortable="field_2"         (sortevent)="onSort($event)">Demo</th>
 				<th scope="col" *ngIf="this._authService.matchRoles(this.ConfigRoleString)"
-								sortable="field_4"         (sortevent)="onSort($event)">Repo</th>
-				<th scope="col" sortable="field_5"         (sortevent)="onSort($event)">Tema</th>
-				<th scope="col" sortable="field_2"         (sortevent)="onSort($event)">P. Clave</th>
+								sortable="field_3"         (sortevent)="onSort($event)">Repo</th>
+				<th scope="col" sortable="field_4"         (sortevent)="onSort($event)">Tema</th>
+				<th scope="col" sortable="field_1"         (sortevent)="onSort($event)">P. Clave</th>
 				<th scope="col" sortable="description"     (sortevent)="onSort($event)">Descripción</th>
 			</tr>
 		</thead>
@@ -41,26 +41,26 @@
 						<input type="checkbox" name="done" id="done" value="done" [checked]="featurePage.done" readonly>
 					</td>
 					<td>
-						<a [href]="featurePage.field_1" target="_blank">
+						<a [href]="featurePage.field_2" target="_blank">
 							<ngb-highlight [result]="featurePage.name" [term]="_service.searchTerm" />
 						</a>
 					</td>
 					<td>
-						<a ngb-highlight [href]="featurePage.field_1" target="_blank">
+						<a ngb-highlight [href]="featurePage.field_2" target="_blank">
 							[Demo]
 						</a>
 					</td>
 					<td *ngIf="this._authService.matchRoles(this.ConfigRoleString)">
-						<a ngb-highlight [href]="featurePage.field_4" target="_blank">
+						<a ngb-highlight [href]="featurePage.field_3" target="_blank">
 							[Repo]
 						</a>
 					</td>
 					<td>
-						<a ngb-highlight [href]="featurePage.field_5" target="_blank">
+						<a ngb-highlight [href]="featurePage.field_4" target="_blank">
 							[Tema]
 						</a>
 					</td>
-					<td><ngb-highlight [result]="featurePage.field_2"               [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="featurePage.field_1"               [term]="_service.searchTerm" /></td>
 					<td><ngb-highlight [result]="featurePage.description"           [term]="_service.searchTerm" /></td>
 				</tr>
 			} @empty {
@@ -82,7 +82,6 @@
 		</select>
 	</div>
 </form>
--->
 <hr>
 </div>
 <div align="right">
