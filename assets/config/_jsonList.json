@@ -37,7 +37,7 @@
         "p_Path"            : "./assets/angularDemo/angular_Curriculum_base.json"
     },
     { 
-        "f_Name"            : "SPRINGBOOT_DEMO",
+        "f_Name"            : "SPRING_BOOT_DEMO",
         "p_Path"            : "./assets/springBootDemo/springBoot_Demos_base.json"
     }
 ] 
