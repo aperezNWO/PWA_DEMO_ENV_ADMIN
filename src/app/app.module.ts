@@ -37,6 +37,8 @@ import { PageNotFoundComponent                  } from './_modules/_home/page-no
 import { HomeComponent                          } from './_modules/_home/_homeWeb/home.component';
 import { BaseSortableHeader                     } from './_directives/BaseSortableHeader.directive';
 import { _environment                           } from '../environments/environment';
+import { SpringBootWebComponent } from './_modules/_demos/SpringBoot/SpringBootWeb/spring-boot-web/spring-boot-web.component';
+import { SpringBootDemoComponent } from './_modules/_demos/SpringBoot/SpringBootDemo/spring-boot-demo/spring-boot-demo.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -79,6 +81,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NetCoreConfigComponent,
     BaseSortableHeader,
     AiPromtsComponent,
+    SpringBootWebComponent,
+    SpringBootDemoComponent,
   ],
   imports: [
     BrowserModule,

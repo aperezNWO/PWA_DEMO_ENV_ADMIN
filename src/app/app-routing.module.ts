@@ -12,6 +12,8 @@ import { NetcoredemoComponent    } from './_modules/_demos/NetCore/netcore-web/n
 import { NodejsDemoComponent     } from './_modules/_demos/Nodejs/nodejs-demo/nodejs-demo.component';
 import { NodeJsWebComponent      } from './_modules/_demos/Nodejs/node-js-web/node-js-web.component';
 import { DemosComponent          } from './_modules/_demos/_demosweb/demos.component';
+import { SpringBootWebComponent  } from './_modules/_demos/SpringBoot/SpringBootWeb/spring-boot-web/spring-boot-web.component';
+import { SpringBootDemoComponent } from './_modules/_demos/SpringBoot/SpringBootDemo/spring-boot-demo/spring-boot-demo.component';
 import { DevPagesListsComponent  } from './_modules/_config/AngularConfig/devPagesList.component';
 import { ConfigWebComponent      } from './_modules/_config/_config-web/config-web.component';
 import { NodeJsConfigComponent   } from './_modules/_config/node-js-config/node-js-config.component';
@@ -44,6 +46,8 @@ const routes: Routes = [
   {  path: 'CppDemo'                  , component: CppDemoComponent                   }, 
   {  path: 'CppWeb'                   , component: CppWebComponent                    }, 
   {  path: 'DemosWeb'                 , component: DemosComponent                     }, 
+  {  path: 'SpringBootWeb'            , component: SpringBootWebComponent             }, 
+  {  path: 'SpringBootDemo'           , component: SpringBootDemoComponent            }, 
   {  path: 'EduWeb'                   , component: EduWebComponent                    },
   {  path: 'ConfigWeb'                , component: ConfigWebComponent                 
                                       , canActivate: [CanActivateGuard]               }, // Protected component

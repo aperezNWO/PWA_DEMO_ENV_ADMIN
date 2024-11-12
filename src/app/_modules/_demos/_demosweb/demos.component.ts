@@ -23,10 +23,10 @@ export class DemosComponent {
     {
       'url': '/NetCoreWeb',
       'text': '[.NET CORE DEMO]',
-    }/*,
+    },
     {
-      'url': '/PhpWeb',
-      'text': '[PHP DEMO]',
-    }*/
+      'url': '/SpringBootWeb',
+      'text': '[SPRING BOOT DEMO]',
+    }
   ]
 }
