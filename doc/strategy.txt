@@ -358,4 +358,14 @@
 
 -- [_] https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-personal-website
 
+-- [_] codedandbox contingency.
+
+      -- [_] check df149032@outlook.com.
+
+      -- [_] set github account
+
+      -- [_] upload node.js source code.
+
+      -- [_] set codesandbox account.
+
 /***********************************************/
