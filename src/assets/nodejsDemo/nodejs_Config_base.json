@@ -15,9 +15,9 @@
 		"name"             : "OCR DEMO",
 		"description"      : "OCR DEMO",
 		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Ocr",
-		"field_2"          : "https://github.com/aperezNWO/cs_nodejs_ocr_/blob/main/index.js",
-		"field_3"          : "https://codesandbox.io/p/github/aperezNWO/cs_nodejs_ocr_/main",      
-		"field_4"          : "https://rjts8s-3000.csb.app/" 
+		"field_2"          : "https://github.com/Exam70486/cs_nodejs_ocr_/blob/main/index.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/cs_nodejs_ocr_/main",      
+		"field_4"          : "https://zdsjg8-3000.csb.app" 
 	},
 	{
 		"id"               : 3,
@@ -25,9 +25,9 @@
 		"name"             : "CHAT DEMO",
 		"description"      : "CHAT DEMO",
 		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chat",
-		"field_2"          : "https://github.com/aperezNWO/cs_node_js_test_chat",
-		"field_3"          : "https://codesandbox.io/p/github/aperezNWO/cs_node_js_test_chat/main",      
-		"field_4"          : "https://d57kw2-3000.csb.app/" 
+		"field_2"          : "https://github.com/Exam70486/cs_node_js_test_chat/blob/main/index.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/cs_node_js_test_chat/main",      
+		"field_4"          : "https://4d9gc8-3000.csb.app" 
 	},
 	{
 		"id"               : 4,
