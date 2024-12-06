@@ -1,5 +1,5 @@
 import { Component, Injectable                       } from '@angular/core';
-import { BaseComponent                               } from '../../basecomponent';
+import { BaseComponent                               } from '../../../_components/basecomponent';
 import { _BaseModel, ENV_LIST_ANGULAR_EDU,           } from '../../../_models/common/common';
 import { AuthService                                 } from '../../../_services/_config/auth.service';
 import {  BaseService                                } from '../../../_services/_config/base.service';

@@ -1,5 +1,5 @@
 import { Component, Injectable,         } from '@angular/core';
-import { BaseComponent                  } from '../../../basecomponent';
+import { BaseComponent                  } from '../../../../_components/basecomponent';
 import { _environment                   } from '../../../../../environments/environment';
 import { AuthService                    } from '../../../../_services/_config/auth.service';
 import { _BaseModel, _BaseSearchResult  } from '../../../../_models/common/common';

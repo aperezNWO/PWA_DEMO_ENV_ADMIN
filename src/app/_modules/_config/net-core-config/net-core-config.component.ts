@@ -5,7 +5,7 @@ import { _BaseSortEvent                      } from '../../../_directives/BaseSo
 import { _environment                        } from '../../../../environments/environment';
 import { AuthService                         } from '../../../_services/_config/auth.service';
 import { ConfigService                       } from '../../../_services/_config/config.service';
-import { BaseComponent                       } from '../../basecomponent';
+import { BaseComponent                       } from '../../../_components/basecomponent';
 
 @Component({
   selector: 'app-net-core-config',

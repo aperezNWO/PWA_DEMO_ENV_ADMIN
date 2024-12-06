@@ -1,5 +1,5 @@
 import { Component, Injectable                 } from '@angular/core';
-import { BaseComponent                         } from '../../basecomponent';
+import { BaseComponent                         } from '../../../_components/basecomponent';
 import { _BaseModel, ENV_LIST_NODEJS_CONFIG    } from '../../../_models/common/common';
 import { _BaseSortEvent                        } from '../../../_directives/BaseSortableHeader.directive';
 import {  BaseService                          } from '../../../_services/_config/base.service';

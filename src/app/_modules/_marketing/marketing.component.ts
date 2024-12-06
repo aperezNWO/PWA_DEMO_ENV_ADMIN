@@ -5,7 +5,7 @@ import { _environment                         } from '../../../environments/envi
 import { _BaseSortEvent                       } from '../../_directives/BaseSortableHeader.directive';
 import { AuthService                          } from '../../_services/_config/auth.service';
 import { ConfigService                        } from '../../_services/_config/config.service';
-import { BaseComponent                        } from '../basecomponent';
+import { BaseComponent                        } from '../../_components/basecomponent';
 //
 @Component({
   selector: 'app-marketing',

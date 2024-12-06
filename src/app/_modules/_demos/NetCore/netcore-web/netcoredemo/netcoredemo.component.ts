@@ -5,7 +5,7 @@ import { _BaseSortEvent                                           } from '../../
 import {  BaseService                                             } from '../../../../../_services/_config/base.service';
 import { _environment                                             } from '../../../../../../environments/environment';
 import { ConfigService                                            } from '../../../../../_services/_config/config.service';
-import { BaseComponent                                            } from '../../../../basecomponent';
+import { BaseComponent                                            } from '../../../../../_components/basecomponent';
 
 @Component({
   selector: 'app-netcoredemo',

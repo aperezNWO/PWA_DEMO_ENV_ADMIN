@@ -4,7 +4,7 @@ import { _BaseModel, ENV_LIST_NODEJS_DEMO                               } from '
 import { _BaseSortEvent                                                 } from '../../../../_directives/BaseSortableHeader.directive';
 import { BaseService                                                    } from '../../../../_services/_config/base.service';
 import { _environment                                                   } from '../../../../../environments/environment';
-import { BaseComponent                                                  } from '../../../basecomponent';
+import { BaseComponent                                                  } from '../../../../_components/basecomponent';
 import { ConfigService                                                  } from '../../../../_services/_config/config.service';
 
 @Component({

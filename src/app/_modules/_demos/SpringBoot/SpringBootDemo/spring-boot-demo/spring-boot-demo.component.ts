@@ -3,7 +3,7 @@ import { AuthService                    } from '../../../../../_services/_config
 import { ENV_LIST_SPRING_BOOT_DEMO      } from '../../../../../_models/common/common';
 import { BaseService                    } from '../../../../../_services/_config/base.service';
 import { ConfigService                  } from '../../../../../_services/_config/config.service';
-import { BaseComponent                  } from '../../../../basecomponent';
+import { BaseComponent                  } from '../../../../../_components/basecomponent';
 
 @Component({
   selector: 'app-spring-boot-demo',
