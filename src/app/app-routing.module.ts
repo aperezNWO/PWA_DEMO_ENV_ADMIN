@@ -27,6 +27,7 @@ import { AiPromtsComponent         } from './_modules/_about/ai-promts/ai-promts
 import { ProtectedComponent        } from './_modules/_login/protected/protected.component';
 import { PageNotFoundComponent     } from './_modules/_home/page-not-found/page-not-found.component';
 import { HomeComponent             } from './_modules/_home/_homeWeb/home.component';
+import { IndexComponent            } from './_modules/_home/index/index.component';
 //
 export interface _Route extends Route
 {
@@ -37,6 +38,7 @@ export interface _Route extends Route
 //
 export const routes: _Route[] = [
   {  path: 'Home'                     , component: HomeComponent                    , caption : 'Home'                                  },
+  {  path: 'Index'                    , component: IndexComponent                   , caption : 'Index'                                  },
   {  path: ''                         , component: HomeComponent                    , caption : ''                                      },
   {  path: 'AngularWeb'               , component: AngularComponent                 , caption : 'Angular - Main Page'                   }, 
   {  path: 'AngularFeaturesPages'     , component: FeaturePagesComponent            , caption : 'Angular - Demos'                       },

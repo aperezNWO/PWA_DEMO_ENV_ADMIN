@@ -33,5 +33,10 @@
       "url"        :  "/protected",
       "text"       :  "[ACCESS]",
       "pageRoles"  :  "0"
+    },
+    {
+      "url"       : "/Index",
+      "text"      : "[INDEX]",
+      "pageRoles" : "0"
     }
   ]
