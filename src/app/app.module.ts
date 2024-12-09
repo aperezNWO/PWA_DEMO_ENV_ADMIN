@@ -40,6 +40,7 @@ import { _environment                           } from '../environments/environm
 import { SpringBootWebComponent                 }  from './_modules/_demos/SpringBoot/SpringBootWeb/spring-boot-web/spring-boot-web.component';
 import { SpringBootDemoComponent                } from './_modules/_demos/SpringBoot/SpringBootDemo/spring-boot-demo/spring-boot-demo.component';
 import { SpringBootConfigComponent              } from './_modules/_config/spring-boot-config/spring-boot-config.component';
+import { IndexComponent } from './_modules/_home/index/index.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -85,6 +86,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     SpringBootWebComponent,
     SpringBootDemoComponent,
     SpringBootConfigComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,

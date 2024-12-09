@@ -1,5 +1,5 @@
-import { NgModule                  } from '@angular/core';
-import { RouterModule, Routes      } from '@angular/router';
+import { NgModule                          } from '@angular/core';
+import { Route, RouterModule, Routes       } from '@angular/router';
 import { CurriculumComponent       } from './_modules/_education/AngularDemo/curriculum.component';
 import { EduWebComponent           } from './_modules/_education/_edu-web/edu-web.component';
 import { MarketingComponent        } from './_modules/_marketing/marketing.component';
@@ -27,41 +27,46 @@ import { AiPromtsComponent         } from './_modules/_about/ai-promts/ai-promts
 import { ProtectedComponent        } from './_modules/_login/protected/protected.component';
 import { PageNotFoundComponent     } from './_modules/_home/page-not-found/page-not-found.component';
 import { HomeComponent             } from './_modules/_home/_homeWeb/home.component';
+//
+export interface _Route extends Route
+{
+    caption : string;
+}
 
 
 //
-const routes: Routes = [
-  {  path: 'Home'                     , component: HomeComponent                      },
-  {  path: ''                         , component: HomeComponent                      },
-  {  path: 'AngularWeb'               , component: AngularComponent                   }, 
-  {  path: 'AngularFeaturesPages'     , component: FeaturePagesComponent              },
+export const routes: _Route[] = [
+  {  path: 'Home'                     , component: HomeComponent                    , caption : 'Home'                                  },
+  {  path: ''                         , component: HomeComponent                    , caption : ''                                      },
+  {  path: 'AngularWeb'               , component: AngularComponent                 , caption : 'Angular - Main Page'                   }, 
+  {  path: 'AngularFeaturesPages'     , component: FeaturePagesComponent            , caption : 'Angular - Demos'                       },
   {  path: 'AngularReference'         , component: CurriculumComponent               
-                                      , canActivate: [CanActivateGuard]               }, // Protected component
-  {  path: 'AngularConfig'            , component: DevPagesListsComponent             },
-  {  path: 'NodeJsWeb'                , component: NodeJsWebComponent                 }, 
-  {  path: 'NodeJsDemo'               , component: NodejsDemoComponent                }, 
-  {  path: 'NodeJsWeb'                , component: NodeJsWebComponent                 }, 
-  {  path: 'NodeJsConfig'             , component: NodeJsConfigComponent              }, 
-  {  path: 'NetCoreConfig'            , component: NetCoreConfigComponent             },
-  {  path: 'NetCoreDemo'              , component: NetcoredemoComponent               },
-  {  path: 'NetCoreWeb'               , component: NetcoreWebComponent                },
-  {  path: 'CppDemo'                  , component: CppDemoComponent                   }, 
-  {  path: 'CppWeb'                   , component: CppWebComponent                    }, 
-  {  path: 'DemosWeb'                 , component: DemosComponent                     }, 
-  {  path: 'SpringBootWeb'            , component: SpringBootWebComponent             }, 
-  {  path: 'SpringBootDemo'           , component: SpringBootDemoComponent            }, 
-  {  path: 'SpringBootConfig'         , component: SpringBootConfigComponent          }, 
-  {  path: 'EduWeb'                   , component: EduWebComponent                    },
+                                      , canActivate: [CanActivateGuard]             , caption : 'Angular - Reference'                   }, // Protected component
+  {  path: 'AngularConfig'            , component: DevPagesListsComponent           , caption : 'Angular - Config'                      },
+  {  path: 'NodeJsDemo'               , component: NodejsDemoComponent              , caption : 'Node.js   - Demos'                     }, 
+  {  path: 'NodeJsWeb'                , component: NodeJsWebComponent               , caption : 'Node.js   - Main Page'                 }, 
+  {  path: 'NodeJsConfig'             , component: NodeJsConfigComponent            , caption : 'Nodd.js   - Config'                    }, 
+  {  path: 'NetCoreConfig'            , component: NetCoreConfigComponent           , caption : '.NET Core - Config'                    },
+  {  path: 'NetCoreDemo'              , component: NetcoredemoComponent             , caption : '.NET Core - Demos'                     },
+  {  path: 'NetCoreWeb'               , component: NetcoreWebComponent              , caption : '.NET Core - Main Page'                 },
+  {  path: 'CppDemo'                  , component: CppDemoComponent                 , caption : 'C++ - Demos'                           }, 
+  {  path: 'CppWeb'                   , component: CppWebComponent                  , caption : 'C++ - Main Page'                       }, 
+  {  path: 'CppConfig'                , component: CppWebComponent                  , caption : 'C++ - Main Page'                       }, 
+  {  path: 'DemosWeb'                 , component: DemosComponent                   , caption : 'Demos - Main Page'                     }, 
+  {  path: 'SpringBootWeb'            , component: SpringBootWebComponent           , caption : 'SprinbBoot - Main Page'                }, 
+  {  path: 'SpringBootDemo'           , component: SpringBootDemoComponent          , caption : 'SpringBoot - Demos'                    }, 
+  {  path: 'SpringBootConfig'         , component: SpringBootConfigComponent        , caption : 'SprinbBoot - Config'                   }, 
+  {  path: 'EduWeb'                   , component: EduWebComponent                  , caption : 'Education  - Main Page'                },
   {  path: 'ConfigWeb'                , component: ConfigWebComponent                 
-                                      , canActivate: [CanActivateGuard]               }, // Protected component
-  {  path: 'Contact'                  , component: ContactComponent                   },
-  {  path: 'TechInfo'                 , component: TechInfoComponent                  },
-  {  path: 'AiPrompts'                , component: AiPromtsComponent                  },
-  {  path: 'AboutWeb'                 , component: AboutWebComponent                  },
+                                      , canActivate: [CanActivateGuard]             , caption : 'Configuration - Main Page'             }, // Protected component
+  {  path: 'Contact'                  , component: ContactComponent                 , caption : 'Contact Form'                          },
+  {  path: 'TechInfo'                 , component: TechInfoComponent                , caption : 'Tecnical Specifications'               },
+  {  path: 'AiPrompts'                , component: AiPromtsComponent                , caption : 'A.I. Prompts'                          },
+  {  path: 'AboutWeb'                 , component: AboutWebComponent                , caption : 'About'                                 },
   {  path: 'Marketing'                , component: MarketingComponent                 
-                                      , canActivate: [CanActivateGuard]               }, // Protected component
-  {  path: 'protected'                , component: ProtectedComponent                 },
-  {  path: '**'                       , component: PageNotFoundComponent              },
+                                      , canActivate: [CanActivateGuard]             , caption : 'Marketing - Main Page'                 }, // Protected component
+  {  path: 'protected'                , component: ProtectedComponent               , caption : ''                                      },
+  {  path: '**'                       , component: PageNotFoundComponent            , caption : ''                                      },
 ];
 
 //
