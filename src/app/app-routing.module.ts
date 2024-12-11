@@ -23,7 +23,6 @@ import { CanActivateGuard          } from './_modules/_config/can-activate.guard
 import { ContactComponent          } from './_modules/_about/contact/contact.component';
 import { TechInfoComponent         } from './_modules/_about/tech-info/tech-info.component';
 import { AboutWebComponent         } from './_modules/_about/about-web/about-web.component';
-import { AiPromtsComponent         } from './_modules/_about/ai-promts/ai-promts.component';
 import { ProtectedComponent        } from './_modules/_login/protected/protected.component';
 import { PageNotFoundComponent     } from './_modules/_home/page-not-found/page-not-found.component';
 import { HomeComponent             } from './_modules/_home/_homeWeb/home.component';
@@ -63,7 +62,6 @@ export const routes: _Route[] = [
                                       , canActivate: [CanActivateGuard]             , caption : 'Configuration - Main Page'             }, // Protected component
   {  path: 'Contact'                  , component: ContactComponent                 , caption : 'Contact Form'                          },
   {  path: 'TechInfo'                 , component: TechInfoComponent                , caption : 'Tecnical Specifications'               },
-  {  path: 'AiPrompts'                , component: AiPromtsComponent                , caption : 'A.I. Prompts'                          },
   {  path: 'AboutWeb'                 , component: AboutWebComponent                , caption : 'About'                                 },
   {  path: 'Marketing'                , component: MarketingComponent                 
                                       , canActivate: [CanActivateGuard]             , caption : 'Marketing - Main Page'                 }, // Protected component

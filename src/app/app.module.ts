@@ -28,7 +28,6 @@ import { EduWebComponent                        } from './_modules/_education/_e
 import { MarketingComponent                     } from './_modules/_marketing/marketing.component';
 import { ContactComponent                       } from './_modules/_about/contact/contact.component';
 import { TechInfoComponent                      } from './_modules/_about/tech-info/tech-info.component';
-import { AiPromtsComponent                      } from './_modules/_about/ai-promts/ai-promts.component';
 import { AboutWebComponent                      } from './_modules/_about/about-web/about-web.component';
 import { ProtectedComponent                     } from './_modules/_login/protected/protected.component';
 import { LoginComponentContent                  } from './_modules/_login/login-content/login-content.component';
@@ -40,7 +39,7 @@ import { _environment                           } from '../environments/environm
 import { SpringBootWebComponent                 }  from './_modules/_demos/SpringBoot/SpringBootWeb/spring-boot-web/spring-boot-web.component';
 import { SpringBootDemoComponent                } from './_modules/_demos/SpringBoot/SpringBootDemo/spring-boot-demo/spring-boot-demo.component';
 import { SpringBootConfigComponent              } from './_modules/_config/spring-boot-config/spring-boot-config.component';
-import { IndexComponent } from './_modules/_home/index/index.component';
+import { IndexComponent                         } from './_modules/_home/index/index.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -82,7 +81,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     NetcoredemoComponent,
     NetCoreConfigComponent,
     BaseSortableHeader,
-    AiPromtsComponent,
     SpringBootWebComponent,
     SpringBootDemoComponent,
     SpringBootConfigComponent,
