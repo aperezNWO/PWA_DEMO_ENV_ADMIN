@@ -94,7 +94,7 @@
         "description"      : "Reconocimientos de Caracteres",
         "field_6"          : "Node.js",
         "field_1"          : "Node.js, OCR, tesseract, codesandbox",
-        "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Ocr",
+        "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/OcrPhotoCapture",
         "field_3"          : "https://github.com/aperezNWO/cs_nodejs_ocr_/blob/main/index.js",
         "field_4"          : "https://github.com/tesseract-ocr/tesseract"  
     },
