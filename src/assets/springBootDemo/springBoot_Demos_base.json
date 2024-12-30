@@ -2,8 +2,8 @@
    {
 		"id"               : 1,
         "done"             : true,
-        "name"             : "Listado desde MS SQL Server",
-        "description"      : "Listado desde MS SQL Server",
+        "name"             : "Listado desde MS SQL Server - CSV",
+        "description"      : "Listado desde MS SQL Server - CSV",
         "field_6"          : "Spring Boot",
         "field_1"          : "Spring Boot, REST Service, MS SQL SERVER",
         "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV/",
