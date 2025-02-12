@@ -1,66 +1,86 @@
-<div align="center">
-	<h4><b>[MARKETING - CONTACT FORM - ADMIN]</b></h4>
-	<hr>
+<div align="left">
+    <h1>[SCM]</h1>
 </div>
+<hr>
 <form>
-	<div class="mb-3 row">
-		<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Busqueda de Texto Completo:</label>
-		<div class="col-xs-3 col-sm-auto">
-			<input
-				id="table-complete-search"
-				type="text"
-				class="form-control"
-				name="searchTerm"
-				[(ngModel)]="searchTerm"
-			/>
-		</div>
-		@if (loading | async) {
-			<span class="col col-form-label">[Cargando...]</span>
-		}
-	</div>
-
-	<table class="table table-striped table-dark">
-		<thead>
-			<tr>
-				<th scope="col" sortable  ="id"              >#</th>
-				<th scope="col" sortable  ="name"            >Nombre</th>
-				<th scope="col" sortable  ="field_1"         >Email</th>
-				<th scope="col" sortable  ="field_3"         >Fecha</th>
-                <th scope="col" sortable  ="field_2"         >Mensaje</th>
-			</tr>
-		</thead>
-		<tbody>
-			@for (contactFormAdminPage of _Pagelist | async; track contactFormAdminPage.id) {
-				<tr>
-					<th scope="row">{{ contactFormAdminPage.id }}</th>
-					<td><ngb-highlight [result]="contactFormAdminPage.name"     [term]="searchTerm" /></td>
-					<td><ngb-highlight [result]="contactFormAdminPage.field_1"  [term]="searchTerm" /></td>
-					<td><ngb-highlight [result]="contactFormAdminPage.field_3"  [term]="searchTerm" /></td>
-					<td><ngb-highlight [result]="contactFormAdminPage.field_2"  [term]="searchTerm" /></td>
-				</tr>
-			} @empty {
-				<tr>
-					<td colspan="4" style="text-align: center">[NO SE ENCONTRARON DATOS]</td>
-				</tr>
-			}
-		</tbody>
-	</table>
-
-	<div class="d-flex justify-content-between p-2">
-		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="page" [pageSize]="pageSize">
-		</ngb-pagination>
-
-		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="pageSize">
-			<option [ngValue]="2">2 items por Pagina</option>
-			<option [ngValue]="4">4 items por Pagina</option>
-			<option [ngValue]="6">6 items por Pagina</option>
-			<option [ngValue]="8">8 items por Pagina</option>
-			<option [ngValue]="10">10 items por Pagina</option>
-		</select>
-	</div>
-</form>
- <hr>
-<div align="right">
-    <a routerLink="/MarketingWeb">[Inicio]</a>
+  <div class="mb-3 row">
+  <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Busqueda de Texto Completo:</label>
+  <div class="col-xs-3 col-sm-auto">
+    <input
+      id="table-complete-search"
+      type="text"
+      class="form-control"
+      name="searchTerm"
+      [(ngModel)]="searchTerm"
+    />
+  </div>
+  <span class="col-sm-auto">
+    <button (click)="startListening()" [disabled]="this.isListening">   <img [src]="this.ListeningButtonIconOn"></button>
+    <button (click)="stopListening()"  [disabled]="!this.isListening">  <img [src]="this.ListeningButtonIconOff"></button>
+    <button (click)="speakText()"      [disabled]="this.isListening">   <img [src]="this.SpeakerIcon"></button>
+    <button (click)="clearText()"     								>   <img [src]="this.clearFormIcon"></button>
+  </span>
+  @if (loading | async) {
+    <span class="col col-form-label">[Cargando...]</span>
+  }
+  @if ((this.isListening) && (!this.error))  {
+    <span class="col col-form-label">[Escuchando...]</span>
+  }
+  <span class="col col-form-label" *ngIf="error" class="error">
+    <p>Error: {{ error }}</p>
+    </span>
 </div>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th align="left" scope="col" sortable="id"              >#</th>
+      <th align="left" scope="col" sortable="name"            >[Name]</th>
+      <th align="left" scope="col" sortable="field_1"         >[Email]</th>
+      <th align="left" scope="col" sortable="field_3"         >[Message]</th>
+      <th align="left" scope="col" sortable="field_2"         >[Date/Time]</th>
+    </tr>
+  </thead> 
+  <tbody>
+    @for (scmItem of _Pagelist | async; track scmItem.id) {
+        <tr>
+					<th scope="row">{{ scmItem.id }}</th>
+          <td align="left">
+              <ngb-highlight [result]="scmItem.name" [term]="searchTerm" />
+          </td>
+          <td align="left">
+               <ngb-highlight [result]="scmItem.field_1" [term]="searchTerm" />
+          </td>
+          <td align="left">
+              <ngb-highlight [result]="scmItem.field_3" [term]="searchTerm" />
+          </td>
+          <td align="left">
+              <ngb-highlight [result]="scmItem.field_2" [term]="searchTerm" />
+          </td>
+        </tr>
+    } @empty {
+      <tr>
+        <td colspan="4" style="text-align: center">[NO SE ENCONTRARON DATOS]</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="(total | async)!" [(page)]="page" [pageSize]="pageSize">
+  </ngb-pagination>
+
+  <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="pageSize">
+    <option [ngValue]="2">2 items por Pagina</option>
+    <option [ngValue]="4">4 items por Pagina</option>
+    <option [ngValue]="6">6 tems por Pagina</option>
+    <option [ngValue]="10">10 items por Pagina</option>
+  </select>
+</div>
+</form>
+<hr>
+<div align="right">
+  <a routerLink="/Marketing">[Volver al Menu]</a>
+</div>
+
+
 

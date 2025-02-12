@@ -1,4 +1,4 @@
-import { PageSetting, PageSettingDictionary } from '../app/_models/common/common';
+import { _SCMItem, PageSetting, PageSettingDictionary } from '../app/_models/common/common';
 
 interface EnvironmentConfig {
     pageSettingDictionary   : PageSettingDictionary;
@@ -10,6 +10,7 @@ interface EnvironmentConfig {
     usersList               : [];                // 
     usersDictionary         : [];                // 
     jsonList                : PageSetting[];     // 
+    SCMList                 : _SCMItem[];        //
 }
 
 
@@ -23,4 +24,5 @@ export const _environment : EnvironmentConfig  = {
     usersList               : [],        // 
     usersDictionary         : [],        // 
     jsonList                : [],        // 
+    SCMList                 : []         //
 };
