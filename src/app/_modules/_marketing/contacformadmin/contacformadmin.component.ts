@@ -319,7 +319,7 @@ export class ContacFormAdminComponent {
   }
 } 
 */
-import { Component, PipeTransform, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnInit, PipeTransform, QueryList, ViewChildren } from '@angular/core';
 import { Directive, EventEmitter, Input, Output            } from '@angular/core';
 import { DecimalPipe                                       } from '@angular/common';
 import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
@@ -396,7 +396,7 @@ class BaseSortableHeader {
   templateUrl: './contacformadmin.component.html',
   styleUrl: './contacformadmin.component.css'
 })
-export class ContacFormAdminComponent {
+export class ContacFormAdminComponent  implements OnInit {
   //
   @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
   //
@@ -432,36 +432,48 @@ export class ContacFormAdminComponent {
   ) 
   {
     //
-    this.InitializeSpeechRecognition();
-    //
-    const pageSetting    = _environment.pageSettingDictionary[ENV_LIST_CONTACTFORM_ADMIN];
-    
-    //
-    let _environmentList : string[] = [];
+    this.InitializeData();
 
-    this.__configService.loadJsonData(pageSetting.p_Path,
-                                _environmentList).then(() => {
-        //                            
-        _environmentList.forEach((element: any) => {
-          _environment.SCMList.push(element);
-        });
-    });
+  }
+  //
+  ngOnInit(): void {
+
+    //
+    //this._search$.next();
+    //
+    this.InitializeSpeechRecognition();
+  }
+  //
+  InitializeData():void {
+        //
+        const pageSetting    = _environment.pageSettingDictionary[ENV_LIST_CONTACTFORM_ADMIN];
     
-    //
-    this._search$
-      .pipe(
-        tap(() => this._loading!.next(true)),
-        debounceTime(200),
-        switchMap(() => this._search()),
-        delay(200),
-        tap(() => this._loading!.next(false)),
-      )
-      .subscribe((result) => {
-        this._Pagelist!.next(result.searchPages);
-        this._total!.next(result.total);
-      });
-    //
-    this._search$.next();
+        //
+        let _environmentList : string[] = [];
+    
+        this.__configService.loadJsonData(pageSetting.p_Path,
+                                    _environmentList).then(() => {
+            //                            
+            _environmentList.forEach((element: any) => {
+              _environment.SCMList.push(element);
+            });
+
+            //
+            this._search$
+              .pipe(
+                tap(() => this._loading!.next(true)),
+                debounceTime(200),
+                switchMap(() => this._search()),
+                delay(200),
+                tap(() => this._loading!.next(false)),
+              )
+              .subscribe((result) => {
+                this._Pagelist!.next(result.searchPages);
+                this._total!.next(result.total);
+              });
+            //
+            this._search$.next();
+        });
   }
   //
   private _search(): Observable<_BaseSearchResult> {
