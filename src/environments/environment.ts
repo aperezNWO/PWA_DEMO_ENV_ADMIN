@@ -1,4 +1,4 @@
-import { _SCMItem, PageSetting, PageSettingDictionary } from '../app/_models/common/common';
+import { _ContactFormItem, PageSetting, PageSettingDictionary } from '../app/_models/common/common';
 
 interface EnvironmentConfig {
     pageSettingDictionary   : PageSettingDictionary;
@@ -10,7 +10,7 @@ interface EnvironmentConfig {
     usersList               : [];                // 
     usersDictionary         : [];                // 
     jsonList                : PageSetting[];     // 
-    SCMList                 : _SCMItem[];        //
+    SCMList                 : _ContactFormItem[];        //
 }
 
 

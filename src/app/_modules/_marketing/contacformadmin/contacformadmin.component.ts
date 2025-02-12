@@ -323,13 +323,13 @@ import { Component, PipeTransform, QueryList, ViewChildren } from '@angular/core
 import { Directive, EventEmitter, Input, Output            } from '@angular/core';
 import { DecimalPipe                                       } from '@angular/common';
 import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
-import { _SCMItem, ENV_LIST_CONTACTFORM_ADMIN } from '../../../_models/common/common';
+import { _ContactFormItem, ENV_LIST_CONTACTFORM_ADMIN } from '../../../_models/common/common';
 import { _environment } from '../../../../environments/environment';
 import { ConfigService } from '../../../_services/_config/config.service';
 
 
 //
-type _SortColumn = keyof _SCMItem | '';
+type _SortColumn = keyof _ContactFormItem | '';
 //
 interface _BaseSortEvent {
   column    : _SortColumn;
@@ -337,7 +337,7 @@ interface _BaseSortEvent {
 }
 //
 interface _BaseSearchResult {
-  searchPages : _SCMItem[];
+  searchPages : _ContactFormItem[];
   total       : number;
 }   
 
@@ -353,7 +353,7 @@ interface _SearchState {
       sortDirection : _SortDirection;
 }
 //
-function matches(scmList: _SCMItem, term: string, pipe: PipeTransform) {
+function matches(scmList: _ContactFormItem, term: string, pipe: PipeTransform) {
     return (
       scmList.name?.toLowerCase().includes(term?.toLowerCase())        ||       
       scmList.description?.toLowerCase().includes(term?.toLowerCase()) ||              
@@ -406,7 +406,7 @@ export class ContacFormAdminComponent {
   public _total   = new BehaviorSubject<number>(0);
   public _search$ = new Subject<void>();
   //
-  public _Pagelist = new BehaviorSubject<_SCMItem[]>([]);
+  public _Pagelist = new BehaviorSubject<_ContactFormItem[]>([]);
   //
   public _state: _SearchState = {
     page: 1,
@@ -466,7 +466,7 @@ export class ContacFormAdminComponent {
   //
   private _search(): Observable<_BaseSearchResult> {
     //
-    let _searchPages: _SCMItem[] = [];
+    let _searchPages: _ContactFormItem[] = [];
     let _total: any;
     let _searchResult: _BaseSearchResult = { searchPages: _searchPages, total: _total };
 
@@ -478,7 +478,7 @@ export class ContacFormAdminComponent {
     _searchPages   = _environment.SCMList;
 
     // 2. filter
-    _searchPages = _searchPages.filter((_searchPage: _SCMItem) => matches(_searchPage, searchTerm, this.pipe));
+    _searchPages = _searchPages.filter((_searchPage: _ContactFormItem) => matches(_searchPage, searchTerm, this.pipe));
     _total       = _searchPages.length;
 
     // 3. paginate

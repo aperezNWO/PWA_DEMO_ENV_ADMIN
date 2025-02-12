@@ -69,7 +69,7 @@ export interface _BaseModel
     field_10         : string;
 }
 
-export interface _SCMItem 
+export interface _ContactFormItem 
 {
     id           : number;
     done         : boolean;
