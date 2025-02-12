@@ -11,10 +11,10 @@
 				type="text"
 				class="form-control"
 				name="searchTerm"
-				[(ngModel)]="_service.searchTerm"
+				[(ngModel)]="searchTerm"
 			/>
 		</div>
-		@if (_service.loading | async) {
+		@if (loading | async) {
 			<span class="col col-form-label">[Cargando...]</span>
 		}
 	</div>
@@ -22,21 +22,21 @@
 	<table class="table table-striped table-dark">
 		<thead>
 			<tr>
-				<th scope="col" sortable  ="id"              (sortevent)="onSort($event)">#</th>
-				<th scope="col" sortable  ="name"            (sortevent)="onSort($event)">Nombre</th>
-				<th scope="col" sortable  ="field_1"         (sortevent)="onSort($event)">Email</th>
-				<th scope="col" sortable  ="field_3"         (sortevent)="onSort($event)">Fecha</th>
-                <th scope="col" sortable  ="field_2"         (sortevent)="onSort($event)">Mensaje</th>
+				<th scope="col" sortable  ="id"              >#</th>
+				<th scope="col" sortable  ="name"            >Nombre</th>
+				<th scope="col" sortable  ="field_1"         >Email</th>
+				<th scope="col" sortable  ="field_3"         >Fecha</th>
+                <th scope="col" sortable  ="field_2"         >Mensaje</th>
 			</tr>
 		</thead>
 		<tbody>
-			@for (contactFormAdminPage of PagesList | async; track contactFormAdminPage.id) {
+			@for (contactFormAdminPage of _Pagelist | async; track contactFormAdminPage.id) {
 				<tr>
 					<th scope="row">{{ contactFormAdminPage.id }}</th>
-					<td><ngb-highlight [result]="contactFormAdminPage.name"     [term]="_service.searchTerm" /></td>
-					<td><ngb-highlight [result]="contactFormAdminPage.field_1"  [term]="_service.searchTerm" /></td>
-					<td><ngb-highlight [result]="contactFormAdminPage.field_3"  [term]="_service.searchTerm" /></td>
-					<td><ngb-highlight [result]="contactFormAdminPage.field_2"  [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="contactFormAdminPage.name"     [term]="searchTerm" /></td>
+					<td><ngb-highlight [result]="contactFormAdminPage.field_1"  [term]="searchTerm" /></td>
+					<td><ngb-highlight [result]="contactFormAdminPage.field_3"  [term]="searchTerm" /></td>
+					<td><ngb-highlight [result]="contactFormAdminPage.field_2"  [term]="searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>
@@ -47,10 +47,10 @@
 	</table>
 
 	<div class="d-flex justify-content-between p-2">
-		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="_service.page" [pageSize]="_service.pageSize">
+		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="page" [pageSize]="pageSize">
 		</ngb-pagination>
 
-		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="_service.pageSize">
+		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="pageSize">
 			<option [ngValue]="2">2 items por Pagina</option>
 			<option [ngValue]="4">4 items por Pagina</option>
 			<option [ngValue]="6">6 items por Pagina</option>
