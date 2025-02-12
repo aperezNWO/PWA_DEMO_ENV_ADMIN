@@ -9,12 +9,12 @@ export class AboutWebComponent {
   //
   pages = [
     {
-      'url': '/Contact',
-      'text': '[Contacto]',
-    },
-    {
       'url': '/TechInfo',
       'text': '[Especificaciones Técnicas]',
+    },
+    {
+      'url': '/SCM',
+      'text': '[Software Configuration Management]',
     }
   ]
 }

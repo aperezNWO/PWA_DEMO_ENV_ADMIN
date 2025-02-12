@@ -38,6 +38,7 @@ export class BaseComponent
             //
             this.__service._SEARCH_PAGES.splice(0,this.__service._SEARCH_PAGES.length);
             //
+            this.__service._SEARCH_PAGES = [];
             _environmentList.forEach((element: any) => {
                 this.__service._SEARCH_PAGES.push(element);
             });
