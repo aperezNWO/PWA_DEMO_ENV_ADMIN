@@ -1,5 +1,5 @@
 <div align="center">
-	<h4><b>[MARKETING]</b></h4>
+	<h4><b>[MARKETING - CONTACT FORM - ADMIN]</b></h4>
 	<hr>
 </div>
 <form>
@@ -23,26 +23,20 @@
 		<thead>
 			<tr>
 				<th scope="col" sortable  ="id"              (sortevent)="onSort($event)">#</th>
-				<th scope="col" sortable  ="done"            (sortevent)="onSort($event)">(hecho)</th>
 				<th scope="col" sortable  ="name"            (sortevent)="onSort($event)">Nombre</th>
-				<th scope="col" sortable  ="field_1"         (sortevent)="onSort($event)">Categoria</th>
-				<th scope="col" sortable  ="description"     (sortevent)="onSort($event)">Descripción</th>
+				<th scope="col" sortable  ="field_1"         (sortevent)="onSort($event)">Email</th>
+				<th scope="col" sortable  ="field_2"         (sortevent)="onSort($event)">Fecha</th>
+                <th scope="col" sortable  ="field_3"         (sortevent)="onSort($event)">Mensaje</th>
 			</tr>
 		</thead>
 		<tbody>
-			@for (marketingPage of PagesList | async; track marketingPage.id) {
+			@for (contactFormAdminPage of PagesList | async; track contactFormAdminPage.id) {
 				<tr>
-					<th scope="row">{{ marketingPage.id }}</th>
-					<td>
-						<input type="checkbox" name="done" id="done" value="done" [checked]="marketingPage.done" readonly>
-					</td>
-					<td>
-						<a ngb-highlight [href]="marketingPage.field_2" target="_blank">
-							<ngb-highlight [result]="marketingPage.name" [term]="_service.searchTerm" />
-						</a>
-					</td>
-					<td><ngb-highlight [result]="marketingPage.field_1"               [term]="_service.searchTerm" /></td>
-					<td><ngb-highlight [result]="marketingPage.description"           [term]="_service.searchTerm" /></td>
+					<th scope="row">{{ contactFormAdminPage.id }}</th>
+					<td><ngb-highlight [result]="contactFormAdminPage.name"     [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="contactFormAdminPage.field_1"  [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="contactFormAdminPage.field_2"  [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="contactFormAdminPage.field_3"  [term]="_service.searchTerm" /></td>
 				</tr>
 			} @empty {
 				<tr>
@@ -65,5 +59,6 @@
 </form>
  <hr>
 <div align="right">
-    <a routerLink="/Home">[Inicio]</a>
+    <a routerLink="/MarketingWeb">[Inicio]</a>
 </div>
+

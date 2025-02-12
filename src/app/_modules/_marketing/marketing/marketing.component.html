@@ -1,0 +1,69 @@
+<div align="center">
+	<h4><b>[MARKETING]</b></h4>
+	<hr>
+</div>
+<form>
+	<div class="mb-3 row">
+		<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Busqueda de Texto Completo:</label>
+		<div class="col-xs-3 col-sm-auto">
+			<input
+				id="table-complete-search"
+				type="text"
+				class="form-control"
+				name="searchTerm"
+				[(ngModel)]="_service.searchTerm"
+			/>
+		</div>
+		@if (_service.loading | async) {
+			<span class="col col-form-label">[Cargando...]</span>
+		}
+	</div>
+
+	<table class="table table-striped table-dark">
+		<thead>
+			<tr>
+				<th scope="col" sortable  ="id"              (sortevent)="onSort($event)">#</th>
+				<th scope="col" sortable  ="done"            (sortevent)="onSort($event)">(hecho)</th>
+				<th scope="col" sortable  ="name"            (sortevent)="onSort($event)">Nombre</th>
+				<th scope="col" sortable  ="field_1"         (sortevent)="onSort($event)">Categoria</th>
+				<th scope="col" sortable  ="description"     (sortevent)="onSort($event)">Descripción</th>
+			</tr>
+		</thead>
+		<tbody>
+			@for (marketingPage of PagesList | async; track marketingPage.id) {
+				<tr>
+					<th scope="row">{{ marketingPage.id }}</th>
+					<td>
+						<input type="checkbox" name="done" id="done" value="done" [checked]="marketingPage.done" readonly>
+					</td>
+					<td>
+						<a ngb-highlight [href]="marketingPage.field_2" target="_blank">
+							<ngb-highlight [result]="marketingPage.name" [term]="_service.searchTerm" />
+						</a>
+					</td>
+					<td><ngb-highlight [result]="marketingPage.field_1"               [term]="_service.searchTerm" /></td>
+					<td><ngb-highlight [result]="marketingPage.description"           [term]="_service.searchTerm" /></td>
+				</tr>
+			} @empty {
+				<tr>
+					<td colspan="4" style="text-align: center">[NO SE ENCONTRARON DATOS]</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+
+	<div class="d-flex justify-content-between p-2">
+		<ngb-pagination [collectionSize]="(total | async)!" [(page)]="_service.page" [pageSize]="_service.pageSize">
+		</ngb-pagination>
+
+		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="_service.pageSize">
+			<option [ngValue]="2">2 items por Pagina</option>
+			<option [ngValue]="4">4 items por Pagina</option>
+			<option [ngValue]="6">6 items por Pagina</option>
+		</select>
+	</div>
+</form>
+ <hr>
+<div align="right">
+    <a routerLink="/MarketingWeb">[Inicio]</a>
+</div>

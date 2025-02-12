@@ -25,7 +25,7 @@ import { NodeJsConfigComponent                  } from './_modules/_config/node-
 import { NetCoreConfigComponent                 } from './_modules/_config/net-core-config/net-core-config.component';
 import { CurriculumComponent                    } from './_modules/_education/AngularDemo/curriculum.component';
 import { EduWebComponent                        } from './_modules/_education/_edu-web/edu-web.component';
-import { MarketingComponent                     } from './_modules/_marketing/marketing.component';
+import { MarketingComponent                     } from './_modules/_marketing/marketing/marketing.component';
 import { ContactComponent                       } from './_modules/_about/contact/contact.component';
 import { TechInfoComponent                      } from './_modules/_about/tech-info/tech-info.component';
 import { AboutWebComponent                      } from './_modules/_about/about-web/about-web.component';
@@ -41,6 +41,8 @@ import { SpringBootDemoComponent                } from './_modules/_demos/Spring
 import { SpringBootConfigComponent              } from './_modules/_config/spring-boot-config/spring-boot-config.component';
 import { IndexComponent                         } from './_modules/_home/index/index.component';
 import { FireworksComponent                     } from './_modules/_home/fireworks/fireworks.component';
+import { ContacFormAdminComponent } from './_modules/_marketing/contacformadmin/contacformadmin.component';
+import { MarketingWebComponent } from './_modules/_marketing/_marketing-web/marketing-web.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -87,6 +89,8 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     SpringBootConfigComponent,
     IndexComponent,
     FireworksComponent,
+    ContacFormAdminComponent,
+    MarketingWebComponent
   ],
   imports: [
     BrowserModule,

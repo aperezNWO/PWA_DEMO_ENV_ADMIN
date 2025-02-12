@@ -2,7 +2,9 @@ import { NgModule                          } from '@angular/core';
 import { Route, RouterModule, Routes       } from '@angular/router';
 import { CurriculumComponent       } from './_modules/_education/AngularDemo/curriculum.component';
 import { EduWebComponent           } from './_modules/_education/_edu-web/edu-web.component';
-import { MarketingComponent        } from './_modules/_marketing/marketing.component';
+import { MarketingComponent        } from './_modules/_marketing/marketing/marketing.component';
+import { MarketingWebComponent     } from './_modules/_marketing/_marketing-web/marketing-web.component';
+import { ContacFormAdminComponent  } from './_modules/_marketing/contacformadmin/contacformadmin.component';
 import { AngularComponent          } from './_modules/_demos/angularDemo/angular-web/angular.component';
 import { FeaturePagesComponent     } from './_modules/_demos/angularDemo/feature-pages/feature-pages.component';
 import { CppDemoComponent          } from './_modules/_demos/CppDemo/cpp-demo/cpp-demo.component';
@@ -27,6 +29,8 @@ import { ProtectedComponent        } from './_modules/_login/protected/protected
 import { PageNotFoundComponent     } from './_modules/_home/page-not-found/page-not-found.component';
 import { HomeComponent             } from './_modules/_home/_homeWeb/home.component';
 import { IndexComponent            } from './_modules/_home/index/index.component';
+
+
 //
 export interface _Route extends Route
 {
@@ -63,7 +67,9 @@ export const routes: _Route[] = [
   {  path: 'Contact'                  , component: ContactComponent                 , caption : 'Contact Form'                          },
   {  path: 'TechInfo'                 , component: TechInfoComponent                , caption : 'Tecnical Specifications'               },
   {  path: 'AboutWeb'                 , component: AboutWebComponent                , caption : 'About'                                 },
-  {  path: 'Marketing'                , component: MarketingComponent                 
+  {  path: 'Marketing'                , component: MarketingComponent               , caption : 'Marketing - Admin'                                      },
+  {  path: 'ContactFormAdmin'         , component: ContacFormAdminComponent         , caption : 'Marketing - ContactForm Admin'                                      },
+  {  path: 'MarketingWeb'             , component: MarketingWebComponent                 
                                       , canActivate: [CanActivateGuard]             , caption : 'Marketing - Main Page'                 }, // Protected component
   {  path: 'protected'                , component: ProtectedComponent               , caption : ''                                      },
   {  path: '**'                       , component: PageNotFoundComponent            , caption : ''                                      },
