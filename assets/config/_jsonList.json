@@ -46,6 +46,6 @@
     },
     { 
         "f_Name"            : "CONTACTFORM_ADMIN",
-        "p_Path"            : "https://n96q4t-8000.csb.app/getAllContactForms"
+        "p_Path"            : "https://n96q4t-8000.csb.app/getAllContactForms?format=json"
     }
 ] 
