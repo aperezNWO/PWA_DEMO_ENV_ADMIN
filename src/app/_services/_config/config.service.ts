@@ -1,5 +1,5 @@
 import { Injectable                 } from '@angular/core';
-import { HttpClient                 } from '@angular/common/http';
+import { HttpClient, HttpHeaders                 } from '@angular/common/http';
 import { _environment               } from '../../../environments/environment';
 import { PageSetting                } from '../../_models/common/common';
 
@@ -14,7 +14,19 @@ export class ConfigService {
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadJsonData(p_Path: string, array : string[]) {
-    return this.http.get(p_Path).toPromise()
+
+    const headers = new HttpHeaders({
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      Pragma: 'no-cache',
+      Expires: '0',
+    });
+  
+    const cacheBuster = Date.now(); // Use current timestamp
+    p_Path = p_Path + `?cacheBuster=${cacheBuster}&format=json`;
+    
+    console.log('load json data from ' + p_Path);
+
+    return this.http.get(p_Path,/* { headers } */).toPromise()
       .then((data: any) => {
           //
           data.forEach((element: any) => {

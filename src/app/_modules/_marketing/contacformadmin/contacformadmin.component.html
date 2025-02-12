@@ -25,8 +25,8 @@
 				<th scope="col" sortable  ="id"              (sortevent)="onSort($event)">#</th>
 				<th scope="col" sortable  ="name"            (sortevent)="onSort($event)">Nombre</th>
 				<th scope="col" sortable  ="field_1"         (sortevent)="onSort($event)">Email</th>
-				<th scope="col" sortable  ="field_2"         (sortevent)="onSort($event)">Fecha</th>
-                <th scope="col" sortable  ="field_3"         (sortevent)="onSort($event)">Mensaje</th>
+				<th scope="col" sortable  ="field_3"         (sortevent)="onSort($event)">Fecha</th>
+                <th scope="col" sortable  ="field_2"         (sortevent)="onSort($event)">Mensaje</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -54,6 +54,8 @@
 			<option [ngValue]="2">2 items por Pagina</option>
 			<option [ngValue]="4">4 items por Pagina</option>
 			<option [ngValue]="6">6 items por Pagina</option>
+			<option [ngValue]="8">8 items por Pagina</option>
+			<option [ngValue]="10">10 items por Pagina</option>
 		</select>
 	</div>
 </form>
