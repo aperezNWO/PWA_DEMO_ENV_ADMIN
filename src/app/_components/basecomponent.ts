@@ -42,6 +42,8 @@ export class BaseComponent
             _environmentList.forEach((element: any) => {
                 this.__service._SEARCH_PAGES.push(element);
             });
+            //
+            this.__service.SubscribeData();
             //    
             this.PagesList  = __service.Pagelist;
             this.total      = __service.total;

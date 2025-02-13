@@ -19,7 +19,7 @@ export class BaseService  {
 	//
 	public _state: _SearchState = {
 		page          : 1,
-		pageSize      : 4,
+		pageSize      : 8,
 		searchTerm    : '',
 		sortColumn    : '',
 		sortDirection : '',
@@ -27,20 +27,25 @@ export class BaseService  {
 	//
 	constructor(private pipe: DecimalPipe) {
 		//
-		this._search$
-			.pipe(
-				tap(() => this._loading!.next(true)),
-				debounceTime(200),
-				switchMap(() => this._search()),
-				delay(200),
-				tap(() => this._loading!.next(false)),
-			)
-			.subscribe((result) => {
-				this._Pagelist!.next(result.searchPages);
-				this._total!.next(result.total);
-			});
-		//
-		this._search$.next();
+	}
+	//
+	public SubscribeData():void
+	{
+				//
+				this._search$
+				.pipe(
+					tap(() => this._loading!.next(true)),
+					debounceTime(200),
+					switchMap(() => this._search()),
+					delay(200),
+					tap(() => this._loading!.next(false)),
+				)
+				.subscribe((result) => {
+					this._Pagelist!.next(result.searchPages);
+					this._total!.next(result.total);
+				});
+			//
+			this._search$.next();
 	}
 	//
 	private _search(): Observable<_BaseSearchResult> {

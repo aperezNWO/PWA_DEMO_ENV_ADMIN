@@ -11,7 +11,7 @@
       type="text"
       class="form-control"
       name="searchTerm"
-      [(ngModel)]="searchTerm"
+      [(ngModel)]="this._service.searchTerm"
     />
   </div>
   <span class="col-sm-auto">
@@ -20,7 +20,7 @@
     <button (click)="speakText()"      [disabled]="this.isListening">   <img [src]="this.SpeakerIcon"></button>
     <button (click)="clearText()"     								>   <img [src]="this.clearFormIcon"></button>
   </span>
-  @if (loading | async) {
+  @if (this._service.loading | async) {
     <span class="col col-form-label">[Cargando...]</span>
   }
   @if ((this.isListening) && (!this.error))  {
@@ -36,25 +36,25 @@
       <th align="left" scope="col" sortable="id"              (sortevent)="onSort($event)">#</th>
       <th align="left" scope="col" sortable="name"            (sortevent)="onSort($event)">[Name]</th>
       <th align="left" scope="col" sortable="field_1"         (sortevent)="onSort($event)">[Email]</th>
-      <th align="left" scope="col" sortable="field_3"         (sortevent)="onSort($event)">[Message]</th>
-      <th align="left" scope="col" sortable="field_2"         (sortevent)="onSort($event)">[Date/Time]</th>
+      <th align="left" scope="col" sortable="field_3"         (sortevent)="onSort($event)">[Date/Time]</th>
+      <th align="left" scope="col" sortable="field_2"         (sortevent)="onSort($event)">[Message]</th>
     </tr>
   </thead> 
   <tbody>
-    @for (scmItem of _Pagelist | async; track scmItem.id) {
+    @for (contactFormItem of PagesList | async; track contactFormItem.id) {
         <tr>
-					<th scope="row">{{ scmItem.id }}</th>
+					<th scope="row">{{ contactFormItem.id }}</th>
           <td align="left">
-              <ngb-highlight [result]="scmItem.name" [term]="searchTerm" />
+              <ngb-highlight [result]="contactFormItem.name" [term]="this._service.searchTerm" />
           </td>
           <td align="left">
-               <ngb-highlight [result]="scmItem.field_1" [term]="searchTerm" />
+               <ngb-highlight [result]="contactFormItem.field_1" [term]="this._service.searchTerm" />
           </td>
           <td align="left">
-              <ngb-highlight [result]="scmItem.field_3" [term]="searchTerm" />
+              <ngb-highlight [result]="contactFormItem.field_3" [term]="this._service.searchTerm" />
           </td>
           <td align="left">
-              <ngb-highlight [result]="scmItem.field_2" [term]="searchTerm" />
+              <ngb-highlight [result]="contactFormItem.field_2" [term]="this._service.searchTerm" />
           </td>
         </tr>
     } @empty {
@@ -66,16 +66,16 @@
 </table>
 <hr>
 <div class="d-flex justify-content-between p-2">
-  <ngb-pagination [collectionSize]="(total | async)!" [(page)]="page" [pageSize]="pageSize">
+  <ngb-pagination [collectionSize]="(total | async)!" [(page)]="this._service.page" [pageSize]="this._service.pageSize">
   </ngb-pagination>
 </div>
 <hr>
 <div class="d-flex justify-content-between p-2">
-  <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="pageSize">
+  <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="this._service.pageSize">
     <option [ngValue]="2">2 items por Pagina</option>
     <option [ngValue]="4">4 items por Pagina</option>
     <option [ngValue]="6">6 tems por Pagina</option>
-    <option [ngValue]="10">10 items por Pagina</option>
+    <option [ngValue]="8">8 items por Pagina</option>
   </select>
 </div>
 </form>
