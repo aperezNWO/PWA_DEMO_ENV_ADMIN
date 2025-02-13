@@ -380,5 +380,7 @@
 
       -- [_] fix onsort.      
 
+-- [_] SpeechService as Service onLoad.     
+
 /***********************************************/
 
