@@ -436,7 +436,7 @@ export class ContacFormAdminComponent  implements OnInit {
     const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
     //
-    console.log("search : " + JSON.stringify(_environment.ContactFormList));
+    //console.log("search : " + JSON.stringify(_environment.ContactFormList));
     _searchPages   = _environment.ContactFormList;
 
     // 2. filter
