@@ -14,18 +14,11 @@ import { BaseComponent                       } from '../../../_components/baseco
 })
 export class NetCoreConfigComponent extends BaseComponent {
   //
-  constructor(public _service: _BaseService,
+  constructor(public _service: BaseService,
     public _authService: AuthService,
     public _configService: ConfigService
   ) {
     //
     super(_service, _authService, _configService, ENV_LIST_NETCORE_CONFIG);
   }
-}
-//
-@Injectable({
-  providedIn: 'root'
-})
-class _BaseService extends BaseService {
-
 }

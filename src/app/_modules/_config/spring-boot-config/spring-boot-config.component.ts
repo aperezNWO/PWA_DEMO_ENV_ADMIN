@@ -16,20 +16,13 @@ import { ConfigService                              } from '../../../_services/_
 export class SpringBootConfigComponent extends BaseComponent 
 {
   //
-  constructor(public _service: _BaseService,
-    public _authService: AuthService,
-    public _configService: ConfigService
+  constructor(public _service        : BaseService,
+              public _authService    : AuthService,
+              public _configService  : ConfigService
   ) 
   {
     //
     super(_service, _authService, _configService, ENV_LIST_SPRING_BOOT_CONFIG);
   }
-}
-//
-@Injectable({
-  providedIn: 'root'
-})
-class _BaseService extends BaseService {
-
 }
 

@@ -15,7 +15,7 @@ import { ConfigService                             } from '../../../_services/_c
 //
 export class DevPagesListsComponent extends BaseComponent {
 	//
-	constructor(public _service: _BaseService,
+	constructor(public _service: BaseService,
 	  public _authService: AuthService,
 	  public _configService: ConfigService
 	) {
@@ -23,12 +23,6 @@ export class DevPagesListsComponent extends BaseComponent {
 	  super(_service, _authService, _configService, ENV_LIST_ANGULAR_CONFIG);
 	}
   }
-  //
-  @Injectable({
-	providedIn: 'root'
-  })
-  class _BaseService extends BaseService {
   
-  }
 
 

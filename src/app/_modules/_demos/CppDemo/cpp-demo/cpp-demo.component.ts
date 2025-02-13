@@ -14,8 +14,8 @@ import { BaseService                    } from '../../../../_services/_config/ba
 })
 export class CppDemoComponent extends BaseComponent {
     //
-    constructor(public _service    : _BaseService,
-                public _authService: AuthService,
+    constructor(public _service       : BaseService,
+                public _authService   : AuthService,
 				        public _configService : ConfigService
 			         )
     {
@@ -24,9 +24,3 @@ export class CppDemoComponent extends BaseComponent {
     }
 }
 
-@Injectable({
-	providedIn: 'root'
-})
-class _BaseService  extends BaseService {
-	
-}

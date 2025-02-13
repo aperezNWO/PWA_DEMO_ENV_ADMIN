@@ -15,18 +15,11 @@ import { ConfigService                                                  } from '
 export class NodejsDemoComponent extends BaseComponent {
  
   //
-  constructor(public _service    : _BaseService,
-              public _authService: AuthService,
+  constructor(public _service       : BaseService,
+              public _authService   : AuthService,
               public _configService: ConfigService)
   {
       //
       super(_service,_authService,_configService, ENV_LIST_NODEJS_DEMO)
   }
-}
-//
-@Injectable({
-	providedIn: 'root'
-})
-class _BaseService  extends BaseService {
-	
 }

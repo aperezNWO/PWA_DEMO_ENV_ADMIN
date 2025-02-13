@@ -14,7 +14,7 @@ import { ConfigService                               } from '../../../_services/
 })
 export class CurriculumComponent extends BaseComponent {
   //
-  constructor(public _service: _BaseService,
+  constructor(public _service: BaseService,
     public _authService: AuthService,
     public _configService: ConfigService
   ) {
@@ -23,9 +23,3 @@ export class CurriculumComponent extends BaseComponent {
   }
 }
 
-@Injectable({
-  providedIn: 'root'
-})
-class _BaseService extends BaseService {
-
-}

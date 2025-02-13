@@ -105,17 +105,17 @@ export function sort(pagelist: _BaseModel[], column: _SortColumn, direction: str
 //
 export function matches(netcoreConfigPagelist: _BaseModel, term: string, pipe: PipeTransform) {
 	return (
-		netcoreConfigPagelist.name.toLowerCase().includes(term?.toLowerCase())        ||
-		netcoreConfigPagelist.description.toLowerCase().includes(term?.toLowerCase()) ||
-		netcoreConfigPagelist.field_1?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_2?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_3?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_4?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_5?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_6?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_7?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_8?.toLowerCase().includes(term?.toLowerCase())    ||
-		netcoreConfigPagelist.field_9?.toLowerCase().includes(term?.toLowerCase())    ||
+		netcoreConfigPagelist.name?.toLowerCase().includes(term?.toLowerCase())        ||
+		netcoreConfigPagelist.description?.toLowerCase().includes(term?.toLowerCase()) ||
+		netcoreConfigPagelist.field_1?.toLowerCase().includes(term?.toLowerCase())     ||
+		netcoreConfigPagelist.field_2?.toLowerCase().includes(term?.toLowerCase())     ||
+		netcoreConfigPagelist.field_3?.toLowerCase().includes(term?.toLowerCase())     ||
+		netcoreConfigPagelist.field_4?.toLowerCase().includes(term?.toLowerCase())     ||
+		netcoreConfigPagelist.field_5?.toLowerCase().includes(term?.toLowerCase())     ||
+		netcoreConfigPagelist.field_6?.toLowerCase().includes(term?.toLowerCase())     ||
+		netcoreConfigPagelist.field_7?.toLowerCase().includes(term?.toLowerCase())     ||
+		netcoreConfigPagelist.field_8?.toLowerCase().includes(term?.toLowerCase())     ||
+		netcoreConfigPagelist.field_9?.toLowerCase().includes(term?.toLowerCase())     ||
 		netcoreConfigPagelist.field_10?.toLowerCase().includes(term?.toLowerCase())    
 	);
 }

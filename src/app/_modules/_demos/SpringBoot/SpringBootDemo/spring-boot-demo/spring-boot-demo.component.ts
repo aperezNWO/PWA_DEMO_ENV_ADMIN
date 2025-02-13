@@ -13,7 +13,7 @@ import { BaseComponent                  } from '../../../../../_components/basec
 export class SpringBootDemoComponent  extends BaseComponent {
 
  //
- constructor(public _service    : _BaseService,
+ constructor(public _service    : BaseService,
     public _authService: AuthService,
     public _configService : ConfigService
 )
@@ -21,11 +21,4 @@ export class SpringBootDemoComponent  extends BaseComponent {
     //
     super(_service, _authService, _configService, ENV_LIST_SPRING_BOOT_DEMO);
   }
-}
-
-@Injectable({
-providedIn: 'root'
-})
-class _BaseService  extends BaseService {
-
 }

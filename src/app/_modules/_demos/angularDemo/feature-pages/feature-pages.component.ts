@@ -15,18 +15,11 @@ import { _BaseModel, _BaseSearchResult, _SearchState, _SortDirection, ENV_LIST_A
 })
 export class FeaturePagesComponent extends BaseComponent {
   //
-  constructor(public _service: _BaseService,
-    public _authService: AuthService,
-    public _configService: ConfigService
+  constructor(public _service       : BaseService,
+              public _authService   : AuthService,
+              public _configService: ConfigService
   ) {
     //
     super(_service, _authService, _configService, ENV_LIST_ANGULAR_DEMO);
   }
-}
-
-@Injectable({
-  providedIn: 'root'
-})
-class _BaseService extends BaseService {
-
 }
