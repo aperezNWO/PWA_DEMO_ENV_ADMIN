@@ -1,5 +1,5 @@
 import { Injectable                 } from '@angular/core';
-import { HttpClient, HttpHeaders                 } from '@angular/common/http';
+import { HttpClient, HttpHeaders    } from '@angular/common/http';
 import { _environment               } from '../../../environments/environment';
 import { PageSetting                } from '../../_models/common/common';
 
@@ -24,12 +24,12 @@ export class ConfigService {
     const cacheBuster = Date.now(); // Use current timestamp
     p_Path = p_Path + `?cacheBuster=${cacheBuster}`;
     
-    console.log('load json data from ' + p_Path);
+    //console.log('load json data from ' + p_Path);
 
     return this.http.get(p_Path, { headers } ).toPromise()
       .then((data: any) => {
           //
-          console.log('data ' + JSON.stringify(data));
+          //console.log('data ' + JSON.stringify(data));
           //
           data.forEach((element: any) => {
             //

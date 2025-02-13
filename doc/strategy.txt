@@ -371,3 +371,14 @@
 -- [_] revisión general.      
 
 /***********************************************/
+
+-- [_] NBX GRID.      
+
+      -- [_] fix onload data.      
+
+            -- [_] basarse en concacform admin grid.      
+
+      -- [_] fix onsort.      
+
+/***********************************************/
+

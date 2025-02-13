@@ -320,40 +320,15 @@ export class ContacFormAdminComponent {
 } 
 */
 import { Component, OnInit, PipeTransform, QueryList, ViewChildren } from '@angular/core';
-import { Directive, EventEmitter, Input, Output            } from '@angular/core';
 import { DecimalPipe                                       } from '@angular/common';
 import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
-import { _ContactFormItem, ENV_LIST_CONTACTFORM_ADMIN } from '../../../_models/common/common';
+import { _BaseModel, _BaseSearchResult, _SearchState, _SortDirection, ENV_LIST_CONTACTFORM_ADMIN } from '../../../_models/common/common';
 import { _environment } from '../../../../environments/environment';
 import { ConfigService } from '../../../_services/_config/config.service';
+import { _BaseSortEvent, _SortColumn, BaseSortableHeader } from '../../../_directives/BaseSortableHeader.directive';
 
-
 //
-type _SortColumn = keyof _ContactFormItem | '';
-//
-interface _BaseSortEvent {
-  column    : _SortColumn;
-  direction: _SortDirection;
-}
-//
-interface _BaseSearchResult {
-  searchPages : _ContactFormItem[];
-  total       : number;
-}   
-
-type _SortDirection = 'asc' | 'desc' | '';
-//
-const pagerotate: { [key: string]: _SortDirection } = { asc: 'desc', desc: '', '': 'asc' };
-//
-interface _SearchState {
-      page          : number;
-      pageSize      : number;
-      searchTerm    : string;
-      sortColumn    : _SortColumn;
-      sortDirection : _SortDirection;
-}
-//
-function matches(scmList: _ContactFormItem, term: string, pipe: PipeTransform) {
+function matches(scmList: _BaseModel, term: string, pipe: PipeTransform) {
     return (
       scmList.name?.toLowerCase().includes(term?.toLowerCase())        ||       
       scmList.description?.toLowerCase().includes(term?.toLowerCase()) ||              
@@ -368,29 +343,6 @@ function matches(scmList: _ContactFormItem, term: string, pipe: PipeTransform) {
 }
 
 //
-@Directive({
-  selector: 'th[_sortevent]',
-  host: {
-    '[class.asc]': '_direction === "asc"',
-    '[class.desc]': '_direction === "desc"',
-    '(click)': '_rotatePage()',
-  },
-})
-class BaseSortableHeader {
-  //
-  @Input() sortable: _SortColumn = '';
-  @Input() direction: _SortDirection = '';
-  @Output() sortevent = new EventEmitter<_BaseSortEvent>();
-  //
-  _rotatePage() {
-    this.direction = pagerotate[this.direction];
-    this.sortevent.emit({
-       column   : this.sortable,
-       direction: this.direction
-    });
-  }
-}
-
 @Component({
   selector: 'app-contacform-admin',
   templateUrl: './contacformadmin.component.html',
@@ -400,13 +352,11 @@ export class ContacFormAdminComponent  implements OnInit {
   //
   @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
   //
-  //public ConfigRoleString: string = SiteRole.RoleConfig.toString();
-  //
   public _loading = new BehaviorSubject<boolean>(true);
   public _total   = new BehaviorSubject<number>(0);
   public _search$ = new Subject<void>();
   //
-  public _Pagelist = new BehaviorSubject<_ContactFormItem[]>([]);
+  public _Pagelist = new BehaviorSubject<_BaseModel[]>([]);
   //
   public _state: _SearchState = {
     page: 1,
@@ -455,7 +405,7 @@ export class ContacFormAdminComponent  implements OnInit {
                                     _environmentList).then(() => {
             //                            
             _environmentList.forEach((element: any) => {
-              _environment.SCMList.push(element);
+              _environment.ContactFormList.push(element);
             });
 
             //
@@ -478,7 +428,7 @@ export class ContacFormAdminComponent  implements OnInit {
   //
   private _search(): Observable<_BaseSearchResult> {
     //
-    let _searchPages: _ContactFormItem[] = [];
+    let _searchPages: _BaseModel[] = [];
     let _total: any;
     let _searchResult: _BaseSearchResult = { searchPages: _searchPages, total: _total };
 
@@ -486,11 +436,11 @@ export class ContacFormAdminComponent  implements OnInit {
     const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
     //
-    console.log("search : " + JSON.stringify(_environment.SCMList));
-    _searchPages   = _environment.SCMList;
+    console.log("search : " + JSON.stringify(_environment.ContactFormList));
+    _searchPages   = _environment.ContactFormList;
 
     // 2. filter
-    _searchPages = _searchPages.filter((_searchPage: _ContactFormItem) => matches(_searchPage, searchTerm, this.pipe));
+    _searchPages = _searchPages.filter((_searchPage: _BaseModel) => matches(_searchPage, searchTerm, this.pipe));
     _total       = _searchPages.length;
 
     // 3. paginate
@@ -560,16 +510,16 @@ export class ContacFormAdminComponent  implements OnInit {
     this._search$.next();
   }
   //
-  onSort({ column, direction }: _BaseSortEvent) {
+  onSort({ _column, _direction }: _BaseSortEvent) {
     // resetting other headers
     this.headers?.forEach((header) => {
-      if (header.sortable !== column) {
+      if (header.sortable !== _column) {
         header.direction = '';
       }
     });
     //
-    this.sortColumn    = column;
-    this.sortDirection = direction;
+    this.sortColumn    = _column;
+    this.sortDirection = _direction;
   }
   //////////////////////////////////////////////////////////
   
