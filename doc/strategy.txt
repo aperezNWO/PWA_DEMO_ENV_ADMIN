@@ -4,4 +4,25 @@
 
 -- [_] reduce code size.
 
+-- [_] contact form.
+
+        -- [_] https://developers.facebook.com/apps/creation/
+
+        -- [_]  https://developers.facebook.com/apps
+
+        -- [_] oAuth.
+
+        -- [_] email notification.
+
+        -- [_] log entry.
+
+        -- [_] llm secure tips.
+         
+        -- [_] isolated url / ENV_LANDING.
+ 
+        -- [_] Microsoft Forms.
+       
+        -- [_] oAuth.
+
+        -- [_] dynamic form.
 ///////////////////////////////////////////////////
