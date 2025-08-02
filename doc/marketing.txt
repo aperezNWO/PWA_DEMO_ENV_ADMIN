@@ -2,11 +2,41 @@
 // MARKETING
 ////////////////////////////////////////////////////
 
+-- [_] https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-personal-website
+
 -- [_] getonboard, glassdoor, indeed, computrabajo, bumeran, upwork, fiverr, workana
 
 -- [_] Direct job offer.
 
+        -- [_] NON IT COMPANIES
+        
+        -- [_] FAANG.
+
 -- [_] Angular Community / dev-se community.
+
+-- [_] social networks
+
+
+          -- [_] LINKEDIN
+
+          -- [_] Linkedon Job Alerts "Angular".
+
+          -- [_] List of previous job alerts ".NET".
+
+        -- [_] facebook
+
+                -- [_] .NET COMMUNITY
+                -- [_] ANGULAR COMMUNITY
+
+        -- [_] TWITTER 
+
+        -- [_] TITKOK
+
+        -- [_] INSTAGRAM.
+
+            -- [_] it companies.
+        
+--[_]  community based job search.
 
 ////////////////////////////////////////////////////
 
@@ -97,13 +127,5 @@ By leveraging these platforms and strategies, you'll increase your chances of fi
 
 -- [_] http://apereznwo.github.io/PWA_DEMO_ENV_ADMIN/ContactFormAdmin.
 
-
-////////////////////////////////////////////////////
-
--- [_] https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-personal-website
-
--- [_] Linkedon Job Alerts "Angular".
-
--- [_] List of previous job alerts ".NET".
 
 ////////////////////////////////////////////////////
