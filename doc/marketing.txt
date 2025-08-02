@@ -2,7 +2,11 @@
 // MARKETING
 ////////////////////////////////////////////////////
 
-getonboard, glassdoor, indeed, computrabajo, bumeran, upwork, fiverr, workana
+-- [_] getonboard, glassdoor, indeed, computrabajo, bumeran, upwork, fiverr, workana
+
+-- [_] Direct job offer.
+
+-- [_] Angular Community / dev-se community.
 
 ////////////////////////////////////////////////////
 
@@ -96,7 +100,10 @@ By leveraging these platforms and strategies, you'll increase your chances of fi
 
 ////////////////////////////////////////////////////
 
-       -- [_] Linkedon Job Alerts "Angular".
-       -- [_] List of previous job alerts ".NET".
+-- [_] https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-personal-website
+
+-- [_] Linkedon Job Alerts "Angular".
+
+-- [_] List of previous job alerts ".NET".
 
 ////////////////////////////////////////////////////

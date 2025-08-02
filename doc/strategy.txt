@@ -10,7 +10,17 @@
 
         -- [_]  https://developers.facebook.com/apps
 
-        -- [_] oAuth.
+        -- [_] custom autn
+
+            -- [_] Guards.
+
+            -- [_] enum roles.
+
+            -- [_] routes on external files.
+
+            -- [_] search through pushed dictionary.
+
+            -- [_] https://g.co/gemini/share/8f40611f1aed
 
         -- [_] email notification.
 
@@ -36,5 +46,25 @@
         -- [_] https://www.positronx.io/angular-facebook-oauth-social-login-tutorial/
         -- [_] https://medium.com/@danilrabizo/google-authentication-in-the-angular-application-e86df69be58a
         -- [_] https://learn.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-angular-auth-code
-                
+
+        -- [_] oAuth / gmail
+
+            -- [_] https://g.co/gemini/share/e39e3fc947a9
+
+            -- [_] https://g.co/gemini/share/e2c0ab68e41e
+
+        -- [_] oAuth / hotmail
+
+            -- [_] https://g.co/gemini/share/8d2cbc587cac
+
+  -- [_] preserve session info.
+
+  -- [_] Marketing Grid
+ 
+       -- [_] Crud.  
+
+       -- [_] Read json pages from somee.com / database.  
+
+      -- [_] marketkng update list.
+
 ///////////////////////////////////////////////////
