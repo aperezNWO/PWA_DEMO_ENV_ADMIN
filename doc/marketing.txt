@@ -135,4 +135,8 @@ By leveraging these platforms and strategies, you'll increase your chances of fi
 
       --[_]  blogs.
 
+      --[_]  social media.
+
+      --[_]  links on "about" section of ANGULAR_DEMO app.
+
 ////////////////////////////////////////////////////
