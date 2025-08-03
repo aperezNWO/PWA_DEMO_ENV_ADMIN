@@ -2,41 +2,14 @@
 // MARKETING
 ////////////////////////////////////////////////////
 
--- [_] https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-personal-website
+-- [_] https://apereznwo.github.io/PWA_DEMO_ENV_ADMIN/protected
 
--- [_] getonboard, glassdoor, indeed, computrabajo, bumeran, upwork, fiverr, workana
+       USER : MARKETING
 
--- [_] Direct job offer.
+       CLAVE : Marketing
 
-        -- [_] NON IT COMPANIES
-        
-        -- [_] FAANG.
+-- [_] http://apereznwo.github.io/PWA_DEMO_ENV_ADMIN/ContactFormAdmin.
 
--- [_] Angular Community / dev-se community.
-
--- [_] social networks
-
-
-          -- [_] LINKEDIN
-
-          -- [_] Linkedon Job Alerts "Angular".
-
-          -- [_] List of previous job alerts ".NET".
-
-        -- [_] facebook
-
-                -- [_] .NET COMMUNITY
-                -- [_] ANGULAR COMMUNITY
-
-        -- [_] TWITTER 
-
-        -- [_] TITKOK
-
-        -- [_] INSTAGRAM.
-
-            -- [_] it companies.
-        
---[_]  community based job search.
 
 ////////////////////////////////////////////////////
 
@@ -119,13 +92,47 @@ By leveraging these platforms and strategies, you'll increase your chances of fi
 ////////////////////////////////////////////////////
 
 
--- [_] https://apereznwo.github.io/PWA_DEMO_ENV_ADMIN/protected
+-- [_] https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-personal-website
 
-       USER : MARKETING
+-- [_] getonboard, glassdoor, indeed, computrabajo, bumeran, upwork, fiverr, workana
 
-       CLAVE : Marketing
+-- [_] Direct job offer.
 
--- [_] http://apereznwo.github.io/PWA_DEMO_ENV_ADMIN/ContactFormAdmin.
+        -- [_] NON IT COMPANIES
+        
+        -- [_] FAANG.
 
+-- [_] Angular Community / dev-se community.
+
+-- [_] social networks
+
+          -- [_] LINKEDIN
+
+          -- [_] Linkedon Job Alerts "Angular".
+
+          -- [_] List of previous job alerts ".NET".
+
+        -- [_] facebook
+
+                -- [_] .NET COMMUNITY
+                -- [_] ANGULAR COMMUNITY
+
+        -- [_] TWITTER 
+
+        -- [_] TITKOK
+
+        -- [_] INSTAGRAM.
+
+            -- [_] it companies.
+        
+--[_]  community based job search.
+
+--[_]  publish articles of current programming sample on social media (english by default).
+
+      --[_]  git hub.
+
+      --[_]  linkedin.
+
+      --[_]  blogs.
 
 ////////////////////////////////////////////////////
