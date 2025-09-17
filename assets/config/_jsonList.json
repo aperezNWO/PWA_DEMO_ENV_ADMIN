@@ -45,11 +45,11 @@
         "p_Path"            : "./assets/springBootDemo/springBoot_Config_base.json"
     },
     { 
-        "f_Name"            : "CONTACTFORM_ADMIN",
+        "f_Name"            : "_CONTACTFORM_ADMIN",
         "p_Path"            : "https://9rfn3t-4000.csb.app/generarinformelogin"
     },
     { 
-        "f_Name"            : "_CONTACTFORM_ADMIN",
-        "p_Path"            : "https://n96q4t-8000.csb.app/getAllContactForms?format=json"
+        "f_Name"            : "CONTACTFORM_ADMIN",
+        "p_Path"            : "https://sp223k-8000.csb.app/getAllContactForms?format=json"
     }
 ] 
