@@ -46,10 +46,10 @@
     },
     { 
         "f_Name"            : "CONTACTFORM_ADMIN",
-        "p_Path"            : "https://9rfn3t-4000.csb.app/generarinformelogin"
+        "p_Path"            : "https://fxh4m2-4000.csb.app/GetAllContactForms"
     },
     { 
-        "f_Name"            : "_CONTACTFORM_ADMIN",
-        "p_Path"            : "https://n96q4t-8000.csb.app/getAllContactForms?format=json"
+        "f_Name"            : "CONTACTFORM_ADMIN_DJANGO",
+        "p_Path"            : "https://sp223k-8000.csb.app/getAllContactForms?format=json"
     }
 ] 

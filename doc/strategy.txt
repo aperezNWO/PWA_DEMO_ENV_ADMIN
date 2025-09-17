@@ -4,39 +4,7 @@
 
 -- [_] reduce code size.
 
--- [_] contact form.
-
-        -- [_] https://developers.facebook.com/apps/creation/
-
-        -- [_]  https://developers.facebook.com/apps
-
-        -- [_] custom autn
-
-            -- [_] Guards.
-
-            -- [_] enum roles.
-
-            -- [_] routes on external files.
-
-            -- [_] search through pushed dictionary.
-
-            -- [_] https://g.co/gemini/share/8f40611f1aed
-
-        -- [_] email notification.
-
-        -- [_] log entry.
-
-        -- [_] llm secure tips.
-         
-        -- [_] isolated url / ENV_LANDING.
- 
-        -- [_] Microsoft Forms.
-       
-        -- [_] oAuth.
-
-        -- [_] dynamic form.
-
-    -- [_] OAUTH.
+-- [_] OAUTH.
 
         -- [_] https://codingpotions.com/angular-login-sesion/
         -- [_] https://auth0.com/docs/quickstart/spa/angular/01-login
@@ -66,5 +34,7 @@
        -- [_] Read json pages from somee.com / database.  
 
       -- [_] marketkng update list.
+
+-- [_] get marketing data from .NET CORE (codesandbox cache issue).
 
 ///////////////////////////////////////////////////

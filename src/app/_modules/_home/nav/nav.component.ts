@@ -62,7 +62,7 @@ export class NavComponent {
 		//
 		_environment.routesList.forEach((element: any) => {
 			this.pages!.push(element);
-			//console.log(element)
+			console.log(element)
 		});
   }
   //

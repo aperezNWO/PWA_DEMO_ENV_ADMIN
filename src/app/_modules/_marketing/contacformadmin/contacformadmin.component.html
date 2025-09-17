@@ -14,12 +14,13 @@
       [(ngModel)]="this._service.searchTerm"
     />
   </div>
+  <!--
   <span class="col-sm-auto">
     <button (click)="startListening()" [disabled]="this.isListening">   <img [src]="this.ListeningButtonIconOn"></button>
     <button (click)="stopListening()"  [disabled]="!this.isListening">  <img [src]="this.ListeningButtonIconOff"></button>
     <button (click)="speakText()"      [disabled]="this.isListening">   <img [src]="this.SpeakerIcon"></button>
     <button (click)="clearText()"     								>   <img [src]="this.clearFormIcon"></button>
-  </span>
+  </span>-->
   @if (this._service.loading | async) {
     <span class="col col-form-label">[Cargando...]</span>
   }
@@ -36,8 +37,8 @@
       <th align="left" scope="col" sortable="id"              (sortevent)="onSort($event)">#</th>
       <th align="left" scope="col" sortable="name"            (sortevent)="onSort($event)">[Name]</th>
       <th align="left" scope="col" sortable="field_1"         (sortevent)="onSort($event)">[Email]</th>
-      <th align="left" scope="col" sortable="field_3"         (sortevent)="onSort($event)">[Date/Time]</th>
       <th align="left" scope="col" sortable="field_2"         (sortevent)="onSort($event)">[Message]</th>
+      <th align="left" scope="col" sortable="field_3"         (sortevent)="onSort($event)">[Date/Time]</th>
     </tr>
   </thead> 
   <tbody>
@@ -51,10 +52,10 @@
                <ngb-highlight [result]="contactFormItem.field_1" [term]="this._service.searchTerm" />
           </td>
           <td align="left">
-              <ngb-highlight [result]="contactFormItem.field_3" [term]="this._service.searchTerm" />
+              <ngb-highlight [result]="contactFormItem.field_2" [term]="this._service.searchTerm" />
           </td>
           <td align="left">
-              <ngb-highlight [result]="contactFormItem.field_2" [term]="this._service.searchTerm" />
+              <ngb-highlight [result]="contactFormItem.field_3" [term]="this._service.searchTerm" />
           </td>
         </tr>
     } @empty {

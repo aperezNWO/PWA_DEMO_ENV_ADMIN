@@ -6,7 +6,7 @@ import { AsyncPipe, DatePipe, DecimalPipe         } from '@angular/common';
 import { FormsModule                              } from '@angular/forms';
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import { HttpClientModule                       } from '@angular/common/http';
-import { BrowserModule, provideClientHydration  } from '@angular/platform-browser';
+import { BrowserModule                          } from '@angular/platform-browser';
 import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
 import { ConfigService                          } from './_services/_config/config.service';
@@ -40,9 +40,8 @@ import { SpringBootWebComponent                 } from './_modules/_demos/Spring
 import { SpringBootDemoComponent                } from './_modules/_demos/SpringBoot/SpringBootDemo/spring-boot-demo/spring-boot-demo.component';
 import { SpringBootConfigComponent              } from './_modules/_config/spring-boot-config/spring-boot-config.component';
 import { IndexComponent                         } from './_modules/_home/index/index.component';
-import { FireworksComponent                     } from './_modules/_home/fireworks/fireworks.component';
-import { ContacFormAdminComponent } from './_modules/_marketing/contacformadmin/contacformadmin.component';
-import { MarketingWebComponent } from './_modules/_marketing/_marketing-web/marketing-web.component';
+import { ContacFormAdminComponent               } from './_modules/_marketing/contacformadmin/contacformadmin.component';
+import { MarketingWebComponent                  } from './_modules/_marketing/_marketing-web/marketing-web.component';
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
@@ -88,7 +87,6 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
     SpringBootDemoComponent,
     SpringBootConfigComponent,
     IndexComponent,
-    FireworksComponent,
     ContacFormAdminComponent,
     MarketingWebComponent
   ],
@@ -116,8 +114,7 @@ export function initialize(_configService: ConfigService, http: HttpClient) {
         multi     : true
       },
     ],
-    [DatePipe,DecimalPipe,HttpClient],
-    provideClientHydration()
+    [DatePipe,DecimalPipe,HttpClient]
   ],
   bootstrap: [AppComponent]
 })

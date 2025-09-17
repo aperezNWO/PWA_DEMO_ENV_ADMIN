@@ -31,7 +31,7 @@ export class ContacFormAdminComponent  extends BaseComponent implements OnInit  
     super(_service, _authService, _configService, ENV_LIST_CONTACTFORM_ADMIN);
   }
   ngOnInit(): void {
-    this.InitializeSpeechRecognition();
+    //this.InitializeSpeechRecognition();
   }
    //////////////////////////////////////////////////////////
   

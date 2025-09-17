@@ -33,7 +33,8 @@ export class BaseComponent
         //
         let _environmentList : string[] = [];
 
-        __configService.loadJsonData(pageSetting.p_Path,
+        __configService.loadJsonData(pageSetting.f_Name,
+                                     pageSetting.p_Path,
                                     _environmentList).then(() => {
             //
             this.__service._SEARCH_PAGES.splice(0,this.__service._SEARCH_PAGES.length);

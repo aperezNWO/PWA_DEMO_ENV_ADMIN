@@ -13,25 +13,39 @@ export class ConfigService {
 
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
-  loadJsonData(p_Path: string, array : string[]) {
+  loadJsonData(f_Name : string, p_Path: string, array : string[]) {
 
     const headers = new HttpHeaders({
       'Cache-Control': 'no-cache, no-store, must-revalidate',
       Pragma: 'no-cache',
       Expires: '0',
     });
-  
-    const cacheBuster = Date.now(); // Use current timestamp
-    p_Path = p_Path + `?cacheBuster=${cacheBuster}`;
     
-    //console.log('load json data from ' + p_Path);
+      const cacheBuster = Date.now(); // Use current timestamp
+
+      if (f_Name.includes('CONTACTFORM_ADMIN'))
+      {
+          p_Path = p_Path + `?cacheBuster=${cacheBuster}`;
+      }
 
     return this.http.get(p_Path, { headers } ).toPromise()
       .then((data: any) => {
+
+          let _data : any;
+
+          if (f_Name.includes('CONTACTFORM_ADMIN'))
+          {
+              _data =   data.recordsets[0];
+          } else 
+          {
+             _data = data;
+          }
           //
-          //console.log('data ' + JSON.stringify(data));
+          console.log('path : ' + p_Path);
           //
-          data.forEach((element: any) => {
+          console.log('data : ' + JSON.stringify(_data));
+          //
+          _data.forEach((element: any) => {
             //
             array.push(element);
           });
@@ -42,7 +56,7 @@ export class ConfigService {
   }  
   //
   loadJsonist() {
-    return this.http.get('./assets/config/_jsonList.json').toPromise()
+    return this.http.get('./assets/config/jsonList.json').toPromise()
       .then((data: any) => {
           //
           _environment.jsonList = data; // Assign loaded data to environment variable
@@ -57,7 +71,7 @@ export class ConfigService {
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadUsersData() {
-    return this.http.get('./assets/config/_UsersInfo.json').toPromise()
+    return this.http.get('./assets/config/UsersInfo.json').toPromise()
       .then((data: any) => {
           //
           ////console.log("loading users..." + JSON.stringify(data));
@@ -70,7 +84,7 @@ export class ConfigService {
   }
   //
   loadPagesInfoData() {
-    return this.http.get('./assets/config/_PagesInfo.json').toPromise()
+    return this.http.get('./assets/config/PagesInfo.json').toPromise()
       .then((data: any) => {
           //
           ////console.log("loading routes data..." + JSON.stringify(data));
@@ -83,7 +97,7 @@ export class ConfigService {
   }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadConfig() {
-    return this.http.get('./assets/config/_config.json').toPromise()
+    return this.http.get('./assets/config/config.json').toPromise()
       .then((data: any) => {
           //
           ////console.log("loading configuration..." + JSON.stringify(data));
