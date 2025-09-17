@@ -49,7 +49,7 @@
         "p_Path"            : "https://fxh4m2-4000.csb.app/GetAllContactForms"
     },
     { 
-        "f_Name"            : "_CONTACTFORM_ADMIN",
+        "f_Name"            : "CONTACTFORM_ADMIN_DJANGO",
         "p_Path"            : "https://sp223k-8000.csb.app/getAllContactForms?format=json"
     }
 ] 
