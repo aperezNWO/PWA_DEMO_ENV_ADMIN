@@ -32,14 +32,15 @@ export class ConfigService {
       .then((data: any) => {
 
           let _data : any;
-
+          /*
           if (f_Name.includes('CONTACTFORM_ADMIN'))
           {
               _data =   data.recordsets[0];
           } else 
           {
              _data = data;
-          }
+          }*/
+          _data = data;
           //
           console.log('path : ' + p_Path);
           //

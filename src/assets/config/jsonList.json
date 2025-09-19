@@ -45,11 +45,15 @@
         "p_Path"            : "./assets/springBootDemo/springBoot_Config_base.json"
     },
     { 
-        "f_Name"            : "CONTACTFORM_ADMIN",
+        "f_Name"            : "CONTACTFORM_ADMIN_NODEJS",
         "p_Path"            : "https://fxh4m2-4000.csb.app/GetAllContactForms"
     },
     { 
         "f_Name"            : "CONTACTFORM_ADMIN_DJANGO",
         "p_Path"            : "https://sp223k-8000.csb.app/getAllContactForms?format=json"
+    },
+    { 
+        "f_Name"            : "CONTACTFORM_ADMIN",
+        "p_Path"            : "https://angularwebapidemo.somee.com/Demos/GetAllContactForms"
     }
 ] 
