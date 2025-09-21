@@ -26,29 +26,31 @@ export class BaseComponent
                  @Inject('dictionaryKey') public _dictionaryKey: string,
                )
     {
-        //
-        this.PagesList       = of([]);
-        //
-        const pageSetting    = _environment.pageSettingDictionary[_dictionaryKey];
-        //
-        let _environmentList : string[] = [];
+        this.__configService.loadJsonist().then(()=> {
+            //
+            this.PagesList       = of([]);
+            //
+            const pageSetting    = _environment.pageSettingDictionary[_dictionaryKey];
+            //
+            let _environmentList : string[] = [];
 
-        __configService.loadJsonData(pageSetting.f_Name,
-                                     pageSetting.p_Path,
-                                    _environmentList).then(() => {
-            //
-            this.__service._SEARCH_PAGES.splice(0,this.__service._SEARCH_PAGES.length);
-            //
-            this.__service._SEARCH_PAGES = [];
-            _environmentList.forEach((element: any) => {
-                this.__service._SEARCH_PAGES.push(element);
+            __configService.loadJsonData(pageSetting.f_Name,
+                                        pageSetting.p_Path,
+                                        _environmentList).then(() => {
+                //
+                this.__service._SEARCH_PAGES.splice(0,this.__service._SEARCH_PAGES.length);
+                //
+                this.__service._SEARCH_PAGES = [];
+                _environmentList.forEach((element: any) => {
+                    this.__service._SEARCH_PAGES.push(element);
+                });
+                //
+                this.__service.SubscribeData();
+                //    
+                this.PagesList  = __service.Pagelist;
+                this.total      = __service.total;
             });
-            //
-            this.__service.SubscribeData();
-            //    
-            this.PagesList  = __service.Pagelist;
-            this.total      = __service.total;
-        });
+       });
     }
     //
     onSort({ _column, _direction }: _BaseSortEvent) {

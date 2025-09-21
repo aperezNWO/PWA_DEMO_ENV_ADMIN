@@ -5,7 +5,7 @@
 /*********************** GIT ***********************************/
 
 git add * 
-git commit -m"[ANGULAR_DEMO] - [ENV_ADMIN] v[1.5.6]" -m"1) GetAllContactForms" -a
+git commit -m"[ANGULAR_DEMO] - [ENV_ADMIN] v[1.5.7]" -m"1) Main Navigation Fix." -a
 git push
 git pull
 

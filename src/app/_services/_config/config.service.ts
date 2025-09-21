@@ -20,31 +20,13 @@ export class ConfigService {
       Pragma: 'no-cache',
       Expires: '0',
     });
-    
-      const cacheBuster = Date.now(); // Use current timestamp
-
-      if (f_Name.includes('CONTACTFORM_ADMIN'))
-      {
-          p_Path = p_Path + `?cacheBuster=${cacheBuster}`;
-      }
 
     return this.http.get(p_Path, { headers } ).toPromise()
       .then((data: any) => {
-
+          //
           let _data : any;
-          /*
-          if (f_Name.includes('CONTACTFORM_ADMIN'))
-          {
-              _data =   data.recordsets[0];
-          } else 
-          {
-             _data = data;
-          }*/
+          //
           _data = data;
-          //
-          console.log('path : ' + p_Path);
-          //
-          console.log('data : ' + JSON.stringify(_data));
           //
           _data.forEach((element: any) => {
             //
@@ -59,6 +41,8 @@ export class ConfigService {
   loadJsonist() {
     return this.http.get('./assets/config/jsonList.json').toPromise()
       .then((data: any) => {
+          //
+          console.log("loading pages sources..." + JSON.stringify(data));
           //
           _environment.jsonList = data; // Assign loaded data to environment variable
           //
@@ -75,7 +59,7 @@ export class ConfigService {
     return this.http.get('./assets/config/UsersInfo.json').toPromise()
       .then((data: any) => {
           //
-          ////console.log("loading users..." + JSON.stringify(data));
+          console.log("loading users..." + JSON.stringify(data));
           //
           _environment.usersList = data; // Assign loaded data to environment variable
       })
@@ -88,7 +72,7 @@ export class ConfigService {
     return this.http.get('./assets/config/PagesInfo.json').toPromise()
       .then((data: any) => {
           //
-          ////console.log("loading routes data..." + JSON.stringify(data));
+          console.log("loading routes data..." + JSON.stringify(data));
           //
           _environment.routesList = data; // Assign loaded data to environment variable
       })
@@ -101,7 +85,7 @@ export class ConfigService {
     return this.http.get('./assets/config/config.json').toPromise()
       .then((data: any) => {
           //
-          ////console.log("loading configuration..." + JSON.stringify(data));
+          console.log("loading configuration..." + JSON.stringify(data));
           //
           _environment.externalConfig = data; // Assign loaded data to environment variable
       })
@@ -116,7 +100,7 @@ export class ConfigService {
     //
     //console.log(jsonData);
     //
-    ////console.log('Reading config : ' + key + ', value :' + jsonData)
+    console.log('Reading config : ' + key + ', value :' + jsonData)
     //
     return jsonData;
   }

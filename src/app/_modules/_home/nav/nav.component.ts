@@ -11,7 +11,7 @@ import { AuthService                } from '../../../_services/_config/auth.serv
   styleUrl: './nav.component.css'
 })
 //
-export class NavComponent {
+export class NavComponent implements OnInit {
 
   // propiedades publicas
   public readonly _appBrand  : string | undefined = "";
@@ -59,18 +59,19 @@ export class NavComponent {
     let title: string = `${this._appBrand} -- ${this._appEnv} -- ${this._appVersion}`;
     //
     this.titleService.setTitle(title);
-		//
-		_environment.routesList.forEach((element: any) => {
-			this.pages!.push(element);
-			console.log('main page element : ' + element)
-		});
-  }
-  //
-  ngOnInit() {
-    //
   }
   //
   getValueFromConfig(key: string) {
     return this._configService.getConfigValue(key);
+  }
+  //
+  ngOnInit() {
+    //
+    console.log('loading navigation ... [' + _environment.routesList + ']');
+    //
+		_environment.routesList.forEach((element: any) => {
+			this.pages!.push(element);
+			console.log('main page element : ' + element)
+		});
   }
 }

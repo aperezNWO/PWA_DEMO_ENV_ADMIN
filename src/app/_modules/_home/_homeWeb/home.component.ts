@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
   constructor(private _configService: ConfigService)
   {
       //
-      //console.log(this.pageTitle + " - [INGRESO]") ;
-      //
       this._appBrand       = this._configService.getConfigValue('appBrand');
       //
       this._appBrand_Long  = this._configService.getConfigValue('appBrand_Long');

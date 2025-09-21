@@ -45,12 +45,12 @@ import { MarketingWebComponent                  } from './_modules/_marketing/_m
 //
 export function initialize(_configService: ConfigService, http: HttpClient) {
   //
-   _configService.loadJsonist().then(()=> {
+  // _configService.loadJsonist().then(()=> {
       //
       _configService.loadPagesInfoData();
       //
       _configService.loadUsersData();
-  });
+  //});
   // 
   return () =>  _configService.loadConfig();
 }
